@@ -1,0 +1,14 @@
+<uc:Template id="DAWNormalChannel" inherit="DAWChannel">
+			<!-- Panner -->
+			<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround" />	
+			<!-- Sends -->
+			<uc:Component id="sends" template="DAWSends" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>							
+			<!-- Cue Mix -->
+			<uc:Component id="cuemix" template="DAWCueMix" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+			<!-- Software Parameters -->
+			<uc:Component id="inputfx" paramlist="InputFXParams"/>
+			<!-- Hardware Parameters -->
+			<uc:Component id="hardware" paramlist="HardwareInput"/>
+			<!-- Mix FX -->
+			<uc:Component id="mixfx" template="DAWMixFX" paramlist="MixFxFolder" classname="DAWDeviceFolder"/>
+		</uc:Template>

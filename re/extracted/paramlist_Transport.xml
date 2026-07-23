@@ -1,0 +1,19 @@
+<uc:ParamList id="Transport">
+			<uc:Param id="start" name="Start"/>
+			<uc:Param id="stop" name="Stop"/>
+			<uc:Param id="record" name="Record"/>			
+			<uc:Param id="returnToZero" name="RTZ"/>
+			<uc:Param id="fastForward" name="FF"/>
+			<uc:Param id="rewind" name="Rewind"/>			
+			<uc:Param id="loop" name="Loop"/>
+			<uc:Param id="punch" name="Punch"/>
+			<uc:Param id="preroll" name="Preroll"/>
+			<uc:Param id="precount" name="Precount"/>
+			
+			<uc:Param id="primaryTime" type="string" flags="private"/>
+			<uc:Param id="secondaryTime" type="string" flags="private"/>
+
+			<uc:Param id="tempo" type="float" range="Tempo" name="Tempo"/>
+			<uc:Param id="timeSignatureNum" type="int" range="TimeSignatureNum"/>
+			<uc:Param id="timeSignatureDenom" type="list" units="TimeSignatureDenom"/>
+		</uc:ParamList>

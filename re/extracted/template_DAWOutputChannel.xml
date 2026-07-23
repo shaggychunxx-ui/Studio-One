@@ -1,0 +1,8 @@
+<uc:Template id="DAWOutputChannel" inherit="DAWChannel">
+			<!-- Post-Fader Inserts -->
+			<uc:Component id="posts" template="DAWInserts" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+			<!-- Click -->
+			<uc:Component id="click" paramlist="ChannelClick" classname="DAWChannelClick"/>
+			<!-- Mix FX -->
+			<uc:Component id="mixfx" template="DAWMixFX" paramlist="MixFxFolder" classname="DAWDeviceFolder"/>
+		</uc:Template>

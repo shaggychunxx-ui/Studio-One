@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Minor 7th Chord" group="Double Notes" description="">
+	<CommandElement category="Edit" name="Copy"/>
+	<CommandElement category="Edit" name="Paste at Original Position"/>
+	<CommandElement category="Musical Functions" name="Transpose">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="3"/>
+		<CommandArgument name="SetValue" value="60"/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Paste at Original Position"/>
+	<CommandElement category="Musical Functions" name="Transpose">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="7"/>
+		<CommandArgument name="SetValue" value="60"/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Paste at Original Position"/>
+	<CommandElement category="Musical Functions" name="Transpose">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="10"/>
+		<CommandArgument name="SetValue" value="60"/>
+	</CommandElement>
+</Macro>

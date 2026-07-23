@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Select Notes 1/8T" group="Note Selection" description="">
+	<CommandElement category="Musical Functions" name="Select Notes">
+		<CommandArgument name="Mode" value="3"/>
+		<CommandArgument name="RangeMode" value="0"/>
+		<CommandArgument name="IntervalMode" value="0"/>
+		<CommandArgument name="Invert" value="0"/>
+		<CommandArgument name="PitchFrom" value="48"/>
+		<CommandArgument name="PitchTo" value="72"/>
+		<CommandArgument name="VelocityFrom" value="25"/>
+		<CommandArgument name="VelocityTo" value="100"/>
+		<CommandArgument name="NoteLengthFrom" value="13"/>
+		<CommandArgument name="NoteLengthTo" value="7"/>
+		<CommandArgument name="BeatGrid" value="12"/>
+		<CommandArgument name="StartBeat" value="0"/>
+		<CommandArgument name="BeatInterval" value="1"/>
+		<CommandArgument name="BeatTolerance" value="0"/>
+		<CommandArgument name="PositionCount" value="2"/>
+		<CommandArgument name="PositionStart" value="0"/>
+	</CommandElement>
+</Macro>

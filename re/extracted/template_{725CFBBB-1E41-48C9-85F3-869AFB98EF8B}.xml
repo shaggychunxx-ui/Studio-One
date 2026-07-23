@@ -1,0 +1,7 @@
+<uc:Template id="{725CFBBB-1E41-48C9-85F3-869AFB98EF8B}" paramlist="ObjectPanner" classname="DAWObjectPanner" />
+
+		<uc:Template id="DAWShowPlayerList">
+			<uc:foreach id="$i" min="1" max="32">
+				<uc:Component id="player$i" paramlist="ShowPlayer" classname="DAWShowPlayer"/>
+			</uc:foreach>
+		</uc:Template>

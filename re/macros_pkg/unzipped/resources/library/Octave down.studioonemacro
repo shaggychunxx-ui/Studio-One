@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Octave down" group="Transpose" description="">
+	<CommandElement category="Musical Functions" name="Transpose">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="-12"/>
+		<CommandArgument name="SetValue" value="60"/>
+	</CommandElement>
+</Macro>

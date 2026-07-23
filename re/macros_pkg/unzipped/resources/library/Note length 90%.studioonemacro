@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Note length 90%" group="Note length" description="">
+	<CommandElement category="Musical Functions" name="Length">
+		<CommandArgument name="Mode" value="3"/>
+		<CommandArgument name="Value" value="0.5"/>
+		<CommandArgument name="FactorValue" value="0.89999997615814208984375"/>
+		<CommandArgument name="LegatoOverlap" value="0"/>
+	</CommandElement>
+</Macro>

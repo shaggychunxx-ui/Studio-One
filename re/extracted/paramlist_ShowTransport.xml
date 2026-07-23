@@ -1,0 +1,8 @@
+<uc:ParamList id="ShowTransport">
+			<uc:Param id="sectionRepeats" type="int" min="0" max="100000" flags="readonly"/>
+			<uc:Param id="currentItemIndex" type="int" min="-1" max="100000" flags="readonly"/>
+			<uc:Param id="currentSectionIndex" type="int" min="-1" max="100000" flags="readonly"/>
+			<uc:Param id="targetSectionIndex" type="int" min="-1" max="100000" flags="readonly"/>
+			<uc:Param id="start"/>
+			<uc:Param id="stop"/>
+		</uc:ParamList>

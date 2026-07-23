@@ -1,0 +1,10 @@
+<uc:Template id="DAWGlobalMacroControls">
+			<!-- 16 float values (float-1 - float-16) -->
+			<uc:foreach id="$i" min="1" max="16">
+				<uc:Component id="float-$i" paramlist="MacroControl" classname="DAWMacroControl"/>
+			</uc:foreach>
+			<!-- 16 bool values (bool-1 - bool-16) -->
+			<uc:foreach id="$i" min="1" max="16">
+				<uc:Component id="bool-$i" paramlist="MacroControl" classname="DAWMacroControl"/>
+			</uc:foreach>
+		</uc:Template>

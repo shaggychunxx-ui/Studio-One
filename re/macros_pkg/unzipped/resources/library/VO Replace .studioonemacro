@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="VO Replace " group="Podcast" description="Paste &amp; Replace">
+	<CommandElement category="Edit" name="Toggle Ripple Edit">
+		<CommandArgument name="State" value="1"/>
+	</CommandElement>
+	<CommandElement category="Transport" name="Locate Selection"/>
+	<CommandElement category="Edit" name="Delete"/>
+	<CommandElement category="Edit" name="Paste"/>
+	<CommandElement category="Edit" name="Toggle Ripple Edit">
+		<CommandArgument name="State" value=""/>
+	</CommandElement>
+</Macro>

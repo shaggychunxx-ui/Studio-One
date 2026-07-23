@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="VO Delete" group="Podcast" description="Delete and close the gap">
+	<CommandElement category="Edit" name="Toggle Ripple Edit">
+		<CommandArgument name="State" value="1"/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Delete"/>
+	<CommandElement category="Edit" name="Toggle Ripple Edit">
+		<CommandArgument name="State" value=""/>
+	</CommandElement>
+</Macro>

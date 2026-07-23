@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Double Octave above" group="Double Notes" description="">
+	<CommandElement category="Edit" name="Copy"/>
+	<CommandElement category="Edit" name="Paste at Original Position"/>
+	<CommandElement category="Musical Functions" name="Transpose">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="12"/>
+		<CommandArgument name="SetValue" value="60"/>
+	</CommandElement>
+</Macro>

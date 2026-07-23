@@ -1,0 +1,5 @@
+<uc:Template id="StreamingDAWRemote" flags="public">
+			<uc:Component id="stats" paramlist="StreamingStats" classname="StreamingDAWStatisticsComponent"/>	
+			<uc:Component id="transport" paramlist="StreamingTransport" classname="StreamingDAWTransportComponent"/>
+			<uc:Component id="sources" paramlist="StreamingSources" classname="StreamingDAWSourcesComponent"/>
+		</uc:Template>

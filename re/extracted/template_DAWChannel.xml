@@ -1,0 +1,3 @@
+<uc:Template id="DAWChannel">
+			<uc:Component id="inserts" template="DAWInserts" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+		</uc:Template>

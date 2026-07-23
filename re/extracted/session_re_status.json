@@ -1,0 +1,14 @@
+{
+  "discovery": "working",
+  "event_ids": "complete_from_libucnet_RTTI",
+  "encoded_message_id": 19021,
+  "encoded_message_hex": "0x4A4D",
+  "daw_param_paths": 171,
+  "tcp_session_framing": "probed_see_report",
+  "shared_memory": "CreateFileMapping present; object name not yet recovered",
+  "next": [
+    "Capture official Remote app traffic (passive_session_sniff + phone)",
+    "Continue EM/BO length framing against hello-bearing connections",
+    "Map PV body: path encoding + float/double + tags"
+  ]
+}

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Deactivate &amp; Hide Track" group="Hotkey" description="">
+	<CommandElement category="Track" name="Disable">
+		<CommandArgument name="Disable" value="1"/>
+	</CommandElement>
+	<CommandElement category="Track" name="Hide"/>
+</Macro>

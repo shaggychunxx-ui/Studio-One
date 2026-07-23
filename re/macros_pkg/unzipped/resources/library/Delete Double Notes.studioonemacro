@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Delete Double Notes" group="Delete Notes" description="">
+	<CommandElement category="Musical Functions" name="Delete Notes">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="MinNoteLength" value="0.125"/>
+	</CommandElement>
+</Macro>

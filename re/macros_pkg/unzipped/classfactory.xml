@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+	<!-- Shared Macro Manager Singleton (hidden) -->
+	<ScriptClass
+		classID="{F556BEC2-8B97-4387-9DE5-87C74670A1B5}"
+		category="FrameworkService"
+		name="Macro Manager"
+		sourceFile="service.js"
+		functionName="createInstance">
+	</ScriptClass>
+
+	<!-- S1 Startpage + Menu Integration -->
+	<ScriptClass
+		classID="{100B9190-D677-476A-AF31-B3E4FFD13775}"
+		category="Gadget"
+		name="Macro Organizer"
+		sourceFile="gadget.js"
+		functionName="createInstance"
+		metaClassID="{4E0DB434-6E09-4839-9B5A-4B4102EA0B0F}">
+	</ScriptClass>
+
+	<ScriptMetaClass classID="{4E0DB434-6E09-4839-9B5A-4B4102EA0B0F}">
+		<ScriptClassResource id="Class:GadgetResource" url="resources/gadget.xml"/> <!-- form and icon descriptions for gadget -->
+	</ScriptMetaClass>
+
+	<!-- S1 Toolbar Integration -->
+	<ScriptClass
+		classID="{7BD5E71B-5622-49cb-BFB2-8DEEF47B257D}"
+		category="EditAddIn"
+		subCategory="Engine"
+		name="Macros (Arrangement)"
+		sourceFile="main.js"
+		functionName="createInstanceSong"
+		metaClassID="{AF34837A-8B6F-4311-AABA-E75CAF80428C}">
+		<Attribute id="formName" value="MacroPanel"/>
+		<Attribute id="groupName" value="SongOnly.AddInPanel"/> <!-- enabled in Arrangement -->
+	</ScriptClass>
+
+	<ScriptClass
+		classID="{75A34963-C834-4F74-9F4A-C5704373FCD6}"
+		category="EditAddIn"
+		subCategory="Engine"
+		name="Macros (Note Editor)"
+		sourceFile="main.js"
+		functionName="createInstanceMusicEditor"
+		metaClassID="{AF34837A-8B6F-4311-AABA-E75CAF80428C}">
+		<Attribute id="formName" value="MacroPanel"/>
+		<Attribute id="groupName" value="MusicOnly.AddInPanel"/> <!-- enabled in Note editor -->
+	</ScriptClass>
+
+	<ScriptClass
+		classID="{E4FF856A-A180-4C64-BFD6-D22C6C459DAB}"
+		category="EditAddIn"
+		subCategory="Engine"
+		name="Macros (Audio Editor)"
+		sourceFile="main.js"
+		functionName="createInstanceAudioEditor"
+		metaClassID="{AF34837A-8B6F-4311-AABA-E75CAF80428C}">
+		<Attribute id="formName" value="MacroPanel"/>
+		<Attribute id="groupName" value="AudioOnly.AddInPanel"/> <!-- enabled in Audio editor -->
+	</ScriptClass>
+
+	<ScriptClass
+		classID="{3C3AB046-02B5-4835-9BFF-4F49249AFB9D}"
+		category="EditAddIn"
+		subCategory="Project"
+		name="Macros"
+		sourceFile="main.js"
+		functionName="createInstanceProject"
+		metaClassID="{AF34837A-8B6F-4311-AABA-E75CAF80428C}">
+		<Attribute id="formName" value="MacroPanel"/>
+		<Attribute id="groupName" value="Project.AddInPanel"/>
+	</ScriptClass>
+
+	<ScriptClass
+		classID="{820488BA-9B21-4FFA-ACD8-ACBC35A7E1E1}"
+		category="EditAddIn"
+		subCategory="Show"
+		name="Macros"
+		sourceFile="main.js"
+		functionName="createInstanceShow"
+		metaClassID="{AF34837A-8B6F-4311-AABA-E75CAF80428C}">
+		<Attribute id="formName" value="MacroPanel"/>
+		<Attribute id="groupName" value="Show.AddInPanel"/>
+	</ScriptClass>
+
+	<!-- Same metaclass for all addin panels -->
+	<ScriptMetaClass classID="{AF34837A-8B6F-4311-AABA-E75CAF80428C}">
+		<ScriptClassResource id="Class:ImageResource" url="theme://$package/MacroToolbarIcon"/> <!-- icon used by toolbar button -->
+	</ScriptMetaClass>	
+</ClassFactory>

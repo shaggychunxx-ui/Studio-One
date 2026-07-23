@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="+1dB" group="Audio" description="">
+	<CommandElement category="Edit" name="Split Range"/>
+	<CommandElement category="Audio" name="Edit Volume">
+		<CommandArgument name="Level" value="1"/>
+		<CommandArgument name="Relative" value="1"/>
+	</CommandElement>
+</Macro>

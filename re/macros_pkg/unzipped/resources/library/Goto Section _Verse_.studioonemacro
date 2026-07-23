@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Goto Section &quot;Verse&quot;" group="Arranger Track" description="">
+	<CommandElement category="Arranger" name="Goto Section">
+		<CommandArgument name="Number" value=""/>
+		<CommandArgument name="Name" value="Verse"/>
+	</CommandElement>
+</Macro>

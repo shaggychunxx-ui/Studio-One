@@ -1,0 +1,5 @@
+<uc:Template id="{B90855F4-9F05-46EB-A647-49EC9A8161C7}" classname="DAWShowComponent">
+			<uc:Component id="players" template="DAWShowPlayerList" paramlist="ShowPlayerList" classname="DAWShowPlayerList"/>
+			<uc:Component id="transport" paramlist="ShowTransport" classname="DAWShowTransport"/>
+			<uc:Component id="macrocontrols" template="DAWGlobalMacroControls" paramlist="MacroControlSet" classname="DAWGlobalMacroControls"/>
+		</uc:Template>

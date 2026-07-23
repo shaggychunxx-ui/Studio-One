@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Sforzato" group="Sound Variations" description="Sound Variations">
+	<CommandElement category="Sound Variation" name="Find and Apply Variation">
+		<CommandArgument name="Name" value="sforzato"/>
+	</CommandElement>
+</Macro>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Export Everything" group="Podcast" description="">
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Transport" name="Loop Selection">
+		<CommandArgument name="Activate" value=""/>
+	</CommandElement>
+	<CommandElement category="Marker" name="Set Start and End to Selection"/>
+	<CommandElement category="Edit" name="Deselect All"/>
+	<CommandElement category="Song" name="Export Mixdown"/>
+</Macro>

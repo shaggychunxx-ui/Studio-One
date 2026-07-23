@@ -1,0 +1,3 @@
+<uc:Template id="DAWAudioPanner" paramlist="AudioPanner" >
+			<uc:Component id="effect" flags="mutable" condition="surround" />
+		</uc:Template>

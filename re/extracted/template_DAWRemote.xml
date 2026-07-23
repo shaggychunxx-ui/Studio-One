@@ -1,0 +1,72 @@
+<uc:Template id="DAWRemote" flags="public">			
+			<uc:Component id="transport" paramlist="Transport" classname="DAWTransport"/>
+			<uc:Component id="metronome" paramlist="Metronome"/>
+			<uc:Component id="recordpanel" paramlist="RecordPanel"/>
+			<uc:Component id="channelgui" paramlist="ChannelGui"/>
+									
+			<!-- NOTE: total number of remote channels is limited to 512 for now! -->				
+			<uc:Component id="mixer" paramlist="Mixer" classname="DAWMixer">
+				<uc:Component id="focus" paramlist="FocusChannel" classname="DAWFocusChannel"/>
+			
+				<!-- Inputs -->
+				<uc:Component id="input" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="64">
+						<uc:Component id="ch$i"	template="DAWInputChannel" paramlist="Channel" classname="DAWChannel"/>
+					</uc:foreach>				
+				</uc:Component>
+
+				<!-- Audio, Instruments, Buses, FX -->
+				<uc:Component id="channel" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="384">
+						<uc:Component id="ch$i"	template="DAWNormalChannel" paramlist="Channel" classname="DAWChannel"/>
+					</uc:foreach>				
+				</uc:Component>
+
+				<!-- Sub Outs -->
+				<uc:Component id="sub" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="62"> <!-- -2 for main out and optional listen bus-->
+						<uc:Component id="ch$i"	template="DAWOutputChannel" paramlist="OutputChannel" classname="DAWChannel"/>
+					</uc:foreach>				
+				</uc:Component>
+
+				<!-- Main Out -->
+				<uc:Component id="main" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:Component id="ch1" template="DAWOutputChannel" paramlist="OutputChannel" classname="DAWChannel"/>
+				</uc:Component>
+				
+				<!-- Listen Bus -->
+				<uc:Component id="listen" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:Component id="ch1" template="DAWOutputChannel" paramlist="ListenBusChannel" classname="DAWChannel"/>
+				</uc:Component>
+			</uc:Component>		
+
+			<uc:Component id="cuemixrouter" classname="DAWCueMixRouter">
+				<uc:foreach id="$i" min="1" max="8">
+					<uc:Component id="output$i" paramlist="CueMixOutput"/>
+				</uc:foreach>			
+			</uc:Component>
+			
+			<uc:Component id="hardwaremixer" classname="DAWHardwareMixer">
+				<uc:Component id="global" paramlist="HardwareGlobal" classname="DAWHardwareMixerGlobal"/>
+				<uc:Component id="input" paramlist="ChannelGroup" classname="DAWHardwareChannelGroup">
+					<uc:foreach id="$i" min="1" max="64">
+						<uc:Component id="ch$i" classname="DAWHardwareChannel">
+							<uc:Component id="remotefx" paramlist="RemoteFXFolder" classname="DAWDeviceFolder">
+								<uc:foreach id="$i" min="1" max="2"> <!-- limited to 2 for now -->
+									<uc:Component id="slot$i" paramlist="RemoteFXSlot" classname="DAWDeviceSlot"/>
+								</uc:foreach>			
+							</uc:Component>
+						</uc:Component>
+					</uc:foreach>				
+				</uc:Component>
+			</uc:Component>
+			
+			<uc:Component id="controls" template="DAWInput"/>
+			<uc:Component id="surface" paramlist="ControlSurface" classname="DAWSurfaceFocusComponent"/>
+			<uc:Component id="document" template="DAWDocument"/>
+			<uc:Component id="activity" paramlist="Activity"/>
+			<uc:Component id="options" paramlist="Options"/>
+			<uc:Component id="recorddiskspace" paramlist="RecordDiskSpace"/>
+
+			<uc:Component id="show" flags="mutable"/> <!-- optional (DAWShowComponent), only  in show document -->
+		</uc:Template>

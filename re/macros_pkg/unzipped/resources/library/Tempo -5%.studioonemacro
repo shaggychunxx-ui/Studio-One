@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Tempo -5%" group="Tempo" description="">
+	<CommandElement category="Musical Functions" name="Stretch">
+		<CommandArgument name="Mode" value="2"/>
+		<CommandArgument name="Value" value="0.949999988079071044921875"/>
+	</CommandElement>
+</Macro>

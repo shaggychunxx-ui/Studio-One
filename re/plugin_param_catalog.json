@@ -1,0 +1,5916 @@
+{
+  "static": {
+    "deviceID": "{11111111-1111-1111-1111-111111111111}",
+    "params": {},
+    "subdevices": []
+  },
+  "Channel Controls": {
+    "deviceID": "{22222222-2222-2222-2222-222222222222}",
+    "params": {
+      "AudioChannelMacroControlSet/float-1": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-2": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-3": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-4": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-5": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-6": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c5.value",
+          "p5.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-7": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c6.value",
+          "p6.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/float-8": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/pad-x-1": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c16.value",
+          "p12.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/pad-y-1": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c17.value",
+          "p13.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/pad-x-2": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c18.value",
+          "p14.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/pad-y-2": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c19.value",
+          "p15.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-1": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-2": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c21.value",
+          "p17.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-3": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c22.value",
+          "p18.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-4": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c23.value",
+          "p19.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-5": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c24.value",
+          "p20.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-6": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c25.value",
+          "p21.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-7": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c26.value",
+          "p22.value"
+        ]
+      },
+      "AudioChannelMacroControlSet/bool-8": {
+        "guid": "{22222222-2222-2222-2222-222222222222}",
+        "controls": [
+          "c27.value",
+          "p23.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Macro Controls": {
+    "deviceID": "{33333333-3333-3333-3333-333333333333}",
+    "params": {
+      "GlobalMacroControlSet/float-1": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-2": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-3": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-4": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-5": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-6": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c5.value",
+          "p5.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-7": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c6.value",
+          "p6.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-8": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-2": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c21.value",
+          "p17.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-3": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c22.value",
+          "p18.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-1": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-4": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c23.value",
+          "p19.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-5": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c24.value",
+          "p20.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-6": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c25.value",
+          "p21.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-7": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c26.value",
+          "p22.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-8": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c27.value",
+          "p23.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-9": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c8.value",
+          "p8.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-10": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c9.value",
+          "p9.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-11": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c10.value",
+          "p10.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-12": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c11.value",
+          "p11.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-13": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c12.value",
+          "p12.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-14": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c13.value",
+          "p13.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-15": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c14.value",
+          "p14.value"
+        ]
+      },
+      "GlobalMacroControlSet/float-16": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "c15.value",
+          "p15.value"
+        ]
+      },
+      "GlobalMacroControlSet/bool-9": {
+        "guid": "{33333333-3333-3333-3333-333333333333}",
+        "controls": [
+          "p24.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Multi Instrument": {
+    "deviceID": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+    "params": {
+      "float-1": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "float-2": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "float-3": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "float-4": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "float-5": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "float-6": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c5.value",
+          "p5.value"
+        ]
+      },
+      "float-7": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c6.value",
+          "p6.value"
+        ]
+      },
+      "float-8": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "pad-x-1": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c16.value",
+          "p12.value"
+        ]
+      },
+      "pad-y-1": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c17.value",
+          "p13.value"
+        ]
+      },
+      "pad-x-2": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c18.value",
+          "p14.value"
+        ]
+      },
+      "pad-y-2": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c19.value",
+          "p15.value"
+        ]
+      },
+      "bool-1": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "bool-2": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c21.value",
+          "p17.value"
+        ]
+      },
+      "bool-3": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c22.value",
+          "p18.value"
+        ]
+      },
+      "bool-4": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c23.value",
+          "p19.value"
+        ]
+      },
+      "bool-5": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c24.value",
+          "p20.value"
+        ]
+      },
+      "bool-6": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c25.value",
+          "p21.value"
+        ]
+      },
+      "bool-7": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c26.value",
+          "p22.value"
+        ]
+      },
+      "bool-8": {
+        "guid": "{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}",
+        "controls": [
+          "c27.value",
+          "p23.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Ampire": {
+    "deviceID": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+    "params": {
+      "wahamt": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c16.value"
+        ]
+      },
+      "delayFeedback": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c18.value",
+          "p14.value"
+        ]
+      },
+      "delayMix": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p15.value"
+        ]
+      },
+      "preingainB": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c9.value"
+        ]
+      },
+      "tonelowB": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c10.value"
+        ]
+      },
+      "tonemidB": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c11.value"
+        ]
+      },
+      "tonehighB": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c12.value"
+        ]
+      },
+      "controls.active[stomp4]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c23.value",
+          "p19.value"
+        ]
+      },
+      "controls.active[stomp1]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "controls.active[stomp2]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c21.value",
+          "p17.value"
+        ]
+      },
+      "controls.active[stomp3]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c22.value",
+          "p18.value"
+        ]
+      },
+      "controls.active[stomp5]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c24.value",
+          "p20.value"
+        ]
+      },
+      "controls.active[stomp6]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c25.value",
+          "p21.value"
+        ]
+      },
+      "controls.active[stomp7]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c26.value",
+          "p23.value"
+        ]
+      },
+      "controls.active[stomp8]": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c27.value",
+          "p24.value"
+        ]
+      },
+      "controls.wah": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c8.value",
+          "c17.value"
+        ]
+      },
+      "opt.tunerbypass": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p22.value"
+        ]
+      },
+      "input.level": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p0.value"
+        ]
+      },
+      "output.level": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p1.value"
+        ]
+      },
+      "amp.presence": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c0.value",
+          "p2.value"
+        ]
+      },
+      "amp.bass": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c1.value",
+          "p3.value",
+          "c6.value",
+          "p8.value"
+        ]
+      },
+      "amp.middle": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c2.value",
+          "p4.value"
+        ]
+      },
+      "amp.treble": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c3.value",
+          "p5.value",
+          "c5.value",
+          "p7.value"
+        ]
+      },
+      "amp.master": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c4.value",
+          "p6.value"
+        ]
+      },
+      "amp.preampvolume": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c5.value",
+          "p7.value"
+        ]
+      },
+      "amp.sensitivity": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c19.value"
+        ]
+      },
+      "amp.redpresence": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p2.value"
+        ]
+      },
+      "amp.redmaster": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p3.value",
+          "c0.value"
+        ]
+      },
+      "amp.redgain": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p4.value",
+          "c1.value"
+        ]
+      },
+      "amp.redbass": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "amp.redmid": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p6.value"
+        ]
+      },
+      "amp.redtreble": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p7.value"
+        ]
+      },
+      "amp.orangepresence": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p8.value"
+        ]
+      },
+      "amp.orangemaster": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p9.value",
+          "c2.value"
+        ]
+      },
+      "amp.orangegain": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p10.value",
+          "c3.value"
+        ]
+      },
+      "amp.orangebass": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p11.value"
+        ]
+      },
+      "amp.orangemid": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p12.value"
+        ]
+      },
+      "amp.orangetreble": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p13.value"
+        ]
+      },
+      "amp.channel": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c7.value"
+        ]
+      },
+      "amp.greenmaster": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "amp.greengain": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c5.value"
+        ]
+      },
+      "amp.vib_speed": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c0.value",
+          "p2.value"
+        ]
+      },
+      "amp.vib_trem": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c1.value",
+          "p3.value"
+        ]
+      },
+      "amp.vol_trem": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c2.value",
+          "p4.value"
+        ]
+      },
+      "amp.vol_normal": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c3.value",
+          "p5.value"
+        ]
+      },
+      "amp.vol_bril": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c4.value",
+          "p6.value"
+        ]
+      },
+      "amp.cut": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c7.value",
+          "p9.value"
+        ]
+      },
+      "amp.input": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c19.value",
+          "c19.value",
+          "c7.value"
+        ]
+      },
+      "amp.nvolume": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c0.value",
+          "p2.value"
+        ]
+      },
+      "amp.ntreble": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c1.value",
+          "p3.value"
+        ]
+      },
+      "amp.nmiddle": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c2.value",
+          "p4.value"
+        ]
+      },
+      "amp.nbass": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c3.value",
+          "p5.value"
+        ]
+      },
+      "amp.vvolume": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c4.value",
+          "p6.value"
+        ]
+      },
+      "amp.vtreble": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c5.value",
+          "p7.value"
+        ]
+      },
+      "amp.vmiddle": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c6.value",
+          "p8.value"
+        ]
+      },
+      "amp.intensity": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c15.value",
+          "p12.value"
+        ]
+      },
+      "amp.speed": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c14.value",
+          "p11.value"
+        ]
+      },
+      "amp.reverb": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c13.value",
+          "p10.value",
+          "c7.value"
+        ]
+      },
+      "amp.vbass": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "p9.value"
+        ]
+      },
+      "amp.vol1": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c0.value",
+          "p2.value"
+        ]
+      },
+      "amp.treble1": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c1.value",
+          "p3.value"
+        ]
+      },
+      "amp.mid1": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c2.value",
+          "p4.value"
+        ]
+      },
+      "amp.bass1": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c3.value",
+          "p5.value"
+        ]
+      },
+      "amp.vol2": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c4.value",
+          "p6.value"
+        ]
+      },
+      "amp.treble2": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c5.value",
+          "p7.value"
+        ]
+      },
+      "amp.bass2": {
+        "guid": "{B6407C28-0F92-4538-9E7F-9B867B3FEA74}",
+        "controls": [
+          "c6.value",
+          "p8.value"
+        ]
+      }
+    },
+    "subdevices": [
+      {
+        "folder": "stomp1",
+        "deviceID": "{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}",
+        "friendlyName": "Wah Wah"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp6",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp8",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{71B4D5DC-5308-4F6F-BFC7-8A2948BFEA43}",
+        "friendlyName": "MCM 800"
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{4FB264B6-CE6D-48C5-BB56-3EDB89BE7725}",
+        "friendlyName": "Dual Amplifier"
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{3939AAE9-2EDF-477E-AC44-7F6115AA7853}",
+        "friendlyName": "VC30"
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{C981653D-AE55-45B1-9711-131A129B0664}",
+        "friendlyName": "Blackface Twin"
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{DC8890A7-7563-4F94-82EF-4125CBF7FF40}",
+        "friendlyName": "Amp STV"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}",
+        "friendlyName": "Tube Dreamer"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp6",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "cab",
+        "deviceID": "{30C0DE0C-4350-0000-414D-504952450000}",
+        "friendlyName": "Ampire 4x12 M65"
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{753EEB12-4150-0000-414D-504952450000}",
+        "friendlyName": null
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{753EEC14-4150-0000-414D-504952450000}",
+        "friendlyName": null
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{753EEC95-4150-0000-414D-504952450000}",
+        "friendlyName": null
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{753EED97-4150-0000-414D-504952450000}",
+        "friendlyName": null
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{753EED16-4150-0000-414D-504952450000}",
+        "friendlyName": null
+      },
+      {
+        "folder": "amp",
+        "deviceID": "{753EEB93-4150-0000-414D-504952450000}",
+        "friendlyName": null
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "cab",
+        "deviceID": "{30C0DC0B-4350-0000-414D-504952450000}",
+        "friendlyName": "Ampire 2x12 Blackface"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      }
+    ]
+  },
+  "Analog Delay": {
+    "deviceID": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+    "params": {
+      "lfowidth": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c18.value",
+          "c16.value",
+          "p14.value",
+          "c11.value",
+          "c3.value"
+        ]
+      },
+      "lfobeatsnu": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c19.value",
+          "p15.value",
+          "c12.value"
+        ]
+      },
+      "feedback": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c17.value",
+          "p3.value",
+          "c1.value"
+        ]
+      },
+      "beatsnu": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p0.value",
+          "c0.value"
+        ]
+      },
+      "locut": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p1.value"
+        ]
+      },
+      "hicut": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p2.value",
+          "c4.value"
+        ]
+      },
+      "width": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p4.value",
+          "c6.value"
+        ]
+      },
+      "inchannels": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "saturation": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p6.value",
+          "c5.value"
+        ]
+      },
+      "mix": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p7.value",
+          "c7.value",
+          "c27.value"
+        ]
+      },
+      "feedbackboost": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p16.value",
+          "c21.value"
+        ]
+      },
+      "sync": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c20.value"
+        ]
+      },
+      "speed": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p12.value",
+          "c9.value"
+        ]
+      },
+      "inertia": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p13.value",
+          "c10.value"
+        ]
+      },
+      "time": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "p11.value",
+          "c8.value"
+        ]
+      },
+      "lfotime": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c13.value",
+          "c2.value"
+        ]
+      },
+      "lfosync": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c22.value"
+        ]
+      },
+      "wave": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c23.value"
+        ]
+      },
+      "pingpongmode": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "pingpongswap": {
+        "guid": "{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}",
+        "controls": [
+          "c25.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Autofilter": {
+    "deviceID": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+    "params": {
+      "cutoff": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c16.value",
+          "p12.value",
+          "c1.value"
+        ]
+      },
+      "reso": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c17.value",
+          "p13.value",
+          "c2.value"
+        ]
+      },
+      "filter1mix": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c18.value",
+          "p14.value"
+        ]
+      },
+      "filter2mix": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c19.value",
+          "p15.value",
+          "c10.value"
+        ]
+      },
+      "filterschained": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "filter1type": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "depth": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "gain": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c6.value",
+          "p6.value"
+        ]
+      },
+      "envelopeauto": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p17.value",
+          "c23.value"
+        ]
+      },
+      "lfosync": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p18.value",
+          "c25.value"
+        ]
+      },
+      "gainauto": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p19.value",
+          "c26.value"
+        ]
+      },
+      "filter2typev2": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p1.value"
+        ]
+      },
+      "spread": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p2.value",
+          "c9.value"
+        ]
+      },
+      "drive": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p3.value",
+          "c15.value"
+        ]
+      },
+      "envelopespeed": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p4.value",
+          "c14.value"
+        ]
+      },
+      "lfobeatsnu": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "p5.value",
+          "c5.value"
+        ]
+      },
+      "envcut": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c3.value"
+        ]
+      },
+      "lfocut": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "envreso": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c11.value"
+        ]
+      },
+      "lforeso": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c12.value"
+        ]
+      },
+      "filter2typev3": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c8.value"
+        ]
+      },
+      "lfotype": {
+        "guid": "{BEC73D38-7954-42A0-9504-038B23046FAB}",
+        "controls": [
+          "c13.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Beat Delay": {
+    "deviceID": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+    "params": {
+      "locut": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "c18.value",
+          "p14.value",
+          "c5.value"
+        ]
+      },
+      "hicut": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "c19.value",
+          "p15.value",
+          "c6.value"
+        ]
+      },
+      "mix": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "cross": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "p0.value",
+          "c10.value"
+        ]
+      },
+      "inpan": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "p1.value",
+          "c11.value"
+        ]
+      },
+      "beatsnu": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "p2.value",
+          "c0.value"
+        ]
+      },
+      "offset": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "p3.value",
+          "c8.value"
+        ]
+      },
+      "feedback": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "p4.value",
+          "p16.value",
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "width": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "p5.value",
+          "c3.value",
+          "c16.value"
+        ]
+      },
+      "pingfactor": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "pingpongmode": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "c2.value"
+        ]
+      },
+      "pingpongswap": {
+        "guid": "{BFBEA41B-679A-41F2-AACA-ED9D51137412}",
+        "controls": [
+          "c22.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Channel Strip": {
+    "deviceID": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+    "params": {
+      "lcfreq": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "lcactive": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "gain": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "c7.value",
+          "p11.value"
+        ]
+      },
+      "autogain": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "c27.value",
+          "p22.value"
+        ]
+      },
+      "compress": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "c16.value",
+          "p6.value",
+          "c1.value"
+        ]
+      },
+      "expand": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "c18.value",
+          "p7.value",
+          "c2.value"
+        ]
+      },
+      "speed": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p17.value",
+          "p1.value",
+          "c21.value"
+        ]
+      },
+      "gain1": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p12.value",
+          "c3.value"
+        ]
+      },
+      "gain2": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p13.value",
+          "c4.value"
+        ]
+      },
+      "gain3": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p14.value",
+          "c6.value"
+        ]
+      },
+      "freq3": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p4.value",
+          "c26.value"
+        ]
+      },
+      "freq2": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p3.value",
+          "c5.value"
+        ]
+      },
+      "freq1": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p2.value",
+          "c23.value"
+        ]
+      },
+      "adaptiveq": {
+        "guid": "{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}",
+        "controls": [
+          "p20.value",
+          "c24.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Chorus": {
+    "deviceID": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+    "params": {
+      "hifreq": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c19.value",
+          "p15.value",
+          "c6.value"
+        ]
+      },
+      "delay0": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "lfospeed": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "lfowidth": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "lofreq": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c18.value",
+          "p14.value",
+          "c5.value"
+        ]
+      },
+      "lfoShape": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c4.value",
+          "p4.value",
+          "c24.value"
+        ]
+      },
+      "depth": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c7.value",
+          "p7.value",
+          "c16.value"
+        ]
+      },
+      "speed": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "p1.value"
+        ]
+      },
+      "voices": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "p5.value",
+          "c27.value"
+        ]
+      },
+      "stereo": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "p6.value"
+        ]
+      },
+      "spreadmode": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c21.value"
+        ]
+      },
+      "width": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "mode": {
+        "guid": "{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}",
+        "controls": [
+          "c20.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Compressor": {
+    "deviceID": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+    "params": {
+      "sidechainfreqlow": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c18.value",
+          "p0.value",
+          "c4.value"
+        ]
+      },
+      "sidechainfreqhigh": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c19.value",
+          "p1.value",
+          "c5.value"
+        ]
+      },
+      "ratio": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c1.value",
+          "p7.value",
+          "c17.value"
+        ]
+      },
+      "gain": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c7.value",
+          "p10.value"
+        ]
+      },
+      "auto": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c27.value",
+          "p22.value"
+        ]
+      },
+      "mix": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c6.value",
+          "p11.value"
+        ]
+      },
+      "threshold": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p6.value",
+          "c0.value",
+          "c16.value"
+        ]
+      },
+      "release": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p9.value",
+          "c3.value"
+        ]
+      },
+      "attack": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p8.value",
+          "c2.value"
+        ]
+      },
+      "autospeed": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p20.value",
+          "c22.value"
+        ]
+      },
+      "internalsidechain": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p16.value",
+          "c24.value"
+        ]
+      },
+      "sidechainlisten": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p17.value",
+          "c25.value"
+        ]
+      },
+      "ingain": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "knee": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p12.value",
+          "c21.value"
+        ]
+      },
+      "lookAhead": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p18.value",
+          "c20.value"
+        ]
+      },
+      "adaptive": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p21.value",
+          "c23.value"
+        ]
+      },
+      "linked": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "p19.value"
+        ]
+      },
+      "swapfreqs": {
+        "guid": "{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}",
+        "controls": [
+          "c26.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Dual Pan": {
+    "deviceID": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+    "params": {
+      "inbalance": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "c0.value",
+          "p0.value",
+          "c8.value",
+          "c16.value"
+        ]
+      },
+      "panlaw": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "p1.value",
+          "c9.value",
+          "c20.value"
+        ]
+      },
+      "leftpan": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "p2.value",
+          "c10.value",
+          "c1.value"
+        ]
+      },
+      "rightpan": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "p3.value",
+          "c11.value",
+          "c2.value"
+        ]
+      },
+      "link": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "p18.value",
+          "c23.value"
+        ]
+      },
+      "linkedwidth": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "c12.value",
+          "c19.value",
+          "c4.value"
+        ]
+      },
+      "linkedpan": {
+        "guid": "{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}",
+        "controls": [
+          "c13.value",
+          "c18.value",
+          "c3.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Expander": {
+    "deviceID": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+    "params": {
+      "highthresh": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "c0.value",
+          "p2.value",
+          "c16.value"
+        ]
+      },
+      "internalside": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p19.value",
+          "p16.value",
+          "c25.value"
+        ]
+      },
+      "intlisten": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p20.value",
+          "p17.value",
+          "c26.value"
+        ]
+      },
+      "range": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p3.value",
+          "c4.value"
+        ]
+      },
+      "ratio": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p7.value",
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "attack": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p4.value",
+          "c2.value"
+        ]
+      },
+      "release": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p5.value",
+          "c3.value"
+        ]
+      },
+      "lookahead": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p24.value",
+          "c20.value"
+        ]
+      },
+      "filterlow": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p0.value",
+          "c5.value",
+          "c18.value"
+        ]
+      },
+      "filterhigh": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "p1.value",
+          "c6.value",
+          "c19.value"
+        ]
+      },
+      "swapfreqs": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "c27.value"
+        ]
+      },
+      "duck": {
+        "guid": "{831A0046-BD71-45BF-A419-6FC90D6E9F2F}",
+        "controls": [
+          "c21.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Fat Channel": {
+    "deviceID": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+    "params": {
+      "filter.hpf": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c0.value",
+          "p1.value"
+        ]
+      },
+      "gate.on": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p18.value",
+          "c20.value"
+        ]
+      },
+      "limit.limiteron": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p22.value",
+          "c27.value"
+        ]
+      },
+      "limit.threshold": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p11.value",
+          "c7.value"
+        ]
+      },
+      "gate.threshold": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p2.value",
+          "c1.value"
+        ]
+      },
+      "gate.range": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p3.value"
+        ]
+      },
+      "gate.attack": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p4.value"
+        ]
+      },
+      "gate.release": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "gate.keyfilter": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p0.value"
+        ]
+      },
+      "gate.keylisten": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p16.value"
+        ]
+      },
+      "gate.expander": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p19.value",
+          "c21.value"
+        ]
+      },
+      "comp.on": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p20.value",
+          "c22.value",
+          "p20.value",
+          "c22.value",
+          "p20.value",
+          "c22.value",
+          "p20.value",
+          "c22.value",
+          "c22.value",
+          "c22.value",
+          "c22.value",
+          "c22.value",
+          "c22.value",
+          "c22.value",
+          "c22.value",
+          "c22.value"
+        ]
+      },
+      "comp.ratio": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p7.value",
+          "c23.value",
+          "c16.value",
+          "p7.value",
+          "c5.value",
+          "p7.value",
+          "c3.value",
+          "c17.value",
+          "c5.value",
+          "c5.value",
+          "c5.value",
+          "c5.value"
+        ]
+      },
+      "comp.attack": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p8.value",
+          "p8.value",
+          "c10.value",
+          "p8.value",
+          "c10.value",
+          "c10.value",
+          "c10.value",
+          "c10.value",
+          "c10.value"
+        ]
+      },
+      "comp.release": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p9.value",
+          "p9.value",
+          "c11.value",
+          "p9.value",
+          "c11.value",
+          "c11.value",
+          "c11.value",
+          "c11.value",
+          "c11.value"
+        ]
+      },
+      "comp.input": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p6.value",
+          "c2.value",
+          "c17.value"
+        ]
+      },
+      "comp.output": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p10.value",
+          "c3.value"
+        ]
+      },
+      "comp.keylisten": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p21.value",
+          "p21.value",
+          "c25.value",
+          "c25.value",
+          "c25.value",
+          "c25.value",
+          "c25.value",
+          "c25.value",
+          "c25.value",
+          "c25.value"
+        ]
+      },
+      "comp.keyfilter": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c7.value",
+          "p9.value",
+          "c7.value",
+          "c7.value",
+          "c7.value",
+          "c7.value",
+          "c7.value",
+          "c7.value",
+          "c7.value",
+          "c7.value",
+          "c7.value"
+        ]
+      },
+      "eq.eqallon": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p23.value",
+          "c24.value",
+          "p23.value",
+          "c24.value",
+          "p23.value",
+          "c24.value",
+          "p23.value",
+          "c24.value",
+          "c24.value",
+          "c24.value",
+          "c24.value",
+          "c24.value",
+          "c24.value",
+          "c24.value",
+          "c24.value"
+        ]
+      },
+      "eq.eqgain1": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p12.value",
+          "p12.value",
+          "c8.value"
+        ]
+      },
+      "eq.eqgain2": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p13.value",
+          "c17.value",
+          "p13.value",
+          "c19.value",
+          "c4.value",
+          "c10.value"
+        ]
+      },
+      "eq.eqgain3": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p14.value",
+          "c19.value",
+          "p14.value",
+          "c12.value"
+        ]
+      },
+      "eq.eqgain4": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p15.value",
+          "p15.value",
+          "c6.value",
+          "c14.value"
+        ]
+      },
+      "eq.eqfreq2": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c16.value",
+          "c18.value",
+          "c5.value",
+          "c11.value"
+        ]
+      },
+      "eq.eqfreq3": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c18.value",
+          "c13.value"
+        ]
+      },
+      "eq.eqbandon2": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c25.value",
+          "c25.value"
+        ]
+      },
+      "eq.eqbandon3": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "eq.eqq2": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c13.value"
+        ]
+      },
+      "eq.eqq3": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c14.value"
+        ]
+      },
+      "eq.eqbandon4": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "eq.eqfreq1": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c9.value"
+        ]
+      },
+      "eq.eqfreq4": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c15.value"
+        ]
+      },
+      "eq.bboost": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p12.value",
+          "c4.value",
+          "c19.value",
+          "c8.value"
+        ]
+      },
+      "eq.batten": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p13.value",
+          "c5.value",
+          "c9.value"
+        ]
+      },
+      "eq.mboost": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p14.value",
+          "c6.value",
+          "c18.value",
+          "c12.value"
+        ]
+      },
+      "eq.hatten": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p15.value",
+          "c13.value"
+        ]
+      },
+      "eq.bfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c25.value",
+          "c10.value"
+        ]
+      },
+      "eq.mfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value",
+          "c14.value"
+        ]
+      },
+      "eq.bbwidth": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c11.value"
+        ]
+      },
+      "eq.hsfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c15.value"
+        ]
+      },
+      "eq.lowgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p12.value",
+          "c4.value",
+          "c8.value",
+          "c12.value",
+          "c12.value",
+          "c12.value",
+          "c12.value",
+          "c12.value",
+          "c12.value"
+        ]
+      },
+      "eq.lowmidgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p13.value",
+          "c5.value",
+          "c19.value",
+          "c10.value",
+          "c13.value"
+        ]
+      },
+      "eq.himidgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p14.value",
+          "c6.value",
+          "c12.value"
+        ]
+      },
+      "eq.higain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p15.value",
+          "c14.value"
+        ]
+      },
+      "eq.lowmidfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c25.value",
+          "c18.value",
+          "c11.value"
+        ]
+      },
+      "eq.himidfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value",
+          "c13.value"
+        ]
+      },
+      "eq.lowfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c9.value",
+          "c17.value"
+        ]
+      },
+      "comp.gain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p6.value",
+          "c2.value",
+          "c17.value",
+          "c6.value",
+          "p10.value",
+          "p10.value",
+          "c6.value",
+          "c6.value",
+          "c6.value",
+          "c4.value",
+          "c6.value",
+          "c6.value"
+        ]
+      },
+      "comp.peak": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p7.value",
+          "c3.value",
+          "c16.value"
+        ]
+      },
+      "comp.mode": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c23.value"
+        ]
+      },
+      "comp.threshold": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c4.value",
+          "p6.value",
+          "p6.value",
+          "c2.value",
+          "c16.value",
+          "c4.value",
+          "c4.value",
+          "c4.value",
+          "c5.value",
+          "c4.value",
+          "c4.value",
+          "c4.value"
+        ]
+      },
+      "comp.softknee": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "p21.value",
+          "p21.value"
+        ]
+      },
+      "comp.automode": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c23.value",
+          "c23.value"
+        ]
+      },
+      "comp.makeup": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c6.value",
+          "c6.value"
+        ]
+      },
+      "comp.compression": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c5.value"
+        ]
+      },
+      "eq.midgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c13.value",
+          "c13.value",
+          "c13.value",
+          "c13.value",
+          "c13.value"
+        ]
+      },
+      "eq.highgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c14.value",
+          "c13.value",
+          "c14.value",
+          "c14.value",
+          "c14.value"
+        ]
+      },
+      "eq.filter": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "comp.gainred": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c5.value"
+        ]
+      },
+      "comp.timeconstant": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c6.value"
+        ]
+      },
+      "eq.lowcut": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c16.value"
+        ]
+      },
+      "eq.highfreq": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c18.value"
+        ]
+      },
+      "eq.highcut": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c19.value"
+        ]
+      },
+      "eq.bassgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c12.value"
+        ]
+      },
+      "eq.10kGain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c14.value"
+        ]
+      },
+      "eq.phase": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value",
+          "c26.value"
+        ]
+      },
+      "eq.hightype": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "eq.highmidgain": {
+        "guid": "{5E91DC8A-E560-4115-98FA-59FB3F215BA1}",
+        "controls": [
+          "c14.value"
+        ]
+      }
+    },
+    "subdevices": [
+      {
+        "folder": "comp",
+        "deviceID": "{1F831EC1-B8AC-4EE9-AD53-54227AF53D58}",
+        "friendlyName": "StudioLive FET Compressor"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{983BF658-011F-4E91-827F-6A0F66A40D89}",
+        "friendlyName": "StudioLive EQ"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{A0A8A068-14F0-4B04-BB6F-AF8329D0E8EE}",
+        "friendlyName": "StudioLive EQ XT 4 Band"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{C0730CBB-5135-4558-9222-C40BDBA036ED}",
+        "friendlyName": "StudioLive Passive EQ"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{E1C5E024-C5CD-473C-B08A-6EC177812E01}",
+        "friendlyName": "StudioLive Vintage EQ"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{7F8A4262-D377-48E3-9D48-15D82C400A71}",
+        "friendlyName": "StudioLive Tube Compressor"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{AFEE6684-5985-4D29-81E6-661F4F07C2CE}",
+        "friendlyName": "StudioLive Compressor"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{870D04F7-212E-4F9C-ADBB-39A97216433F}",
+        "friendlyName": "StudioLive Compressor XT"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{FEF33155-7A9E-4F4E-B209-CFE86DDAFC8E}",
+        "friendlyName": "StudioLive Brit Comp"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{C38F9E1A-0127-4BB8-9377-40C545A50328}",
+        "friendlyName": "StudioLive Classic Compressor"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{F0BD22BB-5FE8-4279-8B05-D089B4D7B0BB}",
+        "friendlyName": "StudioLive Comp 160"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{CBDD0DD3-C5EF-495A-B4C7-92EC5E8FE146}",
+        "friendlyName": "StudioLive Alpine EQ-550"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{23F9C088-08BE-4259-9DCE-38720AE5DE73}",
+        "friendlyName": "StudioLive Everest C100A"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{85DD5632-A536-49FF-894A-9329FC1124E4}",
+        "friendlyName": "StudioLive FC-670"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{6A372968-AFA7-4A3F-805D-A09A4AE15777}",
+        "friendlyName": "StudioLive RC500 Comp"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{AF35E448-40EC-4C5A-A05C-B40A5AC0A42F}",
+        "friendlyName": "StudioLive VT1 Comp"
+      },
+      {
+        "folder": "comp",
+        "deviceID": "{C3C32BBC-42E2-41A7-99B5-EA1D62F897B5}",
+        "friendlyName": "StudioLive The Tube P1B"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{B4D3497E-4B1C-4CFA-B859-A918C17CDA03}",
+        "friendlyName": "StudioLive Baxandall EQ"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{63ADDF9B-0EC7-430A-AEBE-62B4CB5FBBD6}",
+        "friendlyName": "StudioLive RC500 EQ"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{03819C3F-DC16-4B7B-B521-14B4042192F2}",
+        "friendlyName": "StudioLive Solar 69"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{09B38119-3945-40D1-BA33-2FA19620DAB0}",
+        "friendlyName": "StudioLive The Tube Midrange EQ"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{4635DE88-C3D2-4645-BC4D-8DFD116D6914}",
+        "friendlyName": "StudioLive Vintage 3-band EQ"
+      },
+      {
+        "folder": "eq",
+        "deviceID": "{A0FAF452-D664-4BA2-90FC-6BD4AC469B29}",
+        "friendlyName": "StudioLive VT1 EQ"
+      }
+    ]
+  },
+  "Flanger": {
+    "deviceID": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+    "params": {
+      "lfowidth": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p0.value",
+          "c2.value"
+        ]
+      },
+      "lfospeed": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p2.value",
+          "c3.value"
+        ]
+      },
+      "beatsnu": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p1.value",
+          "c4.value"
+        ]
+      },
+      "sync": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p17.value",
+          "c24.value"
+        ]
+      },
+      "feedback": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p3.value",
+          "c0.value",
+          "c17.value"
+        ]
+      },
+      "speed": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p4.value",
+          "c1.value",
+          "c16.value"
+        ]
+      },
+      "depth": {
+        "guid": "{AC97B789-7D8F-4585-A308-56C98374BD4C}",
+        "controls": [
+          "p5.value",
+          "c7.value",
+          "c19.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Gate": {
+    "deviceID": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+    "params": {
+      "highthresh": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "c0.value",
+          "p2.value",
+          "c16.value"
+        ]
+      },
+      "filterlow": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "c6.value",
+          "p0.value",
+          "c19.value"
+        ]
+      },
+      "filterhigh": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "c7.value",
+          "p1.value",
+          "c18.value"
+        ]
+      },
+      "hysteresis": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p6.value"
+        ]
+      },
+      "range": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p3.value",
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "attack": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p4.value",
+          "c2.value"
+        ]
+      },
+      "release": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p5.value",
+          "c3.value"
+        ]
+      },
+      "internalside": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p16.value",
+          "c26.value"
+        ]
+      },
+      "intlisten": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p17.value",
+          "c27.value"
+        ]
+      },
+      "hold": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p7.value",
+          "c4.value"
+        ]
+      },
+      "sendtrig": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p22.value",
+          "c25.value"
+        ]
+      },
+      "lookahead": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "p24.value",
+          "c20.value"
+        ]
+      },
+      "duck": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "c21.value"
+        ]
+      },
+      "trignote": {
+        "guid": "{132C0E1F-06FD-4C96-BD65-678C04FE1C92}",
+        "controls": [
+          "c5.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Groove Delay": {
+    "deviceID": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+    "params": {
+      "beats1": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c0.value",
+          "p2.value"
+        ]
+      },
+      "beats2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c1.value",
+          "p6.value"
+        ]
+      },
+      "beats3": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c2.value",
+          "p12.value"
+        ]
+      },
+      "mix": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c7.value",
+          "p1.value",
+          "c17.value"
+        ]
+      },
+      "pan3": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c13.value",
+          "p15.value"
+        ]
+      },
+      "out4": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c14.value",
+          "p10.value"
+        ]
+      },
+      "filter1": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c20.value",
+          "p18.value"
+        ]
+      },
+      "filter2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c21.value",
+          "p20.value"
+        ]
+      },
+      "filter3": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c22.value",
+          "p23.value"
+        ]
+      },
+      "filter4": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c23.value",
+          "p21.value"
+        ]
+      },
+      "cutoff2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c18.value"
+        ]
+      },
+      "reso2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c19.value"
+        ]
+      },
+      "beatlength": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p0.value",
+          "c5.value"
+        ]
+      },
+      "feedback": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p11.value",
+          "c6.value",
+          "c16.value"
+        ]
+      },
+      "groove1": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p3.value"
+        ]
+      },
+      "out1": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p4.value",
+          "c8.value"
+        ]
+      },
+      "pan1": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p5.value",
+          "c9.value"
+        ]
+      },
+      "groove2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p7.value"
+        ]
+      },
+      "out2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p8.value",
+          "c10.value"
+        ]
+      },
+      "pan2": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p9.value",
+          "c11.value"
+        ]
+      },
+      "groove3": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p13.value"
+        ]
+      },
+      "out3": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "p14.value",
+          "c12.value"
+        ]
+      },
+      "beats4": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c3.value"
+        ]
+      },
+      "lfobeatsnu": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "lfosync": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c24.value"
+        ]
+      },
+      "pan4": {
+        "guid": "{C80A56CC-912C-416C-834B-68A9B1A83420}",
+        "controls": [
+          "c15.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Limiter": {
+    "deviceID": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+    "params": {
+      "ingain": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "ceiling": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "c1.value",
+          "p1.value",
+          "c16.value"
+        ]
+      },
+      "thresholdrel": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "c2.value",
+          "p2.value",
+          "p11.value",
+          "c17.value"
+        ]
+      },
+      "clipper": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "p19.value",
+          "c21.value"
+        ]
+      },
+      "release": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "p5.value",
+          "c4.value",
+          "c18.value"
+        ]
+      },
+      "highqual": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "c22.value"
+        ]
+      },
+      "attack": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "c3.value",
+          "c19.value"
+        ]
+      },
+      "abmode": {
+        "guid": "{61B18D53-26FA-4220-8614-89944A1990EC}",
+        "controls": [
+          "c20.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Mixtool": {
+    "deviceID": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+    "params": {
+      "gain": {
+        "guid": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+        "controls": [
+          "c0.value",
+          "p0.value",
+          "c16.value"
+        ]
+      },
+      "dcblock": {
+        "guid": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+        "controls": [
+          "p16.value",
+          "c22.value"
+        ]
+      },
+      "phaseflipleft": {
+        "guid": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+        "controls": [
+          "p17.value",
+          "c23.value"
+        ]
+      },
+      "phaseflipright": {
+        "guid": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+        "controls": [
+          "p18.value",
+          "c24.value"
+        ]
+      },
+      "channelflip": {
+        "guid": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+        "controls": [
+          "p19.value",
+          "c20.value"
+        ]
+      },
+      "mstransform": {
+        "guid": "{E4D7D911-0608-4B46-ABA3-2E345399A5AC}",
+        "controls": [
+          "p20.value",
+          "c21.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Mixverb": {
+    "deviceID": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+    "params": {
+      "predelay": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c0.value",
+          "p0.value",
+          "c17.value"
+        ]
+      },
+      "size": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c1.value",
+          "p1.value",
+          "c16.value"
+        ]
+      },
+      "damp": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c2.value",
+          "p3.value"
+        ]
+      },
+      "gateactive": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c23.value",
+          "p18.value"
+        ]
+      },
+      "highthresh": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c3.value",
+          "p2.value"
+        ]
+      },
+      "gaterel": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c4.value",
+          "p5.value"
+        ]
+      },
+      "width": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c5.value",
+          "p4.value",
+          "p20.value",
+          "c18.value"
+        ]
+      },
+      "mix": {
+        "guid": "{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}",
+        "controls": [
+          "c6.value",
+          "p6.value",
+          "c19.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Multiband Dynamics": {
+    "deviceID": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+    "params": {
+      "extmuteband1": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p16.value"
+        ]
+      },
+      "extmuteband2": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p17.value"
+        ]
+      },
+      "extmuteband3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p18.value"
+        ]
+      },
+      "extmuteband4": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p19.value"
+        ]
+      },
+      "extmuteband5": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p20.value"
+        ]
+      },
+      "autospeed": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p22.value",
+          "c25.value"
+        ]
+      },
+      "gain": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p0.value",
+          "c6.value",
+          "c17.value"
+        ]
+      },
+      "knee": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p1.value",
+          "c5.value"
+        ]
+      },
+      "corner1": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p2.value",
+          "p6.value"
+        ]
+      },
+      "corner3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p11.value"
+        ]
+      },
+      "corner4": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p15.value"
+        ]
+      },
+      "lowthreshband2": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p3.value",
+          "c1.value"
+        ]
+      },
+      "ratioband2": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p4.value",
+          "c9.value"
+        ]
+      },
+      "gainband2": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "lowthreshband3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p7.value",
+          "c2.value"
+        ]
+      },
+      "ratioband3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p8.value",
+          "c10.value",
+          "c11.value"
+        ]
+      },
+      "gainband3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p9.value"
+        ]
+      },
+      "hithreshband3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p10.value"
+        ]
+      },
+      "lowthreshband4": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p12.value",
+          "c3.value"
+        ]
+      },
+      "ratioband4": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p13.value"
+        ]
+      },
+      "gainband4": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "p14.value"
+        ]
+      },
+      "mix": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c7.value",
+          "c16.value"
+        ]
+      },
+      "lowthreshband1": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c0.value"
+        ]
+      },
+      "lowthreshband5": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "soloband1": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c20.value"
+        ]
+      },
+      "soloband2": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c21.value"
+        ]
+      },
+      "soloband3": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c22.value"
+        ]
+      },
+      "soloband4": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c23.value"
+        ]
+      },
+      "soloband5": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c24.value"
+        ]
+      },
+      "ratioband1": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c8.value"
+        ]
+      },
+      "ratioband5": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c12.value"
+        ]
+      },
+      "bandmetering": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "gang": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c27.value"
+        ]
+      },
+      "viewrangelow": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c14.value",
+          "c19.value"
+        ]
+      },
+      "viewrangehigh": {
+        "guid": "{701812B1-7B20-4C95-BECB-D7C2ACF954ED}",
+        "controls": [
+          "c15.value",
+          "c18.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Open AIR": {
+    "deviceID": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+    "params": {
+      "predelayoffset": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "lengthoffset": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "crossfeed": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "crossdelay": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "crossasym": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "gain": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c6.value",
+          "p6.value",
+          "c16.value"
+        ]
+      },
+      "erlrbalance": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c5.value",
+          "p5.value",
+          "c17.value"
+        ]
+      },
+      "mix": {
+        "guid": "{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Phaser": {
+    "deviceID": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+    "params": {
+      "rangeMin": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p0.value"
+        ]
+      },
+      "rangeMax": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p1.value"
+        ]
+      },
+      "speed": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p2.value",
+          "c1.value"
+        ]
+      },
+      "beatsnu": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p3.value",
+          "c2.value"
+        ]
+      },
+      "sync": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p18.value",
+          "c22.value"
+        ]
+      },
+      "feedback": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p4.value",
+          "c5.value",
+          "c17.value"
+        ]
+      },
+      "stages": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p5.value",
+          "c0.value",
+          "c16.value"
+        ]
+      },
+      "spread": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p6.value",
+          "c6.value",
+          "c18.value"
+        ]
+      },
+      "depth": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "p7.value",
+          "c7.value",
+          "c19.value"
+        ]
+      },
+      "lfoWidth": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "lfoCenter": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "c3.value"
+        ]
+      },
+      "lfoMode": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "c23.value"
+        ]
+      },
+      "soft": {
+        "guid": "{0E890247-B39D-41AE-A9A3-647C30BB5C16}",
+        "controls": [
+          "c24.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Pro EQ": {
+    "deviceID": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+    "params": {
+      "lcfreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p0.value",
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "hcfreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p1.value",
+          "c7.value",
+          "c16.value"
+        ]
+      },
+      "lffreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p2.value",
+          "c10.value"
+        ]
+      },
+      "lmffreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p3.value",
+          "c11.value"
+        ]
+      },
+      "hmffreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p4.value",
+          "c13.value"
+        ]
+      },
+      "hffreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p5.value",
+          "c14.value"
+        ]
+      },
+      "lfq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p6.value"
+        ]
+      },
+      "lmfq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p7.value"
+        ]
+      },
+      "hmfq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p8.value"
+        ]
+      },
+      "mffreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p9.value",
+          "c18.value",
+          "c12.value"
+        ]
+      },
+      "mfgain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p10.value",
+          "c4.value",
+          "c19.value"
+        ]
+      },
+      "gain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p11.value"
+        ]
+      },
+      "lfgain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p12.value",
+          "c22.value",
+          "c2.value"
+        ]
+      },
+      "lmfgain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p13.value",
+          "c3.value"
+        ]
+      },
+      "hmfgain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p14.value",
+          "c5.value"
+        ]
+      },
+      "hfgain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p15.value",
+          "c6.value"
+        ]
+      },
+      "lcactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p16.value",
+          "c21.value"
+        ]
+      },
+      "hcactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p17.value",
+          "c27.value"
+        ]
+      },
+      "lfactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p18.value"
+        ]
+      },
+      "lmfactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p19.value",
+          "c23.value"
+        ]
+      },
+      "mfactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p21.value",
+          "c24.value"
+        ]
+      },
+      "autogain": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p22.value"
+        ]
+      },
+      "hmfactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p23.value",
+          "c25.value"
+        ]
+      },
+      "hfactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "p24.value",
+          "c26.value"
+        ]
+      },
+      "linearphaseactive": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "c20.value"
+        ]
+      },
+      "linearphasefreq": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "c0.value"
+        ]
+      },
+      "linearphasesoft": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "c8.value"
+        ]
+      },
+      "lcslope": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "c9.value"
+        ]
+      },
+      "hcslope": {
+        "guid": "{073C4094-E062-4FB5-8328-74608DD1A3A4}",
+        "controls": [
+          "c15.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "RedlightDist": {
+    "deviceID": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+    "params": {
+      "ingain": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "drive": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "outgain": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "mix": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "c6.value",
+          "p6.value",
+          "c16.value"
+        ]
+      },
+      "low": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "p2.value",
+          "c4.value",
+          "c19.value"
+        ]
+      },
+      "high": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "p3.value",
+          "c5.value",
+          "c18.value"
+        ]
+      },
+      "bias": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "p5.value",
+          "c2.value",
+          "c17.value"
+        ]
+      },
+      "stages": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "p4.value",
+          "c23.value"
+        ]
+      },
+      "type": {
+        "guid": "{EB8C4ED5-615C-44EA-8F93-757181647AC8}",
+        "controls": [
+          "c3.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Room Reverb": {
+    "deviceID": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+    "params": {
+      "mix": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "lengthoffset": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "plane": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c19.value",
+          "p15.value",
+          "c12.value"
+        ]
+      },
+      "asymmetry": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c17.value",
+          "p13.value",
+          "c11.value"
+        ]
+      },
+      "distance": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c16.value",
+          "p12.value",
+          "c10.value"
+        ]
+      },
+      "roomtype": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c18.value",
+          "p14.value",
+          "c23.value"
+        ]
+      },
+      "erlrbalance": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "p6.value",
+          "c2.value"
+        ]
+      },
+      "predelayoffset": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "p0.value",
+          "c0.value"
+        ]
+      },
+      "roomsize": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "p2.value",
+          "c3.value"
+        ]
+      },
+      "damping": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "p5.value",
+          "c6.value"
+        ]
+      },
+      "roomwidth": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "p3.value",
+          "c4.value"
+        ]
+      },
+      "roomheight": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "p4.value",
+          "c5.value"
+        ]
+      },
+      "perfmode": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c27.value"
+        ]
+      },
+      "population": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c8.value"
+        ]
+      },
+      "smoothness": {
+        "guid": "{29C71194-B29A-40C0-9A35-9053DB6F596C}",
+        "controls": [
+          "c9.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Tone Generator": {
+    "deviceID": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+    "params": {
+      "modtype": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c22.value",
+          "p18.value"
+        ]
+      },
+      "sweeptype": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c23.value",
+          "p19.value"
+        ]
+      },
+      "modlen": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "shift": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "modtargetfreq": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "level": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c7.value",
+          "p7.value",
+          "c17.value"
+        ]
+      },
+      "outmode": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "c6.value",
+          "p6.value",
+          "p22.value",
+          "c27.value"
+        ]
+      },
+      "freq": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "p0.value",
+          "c1.value",
+          "c16.value"
+        ]
+      },
+      "antialias": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "p17.value",
+          "c20.value"
+        ]
+      },
+      "wave": {
+        "guid": "{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}",
+        "controls": [
+          "p1.value",
+          "c0.value",
+          "c18.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Tricomp": {
+    "deviceID": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+    "params": {
+      "ingain": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "outgain": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "mix": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c6.value",
+          "p6.value",
+          "c26.value"
+        ]
+      },
+      "saturation": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c5.value",
+          "p5.value"
+        ]
+      },
+      "low": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c16.value",
+          "p12.value",
+          "c2.value"
+        ]
+      },
+      "high": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c17.value",
+          "p13.value",
+          "c3.value"
+        ]
+      },
+      "lowcorner": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c18.value",
+          "p14.value",
+          "c10.value",
+          "c22.value"
+        ]
+      },
+      "highcorner": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c19.value",
+          "p15.value",
+          "c11.value",
+          "c23.value"
+        ]
+      },
+      "knee": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "p3.value"
+        ]
+      },
+      "speed": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "p4.value"
+        ]
+      },
+      "compress": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "p2.value",
+          "c1.value"
+        ]
+      },
+      "auto": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "p20.value",
+          "c24.value"
+        ]
+      },
+      "release": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "attack": {
+        "guid": "{B34E203A-82A9-4D07-83AD-691860665E9A}",
+        "controls": [
+          "c25.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "X-Trem": {
+    "deviceID": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+    "params": {
+      "depth": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "c0.value",
+          "p0.value",
+          "c17.value"
+        ]
+      },
+      "lfobeatsnu": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "c1.value",
+          "p1.value",
+          "c16.value"
+        ]
+      },
+      "lfospeed": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "mode": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "lfotype": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "lfosync": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "p17.value",
+          "c21.value"
+        ]
+      },
+      "lfoflip": {
+        "guid": "{345D7412-977D-4364-A79B-5981F249AAC3}",
+        "controls": [
+          "c23.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Mojito": {
+    "deviceID": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+    "params": {
+      "ampEnvAttack": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "ampEnvDecay": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c5.value",
+          "p5.value"
+        ]
+      },
+      "ampEnvSustain": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c6.value",
+          "p6.value"
+        ]
+      },
+      "ampEnvRelease": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c7.value",
+          "p7.value"
+        ]
+      },
+      "Control/7": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "fltCutoff": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c16.value",
+          "p12.value"
+        ]
+      },
+      "fltResonance": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c17.value",
+          "p13.value"
+        ]
+      },
+      "fltEnvelope": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c18.value",
+          "p14.value"
+        ]
+      },
+      "lfoFilter": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c19.value",
+          "p15.value"
+        ]
+      },
+      "tune": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "sawSquareOsc1": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "pulseWidthOsc1": {
+        "guid": "{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Presence": {
+    "deviceID": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+    "params": {
+      "filter.active": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c20.value",
+          "p20.value"
+        ]
+      },
+      "filter.cutoff": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c0.value",
+          "p6.value"
+        ]
+      },
+      "filter.resonance": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c1.value",
+          "p7.value"
+        ]
+      },
+      "adsrMain.attack": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c2.value",
+          "p12.value"
+        ]
+      },
+      "adsrMain.decay": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c3.value",
+          "p13.value"
+        ]
+      },
+      "adsrMain.sustain": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c4.value",
+          "p14.value"
+        ]
+      },
+      "adsrMain.release": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c5.value",
+          "p15.value"
+        ]
+      },
+      "Control/7": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c7.value",
+          "p11.value"
+        ]
+      },
+      "monophone": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c27.value",
+          "p22.value"
+        ]
+      },
+      "voiceAmp.velo-amount": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "c6.value",
+          "p1.value"
+        ]
+      },
+      "adsr2.attack": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p8.value",
+          "c8.value"
+        ]
+      },
+      "filter.compress": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p9.value",
+          "c9.value"
+        ]
+      },
+      "filter.velo-to-cutoff": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p10.value",
+          "c10.value"
+        ]
+      },
+      "modFx.active": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p16.value",
+          "c23.value"
+        ]
+      },
+      "modFx.depth": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p0.value",
+          "c11.value"
+        ]
+      },
+      "delayFx.active": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p18.value",
+          "c24.value"
+        ]
+      },
+      "verbFx.active": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p19.value",
+          "c26.value"
+        ]
+      },
+      "verbFx.size": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p4.value",
+          "c19.value",
+          "c14.value"
+        ]
+      },
+      "verbFx.mix": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p5.value",
+          "c18.value",
+          "c15.value"
+        ]
+      },
+      "delayFx.beats": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p2.value",
+          "c17.value",
+          "c12.value"
+        ]
+      },
+      "delayFx.mix": {
+        "guid": "{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}",
+        "controls": [
+          "p3.value",
+          "c16.value",
+          "c13.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Bitcrusher": {
+    "deviceID": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+    "params": {
+      "mix": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "c7.value",
+          "p7.value",
+          "c19.value"
+        ]
+      },
+      "setView": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "c24.value",
+          "p20.value"
+        ]
+      },
+      "drive": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p0.value",
+          "c2.value"
+        ]
+      },
+      "bitDepth": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p1.value",
+          "c0.value",
+          "c17.value"
+        ]
+      },
+      "downsample": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p2.value",
+          "c1.value",
+          "c16.value"
+        ]
+      },
+      "clipping": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p5.value",
+          "c3.value"
+        ]
+      },
+      "gain": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p6.value",
+          "c6.value"
+        ]
+      },
+      "bitDepthDirt": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p17.value",
+          "c20.value"
+        ]
+      },
+      "downsampleZero": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p18.value",
+          "c21.value"
+        ]
+      },
+      "autoGain": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p22.value",
+          "c26.value"
+        ]
+      },
+      "clippingMode": {
+        "guid": "{BC7319ED-C40D-3C40-8015-34502212C1B8}",
+        "controls": [
+          "p4.value",
+          "c4.value",
+          "c22.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "VT1": {
+    "deviceID": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+    "params": {
+      "master.volume": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c7.value",
+          "p11.value"
+        ]
+      },
+      "eq.higainVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p15.value"
+        ]
+      },
+      "eq.himidgain": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p14.value",
+          "c19.value"
+        ]
+      },
+      "eq.lomidgain": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p13.value",
+          "c14.value"
+        ]
+      },
+      "eq.logainVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p12.value"
+        ]
+      },
+      "eq.hitypeVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p24.value"
+        ]
+      },
+      "eq.lotypeVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p23.value"
+        ]
+      },
+      "comp.makeup": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p10.value",
+          "c6.value"
+        ]
+      },
+      "comp.thresholdVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p6.value"
+        ]
+      },
+      "comp.ratioVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p7.value"
+        ]
+      },
+      "comp.attackVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p8.value"
+        ]
+      },
+      "comp.releaseVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p9.value"
+        ]
+      },
+      "comp.onVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p20.value"
+        ]
+      },
+      "eq.eqcompVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p21.value"
+        ]
+      },
+      "eq.onVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p22.value"
+        ]
+      },
+      "eq.hifreqVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "eq.himidfreq": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p4.value",
+          "c18.value"
+        ]
+      },
+      "eq.lomidfreq": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p3.value",
+          "c15.value"
+        ]
+      },
+      "eq.lofreqVT": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p2.value"
+        ]
+      },
+      "pre.phase": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p17.value",
+          "c21.value"
+        ]
+      },
+      "pre.hpffreq": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p1.value",
+          "c0.value"
+        ]
+      },
+      "pre.hpfon": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p16.value",
+          "c20.value"
+        ]
+      },
+      "pre.finegain": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "p0.value"
+        ]
+      },
+      "pre.gainselect": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c1.value",
+          "c9.value"
+        ]
+      },
+      "comp.threshold": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c2.value",
+          "c17.value"
+        ]
+      },
+      "comp.ratio": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c3.value",
+          "c16.value"
+        ]
+      },
+      "comp.on": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c22.value"
+        ]
+      },
+      "eq.logain": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "eq.higain": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c5.value"
+        ]
+      },
+      "eq.lotype": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c24.value"
+        ]
+      },
+      "eq.eqcomp": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c23.value"
+        ]
+      },
+      "eq.on": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "pre.impselect": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c8.value"
+        ]
+      },
+      "comp.attack": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c10.value"
+        ]
+      },
+      "comp.release": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c11.value"
+        ]
+      },
+      "eq.lofreq": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c12.value"
+        ]
+      },
+      "eq.hifreq": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c13.value"
+        ]
+      },
+      "eq.hitype": {
+        "guid": "{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}",
+        "controls": [
+          "c25.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "RC500": {
+    "deviceID": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+    "params": {
+      "comp.attackRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p8.value"
+        ]
+      },
+      "comp.thresholdRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p6.value"
+        ]
+      },
+      "pre.gain": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p10.value",
+          "c3.value",
+          "c17.value"
+        ]
+      },
+      "master.volume": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p11.value",
+          "c7.value"
+        ]
+      },
+      "comp.releaseRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p9.value"
+        ]
+      },
+      "pre.phase": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p17.value",
+          "c22.value"
+        ]
+      },
+      "pre.hpfon": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p16.value",
+          "c21.value"
+        ]
+      },
+      "eq.hitypeRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p24.value"
+        ]
+      },
+      "eq.lotypeRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p23.value"
+        ]
+      },
+      "comp.onRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p20.value"
+        ]
+      },
+      "eq.onRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p22.value"
+        ]
+      },
+      "eq.hifreqRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p5.value"
+        ]
+      },
+      "eq.higainRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p15.value"
+        ]
+      },
+      "eq.midfreq": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p3.value",
+          "c18.value",
+          "c13.value"
+        ]
+      },
+      "eq.midgain": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p13.value",
+          "c5.value",
+          "c19.value"
+        ]
+      },
+      "eq.lofreqRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p2.value"
+        ]
+      },
+      "eq.logainRC": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "p12.value",
+          "c15.value"
+        ]
+      },
+      "comp.on": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c20.value"
+        ]
+      },
+      "eq.lotype": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c26.value"
+        ]
+      },
+      "comp.threshold": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c0.value",
+          "c16.value"
+        ]
+      },
+      "comp.attack": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c1.value"
+        ]
+      },
+      "comp.release": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c2.value"
+        ]
+      },
+      "eq.higain": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "eq.logain": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c6.value"
+        ]
+      },
+      "eq.on": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c24.value"
+        ]
+      },
+      "eq.hitype": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c25.value"
+        ]
+      },
+      "eq.hifreq": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c12.value"
+        ]
+      },
+      "eq.lofreq": {
+        "guid": "{03518B56-3075-4B49-91B5-5489CA84175F}",
+        "controls": [
+          "c14.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Mai Tai": {
+    "deviceID": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+    "params": {
+      "adsrMain.attack": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p12.value",
+          "c2.value"
+        ]
+      },
+      "adsrMain.decay": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p13.value",
+          "c3.value"
+        ]
+      },
+      "adsrMain.sustain": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p14.value",
+          "c4.value"
+        ]
+      },
+      "adsrMain.release": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p15.value",
+          "c5.value"
+        ]
+      },
+      "Control/7": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p11.value",
+          "c7.value"
+        ]
+      },
+      "monophone": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p22.value",
+          "c27.value"
+        ]
+      },
+      "filter.cutoff": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p6.value",
+          "c0.value"
+        ]
+      },
+      "adsr2.attack": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p8.value",
+          "c9.value"
+        ]
+      },
+      "osc1.active": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p18.value",
+          "c21.value"
+        ]
+      },
+      "osc1.octaverange": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p3.value",
+          "c17.value",
+          "c13.value"
+        ]
+      },
+      "osc2.active": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p19.value",
+          "c22.value"
+        ]
+      },
+      "osc2.octaverange": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p4.value",
+          "c19.value",
+          "c15.value"
+        ]
+      },
+      "osc2.type": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p5.value",
+          "c18.value",
+          "c14.value"
+        ]
+      },
+      "osc1.type": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p2.value",
+          "c16.value",
+          "c12.value"
+        ]
+      },
+      "noise.active": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p16.value",
+          "c23.value"
+        ]
+      },
+      "noise.color": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p0.value",
+          "c8.value"
+        ]
+      },
+      "filter.resonance": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p7.value",
+          "c1.value"
+        ]
+      },
+      "filter.compress": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p9.value",
+          "c10.value"
+        ]
+      },
+      "filter.velo-to-cutoff": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p10.value",
+          "c11.value"
+        ]
+      },
+      "filter.active": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p20.value",
+          "c20.value"
+        ]
+      },
+      "voiceAmp.velo-amount": {
+        "guid": "{B625F134-4485-4A50-A3C8-C9CF0C5495E1}",
+        "controls": [
+          "p1.value",
+          "c6.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Rotor": {
+    "deviceID": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+    "params": {
+      "drive": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c0.value",
+          "p0.value"
+        ]
+      },
+      "hornQ": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c1.value",
+          "p1.value"
+        ]
+      },
+      "micDistance": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c2.value",
+          "p2.value"
+        ]
+      },
+      "balance": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c3.value",
+          "p3.value"
+        ]
+      },
+      "spread": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c4.value",
+          "p4.value"
+        ]
+      },
+      "drumSpeedTrimFast": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c14.value",
+          "c18.value",
+          "p7.value",
+          "c26.value"
+        ]
+      },
+      "drumSpeedTrimSlow": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c16.value",
+          "p6.value",
+          "c6.value"
+        ]
+      },
+      "hornSpeedTrimSlow": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c17.value",
+          "p8.value",
+          "c5.value"
+        ]
+      },
+      "hornSpeedTrimFast": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c19.value",
+          "p9.value",
+          "c25.value",
+          "c13.value"
+        ]
+      },
+      "turning": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "p20.value",
+          "c20.value"
+        ]
+      },
+      "speed": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "p21.value",
+          "c21.value"
+        ]
+      },
+      "ampModel": {
+        "guid": "{072BAC58-596A-4D6A-8F01-978B96E4BF36}",
+        "controls": [
+          "c22.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "{12345678-90AB-CDEF-1234-567890ABCDEF}": {
+    "deviceID": "{12345678-90AB-CDEF-1234-567890ABCDEF}",
+    "params": {},
+    "subdevices": []
+  },
+  "CTC-1": {
+    "deviceID": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+    "params": {
+      "drive": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c0.value",
+          "c16.value",
+          "p3.value"
+        ]
+      },
+      "noise": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c2.value",
+          "p8.value"
+        ]
+      },
+      "crosstalk": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c4.value",
+          "c17.value",
+          "p11.value"
+        ]
+      },
+      "character": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c5.value",
+          "p13.value"
+        ]
+      },
+      "master": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c6.value",
+          "p15.value"
+        ]
+      },
+      "preampType": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c7.value",
+          "c15.value",
+          "p0.value"
+        ]
+      },
+      "tolerance": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c13.value",
+          "p1.value"
+        ]
+      },
+      "preampOn": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c20.value",
+          "p18.value"
+        ]
+      },
+      "preampBoost": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c21.value",
+          "p19.value"
+        ]
+      },
+      "noiseOn": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c22.value",
+          "p20.value"
+        ]
+      },
+      "noiseGateOn": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c23.value",
+          "p21.value"
+        ]
+      },
+      "crosstalkOn": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c24.value",
+          "p22.value"
+        ]
+      },
+      "compensation": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c26.value",
+          "p16.value"
+        ]
+      },
+      "economy": {
+        "guid": "{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}",
+        "controls": [
+          "c27.value",
+          "p17.value"
+        ]
+      }
+    },
+    "subdevices": []
+  },
+  "Pedalboard": {
+    "deviceID": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+    "params": {
+      "controls.active[stomp1]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c20.value",
+          "p16.value"
+        ]
+      },
+      "controls.active[stomp2]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c21.value",
+          "p17.value"
+        ]
+      },
+      "controls.active[stomp3]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c22.value",
+          "p18.value"
+        ]
+      },
+      "controls.active[stomp4]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c23.value",
+          "p19.value"
+        ]
+      },
+      "controls.active[stomp5]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c24.value",
+          "p20.value"
+        ]
+      },
+      "controls.active[stomp6]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c25.value",
+          "p21.value"
+        ]
+      },
+      "controls.active[stomp7]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c26.value",
+          "p23.value"
+        ]
+      },
+      "controls.active[stomp8]": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c27.value",
+          "p24.value"
+        ]
+      },
+      "controls.wah": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "p0.value",
+          "c14.value"
+        ]
+      },
+      "controls.speed": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c15.value",
+          "c18.value"
+        ]
+      },
+      "stomp1.vol": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value",
+          "c19.value"
+        ]
+      },
+      "stomp1.tone": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c1.value",
+          "c16.value",
+          "c1.value",
+          "c16.value",
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.sustain": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.lowcut": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value",
+          "c2.value"
+        ]
+      },
+      "stomp1.highcut": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c1.value",
+          "c3.value"
+        ]
+      },
+      "stomp1.feedback": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value",
+          "c16.value",
+          "c1.value",
+          "c19.value"
+        ]
+      },
+      "stomp1.mix": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c3.value",
+          "c17.value",
+          "c1.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.beats": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c4.value",
+          "c1.value",
+          "c1.value"
+        ]
+      },
+      "stomp1.level1": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value",
+          "c16.value"
+        ]
+      },
+      "stomp1.level2": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c1.value"
+        ]
+      },
+      "stomp1.level3": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.level4": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c3.value"
+        ]
+      },
+      "stomp1.level5": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "stomp1.level6": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c5.value"
+        ]
+      },
+      "stomp1.level7": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c6.value"
+        ]
+      },
+      "stomp1.range": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c7.value",
+          "c19.value"
+        ]
+      },
+      "stomp1.distortion": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.volume": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value",
+          "c19.value"
+        ]
+      },
+      "stomp1.type": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value"
+        ]
+      },
+      "stomp1.depth": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c7.value",
+          "c17.value",
+          "c0.value",
+          "c16.value",
+          "c0.value",
+          "c16.value"
+        ]
+      },
+      "stomp1.lfowidth": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c6.value",
+          "c16.value"
+        ]
+      },
+      "stomp1.inputSensitivity": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value"
+        ]
+      },
+      "stomp1.inputLevel": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c1.value"
+        ]
+      },
+      "stomp1.chorusIntensity": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value",
+          "c16.value"
+        ]
+      },
+      "stomp1.vibratoDepth": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c3.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.vibratoMode": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c7.value"
+        ]
+      },
+      "stomp1.size": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value",
+          "c16.value"
+        ]
+      },
+      "stomp1.damp": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c4.value",
+          "c19.value"
+        ]
+      },
+      "stomp1.drive": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value",
+          "c16.value",
+          "c0.value",
+          "c17.value"
+        ]
+      },
+      "stomp1.level": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value",
+          "c19.value"
+        ]
+      },
+      "stomp1.character": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value"
+        ]
+      },
+      "stomp2.lowcut": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c0.value"
+        ]
+      },
+      "stomp2.highcut": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c1.value"
+        ]
+      },
+      "stomp2.inputLevel": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c1.value"
+        ]
+      },
+      "stomp2.chorusIntensity": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c2.value"
+        ]
+      },
+      "stomp2.vibratoDepth": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c3.value"
+        ]
+      },
+      "stomp2.vibratoRate": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c4.value"
+        ]
+      },
+      "stomp3.speed": {
+        "guid": "{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}",
+        "controls": [
+          "c3.value"
+        ]
+      }
+    },
+    "subdevices": [
+      {
+        "folder": "stomp1",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp6",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "stomp8",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}",
+        "friendlyName": "Equalizer"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{C5881966-568C-4EF6-825E-E6E0C739EE70}",
+        "friendlyName": "FAT"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}",
+        "friendlyName": "Modulation"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{ACBEC854-7CE9-4A78-9BF1-53E12CF49B04}",
+        "friendlyName": "Pan"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{63EE9686-5245-4212-AF83-3F6311192F42}",
+        "friendlyName": "Reverb"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{23EF7C12-6BCE-4AC2-B518-4401F7145847}",
+        "friendlyName": "Tremolo"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}",
+        "friendlyName": "Tube Dreamer"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{40FC219D-6D44-4DC3-9D88-1D40D2821F3C}",
+        "friendlyName": "Tube Driver"
+      },
+      {
+        "folder": "stomp1",
+        "deviceID": "{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}",
+        "friendlyName": "Wah Wah"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}",
+        "friendlyName": "Wah Wah"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{ACBEC854-7CE9-4A78-9BF1-53E12CF49B04}",
+        "friendlyName": "Pan"
+      },
+      {
+        "folder": "stomp6",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{63EE9686-5245-4212-AF83-3F6311192F42}",
+        "friendlyName": "Reverb"
+      },
+      {
+        "folder": "stomp8",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      },
+      {
+        "folder": "stomp8",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}",
+        "friendlyName": "Tube Dreamer"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{E7DFD20D-B552-456C-94E7-15AFEC3B020C}",
+        "friendlyName": "Delay"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{63EE9686-5245-4212-AF83-3F6311192F42}",
+        "friendlyName": "Reverb"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}",
+        "friendlyName": "Equalizer"
+      },
+      {
+        "folder": "stomp2",
+        "deviceID": "{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}",
+        "friendlyName": "Equalizer"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{63EE9686-5245-4212-AF83-3F6311192F42}",
+        "friendlyName": "Reverb"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}",
+        "friendlyName": "Modulation"
+      },
+      {
+        "folder": "stomp3",
+        "deviceID": "{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}",
+        "friendlyName": "Modulation"
+      },
+      {
+        "folder": "stomp4",
+        "deviceID": "{63EE9686-5245-4212-AF83-3F6311192F42}",
+        "friendlyName": "Reverb"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{995F339E-2341-4F49-AD9F-FE2FDE911ADB}",
+        "friendlyName": "MP Ninety"
+      },
+      {
+        "folder": "stomp8",
+        "deviceID": "{C5881966-568C-4EF6-825E-E6E0C739EE70}",
+        "friendlyName": "FAT"
+      },
+      {
+        "folder": "stomp5",
+        "deviceID": "{C5881966-568C-4EF6-825E-E6E0C739EE70}",
+        "friendlyName": "FAT"
+      },
+      {
+        "folder": "stomp6",
+        "deviceID": "{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}",
+        "friendlyName": "Tube Dreamer"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}",
+        "friendlyName": "Big Fuzz"
+      },
+      {
+        "folder": "stomp7",
+        "deviceID": "{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}",
+        "friendlyName": "PAE Chorus 1"
+      },
+      {
+        "folder": "stomp6",
+        "deviceID": "{C5881966-568C-4EF6-825E-E6E0C739EE70}",
+        "friendlyName": "FAT"
+      }
+    ]
+  }
+}

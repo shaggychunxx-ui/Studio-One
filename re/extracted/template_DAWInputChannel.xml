@@ -1,0 +1,6 @@
+<uc:Template id="DAWInputChannel" inherit="DAWChannel">
+			<!-- Software Parameters -->
+			<uc:Component id="inputfx" paramlist="InputFXParams"/>
+			<!-- Hardware Parameters -->
+			<uc:Component id="hardware" paramlist="HardwareInput"/>
+		</uc:Template>

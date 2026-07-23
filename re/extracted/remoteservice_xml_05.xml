@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SurfaceData surfaceID="{5F3B27A2-91F4-415E-B623-C580347ADEC6}" revision="15">
+	<SurfaceDeviceAssignment deviceID="{11111111-1111-1111-1111-111111111111}" friendlyName="static">
+		<List x:id="pages">
+			<SurfaceAssignmentPage/>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{22222222-2222-2222-2222-222222222222}" friendlyName="Channel Controls">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="AudioChannelMacroControlSet/float-1"/>
+				<Association key="c1.value" value="AudioChannelMacroControlSet/float-2"/>
+				<Association key="c2.value" value="AudioChannelMacroControlSet/float-3"/>
+				<Association key="c3.value" value="AudioChannelMacroControlSet/float-4"/>
+				<Association key="c4.value" value="AudioChannelMacroControlSet/float-5"/>
+				<Association key="c5.value" value="AudioChannelMacroControlSet/float-6"/>
+				<Association key="c6.value" value="AudioChannelMacroControlSet/float-7"/>
+				<Association key="c7.value" value="AudioChannelMacroControlSet/float-8"/>
+				<Association key="c16.value" value="AudioChannelMacroControlSet/pad-x-1"/>
+				<Association key="c17.value" value="AudioChannelMacroControlSet/pad-y-1"/>
+				<Association key="c18.value" value="AudioChannelMacroControlSet/pad-x-2"/>
+				<Association key="c19.value" value="AudioChannelMacroControlSet/pad-y-2"/>
+				<Association key="c20.value" value="AudioChannelMacroControlSet/bool-1"/>
+				<Association key="c21.value" value="AudioChannelMacroControlSet/bool-2"/>
+				<Association key="c22.value" value="AudioChannelMacroControlSet/bool-3"/>
+				<Association key="c23.value" value="AudioChannelMacroControlSet/bool-4"/>
+				<Association key="c24.value" value="AudioChannelMacroControlSet/bool-5"/>
+				<Association key="c25.value" value="AudioChannelMacroControlSet/bool-6"/>
+				<Association key="c26.value" value="AudioChannelMacroControlSet/bool-7"/>
+				<Association key="c27.value" value="AudioChannelMacroControlSet/bool-8"/>
+				<Association key="p0.value" value="AudioChannelMacroControlSet/float-1"/>
+				<Association key="p1.value" value="AudioChannelMacroControlSet/float-2"/>
+				<Association key="p2.value" value="AudioChannelMacroControlSet/float-3"/>
+				<Association key="p3.value" value="AudioChannelMacroControlSet/float-4"/>
+				<Association key="p4.value" value="AudioChannelMacroControlSet/float-5"/>
+				<Association key="p5.value" value="AudioChannelMacroControlSet/float-6"/>
+				<Association key="p6.value" value="AudioChannelMacroControlSet/float-7"/>
+				<Association key="p7.value" value="AudioChannelMacroControlSet/float-8"/>
+				<Association key="p12.value" value="AudioChannelMacroControlSet/pad-x-1"/>
+				<Association key="p13.value" value="AudioChannelMacroControlSet/pad-y-1"/>
+				<Association key="p14.value" value="AudioChannelMacroControlSet/pad-x-2"/>
+				<Association key="p15.value" value="AudioChannelMacroControlSet/pad-y-2"/>
+				<Association key="p16.value" value="AudioChannelMacroControlSet/bool-1"/>
+				<Association key="p17.value" value="AudioChannelMacroControlSet/bool-2"/>
+				<Association key="p18.value" value="AudioChannelMacroControlSet/bool-3"/>
+				<Association key="p19.value" value="AudioChannelMacroControlSet/bool-4"/>
+				<Association key="p20.value" value="AudioChannelMacroControlSet/bool-5"/>
+				<Association key="p21.value" value="AudioChannelMacroControlSet/bool-6"/>
+				<Association key="p22.value" value="AudioChannelMacroControlSet/bool-7"/>
+				<Association key="p23.value" value="AudioChannelMacroControlSet/bool-8"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{33333333-3333-3333-3333-333333333333}" friendlyName="Macro Controls">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="GlobalMacroControlSet/float-1"/>
+				<Association key="c1.value" value="GlobalMacroControlSet/float-2"/>
+				<Association key="c2.value" value="GlobalMacroControlSet/float-3"/>
+				<Association key="c3.value" value="GlobalMacroControlSet/float-4"/>
+				<Association key="c4.value" value="GlobalMacroControlSet/float-5"/>
+				<Association key="c5.value" value="GlobalMacroControlSet/float-6"/>
+				<Association key="c6.value" value="GlobalMacroControlSet/float-7"/>
+				<Association key="c7.value" value="GlobalMacroControlSet/float-8"/>
+				<Association key="c21.value" value="GlobalMacroControlSet/bool-2"/>
+				<Association key="c22.value" value="GlobalMacroControlSet/bool-3"/>
+				<Association key="c20.value" value="GlobalMacroControlSet/bool-1"/>
+				<Association key="c23.value" value="GlobalMacroControlSet/bool-4"/>
+				<Association key="c24.value" value="GlobalMacroControlSet/bool-5"/>
+				<Association key="c25.value" value="GlobalMacroControlSet/bool-6"/>
+				<Association key="c26.value" value="GlobalMacroControlSet/bool-7"/>
+				<Association key="c27.value" value="GlobalMacroControlSet/bool-8"/>
+				<Association key="c8.value" value="GlobalMacroControlSet/float-9"/>
+				<Association key="c9.value" value="GlobalMacroControlSet/float-10"/>
+				<Association key="c10.value" value="GlobalMacroControlSet/float-11"/>
+				<Association key="c11.value" value="GlobalMacroControlSet/float-12"/>
+				<Association key="c12.value" value="GlobalMacroControlSet/float-13"/>
+				<Association key="c13.value" value="GlobalMacroControlSet/float-14"/>
+				<Association key="c14.value" value="GlobalMacroControlSet/float-15"/>
+				<Association key="c15.value" value="GlobalMacroControlSet/float-16"/>
+				<Association key="p0.value" value="GlobalMacroControlSet/float-1"/>
+				<Association key="p1.value" value="GlobalMacroControlSet/float-2"/>
+				<Association key="p2.value" value="GlobalMacroControlSet/float-3"/>
+				<Association key="p3.value" value="GlobalMacroControlSet/float-4"/>
+				<Association key="p4.value" value="GlobalMacroControlSet/float-5"/>
+				<Association key="p5.value" value="GlobalMacroControlSet/float-6"/>
+				<Association key="p6.value" value="GlobalMacroControlSet/float-7"/>
+				<Association key="p7.value" value="GlobalMacroControlSet/float-8"/>
+				<Association key="p8.value" value="GlobalMacroControlSet/float-9"/>
+				<Association key="p9.value" value="GlobalMacroControlSet/float-10"/>
+				<Association key="p10.value" value="GlobalMacroControlSet/float-11"/>
+				<Association key="p11.value" value="GlobalMacroControlSet/float-12"/>
+				<Association key="p12.value" value="GlobalMacroControlSet/float-13"/>
+				<Association key="p13.value" value="GlobalMacroControlSet/float-14"/>
+				<Association key="p14.value" value="GlobalMacroControlSet/float-15"/>
+				<Association key="p15.value" value="GlobalMacroControlSet/float-16"/>
+				<Association key="p16.value" value="GlobalMacroControlSet/bool-1"/>
+				<Association key="p17.value" value="GlobalMacroControlSet/bool-2"/>
+				<Association key="p18.value" value="GlobalMacroControlSet/bool-3"/>
+				<Association key="p19.value" value="GlobalMacroControlSet/bool-4"/>
+				<Association key="p20.value" value="GlobalMacroControlSet/bool-5"/>
+				<Association key="p21.value" value="GlobalMacroControlSet/bool-6"/>
+				<Association key="p22.value" value="GlobalMacroControlSet/bool-7"/>
+				<Association key="p23.value" value="GlobalMacroControlSet/bool-8"/>
+				<Association key="p24.value" value="GlobalMacroControlSet/bool-9"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}" friendlyName="Multi Instrument">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-1"/>
+				<Association key="c1.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-2"/>
+				<Association key="c2.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-3"/>
+				<Association key="c3.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-4"/>
+				<Association key="c4.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-5"/>
+				<Association key="c5.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-6"/>
+				<Association key="c6.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-7"/>
+				<Association key="c7.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-8"/>
+				<Association key="c16.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-x-1"/>
+				<Association key="c17.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-y-1"/>
+				<Association key="c18.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-x-2"/>
+				<Association key="c19.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-y-2"/>
+				<Association key="c20.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-1"/>
+				<Association key="c21.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-2"/>
+				<Association key="c22.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-3"/>
+				<Association key="c23.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-4"/>
+				<Association key="c24.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-5"/>
+				<Association key="c25.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-6"/>
+				<Association key="c26.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-7"/>
+				<Association key="c27.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-8"/>
+				<Association key="p0.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-1"/>
+				<Association key="p1.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-2"/>
+				<Association key="p2.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-3"/>
+				<Association key="p3.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-4"/>
+				<Association key="p4.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-5"/>
+				<Association key="p5.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-6"/>
+				<Association key="p6.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-7"/>
+				<Association key="p7.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/float-8"/>
+				<Association key="p12.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-x-1"/>
+				<Association key="p13.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-y-1"/>
+				<Association key="p14.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-x-2"/>
+				<Association key="p15.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/pad-y-2"/>
+				<Association key="p16.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-1"/>
+				<Association key="p17.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-2"/>
+				<Association key="p18.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-3"/>
+				<Association key="p19.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-4"/>
+				<Association key="p20.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-5"/>
+				<Association key="p21.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-6"/>
+				<Association key="p22.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-7"/>
+				<Association key="p23.value" value="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}/bool-8"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}" friendlyName="Ampire">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c16.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/wahamt"/>
+				<Association key="c18.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/delayFeedback"/>
+				<Association key="p14.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/delayFeedback"/>
+				<Association key="p15.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/delayMix"/>
+				<Association key="c9.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/preingainB"/>
+				<Association key="c10.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/tonelowB"/>
+				<Association key="c11.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/tonemidB"/>
+				<Association key="c12.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/tonehighB"/>
+				<Association key="c23.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp4]"/>
+				<Association key="c20.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp1]"/>
+				<Association key="c21.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp2]"/>
+				<Association key="c22.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp3]"/>
+				<Association key="c24.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp5]"/>
+				<Association key="c25.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp6]"/>
+				<Association key="c26.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp7]"/>
+				<Association key="c27.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp8]"/>
+				<Association key="c8.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.wah"/>
+				<Association key="p22.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/opt.tunerbypass"/>
+				<Association key="p16.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp1]"/>
+				<Association key="p17.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp2]"/>
+				<Association key="p18.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp3]"/>
+				<Association key="p20.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp5]"/>
+				<Association key="p21.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp6]"/>
+				<Association key="p23.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp7]"/>
+				<Association key="p24.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp8]"/>
+				<Association key="p0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/input.level"/>
+				<Association key="p1.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/output.level"/>
+				<Association key="p19.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp4]"/>
+				<Association key="c17.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.wah"/>
+				<List x:id="subdevices">
+					<SurfaceAssignmentData folder="stomp1" deviceID="{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}" friendlyName="Wah Wah"/>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp6" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp8" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{71B4D5DC-5308-4F6F-BFC7-8A2948BFEA43}" friendlyName="MCM 800">
+						<Association key="c0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.presence"/>
+						<Association key="c1.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass"/>
+						<Association key="c2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.middle"/>
+						<Association key="c3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble"/>
+						<Association key="c4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.master"/>
+						<Association key="c5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.preampvolume"/>
+						<Association key="p2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.presence"/>
+						<Association key="p3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass"/>
+						<Association key="p4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.middle"/>
+						<Association key="p5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble"/>
+						<Association key="p6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.master"/>
+						<Association key="p7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.preampvolume"/>
+						<Association key="c19.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.sensitivity"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="amp" deviceID="{4FB264B6-CE6D-48C5-BB56-3EDB89BE7725}" friendlyName="Dual Amplifier">
+						<Association key="p2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redpresence"/>
+						<Association key="p3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redmaster"/>
+						<Association key="p4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redgain"/>
+						<Association key="p5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redbass"/>
+						<Association key="p6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redmid"/>
+						<Association key="p7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redtreble"/>
+						<Association key="p8.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangepresence"/>
+						<Association key="p9.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangemaster"/>
+						<Association key="p10.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangegain"/>
+						<Association key="p11.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangebass"/>
+						<Association key="p12.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangemid"/>
+						<Association key="p13.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangetreble"/>
+						<Association key="c7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.channel"/>
+						<Association key="c0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redmaster"/>
+						<Association key="c1.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.redgain"/>
+						<Association key="c2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangemaster"/>
+						<Association key="c3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.orangegain"/>
+						<Association key="c4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.greenmaster"/>
+						<Association key="c5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.greengain"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="amp" deviceID="{3939AAE9-2EDF-477E-AC44-7F6115AA7853}" friendlyName="VC30">
+						<Association key="c0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vib_speed"/>
+						<Association key="c1.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vib_trem"/>
+						<Association key="c2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol_trem"/>
+						<Association key="c3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol_normal"/>
+						<Association key="c4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol_bril"/>
+						<Association key="c5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble"/>
+						<Association key="c6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass"/>
+						<Association key="c7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.cut"/>
+						<Association key="p2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vib_speed"/>
+						<Association key="p3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vib_trem"/>
+						<Association key="p4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol_trem"/>
+						<Association key="p5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol_normal"/>
+						<Association key="p6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol_bril"/>
+						<Association key="p7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble"/>
+						<Association key="p8.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass"/>
+						<Association key="p9.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.cut"/>
+						<Association key="c19.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.input"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="amp" deviceID="{C981653D-AE55-45B1-9711-131A129B0664}" friendlyName="Blackface Twin">
+						<Association key="c0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nvolume"/>
+						<Association key="c1.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.ntreble"/>
+						<Association key="c2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nmiddle"/>
+						<Association key="c3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nbass"/>
+						<Association key="c4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vvolume"/>
+						<Association key="c5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vtreble"/>
+						<Association key="c6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vmiddle"/>
+						<Association key="c15.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.intensity"/>
+						<Association key="c14.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.speed"/>
+						<Association key="c13.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.reverb"/>
+						<Association key="p2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nvolume"/>
+						<Association key="p3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.ntreble"/>
+						<Association key="p4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nmiddle"/>
+						<Association key="p5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nbass"/>
+						<Association key="p6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vvolume"/>
+						<Association key="p7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vtreble"/>
+						<Association key="p8.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vmiddle"/>
+						<Association key="p9.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vbass"/>
+						<Association key="p10.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.reverb"/>
+						<Association key="p11.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.speed"/>
+						<Association key="p12.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.intensity"/>
+						<Association key="c19.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.input"/>
+						<Association key="c7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.reverb"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="amp" deviceID="{DC8890A7-7563-4F94-82EF-4125CBF7FF40}" friendlyName="Amp STV">
+						<Association key="c0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol1"/>
+						<Association key="c1.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble1"/>
+						<Association key="c2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.mid1"/>
+						<Association key="c3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass1"/>
+						<Association key="c4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol2"/>
+						<Association key="c5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble2"/>
+						<Association key="c6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass2"/>
+						<Association key="p2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol1"/>
+						<Association key="p3.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble1"/>
+						<Association key="p4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.mid1"/>
+						<Association key="p5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass1"/>
+						<Association key="p6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vol2"/>
+						<Association key="p7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.treble2"/>
+						<Association key="p8.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.bass2"/>
+						<Association key="c7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.input"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+					<SurfaceAssignmentData folder="stomp6" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+					<SurfaceAssignmentData folder="cab" deviceID="{30C0DE0C-4350-0000-414D-504952450000}" friendlyName="Ampire 4x12 M65"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{753EEB12-4150-0000-414D-504952450000}"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{753EEC14-4150-0000-414D-504952450000}"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{753EEC95-4150-0000-414D-504952450000}"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{753EED97-4150-0000-414D-504952450000}"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{753EED16-4150-0000-414D-504952450000}"/>
+					<SurfaceAssignmentData folder="amp" deviceID="{753EEB93-4150-0000-414D-504952450000}"/>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+					<SurfaceAssignmentData folder="cab" deviceID="{30C0DC0B-4350-0000-414D-504952450000}" friendlyName="Ampire 2x12 Blackface"/>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+				</List>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}" friendlyName="Analog Delay">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c18.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfowidth"/>
+				<Association key="c19.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfobeatsnu"/>
+				<Association key="c16.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfowidth"/>
+				<Association key="c17.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/feedback"/>
+				<Association key="p0.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/beatsnu"/>
+				<Association key="p1.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/locut"/>
+				<Association key="p2.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/hicut"/>
+				<Association key="p3.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/feedback"/>
+				<Association key="p4.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/width"/>
+				<Association key="p5.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/inchannels"/>
+				<Association key="p6.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/saturation"/>
+				<Association key="p7.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/mix"/>
+				<Association key="p16.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/feedbackboost"/>
+				<Association key="c20.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/sync"/>
+				<Association key="p12.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/speed"/>
+				<Association key="p13.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/inertia"/>
+				<Association key="p14.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfowidth"/>
+				<Association key="p15.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfobeatsnu"/>
+				<Association key="p11.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/time"/>
+				<Association key="c0.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/beatsnu"/>
+				<Association key="c7.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/mix"/>
+				<Association key="c9.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/speed"/>
+				<Association key="c10.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/inertia"/>
+				<Association key="c11.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfowidth"/>
+				<Association key="c12.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfobeatsnu"/>
+				<Association key="c13.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfotime"/>
+				<Association key="c8.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/time"/>
+				<Association key="c1.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/feedback"/>
+				<Association key="c21.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/feedbackboost"/>
+				<Association key="c2.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfotime"/>
+				<Association key="c22.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfosync"/>
+				<Association key="c3.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/lfowidth"/>
+				<Association key="c23.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/wave"/>
+				<Association key="c4.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/hicut"/>
+				<Association key="c5.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/saturation"/>
+				<Association key="c6.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/width"/>
+				<Association key="c26.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/pingpongmode"/>
+				<Association key="c27.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/mix"/>
+				<Association key="c25.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/pingpongswap"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{BEC73D38-7954-42A0-9504-038B23046FAB}" friendlyName="Autofilter">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c16.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/cutoff"/>
+				<Association key="c17.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/reso"/>
+				<Association key="c18.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter1mix"/>
+				<Association key="c19.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter2mix"/>
+				<Association key="c20.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filterschained"/>
+				<Association key="c0.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter1type"/>
+				<Association key="c7.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/depth"/>
+				<Association key="c6.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/gain"/>
+				<Association key="p12.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/cutoff"/>
+				<Association key="p13.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/reso"/>
+				<Association key="p14.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter1mix"/>
+				<Association key="p15.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter2mix"/>
+				<Association key="p16.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filterschained"/>
+				<Association key="p17.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/envelopeauto"/>
+				<Association key="p18.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lfosync"/>
+				<Association key="p19.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/gainauto"/>
+				<Association key="p0.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter1type"/>
+				<Association key="p1.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter2typev2"/>
+				<Association key="p2.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/spread"/>
+				<Association key="p3.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/drive"/>
+				<Association key="p4.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/envelopespeed"/>
+				<Association key="p7.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/depth"/>
+				<Association key="p5.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lfobeatsnu"/>
+				<Association key="p6.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/gain"/>
+				<Association key="c26.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/gainauto"/>
+				<Association key="c25.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lfosync"/>
+				<Association key="c1.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/cutoff"/>
+				<Association key="c2.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/reso"/>
+				<Association key="c3.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/envcut"/>
+				<Association key="c4.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lfocut"/>
+				<Association key="c5.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lfobeatsnu"/>
+				<Association key="c23.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/envelopeauto"/>
+				<Association key="c11.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/envreso"/>
+				<Association key="c12.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lforeso"/>
+				<Association key="c8.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter2typev3"/>
+				<Association key="c9.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/spread"/>
+				<Association key="c10.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/filter2mix"/>
+				<Association key="c13.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/lfotype"/>
+				<Association key="c14.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/envelopespeed"/>
+				<Association key="c15.value" value="{BEC73D38-7954-42A0-9504-038B23046FAB}/drive"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{BFBEA41B-679A-41F2-AACA-ED9D51137412}" friendlyName="Beat Delay">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c18.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/locut"/>
+				<Association key="c19.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/hicut"/>
+				<Association key="c7.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/mix"/>
+				<Association key="p0.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/cross"/>
+				<Association key="p1.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/inpan"/>
+				<Association key="p2.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/beatsnu"/>
+				<Association key="p3.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/offset"/>
+				<Association key="p14.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/locut"/>
+				<Association key="p15.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/hicut"/>
+				<Association key="p7.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/mix"/>
+				<Association key="p4.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/feedback"/>
+				<Association key="p5.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/width"/>
+				<Association key="p16.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/feedback"/>
+				<Association key="c4.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/pingfactor"/>
+				<Association key="c0.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/beatsnu"/>
+				<Association key="c1.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/feedback"/>
+				<Association key="c6.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/hicut"/>
+				<Association key="c5.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/locut"/>
+				<Association key="c3.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/width"/>
+				<Association key="c2.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/pingpongmode"/>
+				<Association key="c22.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/pingpongswap"/>
+				<Association key="c17.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/feedback"/>
+				<Association key="c16.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/width"/>
+				<Association key="c8.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/offset"/>
+				<Association key="c10.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/cross"/>
+				<Association key="c11.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/inpan"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}" friendlyName="Channel Strip">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/lcfreq"/>
+				<Association key="c20.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/lcactive"/>
+				<Association key="c7.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain"/>
+				<Association key="c27.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/autogain"/>
+				<Association key="c16.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/compress"/>
+				<Association key="c18.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/expand"/>
+				<Association key="p0.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/lcfreq"/>
+				<Association key="p16.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/lcactive"/>
+				<Association key="p17.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/speed"/>
+				<Association key="p12.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain1"/>
+				<Association key="p13.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain2"/>
+				<Association key="p14.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain3"/>
+				<Association key="p4.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/freq3"/>
+				<Association key="p3.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/freq2"/>
+				<Association key="p2.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/freq1"/>
+				<Association key="p11.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain"/>
+				<Association key="p22.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/autogain"/>
+				<Association key="p20.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/adaptiveq"/>
+				<Association key="p6.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/compress"/>
+				<Association key="p7.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/expand"/>
+				<Association key="p1.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/speed"/>
+				<Association key="c1.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/compress"/>
+				<Association key="c2.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/expand"/>
+				<Association key="c21.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/speed"/>
+				<Association key="c3.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain1"/>
+				<Association key="c4.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain2"/>
+				<Association key="c5.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/freq2"/>
+				<Association key="c6.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/gain3"/>
+				<Association key="c24.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/adaptiveq"/>
+				<Association key="c26.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/freq3"/>
+				<Association key="c23.value" value="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}/freq1"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}" friendlyName="Chorus">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c19.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/hifreq"/>
+				<Association key="c0.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/delay0"/>
+				<Association key="c2.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfospeed"/>
+				<Association key="c3.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfowidth"/>
+				<Association key="c18.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lofreq"/>
+				<Association key="c4.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfoShape"/>
+				<Association key="c7.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/depth"/>
+				<Association key="p15.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/hifreq"/>
+				<Association key="p0.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/delay0"/>
+				<Association key="p2.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfospeed"/>
+				<Association key="p3.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfowidth"/>
+				<Association key="p14.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lofreq"/>
+				<Association key="p4.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfoShape"/>
+				<Association key="p1.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/speed"/>
+				<Association key="p7.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/depth"/>
+				<Association key="p5.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/voices"/>
+				<Association key="p6.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/stereo"/>
+				<Association key="c27.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/voices"/>
+				<Association key="c21.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/spreadmode"/>
+				<Association key="c1.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/width"/>
+				<Association key="c20.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/mode"/>
+				<Association key="c5.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lofreq"/>
+				<Association key="c6.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/hifreq"/>
+				<Association key="c24.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/lfoShape"/>
+				<Association key="c17.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/width"/>
+				<Association key="c16.value" value="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}/depth"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}" friendlyName="Compressor">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c18.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainfreqlow"/>
+				<Association key="c19.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainfreqhigh"/>
+				<Association key="c1.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/ratio"/>
+				<Association key="c7.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/gain"/>
+				<Association key="c27.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/auto"/>
+				<Association key="c6.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/mix"/>
+				<Association key="p7.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/ratio"/>
+				<Association key="p6.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/threshold"/>
+				<Association key="p11.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/mix"/>
+				<Association key="p9.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/release"/>
+				<Association key="p8.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/attack"/>
+				<Association key="p10.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/gain"/>
+				<Association key="p20.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/autospeed"/>
+				<Association key="p16.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/internalsidechain"/>
+				<Association key="p17.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainlisten"/>
+				<Association key="p0.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainfreqlow"/>
+				<Association key="p1.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainfreqhigh"/>
+				<Association key="p5.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/ingain"/>
+				<Association key="p12.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/knee"/>
+				<Association key="p18.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/lookAhead"/>
+				<Association key="p22.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/auto"/>
+				<Association key="p21.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/adaptive"/>
+				<Association key="p19.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/linked"/>
+				<Association key="c0.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/threshold"/>
+				<Association key="c2.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/attack"/>
+				<Association key="c3.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/release"/>
+				<Association key="c22.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/autospeed"/>
+				<Association key="c23.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/adaptive"/>
+				<Association key="c21.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/knee"/>
+				<Association key="c4.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainfreqlow"/>
+				<Association key="c5.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainfreqhigh"/>
+				<Association key="c24.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/internalsidechain"/>
+				<Association key="c25.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/sidechainlisten"/>
+				<Association key="c16.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/threshold"/>
+				<Association key="c17.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/ratio"/>
+				<Association key="c20.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/lookAhead"/>
+				<Association key="c26.value" value="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}/swapfreqs"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}" friendlyName="Dual Pan">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/inbalance"/>
+				<Association key="p0.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/inbalance"/>
+				<Association key="p1.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/panlaw"/>
+				<Association key="p2.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/leftpan"/>
+				<Association key="p3.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/rightpan"/>
+				<Association key="p18.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/link"/>
+				<Association key="c8.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/inbalance"/>
+				<Association key="c9.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/panlaw"/>
+				<Association key="c10.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/leftpan"/>
+				<Association key="c11.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/rightpan"/>
+				<Association key="c12.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/linkedwidth"/>
+				<Association key="c13.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/linkedpan"/>
+				<Association key="c1.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/leftpan"/>
+				<Association key="c2.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/rightpan"/>
+				<Association key="c20.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/panlaw"/>
+				<Association key="c16.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/inbalance"/>
+				<Association key="c18.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/linkedpan"/>
+				<Association key="c19.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/linkedwidth"/>
+				<Association key="c23.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/link"/>
+				<Association key="c3.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/linkedpan"/>
+				<Association key="c4.value" value="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}/linkedwidth"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}" friendlyName="Expander">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/highthresh"/>
+				<Association key="p19.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/internalside"/>
+				<Association key="p20.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/intlisten"/>
+				<Association key="p2.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/highthresh"/>
+				<Association key="p3.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/range"/>
+				<Association key="p7.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/ratio"/>
+				<Association key="p4.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/attack"/>
+				<Association key="p5.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/release"/>
+				<Association key="p24.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/lookahead"/>
+				<Association key="p16.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/internalside"/>
+				<Association key="p17.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/intlisten"/>
+				<Association key="p0.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/filterlow"/>
+				<Association key="p1.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/filterhigh"/>
+				<Association key="c20.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/lookahead"/>
+				<Association key="c1.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/ratio"/>
+				<Association key="c2.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/attack"/>
+				<Association key="c3.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/release"/>
+				<Association key="c5.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/filterlow"/>
+				<Association key="c6.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/filterhigh"/>
+				<Association key="c25.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/internalside"/>
+				<Association key="c26.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/intlisten"/>
+				<Association key="c27.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/swapfreqs"/>
+				<Association key="c4.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/range"/>
+				<Association key="c21.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/duck"/>
+				<Association key="c16.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/highthresh"/>
+				<Association key="c17.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/ratio"/>
+				<Association key="c18.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/filterlow"/>
+				<Association key="c19.value" value="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}/filterhigh"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}" friendlyName="Fat Channel">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/filter.hpf"/>
+				<Association key="p1.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/filter.hpf"/>
+				<Association key="p18.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.on"/>
+				<Association key="p22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/limit.limiteron"/>
+				<Association key="p11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/limit.threshold"/>
+				<Association key="p2.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.threshold"/>
+				<Association key="p3.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.range"/>
+				<Association key="p4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.attack"/>
+				<Association key="p5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.release"/>
+				<Association key="p0.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.keyfilter"/>
+				<Association key="p16.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.keylisten"/>
+				<Association key="p19.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.expander"/>
+				<Association key="c20.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.on"/>
+				<Association key="c21.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.expander"/>
+				<Association key="c1.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/gate.threshold"/>
+				<Association key="c27.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/limit.limiteron"/>
+				<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/limit.threshold"/>
+				<List x:id="subdevices">
+					<SurfaceAssignmentData folder="comp" deviceID="{1F831EC1-B8AC-4EE9-AD53-54227AF53D58}" friendlyName="StudioLive FET Compressor">
+						<Association key="p20.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="p7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="p8.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="p9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="p6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.input"/>
+						<Association key="p10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.output"/>
+						<Association key="p21.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c2.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.input"/>
+						<Association key="c3.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.output"/>
+						<Association key="c23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="c17.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.input"/>
+						<Association key="c16.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{983BF658-011F-4E91-827F-6A0F66A40D89}" friendlyName="StudioLive EQ">
+						<Association key="p23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="p12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain1"/>
+						<Association key="p13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain2"/>
+						<Association key="p14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain3"/>
+						<Association key="p15.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain4"/>
+						<Association key="c16.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq2"/>
+						<Association key="c18.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq3"/>
+						<Association key="c19.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain3"/>
+						<Association key="c17.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain2"/>
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqbandon2"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqbandon3"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqq2"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqq3"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{A0A8A068-14F0-4B04-BB6F-AF8329D0E8EE}" friendlyName="StudioLive EQ XT 4 Band">
+						<Association key="p23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="p12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain1"/>
+						<Association key="p13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain2"/>
+						<Association key="p14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain3"/>
+						<Association key="p15.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain4"/>
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqbandon4"/>
+						<Association key="c19.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain2"/>
+						<Association key="c18.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq2"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain2"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq2"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain4"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqbandon2"/>
+						<Association key="c8.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain1"/>
+						<Association key="c9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq1"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain2"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq2"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain3"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq3"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqgain4"/>
+						<Association key="c15.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqfreq4"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{C0730CBB-5135-4558-9222-C40BDBA036ED}" friendlyName="StudioLive Passive EQ">
+						<Association key="p23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="p12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bboost"/>
+						<Association key="p13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.batten"/>
+						<Association key="p14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.mboost"/>
+						<Association key="p15.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.hatten"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bboost"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.batten"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.mboost"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bfreq"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.mfreq"/>
+						<Association key="c19.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bboost"/>
+						<Association key="c18.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.mboost"/>
+						<Association key="c8.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bboost"/>
+						<Association key="c9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.batten"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bfreq"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bbwidth"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.mboost"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.hatten"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.mfreq"/>
+						<Association key="c15.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.hsfreq"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{E1C5E024-C5CD-473C-B08A-6EC177812E01}" friendlyName="StudioLive Vintage EQ">
+						<Association key="p23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="p12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="p13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidgain"/>
+						<Association key="p14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.himidgain"/>
+						<Association key="p15.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.higain"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidgain"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidfreq"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.himidgain"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.himidfreq"/>
+						<Association key="c19.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidgain"/>
+						<Association key="c18.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidfreq"/>
+						<Association key="c8.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowfreq"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidgain"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidfreq"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.himidgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.himidfreq"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.higain"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{7F8A4262-D377-48E3-9D48-15D82C400A71}" friendlyName="StudioLive Tube Compressor">
+						<Association key="p20.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="p6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="p7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.peak"/>
+						<Association key="p21.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="p9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c2.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c3.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.peak"/>
+						<Association key="c23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.mode"/>
+						<Association key="c17.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c16.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.peak"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{AFEE6684-5985-4D29-81E6-661F4F07C2CE}" friendlyName="StudioLive Compressor">
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="p20.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="p6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="p7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="p8.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="p9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+						<Association key="p10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="p21.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.softknee"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.automode"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{870D04F7-212E-4F9C-ADBB-39A97216433F}" friendlyName="StudioLive Compressor XT">
+						<Association key="p20.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="p6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="p7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="p8.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="p9.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+						<Association key="p10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="p21.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.softknee"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c2.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c3.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="c23.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.automode"/>
+						<Association key="c16.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c17.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{FEF33155-7A9E-4F4E-B209-CFE86DDAFC8E}" friendlyName="StudioLive Brit Comp">
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.makeup"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{C38F9E1A-0127-4BB8-9377-40C545A50328}" friendlyName="StudioLive Classic Compressor">
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{F0BD22BB-5FE8-4279-8B05-D089B4D7B0BB}" friendlyName="StudioLive Comp 160">
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.compression"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{CBDD0DD3-C5EF-495A-B4C7-92EC5E8FE146}" friendlyName="StudioLive Alpine EQ-550">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.midgain"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highgain"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.filter"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{23F9C088-08BE-4259-9DCE-38720AE5DE73}" friendlyName="StudioLive Everest C100A">
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gainred"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{85DD5632-A536-49FF-894A-9329FC1124E4}" friendlyName="StudioLive FC-670">
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.timeconstant"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{6A372968-AFA7-4A3F-805D-A09A4AE15777}" friendlyName="StudioLive RC500 Comp">
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.makeup"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{AF35E448-40EC-4C5A-A05C-B40A5AC0A42F}" friendlyName="StudioLive VT1 Comp">
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="comp" deviceID="{C3C32BBC-42E2-41A7-99B5-EA1D62F897B5}" friendlyName="StudioLive The Tube P1B">
+						<Association key="c25.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keylisten"/>
+						<Association key="c22.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.on"/>
+						<Association key="c7.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.keyfilter"/>
+						<Association key="c6.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.gain"/>
+						<Association key="c5.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.ratio"/>
+						<Association key="c4.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.threshold"/>
+						<Association key="c10.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.attack"/>
+						<Association key="c11.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/comp.release"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{B4D3497E-4B1C-4CFA-B859-A918C17CDA03}" friendlyName="StudioLive Baxandall EQ">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highgain"/>
+						<Association key="c16.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowcut"/>
+						<Association key="c17.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowfreq"/>
+						<Association key="c18.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highfreq"/>
+						<Association key="c19.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highcut"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{63ADDF9B-0EC7-430A-AEBE-62B4CB5FBBD6}" friendlyName="StudioLive RC500 EQ">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.midgain"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highgain"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{03819C3F-DC16-4B7B-B521-14B4042192F2}" friendlyName="StudioLive Solar 69">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.bassgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.midgain"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.10kGain"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.phase"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{09B38119-3945-40D1-BA33-2FA19620DAB0}" friendlyName="StudioLive The Tube Midrange EQ">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.midgain"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highgain"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{4635DE88-C3D2-4645-BC4D-8DFD116D6914}" friendlyName="StudioLive Vintage 3-band EQ">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.midgain"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highgain"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.phase"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="eq" deviceID="{A0FAF452-D664-4BA2-90FC-6BD4AC469B29}" friendlyName="StudioLive VT1 EQ">
+						<Association key="c24.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.eqallon"/>
+						<Association key="c26.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.hightype"/>
+						<Association key="c12.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowgain"/>
+						<Association key="c13.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.lowmidgain"/>
+						<Association key="c14.value" value="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}/eq.highmidgain"/>
+					</SurfaceAssignmentData>
+				</List>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{AC97B789-7D8F-4585-A308-56C98374BD4C}" friendlyName="Flanger">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="p0.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/lfowidth"/>
+				<Association key="p2.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/lfospeed"/>
+				<Association key="p1.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/beatsnu"/>
+				<Association key="p17.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/sync"/>
+				<Association key="p3.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/feedback"/>
+				<Association key="p4.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/speed"/>
+				<Association key="p5.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/depth"/>
+				<Association key="c0.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/feedback"/>
+				<Association key="c1.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/speed"/>
+				<Association key="c2.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/lfowidth"/>
+				<Association key="c3.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/lfospeed"/>
+				<Association key="c7.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/depth"/>
+				<Association key="c4.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/beatsnu"/>
+				<Association key="c24.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/sync"/>
+				<Association key="c17.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/feedback"/>
+				<Association key="c16.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/speed"/>
+				<Association key="c19.value" value="{AC97B789-7D8F-4585-A308-56C98374BD4C}/depth"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}" friendlyName="Gate">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/highthresh"/>
+				<Association key="c6.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/filterlow"/>
+				<Association key="c7.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/filterhigh"/>
+				<Association key="p2.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/highthresh"/>
+				<Association key="p6.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/hysteresis"/>
+				<Association key="p3.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/range"/>
+				<Association key="p4.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/attack"/>
+				<Association key="p5.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/release"/>
+				<Association key="p16.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/internalside"/>
+				<Association key="p17.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/intlisten"/>
+				<Association key="p0.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/filterlow"/>
+				<Association key="p1.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/filterhigh"/>
+				<Association key="p7.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/hold"/>
+				<Association key="p22.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/sendtrig"/>
+				<Association key="p24.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/lookahead"/>
+				<Association key="c20.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/lookahead"/>
+				<Association key="c1.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/range"/>
+				<Association key="c2.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/attack"/>
+				<Association key="c3.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/release"/>
+				<Association key="c26.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/internalside"/>
+				<Association key="c27.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/intlisten"/>
+				<Association key="c21.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/duck"/>
+				<Association key="c4.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/hold"/>
+				<Association key="c25.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/sendtrig"/>
+				<Association key="c5.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/trignote"/>
+				<Association key="c17.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/range"/>
+				<Association key="c16.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/highthresh"/>
+				<Association key="c19.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/filterlow"/>
+				<Association key="c18.value" value="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}/filterhigh"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{C80A56CC-912C-416C-834B-68A9B1A83420}" friendlyName="Groove Delay">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats1"/>
+				<Association key="c1.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats2"/>
+				<Association key="c2.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats3"/>
+				<Association key="c7.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/mix"/>
+				<Association key="c13.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan3"/>
+				<Association key="c14.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out4"/>
+				<Association key="c20.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter1"/>
+				<Association key="c21.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter2"/>
+				<Association key="c22.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter3"/>
+				<Association key="c23.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter4"/>
+				<Association key="c18.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/cutoff2"/>
+				<Association key="c19.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/reso2"/>
+				<Association key="p1.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/mix"/>
+				<Association key="p0.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beatlength"/>
+				<Association key="p11.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/feedback"/>
+				<Association key="p2.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats1"/>
+				<Association key="p3.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/groove1"/>
+				<Association key="p4.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out1"/>
+				<Association key="p5.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan1"/>
+				<Association key="p6.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats2"/>
+				<Association key="p7.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/groove2"/>
+				<Association key="p8.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out2"/>
+				<Association key="p9.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan2"/>
+				<Association key="p12.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats3"/>
+				<Association key="p13.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/groove3"/>
+				<Association key="p14.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out3"/>
+				<Association key="p15.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan3"/>
+				<Association key="p10.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out4"/>
+				<Association key="p21.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter4"/>
+				<Association key="p23.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter3"/>
+				<Association key="p20.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter2"/>
+				<Association key="p18.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/filter1"/>
+				<Association key="c6.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/feedback"/>
+				<Association key="c5.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beatlength"/>
+				<Association key="c3.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/beats4"/>
+				<Association key="c4.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/lfobeatsnu"/>
+				<Association key="c24.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/lfosync"/>
+				<Association key="c17.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/mix"/>
+				<Association key="c16.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/feedback"/>
+				<Association key="c8.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out1"/>
+				<Association key="c9.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan1"/>
+				<Association key="c10.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out2"/>
+				<Association key="c11.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan2"/>
+				<Association key="c12.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/out3"/>
+				<Association key="c15.value" value="{C80A56CC-912C-416C-834B-68A9B1A83420}/pan4"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{61B18D53-26FA-4220-8614-89944A1990EC}" friendlyName="Limiter">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/ingain"/>
+				<Association key="c1.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/ceiling"/>
+				<Association key="c2.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/thresholdrel"/>
+				<Association key="p0.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/ingain"/>
+				<Association key="p1.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/ceiling"/>
+				<Association key="p2.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/thresholdrel"/>
+				<Association key="p19.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/clipper"/>
+				<Association key="p11.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/thresholdrel"/>
+				<Association key="p5.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/release"/>
+				<Association key="c22.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/highqual"/>
+				<Association key="c3.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/attack"/>
+				<Association key="c4.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/release"/>
+				<Association key="c20.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/abmode"/>
+				<Association key="c21.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/clipper"/>
+				<Association key="c16.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/ceiling"/>
+				<Association key="c17.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/thresholdrel"/>
+				<Association key="c19.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/attack"/>
+				<Association key="c18.value" value="{61B18D53-26FA-4220-8614-89944A1990EC}/release"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}" friendlyName="Mixtool">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/gain"/>
+				<Association key="p0.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/gain"/>
+				<Association key="p16.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/dcblock"/>
+				<Association key="p17.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/phaseflipleft"/>
+				<Association key="p18.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/phaseflipright"/>
+				<Association key="p19.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/channelflip"/>
+				<Association key="p20.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/mstransform"/>
+				<Association key="c20.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/channelflip"/>
+				<Association key="c21.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/mstransform"/>
+				<Association key="c22.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/dcblock"/>
+				<Association key="c23.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/phaseflipleft"/>
+				<Association key="c24.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/phaseflipright"/>
+				<Association key="c16.value" value="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}/gain"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}" friendlyName="Mixverb">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/predelay"/>
+				<Association key="c1.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/size"/>
+				<Association key="c2.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/damp"/>
+				<Association key="c23.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/gateactive"/>
+				<Association key="c3.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/highthresh"/>
+				<Association key="c4.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/gaterel"/>
+				<Association key="c5.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/width"/>
+				<Association key="c6.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/mix"/>
+				<Association key="p0.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/predelay"/>
+				<Association key="p1.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/size"/>
+				<Association key="p6.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/mix"/>
+				<Association key="p18.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/gateactive"/>
+				<Association key="p2.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/highthresh"/>
+				<Association key="p5.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/gaterel"/>
+				<Association key="p3.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/damp"/>
+				<Association key="p4.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/width"/>
+				<Association key="p20.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/width"/>
+				<Association key="c17.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/predelay"/>
+				<Association key="c16.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/size"/>
+				<Association key="c19.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/mix"/>
+				<Association key="c18.value" value="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}/width"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}" friendlyName="Multiband Dynamics">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="p16.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband1"/>
+				<Association key="p17.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband2"/>
+				<Association key="p18.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband3"/>
+				<Association key="p19.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband4"/>
+				<Association key="p20.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband5"/>
+				<Association key="p22.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/autospeed"/>
+				<Association key="p0.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gain"/>
+				<Association key="p1.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/knee"/>
+				<Association key="p2.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/corner1"/>
+				<Association key="p6.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/corner1"/>
+				<Association key="p11.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/corner3"/>
+				<Association key="p15.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/corner4"/>
+				<Association key="p3.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband2"/>
+				<Association key="p4.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband2"/>
+				<Association key="p5.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gainband2"/>
+				<Association key="p7.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband3"/>
+				<Association key="p8.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband3"/>
+				<Association key="p9.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gainband3"/>
+				<Association key="p10.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/hithreshband3"/>
+				<Association key="p12.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband4"/>
+				<Association key="p13.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband4"/>
+				<Association key="p14.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gainband4"/>
+				<Association key="c7.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/mix"/>
+				<Association key="c6.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gain"/>
+				<Association key="c0.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband1"/>
+				<Association key="c1.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband2"/>
+				<Association key="c2.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband3"/>
+				<Association key="c3.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband4"/>
+				<Association key="c4.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/lowthreshband5"/>
+				<Association key="c5.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/knee"/>
+				<Association key="c17.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gain"/>
+				<Association key="c16.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/mix"/>
+				<Association key="c20.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband1"/>
+				<Association key="c21.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband2"/>
+				<Association key="c22.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband3"/>
+				<Association key="c23.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband4"/>
+				<Association key="c24.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband5"/>
+				<Association key="c8.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband1"/>
+				<Association key="c9.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband2"/>
+				<Association key="c10.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband3"/>
+				<Association key="c11.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband3"/>
+				<Association key="c12.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/ratioband5"/>
+				<Association key="c26.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/bandmetering"/>
+				<Association key="c25.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/autospeed"/>
+				<Association key="c27.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/gang"/>
+				<Association key="c14.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/viewrangelow"/>
+				<Association key="c15.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/viewrangehigh"/>
+				<Association key="c19.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/viewrangelow"/>
+				<Association key="c18.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/viewrangehigh"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}" friendlyName="Open AIR">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/predelayoffset"/>
+				<Association key="c1.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/lengthoffset"/>
+				<Association key="c2.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/crossfeed"/>
+				<Association key="c3.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/crossdelay"/>
+				<Association key="c4.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/crossasym"/>
+				<Association key="c6.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/gain"/>
+				<Association key="c5.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/erlrbalance"/>
+				<Association key="c7.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/mix"/>
+				<Association key="p0.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/predelayoffset"/>
+				<Association key="p1.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/lengthoffset"/>
+				<Association key="p2.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/crossfeed"/>
+				<Association key="p3.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/crossdelay"/>
+				<Association key="p4.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/crossasym"/>
+				<Association key="p6.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/gain"/>
+				<Association key="p5.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/erlrbalance"/>
+				<Association key="p7.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/mix"/>
+				<Association key="c17.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/erlrbalance"/>
+				<Association key="c16.value" value="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}/gain"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{0E890247-B39D-41AE-A9A3-647C30BB5C16}" friendlyName="Phaser">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="p0.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/rangeMin"/>
+				<Association key="p1.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/rangeMax"/>
+				<Association key="p2.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/speed"/>
+				<Association key="p3.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/beatsnu"/>
+				<Association key="p18.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/sync"/>
+				<Association key="p4.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/feedback"/>
+				<Association key="p5.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/stages"/>
+				<Association key="p6.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/spread"/>
+				<Association key="p7.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/depth"/>
+				<Association key="c0.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/stages"/>
+				<Association key="c1.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/speed"/>
+				<Association key="c7.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/depth"/>
+				<Association key="c6.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/spread"/>
+				<Association key="c5.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/feedback"/>
+				<Association key="c4.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/lfoWidth"/>
+				<Association key="c3.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/lfoCenter"/>
+				<Association key="c2.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/beatsnu"/>
+				<Association key="c22.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/sync"/>
+				<Association key="c23.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/lfoMode"/>
+				<Association key="c24.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/soft"/>
+				<Association key="c16.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/stages"/>
+				<Association key="c17.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/feedback"/>
+				<Association key="c18.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/spread"/>
+				<Association key="c19.value" value="{0E890247-B39D-41AE-A9A3-647C30BB5C16}/depth"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{073C4094-E062-4FB5-8328-74608DD1A3A4}" friendlyName="Pro EQ">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="p0.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lcfreq"/>
+				<Association key="p1.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hcfreq"/>
+				<Association key="p2.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lffreq"/>
+				<Association key="p3.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmffreq"/>
+				<Association key="p4.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmffreq"/>
+				<Association key="p5.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hffreq"/>
+				<Association key="p6.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lfq"/>
+				<Association key="p7.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmfq"/>
+				<Association key="p8.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmfq"/>
+				<Association key="p9.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mffreq"/>
+				<Association key="p10.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mfgain"/>
+				<Association key="p11.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/gain"/>
+				<Association key="p12.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lfgain"/>
+				<Association key="p13.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmfgain"/>
+				<Association key="p14.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmfgain"/>
+				<Association key="p15.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hfgain"/>
+				<Association key="p16.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lcactive"/>
+				<Association key="p17.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hcactive"/>
+				<Association key="p18.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lfactive"/>
+				<Association key="p19.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmfactive"/>
+				<Association key="p21.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mfactive"/>
+				<Association key="p22.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/autogain"/>
+				<Association key="p23.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmfactive"/>
+				<Association key="p24.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hfactive"/>
+				<Association key="c7.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hcfreq"/>
+				<Association key="c20.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/linearphaseactive"/>
+				<Association key="c0.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/linearphasefreq"/>
+				<Association key="c21.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lcactive"/>
+				<Association key="c1.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lcfreq"/>
+				<Association key="c23.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmfactive"/>
+				<Association key="c24.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mfactive"/>
+				<Association key="c25.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmfactive"/>
+				<Association key="c26.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hfactive"/>
+				<Association key="c27.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hcactive"/>
+				<Association key="c22.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lfgain"/>
+				<Association key="c2.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lfgain"/>
+				<Association key="c3.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmfgain"/>
+				<Association key="c4.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mfgain"/>
+				<Association key="c5.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmfgain"/>
+				<Association key="c6.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hfgain"/>
+				<Association key="c16.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hcfreq"/>
+				<Association key="c17.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lcfreq"/>
+				<Association key="c19.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mfgain"/>
+				<Association key="c18.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mffreq"/>
+				<Association key="c8.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/linearphasesoft"/>
+				<Association key="c9.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lcslope"/>
+				<Association key="c10.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lffreq"/>
+				<Association key="c11.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/lmffreq"/>
+				<Association key="c12.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/mffreq"/>
+				<Association key="c13.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hmffreq"/>
+				<Association key="c14.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hffreq"/>
+				<Association key="c15.value" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}/hcslope"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{EB8C4ED5-615C-44EA-8F93-757181647AC8}" friendlyName="RedlightDist">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/ingain"/>
+				<Association key="c1.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/drive"/>
+				<Association key="c7.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/outgain"/>
+				<Association key="c6.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/mix"/>
+				<Association key="p0.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/ingain"/>
+				<Association key="p1.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/drive"/>
+				<Association key="p2.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/low"/>
+				<Association key="p3.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/high"/>
+				<Association key="p5.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/bias"/>
+				<Association key="p4.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/stages"/>
+				<Association key="p7.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/outgain"/>
+				<Association key="p6.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/mix"/>
+				<Association key="c2.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/bias"/>
+				<Association key="c5.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/high"/>
+				<Association key="c4.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/low"/>
+				<Association key="c3.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/type"/>
+				<Association key="c23.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/stages"/>
+				<Association key="c19.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/low"/>
+				<Association key="c18.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/high"/>
+				<Association key="c17.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/bias"/>
+				<Association key="c16.value" value="{EB8C4ED5-615C-44EA-8F93-757181647AC8}/mix"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{29C71194-B29A-40C0-9A35-9053DB6F596C}" friendlyName="Room Reverb">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c7.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/mix"/>
+				<Association key="c1.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/lengthoffset"/>
+				<Association key="c19.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/plane"/>
+				<Association key="c17.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/asymmetry"/>
+				<Association key="c16.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/distance"/>
+				<Association key="c18.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomtype"/>
+				<Association key="p6.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/erlrbalance"/>
+				<Association key="p7.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/mix"/>
+				<Association key="p1.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/lengthoffset"/>
+				<Association key="p0.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/predelayoffset"/>
+				<Association key="p2.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomsize"/>
+				<Association key="p5.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/damping"/>
+				<Association key="p3.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomwidth"/>
+				<Association key="p4.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomheight"/>
+				<Association key="p15.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/plane"/>
+				<Association key="p13.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/asymmetry"/>
+				<Association key="p12.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/distance"/>
+				<Association key="p14.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomtype"/>
+				<Association key="c2.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/erlrbalance"/>
+				<Association key="c3.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomsize"/>
+				<Association key="c4.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomwidth"/>
+				<Association key="c5.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomheight"/>
+				<Association key="c6.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/damping"/>
+				<Association key="c27.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/perfmode"/>
+				<Association key="c23.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/roomtype"/>
+				<Association key="c8.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/population"/>
+				<Association key="c9.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/smoothness"/>
+				<Association key="c10.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/distance"/>
+				<Association key="c11.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/asymmetry"/>
+				<Association key="c12.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/plane"/>
+				<Association key="c0.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/predelayoffset"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}" friendlyName="Tone Generator">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c22.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/modtype"/>
+				<Association key="c23.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/sweeptype"/>
+				<Association key="c2.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/modlen"/>
+				<Association key="c3.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/shift"/>
+				<Association key="c4.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/modtargetfreq"/>
+				<Association key="c7.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/level"/>
+				<Association key="c6.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/outmode"/>
+				<Association key="p0.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/freq"/>
+				<Association key="p17.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/antialias"/>
+				<Association key="p1.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/wave"/>
+				<Association key="p18.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/modtype"/>
+				<Association key="p19.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/sweeptype"/>
+				<Association key="p2.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/modlen"/>
+				<Association key="p3.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/shift"/>
+				<Association key="p4.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/modtargetfreq"/>
+				<Association key="p7.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/level"/>
+				<Association key="p6.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/outmode"/>
+				<Association key="p22.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/outmode"/>
+				<Association key="c0.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/wave"/>
+				<Association key="c1.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/freq"/>
+				<Association key="c20.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/antialias"/>
+				<Association key="c17.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/level"/>
+				<Association key="c16.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/freq"/>
+				<Association key="c18.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/wave"/>
+				<Association key="c27.value" value="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}/outmode"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{B34E203A-82A9-4D07-83AD-691860665E9A}" friendlyName="Tricomp">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/ingain"/>
+				<Association key="c7.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/outgain"/>
+				<Association key="c6.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/mix"/>
+				<Association key="c5.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/saturation"/>
+				<Association key="c16.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/low"/>
+				<Association key="c17.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/high"/>
+				<Association key="c18.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/lowcorner"/>
+				<Association key="c19.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/highcorner"/>
+				<Association key="p0.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/ingain"/>
+				<Association key="p7.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/outgain"/>
+				<Association key="p6.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/mix"/>
+				<Association key="p5.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/saturation"/>
+				<Association key="p3.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/knee"/>
+				<Association key="p4.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/speed"/>
+				<Association key="p2.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/compress"/>
+				<Association key="p12.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/low"/>
+				<Association key="p13.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/high"/>
+				<Association key="p14.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/lowcorner"/>
+				<Association key="p15.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/highcorner"/>
+				<Association key="p20.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/auto"/>
+				<Association key="c4.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/release"/>
+				<Association key="c24.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/auto"/>
+				<Association key="c25.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/attack"/>
+				<Association key="c1.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/compress"/>
+				<Association key="c2.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/low"/>
+				<Association key="c3.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/high"/>
+				<Association key="c10.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/lowcorner"/>
+				<Association key="c11.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/highcorner"/>
+				<Association key="c22.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/lowcorner"/>
+				<Association key="c23.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/highcorner"/>
+				<Association key="c26.value" value="{B34E203A-82A9-4D07-83AD-691860665E9A}/mix"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{345D7412-977D-4364-A79B-5981F249AAC3}" friendlyName="X-Trem">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/depth"/>
+				<Association key="c1.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfobeatsnu"/>
+				<Association key="c2.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfospeed"/>
+				<Association key="c20.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/mode"/>
+				<Association key="c3.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfotype"/>
+				<Association key="p0.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/depth"/>
+				<Association key="p1.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfobeatsnu"/>
+				<Association key="p17.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfosync"/>
+				<Association key="p2.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfospeed"/>
+				<Association key="p16.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/mode"/>
+				<Association key="p3.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfotype"/>
+				<Association key="c21.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfosync"/>
+				<Association key="c23.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfoflip"/>
+				<Association key="c17.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/depth"/>
+				<Association key="c16.value" value="{345D7412-977D-4364-A79B-5981F249AAC3}/lfobeatsnu"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}" friendlyName="Mojito">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c4.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvAttack"/>
+				<Association key="c5.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvDecay"/>
+				<Association key="c6.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvSustain"/>
+				<Association key="c7.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvRelease"/>
+				<Association key="c3.value" value="Control/7"/>
+				<Association key="c16.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/fltCutoff"/>
+				<Association key="c17.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/fltResonance"/>
+				<Association key="c18.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/fltEnvelope"/>
+				<Association key="c19.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/lfoFilter"/>
+				<Association key="c0.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/tune"/>
+				<Association key="c1.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/sawSquareOsc1"/>
+				<Association key="c2.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/pulseWidthOsc1"/>
+				<Association key="p4.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvAttack"/>
+				<Association key="p5.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvDecay"/>
+				<Association key="p6.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvSustain"/>
+				<Association key="p7.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/ampEnvRelease"/>
+				<Association key="p3.value" value="Control/7"/>
+				<Association key="p12.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/fltCutoff"/>
+				<Association key="p13.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/fltResonance"/>
+				<Association key="p14.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/fltEnvelope"/>
+				<Association key="p15.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/lfoFilter"/>
+				<Association key="p0.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/tune"/>
+				<Association key="p1.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/sawSquareOsc1"/>
+				<Association key="p2.value" value="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}/pulseWidthOsc1"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}" friendlyName="Presence">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c20.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.active"/>
+				<Association key="c0.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.cutoff"/>
+				<Association key="c1.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.resonance"/>
+				<Association key="c2.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.attack"/>
+				<Association key="c3.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.decay"/>
+				<Association key="c4.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.sustain"/>
+				<Association key="c5.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.release"/>
+				<Association key="c7.value" value="Control/7"/>
+				<Association key="c27.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/monophone"/>
+				<Association key="c6.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/voiceAmp.velo-amount"/>
+				<Association key="p12.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.attack"/>
+				<Association key="p13.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.decay"/>
+				<Association key="p14.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.sustain"/>
+				<Association key="p15.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsrMain.release"/>
+				<Association key="p11.value" value="Control/7"/>
+				<Association key="p22.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/monophone"/>
+				<Association key="p6.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.cutoff"/>
+				<Association key="p7.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.resonance"/>
+				<Association key="p8.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsr2.attack"/>
+				<Association key="p9.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.compress"/>
+				<Association key="p10.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.velo-to-cutoff"/>
+				<Association key="p20.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.active"/>
+				<Association key="p16.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/modFx.active"/>
+				<Association key="p0.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/modFx.depth"/>
+				<Association key="p1.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/voiceAmp.velo-amount"/>
+				<Association key="p18.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.active"/>
+				<Association key="p19.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.active"/>
+				<Association key="p4.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.size"/>
+				<Association key="p5.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.mix"/>
+				<Association key="p2.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.beats"/>
+				<Association key="p3.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.mix"/>
+				<Association key="c17.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.beats"/>
+				<Association key="c16.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.mix"/>
+				<Association key="c18.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.mix"/>
+				<Association key="c19.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.size"/>
+				<Association key="c8.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/adsr2.attack"/>
+				<Association key="c9.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.compress"/>
+				<Association key="c10.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/filter.velo-to-cutoff"/>
+				<Association key="c23.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/modFx.active"/>
+				<Association key="c24.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.active"/>
+				<Association key="c11.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/modFx.depth"/>
+				<Association key="c12.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.beats"/>
+				<Association key="c13.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/delayFx.mix"/>
+				<Association key="c26.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.active"/>
+				<Association key="c14.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.size"/>
+				<Association key="c15.value" value="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}/verbFx.mix"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{BC7319ED-C40D-3C40-8015-34502212C1B8}" friendlyName="Bitcrusher">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c7.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/mix"/>
+				<Association key="c24.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/setView"/>
+				<Association key="p0.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/drive"/>
+				<Association key="p1.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/bitDepth"/>
+				<Association key="p2.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/downsample"/>
+				<Association key="p5.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clipping"/>
+				<Association key="p6.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/gain"/>
+				<Association key="p7.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/mix"/>
+				<Association key="p17.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/bitDepthDirt"/>
+				<Association key="p18.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/downsampleZero"/>
+				<Association key="p22.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/autoGain"/>
+				<Association key="p4.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clippingMode"/>
+				<Association key="p20.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/setView"/>
+				<Association key="c0.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/bitDepth"/>
+				<Association key="c1.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/downsample"/>
+				<Association key="c2.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/drive"/>
+				<Association key="c3.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clipping"/>
+				<Association key="c20.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/bitDepthDirt"/>
+				<Association key="c21.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/downsampleZero"/>
+				<Association key="c26.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/autoGain"/>
+				<Association key="c6.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/gain"/>
+				<Association key="c4.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clippingMode"/>
+				<Association key="c22.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clippingMode"/>
+				<Association key="c17.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/bitDepth"/>
+				<Association key="c16.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/downsample"/>
+				<Association key="c19.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/mix"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}" friendlyName="VT1">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c7.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/master.volume"/>
+				<Association key="p15.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.higainVT"/>
+				<Association key="p14.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.himidgain"/>
+				<Association key="p13.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lomidgain"/>
+				<Association key="p12.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.logainVT"/>
+				<Association key="p24.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.hitypeVT"/>
+				<Association key="p23.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lotypeVT"/>
+				<Association key="p11.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/master.volume"/>
+				<Association key="p10.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.makeup"/>
+				<Association key="p6.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.thresholdVT"/>
+				<Association key="p7.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.ratioVT"/>
+				<Association key="p8.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.attackVT"/>
+				<Association key="p9.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.releaseVT"/>
+				<Association key="p20.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.onVT"/>
+				<Association key="p21.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.eqcompVT"/>
+				<Association key="p22.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.onVT"/>
+				<Association key="p5.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.hifreqVT"/>
+				<Association key="p4.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.himidfreq"/>
+				<Association key="p3.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lomidfreq"/>
+				<Association key="p2.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lofreqVT"/>
+				<Association key="p17.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.phase"/>
+				<Association key="p1.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.hpffreq"/>
+				<Association key="p16.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.hpfon"/>
+				<Association key="p0.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.finegain"/>
+				<Association key="c20.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.hpfon"/>
+				<Association key="c21.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.phase"/>
+				<Association key="c6.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.makeup"/>
+				<Association key="c0.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.hpffreq"/>
+				<Association key="c1.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.gainselect"/>
+				<Association key="c2.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.threshold"/>
+				<Association key="c3.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.ratio"/>
+				<Association key="c22.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.on"/>
+				<Association key="c4.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.logain"/>
+				<Association key="c5.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.higain"/>
+				<Association key="c24.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lotype"/>
+				<Association key="c23.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.eqcomp"/>
+				<Association key="c26.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.on"/>
+				<Association key="c8.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.impselect"/>
+				<Association key="c9.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/pre.gainselect"/>
+				<Association key="c10.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.attack"/>
+				<Association key="c11.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.release"/>
+				<Association key="c12.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lofreq"/>
+				<Association key="c13.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.hifreq"/>
+				<Association key="c14.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lomidgain"/>
+				<Association key="c15.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.lomidfreq"/>
+				<Association key="c17.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.threshold"/>
+				<Association key="c16.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/comp.ratio"/>
+				<Association key="c19.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.himidgain"/>
+				<Association key="c18.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.himidfreq"/>
+				<Association key="c25.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/eq.hitype"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{03518B56-3075-4B49-91B5-5489CA84175F}" friendlyName="RC500">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="p8.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.attackRC"/>
+				<Association key="p6.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.thresholdRC"/>
+				<Association key="p10.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.gain"/>
+				<Association key="p11.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/master.volume"/>
+				<Association key="p9.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.releaseRC"/>
+				<Association key="p17.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.phase"/>
+				<Association key="p16.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.hpfon"/>
+				<Association key="p24.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.hitypeRC"/>
+				<Association key="p23.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.lotypeRC"/>
+				<Association key="p20.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.onRC"/>
+				<Association key="p22.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.onRC"/>
+				<Association key="p5.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.hifreqRC"/>
+				<Association key="p15.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.higainRC"/>
+				<Association key="p3.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.midfreq"/>
+				<Association key="p13.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.midgain"/>
+				<Association key="p2.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.lofreqRC"/>
+				<Association key="p12.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.logainRC"/>
+				<Association key="c21.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.hpfon"/>
+				<Association key="c22.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.phase"/>
+				<Association key="c15.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.logainRC"/>
+				<Association key="c20.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.on"/>
+				<Association key="c26.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.lotype"/>
+				<Association key="c0.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.threshold"/>
+				<Association key="c1.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.attack"/>
+				<Association key="c2.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.release"/>
+				<Association key="c3.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.gain"/>
+				<Association key="c7.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/master.volume"/>
+				<Association key="c4.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.higain"/>
+				<Association key="c5.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.midgain"/>
+				<Association key="c6.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.logain"/>
+				<Association key="c24.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.on"/>
+				<Association key="c25.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.hitype"/>
+				<Association key="c16.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/comp.threshold"/>
+				<Association key="c17.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/pre.gain"/>
+				<Association key="c19.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.midgain"/>
+				<Association key="c18.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.midfreq"/>
+				<Association key="c12.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.hifreq"/>
+				<Association key="c13.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.midfreq"/>
+				<Association key="c14.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/eq.lofreq"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}" friendlyName="Mai Tai">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="p12.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.attack"/>
+				<Association key="p13.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.decay"/>
+				<Association key="p14.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.sustain"/>
+				<Association key="p15.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.release"/>
+				<Association key="p11.value" value="Control/7"/>
+				<Association key="p22.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/monophone"/>
+				<Association key="p6.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.cutoff"/>
+				<Association key="p8.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsr2.attack"/>
+				<Association key="p18.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.active"/>
+				<Association key="p3.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.octaverange"/>
+				<Association key="p19.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.active"/>
+				<Association key="p4.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.octaverange"/>
+				<Association key="p5.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.type"/>
+				<Association key="p2.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.type"/>
+				<Association key="p16.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/noise.active"/>
+				<Association key="p0.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/noise.color"/>
+				<Association key="p7.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.resonance"/>
+				<Association key="p9.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.compress"/>
+				<Association key="p10.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.velo-to-cutoff"/>
+				<Association key="p20.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.active"/>
+				<Association key="c16.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.type"/>
+				<Association key="c17.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.octaverange"/>
+				<Association key="c19.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.octaverange"/>
+				<Association key="c18.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.type"/>
+				<Association key="p1.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/voiceAmp.velo-amount"/>
+				<Association key="c20.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.active"/>
+				<Association key="c0.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.cutoff"/>
+				<Association key="c2.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.attack"/>
+				<Association key="c3.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.decay"/>
+				<Association key="c4.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.sustain"/>
+				<Association key="c5.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsrMain.release"/>
+				<Association key="c6.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/voiceAmp.velo-amount"/>
+				<Association key="c7.value" value="Control/7"/>
+				<Association key="c21.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.active"/>
+				<Association key="c22.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.active"/>
+				<Association key="c23.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/noise.active"/>
+				<Association key="c27.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/monophone"/>
+				<Association key="c10.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.compress"/>
+				<Association key="c11.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.velo-to-cutoff"/>
+				<Association key="c12.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.type"/>
+				<Association key="c13.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc1.octaverange"/>
+				<Association key="c14.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.type"/>
+				<Association key="c15.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/osc2.octaverange"/>
+				<Association key="c8.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/noise.color"/>
+				<Association key="c1.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/filter.resonance"/>
+				<Association key="c9.value" value="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}/adsr2.attack"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{072BAC58-596A-4D6A-8F01-978B96E4BF36}" friendlyName="Rotor">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drive"/>
+				<Association key="c1.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornQ"/>
+				<Association key="c2.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/micDistance"/>
+				<Association key="c3.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/balance"/>
+				<Association key="c4.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/spread"/>
+				<Association key="c14.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimFast"/>
+				<Association key="c16.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimSlow"/>
+				<Association key="c17.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimSlow"/>
+				<Association key="c18.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimFast"/>
+				<Association key="c19.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimFast"/>
+				<Association key="p0.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drive"/>
+				<Association key="p1.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornQ"/>
+				<Association key="p2.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/micDistance"/>
+				<Association key="p3.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/balance"/>
+				<Association key="p4.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/spread"/>
+				<Association key="p6.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimSlow"/>
+				<Association key="p7.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimFast"/>
+				<Association key="p8.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimSlow"/>
+				<Association key="p9.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimFast"/>
+				<Association key="p20.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/turning"/>
+				<Association key="p21.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/speed"/>
+				<Association key="c20.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/turning"/>
+				<Association key="c5.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimSlow"/>
+				<Association key="c21.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/speed"/>
+				<Association key="c22.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/ampModel"/>
+				<Association key="c6.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimSlow"/>
+				<Association key="c25.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimFast"/>
+				<Association key="c26.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/drumSpeedTrimFast"/>
+				<Association key="c13.value" value="{072BAC58-596A-4D6A-8F01-978B96E4BF36}/hornSpeedTrimFast"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{12345678-90AB-CDEF-1234-567890ABCDEF}">
+		<List x:id="pages">
+			<SurfaceAssignmentPage/>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}" friendlyName="CTC-1">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c0.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/drive"/>
+				<Association key="c2.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/noise"/>
+				<Association key="c4.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/crosstalk"/>
+				<Association key="c5.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/character"/>
+				<Association key="c6.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/master"/>
+				<Association key="c7.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampType"/>
+				<Association key="c13.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/tolerance"/>
+				<Association key="c15.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampType"/>
+				<Association key="c16.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/drive"/>
+				<Association key="c17.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/crosstalk"/>
+				<Association key="c20.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampOn"/>
+				<Association key="c21.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampBoost"/>
+				<Association key="c22.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/noiseOn"/>
+				<Association key="c23.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/noiseGateOn"/>
+				<Association key="c24.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/crosstalkOn"/>
+				<Association key="c26.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/compensation"/>
+				<Association key="c27.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/economy"/>
+				<Association key="p0.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampType"/>
+				<Association key="p1.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/tolerance"/>
+				<Association key="p3.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/drive"/>
+				<Association key="p8.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/noise"/>
+				<Association key="p11.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/crosstalk"/>
+				<Association key="p13.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/character"/>
+				<Association key="p15.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/master"/>
+				<Association key="p16.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/compensation"/>
+				<Association key="p17.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/economy"/>
+				<Association key="p18.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampOn"/>
+				<Association key="p19.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/preampBoost"/>
+				<Association key="p20.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/noiseOn"/>
+				<Association key="p21.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/noiseGateOn"/>
+				<Association key="p22.value" value="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}/crosstalkOn"/>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+	<SurfaceDeviceAssignment deviceID="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}" friendlyName="Pedalboard">
+		<List x:id="pages">
+			<SurfaceAssignmentPage>
+				<Association key="c20.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp1]"/>
+				<Association key="c21.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp2]"/>
+				<Association key="c22.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp3]"/>
+				<Association key="c23.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp4]"/>
+				<Association key="c24.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp5]"/>
+				<Association key="c25.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp6]"/>
+				<Association key="c26.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp7]"/>
+				<Association key="c27.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp8]"/>
+				<Association key="p16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp1]"/>
+				<Association key="p17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp2]"/>
+				<Association key="p18.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp3]"/>
+				<Association key="p19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp4]"/>
+				<Association key="p20.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp5]"/>
+				<Association key="p21.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp6]"/>
+				<Association key="p23.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp7]"/>
+				<Association key="p24.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp8]"/>
+				<Association key="p0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.wah"/>
+				<Association key="c15.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.speed"/>
+				<Association key="c14.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.wah"/>
+				<Association key="c18.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.speed"/>
+				<List x:id="subdevices">
+					<SurfaceAssignmentData folder="stomp1" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.vol"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.tone"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.sustain"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.tone"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.sustain"/>
+						<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.vol"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp6" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+					<SurfaceAssignmentData folder="stomp8" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.lowcut"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.highcut"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.feedback"/>
+						<Association key="c3.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.mix"/>
+						<Association key="c4.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.beats"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.mix"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.feedback"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}" friendlyName="Equalizer">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level1"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level2"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level3"/>
+						<Association key="c3.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level4"/>
+						<Association key="c4.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level5"/>
+						<Association key="c5.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level6"/>
+						<Association key="c6.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level7"/>
+						<Association key="c7.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.range"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level1"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level3"/>
+						<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.range"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.distortion"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.tone"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.volume"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.tone"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.distortion"/>
+						<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.volume"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}" friendlyName="Modulation">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.type"/>
+						<Association key="c7.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.depth"/>
+						<Association key="c6.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.lfowidth"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.feedback"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.depth"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.lfowidth"/>
+						<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.feedback"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.inputSensitivity"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.inputLevel"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.chorusIntensity"/>
+						<Association key="c3.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.vibratoDepth"/>
+						<Association key="c7.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.vibratoMode"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.vibratoDepth"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.chorusIntensity"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{ACBEC854-7CE9-4A78-9BF1-53E12CF49B04}" friendlyName="Pan">
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.beats"/>
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.depth"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.depth"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.size"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.mix"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.lowcut"/>
+						<Association key="c4.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.damp"/>
+						<Association key="c3.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.highcut"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.size"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.mix"/>
+						<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.damp"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{23EF7C12-6BCE-4AC2-B518-4401F7145847}" friendlyName="Tremolo">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.depth"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.beats"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.depth"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.drive"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.tone"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level"/>
+						<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.level"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.tone"/>
+						<Association key="c16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.drive"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{40FC219D-6D44-4DC3-9D88-1D40D2821F3C}" friendlyName="Tube Driver">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.drive"/>
+						<Association key="c17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.drive"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp1" deviceID="{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}" friendlyName="Wah Wah">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.character"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}" friendlyName="Wah Wah"/>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay">
+						<Association key="c0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp2.lowcut"/>
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp2.highcut"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1">
+						<Association key="c1.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp2.inputLevel"/>
+						<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp2.chorusIntensity"/>
+						<Association key="c3.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp2.vibratoDepth"/>
+						<Association key="c4.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp2.vibratoRate"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety">
+						<Association key="c3.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp3.speed"/>
+					</SurfaceAssignmentData>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{ACBEC854-7CE9-4A78-9BF1-53E12CF49B04}" friendlyName="Pan"/>
+					<SurfaceAssignmentData folder="stomp6" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+					<SurfaceAssignmentData folder="stomp8" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+					<SurfaceAssignmentData folder="stomp8" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer"/>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}" friendlyName="Equalizer"/>
+					<SurfaceAssignmentData folder="stomp2" deviceID="{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}" friendlyName="Equalizer"/>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}" friendlyName="Modulation"/>
+					<SurfaceAssignmentData folder="stomp3" deviceID="{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}" friendlyName="Modulation"/>
+					<SurfaceAssignmentData folder="stomp4" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+					<SurfaceAssignmentData folder="stomp8" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT"/>
+					<SurfaceAssignmentData folder="stomp5" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT"/>
+					<SurfaceAssignmentData folder="stomp6" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+					<SurfaceAssignmentData folder="stomp7" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+					<SurfaceAssignmentData folder="stomp6" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT"/>
+				</List>
+			</SurfaceAssignmentPage>
+		</List>
+	</SurfaceDeviceAssignment>
+</SurfaceData>

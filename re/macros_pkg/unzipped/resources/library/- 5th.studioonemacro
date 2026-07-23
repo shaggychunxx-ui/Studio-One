@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="- 5th" group="Transpose" description="">
+	<CommandElement category="Musical Functions" name="Transpose">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="-7"/>
+		<CommandArgument name="SetValue" value="60"/>
+	</CommandElement>
+</Macro>

@@ -1,0 +1,803 @@
+{
+  "ts": "2026-07-23T13:58:14",
+  "static": {
+    "events": [
+      {
+        "id": 16975,
+        "hex": "0x424F",
+        "tag_be": "BO",
+        "name": "11BinaryEvent"
+      },
+      {
+        "id": 17227,
+        "hex": "0x434B",
+        "tag_be": "CK",
+        "name": "17MessageChunkEvent"
+      },
+      {
+        "id": 17473,
+        "hex": "0x4441",
+        "tag_be": "DA",
+        "name": "19DiscoveryAliveEvent"
+      },
+      {
+        "id": 17474,
+        "hex": "0x4442",
+        "tag_be": "DB",
+        "name": "10DebugEvent"
+      },
+      {
+        "id": 17484,
+        "hex": "0x444C",
+        "tag_be": "DL",
+        "name": "19DiscoveryLeaveEvent"
+      },
+      {
+        "id": 17489,
+        "hex": "0x4451",
+        "tag_be": "DQ",
+        "name": "19DiscoveryQueryEvent"
+      },
+      {
+        "id": 17745,
+        "hex": "0x4551",
+        "tag_be": "EQ",
+        "name": "19ExtensionQueryEvent"
+      },
+      {
+        "id": 17985,
+        "hex": "0x4641",
+        "tag_be": "FA",
+        "name": "14FileAbortEvent"
+      },
+      {
+        "id": 17988,
+        "hex": "0x4644",
+        "tag_be": "FD",
+        "name": "13FileDataEvent"
+      },
+      {
+        "id": 18002,
+        "hex": "0x4652",
+        "tag_be": "FR",
+        "name": "16FileRequestEvent"
+      },
+      {
+        "id": 18003,
+        "hex": "0x4653",
+        "tag_be": "FS",
+        "name": "17FileDataRateEvent"
+      },
+      {
+        "id": 19021,
+        "hex": "0x4A4D",
+        "tag_be": "JM",
+        "name": "19EncodedMessageEventILi19021EE"
+      },
+      {
+        "id": 19265,
+        "hex": "0x4B41",
+        "tag_be": "KA",
+        "name": "14KeepAliveEvent"
+      },
+      {
+        "id": 19537,
+        "hex": "0x4C51",
+        "tag_be": "LQ",
+        "name": "18LoopbackQueryEvent"
+      },
+      {
+        "id": 19538,
+        "hex": "0x4C52",
+        "tag_be": "LR",
+        "name": "18LoopbackReplyEvent"
+      },
+      {
+        "id": 19777,
+        "hex": "0x4D41",
+        "tag_be": "MA",
+        "name": "21MultiMidiMessageEvent"
+      },
+      {
+        "id": 19778,
+        "hex": "0x4D42",
+        "tag_be": "MB",
+        "name": "11MeterEvent8"
+      },
+      {
+        "id": 19785,
+        "hex": "0x4D49",
+        "tag_be": "MI",
+        "name": "15MusicInputEvent"
+      },
+      {
+        "id": 19789,
+        "hex": "0x4D4D",
+        "tag_be": "MM",
+        "name": "16MidiMessageEvent"
+      },
+      {
+        "id": 19794,
+        "hex": "0x4D52",
+        "tag_be": "MR",
+        "name": "18SurroundMeterEvent"
+      },
+      {
+        "id": 19795,
+        "hex": "0x4D53",
+        "tag_be": "MS",
+        "name": "12MeterEvent16"
+      },
+      {
+        "id": 20047,
+        "hex": "0x4E4F",
+        "tag_be": "NO",
+        "name": "9NoOpEvent"
+      },
+      {
+        "id": 20547,
+        "hex": "0x5043",
+        "tag_be": "PC",
+        "name": "15ParamColorEvent"
+      },
+      {
+        "id": 20549,
+        "hex": "0x5045",
+        "tag_be": "PE",
+        "name": "14ParamEditEvent"
+      },
+      {
+        "id": 20553,
+        "hex": "0x5049",
+        "tag_be": "PI",
+        "name": "19ParamIncrementEvent"
+      },
+      {
+        "id": 20556,
+        "hex": "0x504C",
+        "tag_be": "PL",
+        "name": "20ParamStringListEvent"
+      },
+      {
+        "id": 20557,
+        "hex": "0x504D",
+        "tag_be": "PM",
+        "name": "14ParamModeEvent"
+      },
+      {
+        "id": 20562,
+        "hex": "0x5052",
+        "tag_be": "PR",
+        "name": "15ParamRangeEvent"
+      },
+      {
+        "id": 20563,
+        "hex": "0x5053",
+        "tag_be": "PS",
+        "name": "16ParamStringEvent"
+      },
+      {
+        "id": 20566,
+        "hex": "0x5056",
+        "tag_be": "PV",
+        "name": "15ParamValueEvent"
+      },
+      {
+        "id": 21324,
+        "hex": "0x534C",
+        "tag_be": "SL",
+        "name": "18MidiLongSysexEvent"
+      },
+      {
+        "id": 21331,
+        "hex": "0x5353",
+        "tag_be": "SS",
+        "name": "19MidiShortSysexEvent"
+      },
+      {
+        "id": 21571,
+        "hex": "0x5443",
+        "tag_be": "TC",
+        "name": "13TimeCodeEvent"
+      },
+      {
+        "id": 21826,
+        "hex": "0x5542",
+        "tag_be": "UB",
+        "name": "19EncodedMessageEventILi21826EE"
+      },
+      {
+        "id": 21837,
+        "hex": "0x554D",
+        "tag_be": "UM",
+        "name": "15UDPMappingEvent"
+      },
+      {
+        "id": 23106,
+        "hex": "0x5A42",
+        "tag_be": "ZB",
+        "name": "19EncodedMessageEventILi23106EE"
+      },
+      {
+        "id": 23117,
+        "hex": "0x5A4D",
+        "tag_be": "ZM",
+        "name": "19EncodedMessageEventILi23117EE"
+      }
+    ],
+    "ucnet_dll": [
+      "UDP mapping for %s set to %d",
+      "Can't send periodic event to %s!!!",
+      "Outgoing socket is in error state!!!",
+      "Incoming socket is in error state!!!",
+      "Failed to bind listening socket (error code %d)",
+      "Started listening on TCP port %d (%d sockets)",
+      "TCP listen socket(s) rebuild, reason is %s!",
+      "UC Discovery sending query event to %s",
+      "Adding server via UDP discovery %s : tcp %d udp %d (alive event)",
+      "Server name changed via UDP discovery %s : %s (alive event)",
+      "Server flags changed via UDP discovery %s : 0x%08x (alive event)",
+      "Removing server via UDP discovery %s : tcp %d udp %d (leave event)",
+      "UC Discovery reply to query event to %s",
+      "Sending file transfer request %d from %d to %d",
+      "Accepted file transfer request %d from %d to %d",
+      "Canceling file transfer request %d from %d to %d",
+      "File transfer %d removed - File transfer failed with error FileDataEvent::kFailed",
+      "File transfer %d removed - FileDataEvent with error status received.",
+      "File transfer %d removed - FileAbortEvent received.",
+      "File transfer %d removed - TIMED OUT!",
+      "Canceling file transfer %d on shutdown (from %d to %d)",
+      "Enabled UDP multicast on official port %d (%d sockets)",
+      "UDP multicast group registration pending",
+      "Local UDP port bound to %d (%d sockets)",
+      "Pending UDP multicast group registration succeeded!",
+      "UDP multicast socket(s) rebuild, reason is %s!",
+      "UDP unicast socket(s) rebuild, reason is %s!",
+      "Event too large!!!",
+      "Sending events to network before shutdown",
+      "Server \"%s\" (id = \"%s\") resolved at host \"%s\", tcp %d udp %d",
+      "UCGetFileTransferManager",
+      "UnmapViewOfFile",
+      "CreateFileMappingA",
+      "OpenFileMappingA",
+      "MapViewOfFile",
+      "GetSystemTimeAsFileTime"
+    ],
+    "remoteservice": [
+      "SlotRemoteFX",
+      "RemoteFX",
+      "editorParam",
+      "remotefx",
+      "DAWRemote",
+      "SimpleDAWRemote",
+      "dawremote.xml",
+      "remoteservice.clients",
+      "remotesupport",
+      "remoteservice",
+      "remotesupport.clients",
+      "SessionInfo",
+      "session",
+      "Remote Control Support",
+      "Support for remote control apps via UCNET",
+      "UCNET Remote",
+      "device/remotedevice.png",
+      "device/remotedevice.surfacedata",
+      "device/remotedevice.txt",
+      "RemoteDevice::EditorWrapper",
+      "device/remotedevice.surface.xml",
+      "RemoteDeviceEditor",
+      "Remote",
+      "Remote Control Support User Option",
+      "RemoteUserOption",
+      "ParameterData",
+      "ParamRenamed",
+      "ParamCaptured",
+      "ParamUndelivered",
+      "ParamEditGrouped",
+      "SetRecentParam",
+      "paramSelected",
+      "RemoteBank",
+      "RemoteAllBank",
+      "modeParam",
+      "paramName",
+      "Parameter",
+      "RemoteComponent",
+      "Subscribe",
+      "Unsubscribe",
+      "uc:Param",
+      "uc:ParamList",
+      "uc:Parameters",
+      "uc:foreachparam",
+      "private-params",
+      "paramlist",
+      "uc:Param.type",
+      "uc:Param.flags",
+      "compressed",
+      "AliasParam",
+      "original: Parameter",
+      "syncProxyParameter",
+      "MultiParamProxyHandler",
+      "ParamContainer",
+      "addParam",
+      "param: Parameter",
+      "FloatParam",
+      "IntParam",
+      "StringParam",
+      "ListParam",
+      "MenuParam",
+      "CommandParam",
+      "ColorParam",
+      "hasParam[",
+      "paramValue[",
+      "paramMin[",
+      "paramEnabled[",
+      "paramEditable[",
+      "paramMax[",
+      "findParameter",
+      "ScrollParam",
+      "PaletteParam",
+      "ParamCurve",
+      "E:\\.jenkins\\workspace\\win\\presonus\\branches\\studioone_6_6_1\\build\\cmake\\win\\x64\\Release\\Plugins\\remoteservice.pdb",
+      "remoteservice.dll",
+      "   namespace=\"Presonus:DAWRemote\"",
+      "   localization=\"DAWRemote\">",
+      "<uc:StringList id=\"EmptyParamList\">",
+      "<uc:Parameters>",
+      "<uc:ParamList id=\"Transport\">"
+    ],
+    "mapping_candidates": [
+      "UCNETLocalDiscoveryRegistry",
+      "Support for remote control apps via UCNET",
+      "UCNET Remote",
+      "UCNET:%s",
+      "Package:SharedLocation",
+      "Translation:SharedTableID",
+      "DAW controls available via UCNET (see also remotedevice.surface.",
+      "Support for remote control apps via UCNET. This device is added "
+    ],
+    "daw_paths_sample": [
+      "transport/start",
+      "transport/stop",
+      "transport/record",
+      "transport/loop",
+      "transport/tempo",
+      "transport/returnToZero",
+      "metronome/clickOn",
+      "mixer/anySolo",
+      "mixer/anyMute",
+      "mixer/focus/path",
+      "document/title",
+      "mixer/channel/ch1/volume",
+      "mixer/channel/ch1/mute",
+      "mixer/channel/ch1/solo",
+      "mixer/channel/ch1/pan",
+      "mixer/channel/ch1/selected",
+      "mixer/channel/ch1/recordArmed",
+      "mixer/channel/ch1/monitor",
+      "mixer/channel/ch1/label",
+      "mixer/channel/ch2/volume",
+      "mixer/channel/ch2/mute",
+      "mixer/channel/ch2/solo",
+      "mixer/channel/ch2/pan",
+      "mixer/channel/ch2/selected",
+      "mixer/channel/ch2/recordArmed",
+      "mixer/channel/ch2/monitor",
+      "mixer/channel/ch2/label",
+      "mixer/channel/ch3/volume",
+      "mixer/channel/ch3/mute",
+      "mixer/channel/ch3/solo",
+      "mixer/channel/ch3/pan",
+      "mixer/channel/ch3/selected",
+      "mixer/channel/ch3/recordArmed",
+      "mixer/channel/ch3/monitor",
+      "mixer/channel/ch3/label",
+      "mixer/channel/ch4/volume",
+      "mixer/channel/ch4/mute",
+      "mixer/channel/ch4/solo",
+      "mixer/channel/ch4/pan",
+      "mixer/channel/ch4/selected",
+      "mixer/channel/ch4/recordArmed",
+      "mixer/channel/ch4/monitor",
+      "mixer/channel/ch4/label",
+      "mixer/channel/ch5/volume",
+      "mixer/channel/ch5/mute",
+      "mixer/channel/ch5/solo",
+      "mixer/channel/ch5/pan",
+      "mixer/channel/ch5/selected",
+      "mixer/channel/ch5/recordArmed",
+      "mixer/channel/ch5/monitor",
+      "mixer/channel/ch5/label",
+      "mixer/channel/ch6/volume",
+      "mixer/channel/ch6/mute",
+      "mixer/channel/ch6/solo",
+      "mixer/channel/ch6/pan",
+      "mixer/channel/ch6/selected",
+      "mixer/channel/ch6/recordArmed",
+      "mixer/channel/ch6/monitor",
+      "mixer/channel/ch6/label",
+      "mixer/channel/ch7/volume",
+      "mixer/channel/ch7/mute",
+      "mixer/channel/ch7/solo",
+      "mixer/channel/ch7/pan",
+      "mixer/channel/ch7/selected",
+      "mixer/channel/ch7/recordArmed",
+      "mixer/channel/ch7/monitor",
+      "mixer/channel/ch7/label",
+      "mixer/channel/ch8/volume",
+      "mixer/channel/ch8/mute",
+      "mixer/channel/ch8/solo",
+      "mixer/channel/ch8/pan",
+      "mixer/channel/ch8/selected",
+      "mixer/channel/ch8/recordArmed",
+      "mixer/channel/ch8/monitor",
+      "mixer/channel/ch8/label",
+      "mixer/channel/ch9/volume",
+      "mixer/channel/ch9/mute",
+      "mixer/channel/ch9/solo",
+      "mixer/channel/ch9/pan",
+      "mixer/channel/ch9/selected",
+      "mixer/channel/ch9/recordArmed",
+      "mixer/channel/ch9/monitor",
+      "mixer/channel/ch9/label",
+      "mixer/channel/ch10/volume",
+      "mixer/channel/ch10/mute",
+      "mixer/channel/ch10/solo",
+      "mixer/channel/ch10/pan",
+      "mixer/channel/ch10/selected",
+      "mixer/channel/ch10/recordArmed",
+      "mixer/channel/ch10/monitor",
+      "mixer/channel/ch10/label",
+      "mixer/channel/ch11/volume",
+      "mixer/channel/ch11/mute",
+      "mixer/channel/ch11/solo",
+      "mixer/channel/ch11/pan",
+      "mixer/channel/ch11/selected",
+      "mixer/channel/ch11/recordArmed",
+      "mixer/channel/ch11/monitor",
+      "mixer/channel/ch11/label",
+      "mixer/channel/ch12/volume",
+      "mixer/channel/ch12/mute",
+      "mixer/channel/ch12/solo",
+      "mixer/channel/ch12/pan",
+      "mixer/channel/ch12/selected",
+      "mixer/channel/ch12/recordArmed",
+      "mixer/channel/ch12/monitor",
+      "mixer/channel/ch12/label",
+      "mixer/channel/ch13/volume",
+      "mixer/channel/ch13/mute",
+      "mixer/channel/ch13/solo",
+      "mixer/channel/ch13/pan",
+      "mixer/channel/ch13/selected",
+      "mixer/channel/ch13/recordArmed",
+      "mixer/channel/ch13/monitor",
+      "mixer/channel/ch13/label",
+      "mixer/channel/ch14/volume",
+      "mixer/channel/ch14/mute",
+      "mixer/channel/ch14/solo",
+      "mixer/channel/ch14/pan",
+      "mixer/channel/ch14/selected",
+      "mixer/channel/ch14/recordArmed",
+      "mixer/channel/ch14/monitor",
+      "mixer/channel/ch14/label",
+      "mixer/channel/ch15/volume",
+      "mixer/channel/ch15/mute",
+      "mixer/channel/ch15/solo",
+      "mixer/channel/ch15/pan",
+      "mixer/channel/ch15/selected",
+      "mixer/channel/ch15/recordArmed",
+      "mixer/channel/ch15/monitor",
+      "mixer/channel/ch15/label",
+      "mixer/channel/ch16/volume",
+      "mixer/channel/ch16/mute",
+      "mixer/channel/ch16/solo",
+      "mixer/channel/ch16/pan",
+      "mixer/channel/ch16/selected",
+      "mixer/channel/ch16/recordArmed",
+      "mixer/channel/ch16/monitor",
+      "mixer/channel/ch16/label",
+      "controls/c0/value",
+      "surface/c0/value",
+      "controls/c1/value",
+      "surface/c1/value",
+      "controls/c2/value",
+      "surface/c2/value",
+      "controls/c3/value",
+      "surface/c3/value",
+      "controls/c4/value",
+      "surface/c4/value",
+      "controls/c5/value",
+      "surface/c5/value",
+      "controls/c6/value",
+      "surface/c6/value",
+      "controls/c7/value",
+      "surface/c7/value",
+      "controls/c8/value",
+      "surface/c8/value",
+      "controls/c9/value",
+      "surface/c9/value",
+      "controls/c10/value",
+      "surface/c10/value",
+      "controls/c11/value",
+      "surface/c11/value",
+      "controls/c12/value",
+      "surface/c12/value",
+      "controls/c13/value",
+      "surface/c13/value",
+      "controls/c14/value",
+      "surface/c14/value",
+      "controls/c15/value",
+      "surface/c15/value"
+    ]
+  },
+  "live": {
+    "servers": [
+      {
+        "name": "Studio One/6.6.1.99821 Win x64",
+        "host": "10.10.10.1",
+        "tcp_port": 56721,
+        "udp_reply_port": 53044,
+        "id": "joc3krytki7gpvyy.studioapp6",
+        "flags": 107,
+        "endpoint": "10.10.10.1:56721",
+        "source_ips": [
+          "10.10.10.1",
+          "192.168.1.116",
+          "127.0.0.1"
+        ]
+      }
+    ],
+    "tcp_probes": [
+      {
+        "name": "empty",
+        "sent": 0,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "UC_ver",
+        "sent": 4,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "DA_announce",
+        "sent": 55,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "KA",
+        "sent": 8,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "LQ",
+        "sent": 10,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "EQ",
+        "sent": 18,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "UM",
+        "sent": 10,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "EM_xml",
+        "sent": 42,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "PV_start",
+        "sent": 26,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "PV_start2",
+        "sent": 34,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "BO_xml",
+        "sent": 42,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "xml_raw",
+        "sent": 32,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le32_DA",
+        "sent": 59,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le32_KA",
+        "sent": 12,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le32_EM",
+        "sent": 46,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le32i_DA",
+        "sent": 59,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be32_DA",
+        "sent": 59,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be32_KA",
+        "sent": 12,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be32_EM",
+        "sent": 46,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be32i_DA",
+        "sent": 59,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le16_DA",
+        "sent": 57,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le16_KA",
+        "sent": 10,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le16_EM",
+        "sent": 44,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "le16i_DA",
+        "sent": 57,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be16_DA",
+        "sent": 57,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be16_KA",
+        "sent": 10,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be16_EM",
+        "sent": 44,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "be16i_DA",
+        "sent": 57,
+        "hello": 0,
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      }
+    ],
+    "udp_probes": [
+      {
+        "name": "UC",
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "KA",
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "UM",
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      },
+      {
+        "name": "DA",
+        "resp": 0,
+        "hex": "",
+        "error": ""
+      }
+    ],
+    "tcp_hits": []
+  }
+}

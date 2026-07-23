@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Full Arrange Align" group="Align" description="">
+	<CommandElement category="Transport" name="Return to Zero"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Arranger" name="Goto Next Section"/>
+	<CommandElement category="Track" name="Add Instrument Track">
+		<CommandArgument name="Name" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Undo"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Edit" name="Select All"/>
+	<CommandElement category="Transport" name="Loop Selection Snapped">
+		<CommandArgument name="Activate" value=""/>
+	</CommandElement>
+	<CommandElement category="Marker" name="Set Start and End to Selection"/>
+	<CommandElement category="Zoom" name="Zoom Full">
+		<CommandArgument name="State" value="1"/>
+	</CommandElement>
+</Macro>

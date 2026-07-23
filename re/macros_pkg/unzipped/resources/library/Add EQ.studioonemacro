@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Add EQ" group="Hotkey" description="">
+	<CommandElement category="Track" name="Add Insert to Selected Channels">
+		<CommandArgument name="mode" value="1"/>
+		<CommandArgument name="cid" value="{073C4094-E062-4FB5-8328-74608DD1A3A4}"/>
+		<CommandArgument name="preset" value="LowCut"/>
+	</CommandElement>
+	<CommandElement category="Console" name="Show Channel Editor"/>
+</Macro>

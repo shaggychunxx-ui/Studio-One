@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Thin out 25%" group="Thin out Notes" description="">
+	<CommandElement category="Musical Functions" name="Thin out Notes">
+		<CommandArgument name="Mode" value="1"/>
+		<CommandArgument name="Amount" value="0.2528735697269439697265625"/>
+		<CommandArgument name="Grid" value="0"/>
+	</CommandElement>
+</Macro>

@@ -1,0 +1,17 @@
+<uc:Template id="SimpleDAWRemote" flags="public">
+			
+			<uc:Component id="transport" paramlist="Transport"/>
+			<uc:Component id="document" template="DAWDocument"/>
+			<uc:Component id="recorddiskspace" paramlist="RecordDiskSpace"/>
+			<uc:Component id="session" paramlist="Session"/> <!-- provided by the 'SessionInfo' controller in Capture -->
+			<uc:Component id="activity" paramlist="Activity"/>
+
+			<uc:Component id="mixer" paramlist="Mixer" classname="DAWMixer">
+				<uc:Component id="channel" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="384">
+						<uc:Component id="ch$i"	paramlist="SimpleChannel" classname="DAWSimpleChannel" />
+					</uc:foreach>
+				</uc:Component>
+			</uc:Component>
+			
+		</uc:Template>

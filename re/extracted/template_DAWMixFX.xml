@@ -1,0 +1,3 @@
+<uc:Template id="DAWMixFX">
+			<uc:Component id="slot1" paramlist="InsertSlot" classname="DAWDeviceSlot"/> <!-- single slot only -->
+		</uc:Template>

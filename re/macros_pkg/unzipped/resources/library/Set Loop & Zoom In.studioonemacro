@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Set Loop &amp; Zoom In" group="Hotkey" description="">
+	<CommandElement category="Edit" name="Autoscroll">
+		<CommandArgument name="State" value="0"/>
+	</CommandElement>
+	<CommandElement category="Transport" name="Loop Selection">
+		<CommandArgument name="Activate" value=""/>
+	</CommandElement>
+	<CommandElement category="Zoom" name="Zoom to Loop">
+		<CommandArgument name="State" value=""/>
+	</CommandElement>
+</Macro>

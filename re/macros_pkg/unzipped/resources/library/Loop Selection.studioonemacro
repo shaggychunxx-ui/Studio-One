@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Loop Selection" group="" description="">
+	<CommandElement category="Transport" name="Loop Selection">
+		<CommandArgument name="Activate" value="1"/>
+	</CommandElement>
+	<CommandElement category="Transport" name="Toggle Loop">
+		<CommandArgument name="State" value="1"/>
+	</CommandElement>
+	<CommandElement category="Transport" name="Play from Loop Start"/>
+</Macro>

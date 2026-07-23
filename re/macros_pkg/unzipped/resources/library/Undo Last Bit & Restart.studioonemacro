@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Undo Last Bit &amp; Restart" group="Podcast" description="">
+	<CommandElement category="Transport" name="Toggle Start">
+		<CommandArgument name="Pause" value="1"/>
+	</CommandElement>
+	<CommandElement category="Transport" name="Rewind Bar">
+		<CommandArgument name="Bars" value="2"/>
+	</CommandElement>
+	<CommandElement category="Transport" name="Record"/>
+	<CommandElement category="Media" name="Select on Track"/>
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Edit" name="Delete"/>
+</Macro>

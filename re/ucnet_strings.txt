@@ -1,0 +1,4437 @@
+
+## ucnet.dll (208296 bytes)
+
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ PreSonus Audio Electronics, Inc.0
+ PreSonus Audio Electronics, Inc.1)0'
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>
+__CxxFrameHandler4
+Adding server via UDP discovery %s : tcp %d udp %d (alive event)
+com.presonus.ucnet
+Copyright (c)2024 PreSonus Software Ltd.
+CreateFileMappingA
+E:\.jenkins\workspace\win\presonus\branches\studioone_6_6_1\build\cmake\win\x64\Release\ucnet.pdb
+Enabled UDP multicast on official port %d (%d sockets)
+Failed to bind listening socket (error code %d)
+FileVersion
+Ihttp://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl0
+Incoming socket is in error state!!!
+Lhttp://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt0
+Local UDP port bound to %d (%d sockets)
+OpenFileMappingA
+Outgoing socket is in error state!!!
+Pending UDP multicast group registration succeeded!
+PreSonus
+ProductName
+ProductVersion
+Removing server via UDP discovery %s : tcp %d udp %d (leave event)
+Server "%s" (id = "%s") resolved at host "%s", tcp %d udp %d
+Server flags changed via UDP discovery %s : 0x%08x (alive event)
+Server name changed via UDP discovery %s : %s (alive event)
+Started listening on TCP port %d (%d sockets)
+TCP listen socket(s) rebuild, reason is %s!
+UC Discovery reply to query event to %s
+UC Discovery sending query event to %s
+UC Discovery time out for server %s:%d!
+UCGetBluetoothNetworkManager
+UCGetFileTransferManager
+UCGetMIDINetworkManager
+UCGetNetworkActivityManager
+UCGetNetworkManager
+ucnet-bt: %s
+ucnet.dll
+UCNETLocalDiscoveryRegistry
+UCReportMessage
+UCSetReportFunction
+UDP mapping for %s set to %d
+UDP multicast group registration pending
+UDP multicast socket(s) rebuild, reason is %s!
+UDP unicast socket(s) rebuild, reason is %s!
+Universal Control Network Library
+VS_VERSION_INFO
+
+## remoteservice.dll (2444712 bytes)
+
+        <!-- GENERIC MAPPING (used for "on the fly" control assignment) -->
+   localization="DAWRemote">
+   namespace="Presonus:DAWRemote"
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ PreSonus Audio Electronics, Inc.0
+ PreSonus Audio Electronics, Inc.1)0'
+,ucE_C
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
+<!-- Assignment (parameter title) -->
+<!-- Assignment (parameter value) -->
+<!-- CONTROL DEFINITIONS -->
+<!-- CS18AI control surface layout (p0 - p24) -->
+<!-- foreach does not work with parameter lists :-( -->
+<!-- Generic layout for remote control apps (c0 - c27) -->
+<!-- Hardware Parameters -->
+<!-- Layout 1 (generic layout for remote control apps) -->
+<!-- Layout 2 (CS18AI control surface) -->
+<!-- NOTE: total number of remote channels is limited to 512 for now! -->
+<!-- Preamp gain range can change for devices with combo jacks! -->
+<!-- REMOTE PAGING SECTIONS -->
+<!-- Software Parameters -->
+<!-- SURFACE MAPPINGS -->
+</Controls>
+</ControlSurface>
+</GenericMapping>
+</Mappings>
+</SurfaceAssignmentData>
+</SurfaceAssignmentPage>
+</SurfaceData>
+</SurfaceDeviceAssignment>
+</uc:Component>
+</uc:ComponentModel>
+</uc:Parameters>
+</uc:ParamList>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<?xpacket begin="
+<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>
+<Association key="c0.value" value="AudioChannelMacroControlSet/float-1"/>
+<Association key="c0.value" value="GlobalMacroControlSet/float-1"/>
+<Association key="c0.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nvolume"/>
+<Association key="c1.value" value="AudioChannelMacroControlSet/float-2"/>
+<Association key="c1.value" value="GlobalMacroControlSet/float-2"/>
+<Association key="c10.value" value="GlobalMacroControlSet/float-11"/>
+<Association key="c11.value" value="GlobalMacroControlSet/float-12"/>
+<Association key="c12.value" value="GlobalMacroControlSet/float-13"/>
+<Association key="c13.value" value="GlobalMacroControlSet/float-14"/>
+<Association key="c14.value" value="GlobalMacroControlSet/float-15"/>
+<Association key="c14.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.wah"/>
+<Association key="c15.value" value="GlobalMacroControlSet/float-16"/>
+<Association key="c15.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.speed"/>
+<Association key="c16.value" value="AudioChannelMacroControlSet/pad-x-1"/>
+<Association key="c17.value" value="AudioChannelMacroControlSet/pad-y-1"/>
+<Association key="c17.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.wah"/>
+<Association key="c18.value" value="AudioChannelMacroControlSet/pad-x-2"/>
+<Association key="c18.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.speed"/>
+<Association key="c19.value" value="AudioChannelMacroControlSet/pad-y-2"/>
+<Association key="c19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.volume"/>
+<Association key="c2.value" value="AudioChannelMacroControlSet/float-3"/>
+<Association key="c2.value" value="GlobalMacroControlSet/float-3"/>
+<Association key="c2.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/stomp1.volume"/>
+<Association key="c2.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/pingpongmode"/>
+<Association key="c20.value" value="AudioChannelMacroControlSet/bool-1"/>
+<Association key="c20.value" value="GlobalMacroControlSet/bool-1"/>
+<Association key="c20.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband1"/>
+<Association key="c20.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp1]"/>
+<Association key="c20.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp1]"/>
+<Association key="c21.value" value="AudioChannelMacroControlSet/bool-2"/>
+<Association key="c21.value" value="GlobalMacroControlSet/bool-2"/>
+<Association key="c21.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband2"/>
+<Association key="c21.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp2]"/>
+<Association key="c21.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp2]"/>
+<Association key="c22.value" value="AudioChannelMacroControlSet/bool-3"/>
+<Association key="c22.value" value="GlobalMacroControlSet/bool-3"/>
+<Association key="c22.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband3"/>
+<Association key="c22.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp3]"/>
+<Association key="c22.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clippingMode"/>
+<Association key="c22.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp3]"/>
+<Association key="c22.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/pingpongswap"/>
+<Association key="c23.value" value="AudioChannelMacroControlSet/bool-4"/>
+<Association key="c23.value" value="GlobalMacroControlSet/bool-4"/>
+<Association key="c23.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband4"/>
+<Association key="c23.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp4]"/>
+<Association key="c23.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp4]"/>
+<Association key="c24.value" value="AudioChannelMacroControlSet/bool-5"/>
+<Association key="c24.value" value="GlobalMacroControlSet/bool-5"/>
+<Association key="c24.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/soloband5"/>
+<Association key="c24.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp5]"/>
+<Association key="c24.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp5]"/>
+<Association key="c25.value" value="AudioChannelMacroControlSet/bool-6"/>
+<Association key="c25.value" value="GlobalMacroControlSet/bool-6"/>
+<Association key="c25.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/pingpongswap"/>
+<Association key="c25.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp6]"/>
+<Association key="c25.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp6]"/>
+<Association key="c26.value" value="AudioChannelMacroControlSet/bool-7"/>
+<Association key="c26.value" value="GlobalMacroControlSet/bool-7"/>
+<Association key="c26.value" value="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}/pingpongmode"/>
+<Association key="c26.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp7]"/>
+<Association key="c26.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp7]"/>
+<Association key="c27.value" value="AudioChannelMacroControlSet/bool-8"/>
+<Association key="c27.value" value="GlobalMacroControlSet/bool-8"/>
+<Association key="c27.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp8]"/>
+<Association key="c27.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp8]"/>
+<Association key="c3.value" value="AudioChannelMacroControlSet/float-4"/>
+<Association key="c3.value" value="Control/7"/>
+<Association key="c3.value" value="GlobalMacroControlSet/float-4"/>
+<Association key="c3.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clipping"/>
+<Association key="c4.value" value="AudioChannelMacroControlSet/float-5"/>
+<Association key="c4.value" value="GlobalMacroControlSet/float-5"/>
+<Association key="c4.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vvolume"/>
+<Association key="c4.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clippingMode"/>
+<Association key="c4.value" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}/pingfactor"/>
+<Association key="c5.value" value="AudioChannelMacroControlSet/float-6"/>
+<Association key="c5.value" value="GlobalMacroControlSet/float-6"/>
+<Association key="c5.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.preampvolume"/>
+<Association key="c6.value" value="AudioChannelMacroControlSet/float-7"/>
+<Association key="c6.value" value="GlobalMacroControlSet/float-7"/>
+<Association key="c6.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/damping"/>
+<Association key="c7.value" value="AudioChannelMacroControlSet/float-8"/>
+<Association key="c7.value" value="Control/7"/>
+<Association key="c7.value" value="GlobalMacroControlSet/float-8"/>
+<Association key="c7.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/master.volume"/>
+<Association key="c7.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/master.volume"/>
+<Association key="c8.value" value="GlobalMacroControlSet/float-9"/>
+<Association key="c8.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.wah"/>
+<Association key="c9.value" value="GlobalMacroControlSet/float-10"/>
+<Association key="p0.value" value="AudioChannelMacroControlSet/float-1"/>
+<Association key="p0.value" value="GlobalMacroControlSet/float-1"/>
+<Association key="p0.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.wah"/>
+<Association key="p1.value" value="AudioChannelMacroControlSet/float-2"/>
+<Association key="p1.value" value="GlobalMacroControlSet/float-2"/>
+<Association key="p10.value" value="GlobalMacroControlSet/float-11"/>
+<Association key="p11.value" value="Control/7"/>
+<Association key="p11.value" value="GlobalMacroControlSet/float-12"/>
+<Association key="p11.value" value="{03518B56-3075-4B49-91B5-5489CA84175F}/master.volume"/>
+<Association key="p11.value" value="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}/master.volume"/>
+<Association key="p12.value" value="AudioChannelMacroControlSet/pad-x-1"/>
+<Association key="p12.value" value="GlobalMacroControlSet/float-13"/>
+<Association key="p13.value" value="AudioChannelMacroControlSet/pad-y-1"/>
+<Association key="p13.value" value="GlobalMacroControlSet/float-14"/>
+<Association key="p14.value" value="AudioChannelMacroControlSet/pad-x-2"/>
+<Association key="p14.value" value="GlobalMacroControlSet/float-15"/>
+<Association key="p15.value" value="AudioChannelMacroControlSet/pad-y-2"/>
+<Association key="p15.value" value="GlobalMacroControlSet/float-16"/>
+<Association key="p16.value" value="AudioChannelMacroControlSet/bool-1"/>
+<Association key="p16.value" value="GlobalMacroControlSet/bool-1"/>
+<Association key="p16.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband1"/>
+<Association key="p16.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp1]"/>
+<Association key="p16.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp1]"/>
+<Association key="p17.value" value="AudioChannelMacroControlSet/bool-2"/>
+<Association key="p17.value" value="GlobalMacroControlSet/bool-2"/>
+<Association key="p17.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband2"/>
+<Association key="p17.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp2]"/>
+<Association key="p17.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp2]"/>
+<Association key="p18.value" value="AudioChannelMacroControlSet/bool-3"/>
+<Association key="p18.value" value="GlobalMacroControlSet/bool-3"/>
+<Association key="p18.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband3"/>
+<Association key="p18.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp3]"/>
+<Association key="p18.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp3]"/>
+<Association key="p19.value" value="AudioChannelMacroControlSet/bool-4"/>
+<Association key="p19.value" value="GlobalMacroControlSet/bool-4"/>
+<Association key="p19.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband4"/>
+<Association key="p19.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp4]"/>
+<Association key="p19.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp4]"/>
+<Association key="p2.value" value="AudioChannelMacroControlSet/float-3"/>
+<Association key="p2.value" value="GlobalMacroControlSet/float-3"/>
+<Association key="p2.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.nvolume"/>
+<Association key="p20.value" value="AudioChannelMacroControlSet/bool-5"/>
+<Association key="p20.value" value="GlobalMacroControlSet/bool-5"/>
+<Association key="p20.value" value="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}/extmuteband5"/>
+<Association key="p20.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp5]"/>
+<Association key="p20.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp5]"/>
+<Association key="p21.value" value="AudioChannelMacroControlSet/bool-6"/>
+<Association key="p21.value" value="GlobalMacroControlSet/bool-6"/>
+<Association key="p21.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp6]"/>
+<Association key="p21.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp6]"/>
+<Association key="p22.value" value="AudioChannelMacroControlSet/bool-7"/>
+<Association key="p22.value" value="GlobalMacroControlSet/bool-7"/>
+<Association key="p23.value" value="AudioChannelMacroControlSet/bool-8"/>
+<Association key="p23.value" value="GlobalMacroControlSet/bool-8"/>
+<Association key="p23.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp7]"/>
+<Association key="p23.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp7]"/>
+<Association key="p24.value" value="GlobalMacroControlSet/bool-9"/>
+<Association key="p24.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/controls.active[stomp8]"/>
+<Association key="p24.value" value="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}/controls.active[stomp8]"/>
+<Association key="p3.value" value="AudioChannelMacroControlSet/float-4"/>
+<Association key="p3.value" value="Control/7"/>
+<Association key="p3.value" value="GlobalMacroControlSet/float-4"/>
+<Association key="p4.value" value="AudioChannelMacroControlSet/float-5"/>
+<Association key="p4.value" value="GlobalMacroControlSet/float-5"/>
+<Association key="p4.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clippingMode"/>
+<Association key="p5.value" value="AudioChannelMacroControlSet/float-6"/>
+<Association key="p5.value" value="GlobalMacroControlSet/float-6"/>
+<Association key="p5.value" value="{29C71194-B29A-40C0-9A35-9053DB6F596C}/damping"/>
+<Association key="p5.value" value="{BC7319ED-C40D-3C40-8015-34502212C1B8}/clipping"/>
+<Association key="p6.value" value="AudioChannelMacroControlSet/float-7"/>
+<Association key="p6.value" value="GlobalMacroControlSet/float-7"/>
+<Association key="p6.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.vvolume"/>
+<Association key="p7.value" value="AudioChannelMacroControlSet/float-8"/>
+<Association key="p7.value" value="GlobalMacroControlSet/float-8"/>
+<Association key="p7.value" value="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}/amp.preampvolume"/>
+<Association key="p8.value" value="GlobalMacroControlSet/float-9"/>
+<Association key="p9.value" value="GlobalMacroControlSet/float-10"/>
+<Control name="c0.text" type="textdisplay" options="transmit"/>
+<Control name="c0.title" type="textdisplay" options="transmit"/>
+<Control name="c0.value" title="Control 1" type="knob" options="receive transmit public"/>
+<Control name="c0.value.edit" type="trigger" options="receive"/>
+<Control name="c1.text" type="textdisplay" options="transmit"/>
+<Control name="c1.title" type="textdisplay" options="transmit"/>
+<Control name="c1.value" title="Control 2" type="knob" options="receive transmit public"/>
+<Control name="c1.value.edit" type="trigger" options="receive"/>
+<Control name="c10.text" type="textdisplay" options="transmit"/>
+<Control name="c10.title" type="textdisplay" options="transmit"/>
+<Control name="c10.value" title="Control 11" type="knob" options="receive transmit public"/>
+<Control name="c10.value.edit" type="trigger" options="receive"/>
+<Control name="c11.text" type="textdisplay" options="transmit"/>
+<Control name="c11.title" type="textdisplay" options="transmit"/>
+<Control name="c11.value" title="Control 12" type="knob" options="receive transmit public"/>
+<Control name="c11.value.edit" type="trigger" options="receive"/>
+<Control name="c12.text" type="textdisplay" options="transmit"/>
+<Control name="c12.title" type="textdisplay" options="transmit"/>
+<Control name="c12.value" title="Control 13" type="knob" options="receive transmit public"/>
+<Control name="c12.value.edit" type="trigger" options="receive"/>
+<Control name="c13.text" type="textdisplay" options="transmit"/>
+<Control name="c13.title" type="textdisplay" options="transmit"/>
+<Control name="c13.value" title="Control 14" type="knob" options="receive transmit public"/>
+<Control name="c13.value.edit" type="trigger" options="receive"/>
+<Control name="c14.text" type="textdisplay" options="transmit"/>
+<Control name="c14.title" type="textdisplay" options="transmit"/>
+<Control name="c14.value" title="Control 15" type="knob" options="receive transmit public"/>
+<Control name="c14.value.edit" type="trigger" options="receive"/>
+<Control name="c15.text" type="textdisplay" options="transmit"/>
+<Control name="c15.title" type="textdisplay" options="transmit"/>
+<Control name="c15.value" title="Control 16" type="knob" options="receive transmit public"/>
+<Control name="c15.value.edit" type="trigger" options="receive"/>
+<Control name="c16.text" type="textdisplay" options="transmit"/>
+<Control name="c16.title" type="textdisplay" options="transmit"/>
+<Control name="c16.value" title="Pad 1 X" type="knob" options="receive transmit public"/>
+<Control name="c16.value.edit" type="trigger" options="receive"/>
+<Control name="c17.text" type="textdisplay" options="transmit"/>
+<Control name="c17.title" type="textdisplay" options="transmit"/>
+<Control name="c17.value" title="Pad 1 Y" type="knob" options="receive transmit public"/>
+<Control name="c17.value.edit" type="trigger" options="receive"/>
+<Control name="c18.text" type="textdisplay" options="transmit"/>
+<Control name="c18.title" type="textdisplay" options="transmit"/>
+<Control name="c18.value" title="Pad 2 X" type="knob" options="receive transmit public"/>
+<Control name="c18.value.edit" type="trigger" options="receive"/>
+<Control name="c19.text" type="textdisplay" options="transmit"/>
+<Control name="c19.title" type="textdisplay" options="transmit"/>
+<Control name="c19.value" title="Pad 2 Y" type="knob" options="receive transmit public"/>
+<Control name="c19.value.edit" type="trigger" options="receive"/>
+<Control name="c2.text" type="textdisplay" options="transmit"/>
+<Control name="c2.title" type="textdisplay" options="transmit"/>
+<Control name="c2.value" title="Control 3" type="knob" options="receive transmit public"/>
+<Control name="c2.value.edit" type="trigger" options="receive"/>
+<Control name="c20.text" type="textdisplay" options="transmit"/>
+<Control name="c20.title" type="textdisplay" options="transmit"/>
+<Control name="c20.value" title="Button 1" type="button" options="receive transmit public"/>
+<Control name="c20.value.edit" type="trigger" options="receive"/>
+<Control name="c21.text" type="textdisplay" options="transmit"/>
+<Control name="c21.title" type="textdisplay" options="transmit"/>
+<Control name="c21.value" title="Button 2" type="button" options="receive transmit public"/>
+<Control name="c21.value.edit" type="trigger" options="receive"/>
+<Control name="c22.text" type="textdisplay" options="transmit"/>
+<Control name="c22.title" type="textdisplay" options="transmit"/>
+<Control name="c22.value" title="Button 3" type="button" options="receive transmit public"/>
+<Control name="c22.value.edit" type="trigger" options="receive"/>
+<Control name="c23.text" type="textdisplay" options="transmit"/>
+<Control name="c23.title" type="textdisplay" options="transmit"/>
+<Control name="c23.value" title="Button 4" type="button" options="receive transmit public"/>
+<Control name="c23.value.edit" type="trigger" options="receive"/>
+<Control name="c24.text" type="textdisplay" options="transmit"/>
+<Control name="c24.title" type="textdisplay" options="transmit"/>
+<Control name="c24.value" title="Button 5" type="button" options="receive transmit public"/>
+<Control name="c24.value.edit" type="trigger" options="receive"/>
+<Control name="c25.text" type="textdisplay" options="transmit"/>
+<Control name="c25.title" type="textdisplay" options="transmit"/>
+<Control name="c25.value" title="Button 6" type="button" options="receive transmit public"/>
+<Control name="c25.value.edit" type="trigger" options="receive"/>
+<Control name="c26.text" type="textdisplay" options="transmit"/>
+<Control name="c26.title" type="textdisplay" options="transmit"/>
+<Control name="c26.value" title="Button 7" type="button" options="receive transmit public"/>
+<Control name="c26.value.edit" type="trigger" options="receive"/>
+<Control name="c27.text" type="textdisplay" options="transmit"/>
+<Control name="c27.title" type="textdisplay" options="transmit"/>
+<Control name="c27.value" title="Button 8" type="button" options="receive transmit public"/>
+<Control name="c27.value.edit" type="trigger" options="receive"/>
+<Control name="c3.text" type="textdisplay" options="transmit"/>
+<Control name="c3.title" type="textdisplay" options="transmit"/>
+<Control name="c3.value" title="Control 4" type="knob" options="receive transmit public"/>
+<Control name="c3.value.edit" type="trigger" options="receive"/>
+<Control name="c4.text" type="textdisplay" options="transmit"/>
+<Control name="c4.title" type="textdisplay" options="transmit"/>
+<Control name="c4.value" title="Control 5" type="knob" options="receive transmit public"/>
+<Control name="c4.value.edit" type="trigger" options="receive"/>
+<Control name="c5.text" type="textdisplay" options="transmit"/>
+<Control name="c5.title" type="textdisplay" options="transmit"/>
+<Control name="c5.value" title="Control 6" type="knob" options="receive transmit public"/>
+<Control name="c5.value.edit" type="trigger" options="receive"/>
+<Control name="c6.text" type="textdisplay" options="transmit"/>
+<Control name="c6.title" type="textdisplay" options="transmit"/>
+<Control name="c6.value" title="Control 7" type="knob" options="receive transmit public"/>
+<Control name="c6.value.edit" type="trigger" options="receive"/>
+<Control name="c7.text" type="textdisplay" options="transmit"/>
+<Control name="c7.title" type="textdisplay" options="transmit"/>
+<Control name="c7.value" title="Control 8" type="knob" options="receive transmit public"/>
+<Control name="c7.value.edit" type="trigger" options="receive"/>
+<Control name="c8.text"  type="textdisplay" options="transmit"/>
+<Control name="c8.title"  type="textdisplay" options="transmit"/>
+<Control name="c8.value"  title="Control 9"  type="knob" options="receive transmit public"/>
+<Control name="c8.value.edit"  type="trigger" options="receive"/>
+<Control name="c9.text"  type="textdisplay" options="transmit"/>
+<Control name="c9.title"  type="textdisplay" options="transmit"/>
+<Control name="c9.value"  title="Control 10" type="knob" options="receive transmit public"/>
+<Control name="c9.value.edit"  type="trigger" options="receive"/>
+<Control name="p0.text" type="textdisplay" options="transmit"/>
+<Control name="p0.title" type="textdisplay" options="transmit"/>
+<Control name="p0.value" title="Knob 1" type="knob" options="receive transmit public"/>
+<Control name="p1.text" type="textdisplay" options="transmit"/>
+<Control name="p1.title" type="textdisplay" options="transmit"/>
+<Control name="p1.value" title="Knob 2" type="knob" options="receive transmit public"/>
+<Control name="p10.text" type="textdisplay" options="transmit"/>
+<Control name="p10.title" type="textdisplay" options="transmit"/>
+<Control name="p10.value" title="Knob 11" type="knob" options="receive transmit public"/>
+<Control name="p11.text" type="textdisplay" options="transmit"/>
+<Control name="p11.title" type="textdisplay" options="transmit"/>
+<Control name="p11.value" title="Knob 12" type="knob" options="receive transmit public"/>
+<Control name="p12.text" type="textdisplay" options="transmit"/>
+<Control name="p12.title" type="textdisplay" options="transmit"/>
+<Control name="p12.value" title="Knob 13" type="knob" options="receive transmit public"/>
+<Control name="p13.text" type="textdisplay" options="transmit"/>
+<Control name="p13.title" type="textdisplay" options="transmit"/>
+<Control name="p13.value" title="Knob 14" type="knob" options="receive transmit public"/>
+<Control name="p14.text" type="textdisplay" options="transmit"/>
+<Control name="p14.title" type="textdisplay" options="transmit"/>
+<Control name="p14.value" title="Knob 15" type="knob" options="receive transmit public"/>
+<Control name="p15.text" type="textdisplay" options="transmit"/>
+<Control name="p15.title" type="textdisplay" options="transmit"/>
+<Control name="p15.value" title="Knob 16" type="knob" options="receive transmit public"/>
+<Control name="p16.text" type="textdisplay" options="transmit"/>
+<Control name="p16.title" type="textdisplay" options="transmit"/>
+<Control name="p16.value" title="Button 1" type="button" options="receive transmit public"/>
+<Control name="p17.text" type="textdisplay" options="transmit"/>
+<Control name="p17.title" type="textdisplay" options="transmit"/>
+<Control name="p17.value" title="Button 2" type="button" options="receive transmit public"/>
+<Control name="p18.text" type="textdisplay" options="transmit"/>
+<Control name="p18.title" type="textdisplay" options="transmit"/>
+<Control name="p18.value" title="Button 3" type="button" options="receive transmit public"/>
+<Control name="p19.text" type="textdisplay" options="transmit"/>
+<Control name="p19.title" type="textdisplay" options="transmit"/>
+<Control name="p19.value" title="Button 4" type="button" options="receive transmit public"/>
+<Control name="p2.text" type="textdisplay" options="transmit"/>
+<Control name="p2.title" type="textdisplay" options="transmit"/>
+<Control name="p2.value" title="Knob 3" type="knob" options="receive transmit public"/>
+<Control name="p20.text" type="textdisplay" options="transmit"/>
+<Control name="p20.title" type="textdisplay" options="transmit"/>
+<Control name="p20.value" title="Button 5" type="button" options="receive transmit public"/>
+<Control name="p21.text" type="textdisplay" options="transmit"/>
+<Control name="p21.title" type="textdisplay" options="transmit"/>
+<Control name="p21.value" title="Button 6" type="button" options="receive transmit public"/>
+<Control name="p22.text" type="textdisplay" options="transmit"/>
+<Control name="p22.title" type="textdisplay" options="transmit"/>
+<Control name="p22.value" title="Button 7" type="button" options="receive transmit public"/>
+<Control name="p23.text" type="textdisplay" options="transmit"/>
+<Control name="p23.title" type="textdisplay" options="transmit"/>
+<Control name="p23.value" title="Button 8" type="button" options="receive transmit public"/>
+<Control name="p24.text" type="textdisplay" options="transmit"/>
+<Control name="p24.title" type="textdisplay" options="transmit"/>
+<Control name="p24.value" title="Button 9" type="button" options="receive transmit public"/>
+<Control name="p3.text" type="textdisplay" options="transmit"/>
+<Control name="p3.title" type="textdisplay" options="transmit"/>
+<Control name="p3.value" title="Knob 4" type="knob" options="receive transmit public"/>
+<Control name="p4.text" type="textdisplay" options="transmit"/>
+<Control name="p4.title" type="textdisplay" options="transmit"/>
+<Control name="p4.value" title="Knob 5" type="knob" options="receive transmit public"/>
+<Control name="p5.text" type="textdisplay" options="transmit"/>
+<Control name="p5.title" type="textdisplay" options="transmit"/>
+<Control name="p5.value" title="Knob 6" type="knob" options="receive transmit public"/>
+<Control name="p6.text" type="textdisplay" options="transmit"/>
+<Control name="p6.title" type="textdisplay" options="transmit"/>
+<Control name="p6.value" title="Knob 7" type="knob" options="receive transmit public"/>
+<Control name="p7.text" type="textdisplay" options="transmit"/>
+<Control name="p7.title" type="textdisplay" options="transmit"/>
+<Control name="p7.value" title="Knob 8" type="knob" options="receive transmit public"/>
+<Control name="p8.text"  type="textdisplay" options="transmit"/>
+<Control name="p8.title"  type="textdisplay" options="transmit"/>
+<Control name="p8.value"  title="Knob 9"  type="knob" options="receive transmit public"/>
+<Control name="p9.text"  type="textdisplay" options="transmit"/>
+<Control name="p9.title"  type="textdisplay" options="transmit"/>
+<Control name="p9.value"  title="Knob 10" type="knob" options="receive transmit public"/>
+<Controls>
+<ControlSurface>
+<GenericMapping>
+<List x:id="subdevices">
+<Mappings>
+<Slot control="c$i.value" row="0" column="$i"/>
+<Slot control="c16.value" role="x"/>
+<Slot control="c17.value" role="y"/>
+<Slot control="c18.value" role="x"/>
+<Slot control="c19.value" role="y"/>
+<Slot control="c20.value" row="0" column="0"/>
+<Slot control="c21.value" row="0" column="1"/>
+<Slot control="c22.value" row="0" column="2"/>
+<Slot control="c23.value" row="0" column="3"/>
+<Slot control="c24.value" row="0" column="4"/>
+<Slot control="c25.value" row="0" column="5"/>
+<Slot control="c26.value" row="0" column="6"/>
+<Slot control="c27.value" row="0" column="7"/>
+<String control="c$i.text" param="value"/>
+<String control="c$i.title" param="title"/>
+<String control="p$i.text" param="value"/>
+<String control="p$i.title" param="title"/>
+<SurfaceAssignmentData folder="amp" deviceID="{3939AAE9-2EDF-477E-AC44-7F6115AA7853}" friendlyName="VC30">
+<SurfaceAssignmentData folder="amp" deviceID="{4FB264B6-CE6D-48C5-BB56-3EDB89BE7725}" friendlyName="Dual Amplifier">
+<SurfaceAssignmentData folder="amp" deviceID="{71B4D5DC-5308-4F6F-BFC7-8A2948BFEA43}" friendlyName="MCM 800">
+<SurfaceAssignmentData folder="amp" deviceID="{753EEB12-4150-0000-414D-504952450000}"/>
+<SurfaceAssignmentData folder="amp" deviceID="{753EEB93-4150-0000-414D-504952450000}"/>
+<SurfaceAssignmentData folder="amp" deviceID="{753EEC14-4150-0000-414D-504952450000}"/>
+<SurfaceAssignmentData folder="amp" deviceID="{753EEC95-4150-0000-414D-504952450000}"/>
+<SurfaceAssignmentData folder="amp" deviceID="{753EED16-4150-0000-414D-504952450000}"/>
+<SurfaceAssignmentData folder="amp" deviceID="{753EED97-4150-0000-414D-504952450000}"/>
+<SurfaceAssignmentData folder="amp" deviceID="{C981653D-AE55-45B1-9711-131A129B0664}" friendlyName="Blackface Twin">
+<SurfaceAssignmentData folder="amp" deviceID="{DC8890A7-7563-4F94-82EF-4125CBF7FF40}" friendlyName="Amp STV">
+<SurfaceAssignmentData folder="cab" deviceID="{30C0DC0B-4350-0000-414D-504952450000}" friendlyName="Ampire 2x12 Blackface"/>
+<SurfaceAssignmentData folder="cab" deviceID="{30C0DE0C-4350-0000-414D-504952450000}" friendlyName="Ampire 4x12 M65"/>
+<SurfaceAssignmentData folder="comp" deviceID="{1F831EC1-B8AC-4EE9-AD53-54227AF53D58}" friendlyName="StudioLive FET Compressor">
+<SurfaceAssignmentData folder="comp" deviceID="{23F9C088-08BE-4259-9DCE-38720AE5DE73}" friendlyName="StudioLive Everest C100A">
+<SurfaceAssignmentData folder="comp" deviceID="{6A372968-AFA7-4A3F-805D-A09A4AE15777}" friendlyName="StudioLive RC500 Comp">
+<SurfaceAssignmentData folder="comp" deviceID="{7F8A4262-D377-48E3-9D48-15D82C400A71}" friendlyName="StudioLive Tube Compressor">
+<SurfaceAssignmentData folder="comp" deviceID="{85DD5632-A536-49FF-894A-9329FC1124E4}" friendlyName="StudioLive FC-670">
+<SurfaceAssignmentData folder="comp" deviceID="{870D04F7-212E-4F9C-ADBB-39A97216433F}" friendlyName="StudioLive Compressor XT">
+<SurfaceAssignmentData folder="comp" deviceID="{AF35E448-40EC-4C5A-A05C-B40A5AC0A42F}" friendlyName="StudioLive VT1 Comp">
+<SurfaceAssignmentData folder="comp" deviceID="{AFEE6684-5985-4D29-81E6-661F4F07C2CE}" friendlyName="StudioLive Compressor">
+<SurfaceAssignmentData folder="comp" deviceID="{C38F9E1A-0127-4BB8-9377-40C545A50328}" friendlyName="StudioLive Classic Compressor">
+<SurfaceAssignmentData folder="comp" deviceID="{C3C32BBC-42E2-41A7-99B5-EA1D62F897B5}" friendlyName="StudioLive The Tube P1B">
+<SurfaceAssignmentData folder="comp" deviceID="{F0BD22BB-5FE8-4279-8B05-D089B4D7B0BB}" friendlyName="StudioLive Comp 160">
+<SurfaceAssignmentData folder="comp" deviceID="{FEF33155-7A9E-4F4E-B209-CFE86DDAFC8E}" friendlyName="StudioLive Brit Comp">
+<SurfaceAssignmentData folder="eq" deviceID="{03819C3F-DC16-4B7B-B521-14B4042192F2}" friendlyName="StudioLive Solar 69">
+<SurfaceAssignmentData folder="eq" deviceID="{09B38119-3945-40D1-BA33-2FA19620DAB0}" friendlyName="StudioLive The Tube Midrange EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{4635DE88-C3D2-4645-BC4D-8DFD116D6914}" friendlyName="StudioLive Vintage 3-band EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{63ADDF9B-0EC7-430A-AEBE-62B4CB5FBBD6}" friendlyName="StudioLive RC500 EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{983BF658-011F-4E91-827F-6A0F66A40D89}" friendlyName="StudioLive EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{A0A8A068-14F0-4B04-BB6F-AF8329D0E8EE}" friendlyName="StudioLive EQ XT 4 Band">
+<SurfaceAssignmentData folder="eq" deviceID="{A0FAF452-D664-4BA2-90FC-6BD4AC469B29}" friendlyName="StudioLive VT1 EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{B4D3497E-4B1C-4CFA-B859-A918C17CDA03}" friendlyName="StudioLive Baxandall EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{C0730CBB-5135-4558-9222-C40BDBA036ED}" friendlyName="StudioLive Passive EQ">
+<SurfaceAssignmentData folder="eq" deviceID="{CBDD0DD3-C5EF-495A-B4C7-92EC5E8FE146}" friendlyName="StudioLive Alpine EQ-550">
+<SurfaceAssignmentData folder="eq" deviceID="{E1C5E024-C5CD-473C-B08A-6EC177812E01}" friendlyName="StudioLive Vintage EQ">
+<SurfaceAssignmentData folder="stomp1" deviceID="{23EF7C12-6BCE-4AC2-B518-4401F7145847}" friendlyName="Tremolo">
+<SurfaceAssignmentData folder="stomp1" deviceID="{40FC219D-6D44-4DC3-9D88-1D40D2821F3C}" friendlyName="Tube Driver">
+<SurfaceAssignmentData folder="stomp1" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz">
+<SurfaceAssignmentData folder="stomp1" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb">
+<SurfaceAssignmentData folder="stomp1" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+<SurfaceAssignmentData folder="stomp1" deviceID="{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}" friendlyName="Equalizer">
+<SurfaceAssignmentData folder="stomp1" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer"/>
+<SurfaceAssignmentData folder="stomp1" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer">
+<SurfaceAssignmentData folder="stomp1" deviceID="{ACBEC854-7CE9-4A78-9BF1-53E12CF49B04}" friendlyName="Pan">
+<SurfaceAssignmentData folder="stomp1" deviceID="{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}" friendlyName="Modulation">
+<SurfaceAssignmentData folder="stomp1" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT">
+<SurfaceAssignmentData folder="stomp1" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1">
+<SurfaceAssignmentData folder="stomp1" deviceID="{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}" friendlyName="Wah Wah"/>
+<SurfaceAssignmentData folder="stomp1" deviceID="{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}" friendlyName="Wah Wah">
+<SurfaceAssignmentData folder="stomp1" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay">
+<SurfaceAssignmentData folder="stomp2" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp2" deviceID="{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}" friendlyName="Equalizer"/>
+<SurfaceAssignmentData folder="stomp2" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer"/>
+<SurfaceAssignmentData folder="stomp2" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1">
+<SurfaceAssignmentData folder="stomp2" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+<SurfaceAssignmentData folder="stomp2" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay">
+<SurfaceAssignmentData folder="stomp3" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp3" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+<SurfaceAssignmentData folder="stomp3" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety">
+<SurfaceAssignmentData folder="stomp3" deviceID="{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}" friendlyName="Modulation"/>
+<SurfaceAssignmentData folder="stomp3" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+<SurfaceAssignmentData folder="stomp3" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+<SurfaceAssignmentData folder="stomp4" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp4" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+<SurfaceAssignmentData folder="stomp4" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+<SurfaceAssignmentData folder="stomp4" deviceID="{ACBEC854-7CE9-4A78-9BF1-53E12CF49B04}" friendlyName="Pan"/>
+<SurfaceAssignmentData folder="stomp4" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{B37FE59D-CEFD-4A23-A667-022CCA77EC6F}" friendlyName="Modulation"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+<SurfaceAssignmentData folder="stomp5" deviceID="{DCAC5B0A-947A-420C-9A37-FBC81AFA144B}" friendlyName="Wah Wah"/>
+<SurfaceAssignmentData folder="stomp6" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp6" deviceID="{AC8F30A6-8A24-44E3-8B73-C3D55FC1614F}" friendlyName="Tube Dreamer"/>
+<SurfaceAssignmentData folder="stomp6" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT"/>
+<SurfaceAssignmentData folder="stomp6" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+<SurfaceAssignmentData folder="stomp6" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+<SurfaceAssignmentData folder="stomp7" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp7" deviceID="{63EE9686-5245-4212-AF83-3F6311192F42}" friendlyName="Reverb"/>
+<SurfaceAssignmentData folder="stomp7" deviceID="{995F339E-2341-4F49-AD9F-FE2FDE911ADB}" friendlyName="MP Ninety"/>
+<SurfaceAssignmentData folder="stomp7" deviceID="{9A0147E4-B67C-46B4-BA8A-786996F0D8F4}" friendlyName="Equalizer"/>
+<SurfaceAssignmentData folder="stomp7" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+<SurfaceAssignmentData folder="stomp7" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+<SurfaceAssignmentData folder="stomp8" deviceID="{5C2EDAFD-DFF7-4517-BAD3-617F8AB4F393}" friendlyName="Big Fuzz"/>
+<SurfaceAssignmentData folder="stomp8" deviceID="{C5881966-568C-4EF6-825E-E6E0C739EE70}" friendlyName="FAT"/>
+<SurfaceAssignmentData folder="stomp8" deviceID="{D6B2DD74-0EE0-4A21-9E64-0135C96583C3}" friendlyName="PAE Chorus 1"/>
+<SurfaceAssignmentData folder="stomp8" deviceID="{E7DFD20D-B552-456C-94E7-15AFEC3B020C}" friendlyName="Delay"/>
+<SurfaceAssignmentPage/>
+<SurfaceAssignmentPage>
+<SurfaceData surfaceID="{5F3B27A2-91F4-415E-B623-C580347ADEC6}" revision="15">
+<SurfaceDeviceAssignment deviceID="{03518B56-3075-4B49-91B5-5489CA84175F}" friendlyName="RC500">
+<SurfaceDeviceAssignment deviceID="{072BAC58-596A-4D6A-8F01-978B96E4BF36}" friendlyName="Rotor">
+<SurfaceDeviceAssignment deviceID="{073C4094-E062-4FB5-8328-74608DD1A3A4}" friendlyName="Pro EQ">
+<SurfaceDeviceAssignment deviceID="{0C3A0AD2-20DD-4B12-A1CF-AD03D8408EAD}" friendlyName="Dual Pan">
+<SurfaceDeviceAssignment deviceID="{0E890247-B39D-41AE-A9A3-647C30BB5C16}" friendlyName="Phaser">
+<SurfaceDeviceAssignment deviceID="{11111111-1111-1111-1111-111111111111}" friendlyName="static">
+<SurfaceDeviceAssignment deviceID="{12345678-90AB-CDEF-1234-567890ABCDEF}">
+<SurfaceDeviceAssignment deviceID="{132C0E1F-06FD-4C96-BD65-678C04FE1C92}" friendlyName="Gate">
+<SurfaceDeviceAssignment deviceID="{19C6BEAB-1A48-4338-BB04-14A9AC1FCC05}" friendlyName="Mojito">
+<SurfaceDeviceAssignment deviceID="{22222222-2222-2222-2222-222222222222}" friendlyName="Channel Controls">
+<SurfaceDeviceAssignment deviceID="{29C71194-B29A-40C0-9A35-9053DB6F596C}" friendlyName="Room Reverb">
+<SurfaceDeviceAssignment deviceID="{33333333-3333-3333-3333-333333333333}" friendlyName="Macro Controls">
+<SurfaceDeviceAssignment deviceID="{345D7412-977D-4364-A79B-5981F249AAC3}" friendlyName="X-Trem">
+<SurfaceDeviceAssignment deviceID="{3713E26C-2FCA-4024-9F25-17E9D2BE2B9A}" friendlyName="Presence">
+<SurfaceDeviceAssignment deviceID="{507EFD36-8B20-4A37-A8C2-36FFC4D30ED1}" friendlyName="Open AIR">
+<SurfaceDeviceAssignment deviceID="{54F19B72-352C-4AA5-A2AF-67F86F30D6BE}" friendlyName="Compressor">
+<SurfaceDeviceAssignment deviceID="{5E91DC8A-E560-4115-98FA-59FB3F215BA1}" friendlyName="Fat Channel">
+<SurfaceDeviceAssignment deviceID="{61B18D53-26FA-4220-8614-89944A1990EC}" friendlyName="Limiter">
+<SurfaceDeviceAssignment deviceID="{68B3EB20-DEDC-4809-B23C-BE5BACA5413C}" friendlyName="Analog Delay">
+<SurfaceDeviceAssignment deviceID="{701812B1-7B20-4C95-BECB-D7C2ACF954ED}" friendlyName="Multiband Dynamics">
+<SurfaceDeviceAssignment deviceID="{831A0046-BD71-45BF-A419-6FC90D6E9F2F}" friendlyName="Expander">
+<SurfaceDeviceAssignment deviceID="{91E6C8D6-0BEA-4A19-BED2-F2694B164B86}" friendlyName="CTC-1">
+<SurfaceDeviceAssignment deviceID="{9340FE84-5B79-45AA-9C3E-5AB9B01F2955}" friendlyName="Chorus">
+<SurfaceDeviceAssignment deviceID="{A1C299EA-7586-4B51-95A0-9BCFE682DE9C}" friendlyName="Tone Generator">
+<SurfaceDeviceAssignment deviceID="{AC97B789-7D8F-4585-A308-56C98374BD4C}" friendlyName="Flanger">
+<SurfaceDeviceAssignment deviceID="{B2C316FC-97E8-46AD-BBC4-7ACC455C18CC}" friendlyName="Channel Strip">
+<SurfaceDeviceAssignment deviceID="{B34E203A-82A9-4D07-83AD-691860665E9A}" friendlyName="Tricomp">
+<SurfaceDeviceAssignment deviceID="{B625F134-4485-4A50-A3C8-C9CF0C5495E1}" friendlyName="Mai Tai">
+<SurfaceDeviceAssignment deviceID="{B6407C28-0F92-4538-9E7F-9B867B3FEA74}" friendlyName="Ampire">
+<SurfaceDeviceAssignment deviceID="{B9D410AD-E47D-495E-8AEE-10D2B2987CC7}" friendlyName="Multi Instrument">
+<SurfaceDeviceAssignment deviceID="{BC7319ED-C40D-3C40-8015-34502212C1B8}" friendlyName="Bitcrusher">
+<SurfaceDeviceAssignment deviceID="{BC9129B4-EC67-41B8-96DE-EC128D5FE54D}" friendlyName="Pedalboard">
+<SurfaceDeviceAssignment deviceID="{BE1EFD56-00F9-4F62-B668-BFED4E8C5DA6}" friendlyName="VT1">
+<SurfaceDeviceAssignment deviceID="{BEC73D38-7954-42A0-9504-038B23046FAB}" friendlyName="Autofilter">
+<SurfaceDeviceAssignment deviceID="{BFBEA41B-679A-41F2-AACA-ED9D51137412}" friendlyName="Beat Delay">
+<SurfaceDeviceAssignment deviceID="{C80A56CC-912C-416C-834B-68A9B1A83420}" friendlyName="Groove Delay">
+<SurfaceDeviceAssignment deviceID="{E4D7D911-0608-4B46-ABA3-2E345399A5AC}" friendlyName="Mixtool">
+<SurfaceDeviceAssignment deviceID="{EB8C4ED5-615C-44EA-8F93-757181647AC8}" friendlyName="RedlightDist">
+<SurfaceDeviceAssignment deviceID="{FEB6F7CB-36CA-4CBA-9090-42B7C76F4158}" friendlyName="Mixverb">
+<Touch control="c$i.value.edit" param="value" options="above"/>
+<uc:Component id="activity" paramlist="Activity"/>
+<uc:Component id="bool-$i" paramlist="MacroControl" classname="DAWMacroControl"/>
+<uc:Component id="c$i" paramlist="Control"/>
+<uc:Component id="ch$i"
+<uc:Component id="ch$i" classname="DAWHardwareChannel">
+<uc:Component id="ch1" template="DAWOutputChannel" paramlist="ListenBusChannel" classname="DAWChannel"/>
+<uc:Component id="ch1" template="DAWOutputChannel" paramlist="OutputChannel" classname="DAWChannel"/>
+<uc:Component id="channel" paramlist="ChannelGroup" classname="DAWChannelGroup">
+<uc:Component id="channel$i" paramlist="SurroundPannerChannel" classname="DAWSurroundPannerChannel"  />
+<uc:Component id="channelgui" paramlist="ChannelGui"/>
+<uc:Component id="click" paramlist="ChannelClick" classname="DAWChannelClick"/>
+<uc:Component id="controls" template="DAWInput"/>
+<uc:Component id="cuemix" template="DAWCueMix" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+<uc:Component id="cuemixrouter" classname="DAWCueMixRouter">
+<uc:Component id="document" template="DAWDocument"/>
+<uc:Component id="effect" flags="mutable" condition="surround" />
+<uc:Component id="float-$i" paramlist="MacroControl" classname="DAWMacroControl"/>
+<uc:Component id="focus" paramlist="FocusChannel" classname="DAWFocusChannel"/>
+<uc:Component id="global" paramlist="HardwareGlobal" classname="DAWHardwareMixerGlobal"/>
+<uc:Component id="hardware" paramlist="HardwareInput"/>
+<uc:Component id="hardwaremixer" classname="DAWHardwareMixer">
+<uc:Component id="input" paramlist="ChannelGroup" classname="DAWChannelGroup">
+<uc:Component id="input" paramlist="ChannelGroup" classname="DAWHardwareChannelGroup">
+<uc:Component id="inputfx" paramlist="InputFXParams"/>
+<uc:Component id="inserts" template="DAWInserts" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+<uc:Component id="listen" paramlist="ChannelGroup" classname="DAWChannelGroup">
+<uc:Component id="macrocontrols" template="DAWGlobalMacroControls" paramlist="MacroControlSet" classname="DAWGlobalMacroControls"/>
+<uc:Component id="main" paramlist="ChannelGroup" classname="DAWChannelGroup">
+<uc:Component id="metronome" paramlist="Metronome"/>
+<uc:Component id="mixer" paramlist="Mixer" classname="DAWMixer">
+<uc:Component id="mixfx" template="DAWMixFX" paramlist="MixFxFolder" classname="DAWDeviceFolder"/>
+<uc:Component id="options" paramlist="Options"/>
+<uc:Component id="output$i" paramlist="CueMixOutput"/>
+<uc:Component id="p$i" paramlist="Control"/>
+<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround" />
+<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround"/>
+<uc:Component id="player$i" paramlist="ShowPlayer" classname="DAWShowPlayer"/>
+<uc:Component id="players" template="DAWShowPlayerList" paramlist="ShowPlayerList" classname="DAWShowPlayerList"/>
+<uc:Component id="posts" template="DAWInserts" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+<uc:Component id="recorddiskspace" paramlist="RecordDiskSpace"/>
+<uc:Component id="recordpanel" paramlist="RecordPanel"/>
+<uc:Component id="remotefx" paramlist="RemoteFXFolder" classname="DAWDeviceFolder">
+<uc:Component id="sends" template="DAWSends" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+<uc:Component id="session" paramlist="Session"/> <!-- provided by the 'SessionInfo' controller in Capture -->
+<uc:Component id="show" flags="mutable"/> <!-- optional (DAWShowComponent), only  in show document -->
+<uc:Component id="slot$i" paramlist="CueMixSlot" classname="DAWDeviceSlot">
+<uc:Component id="slot$i" paramlist="InsertSlot" classname="DAWDeviceSlot"/>
+<uc:Component id="slot$i" paramlist="RemoteFXSlot" classname="DAWDeviceSlot"/>
+<uc:Component id="slot$i" paramlist="SendSlot" classname="DAWDeviceSlot">
+<uc:Component id="slot1" paramlist="InsertSlot" classname="DAWDeviceSlot"/> <!-- single slot only -->
+<uc:Component id="sources" paramlist="StreamingSources" classname="StreamingDAWSourcesComponent"/>
+<uc:Component id="stats" paramlist="StreamingStats" classname="StreamingDAWStatisticsComponent"/>
+<uc:Component id="sub" paramlist="ChannelGroup" classname="DAWChannelGroup">
+<uc:Component id="surface" paramlist="ControlSurface" classname="DAWSurfaceFocusComponent"/>
+<uc:Component id="transport" paramlist="ShowTransport" classname="DAWShowTransport"/>
+<uc:Component id="transport" paramlist="StreamingTransport" classname="StreamingDAWTransportComponent"/>
+<uc:Component id="transport" paramlist="Transport" classname="DAWTransport"/>
+<uc:Component id="transport" paramlist="Transport"/>
+<uc:ComponentModel xmlns:uc="http://www.presonus.com/xml/uc"
+<uc:Param id="48v1" name="48V"/>
+<uc:Param id="48v2" name="48V Right"/>
+<uc:Param id="active" flags="readonly"/>
+<uc:Param id="alertState" flags="readonly"/>
+<uc:Param id="altitude" type="float" min="0" max="90" def="0" />
+<uc:Param id="anyMute" name="Any Mute"/>
+<uc:Param id="anySolo" name="Any Solo"/>
+<uc:Param id="armAll" />
+<uc:Param id="artist" type="string" flags="readonly"/>
+<uc:Param id="automationMode" type="list" units="AutomationMode" name="Armed"/>
+<uc:Param id="azimuth" type="float" min="-180" max="180" def="0" flags="bipolar"/> 
+<uc:Param id="balanceAmount" type="float" min="0" max="1" def="0" units="percent" />
+<uc:Param id="balanceAzimuth" type="float" min="-180" max="180" def="0" flags="bipolar"  />
+<uc:Param id="bypass" name="Bypass"/>
+<uc:Param id="bypassAll" name="Bypass All"/>
+<uc:Param id="centerLevel" type="float" min="0" max="1.2" def="1" units="gain.db"/> <!-- units ? -->
+<uc:Param id="channelColors" type="color" flags="mutable"/>
+<uc:Param id="clickOn" name="Click"/>
+<uc:Param id="clip" type="int" max="99999"/>
+<uc:Param id="color" type="color" name="Color"/>
+<uc:Param id="colorizeChannels" flags="readonly"/>
+<uc:Param id="congestion" type="string"/>
+<uc:Param id="connected" flags="readonly" type="int" min="0" max="2"/>
+<uc:Param id="connected" flags="readonly"/>
+<uc:Param id="count" type="int" max="1000" flags="readonly"/>
+<uc:Param id="count" type="int" max="32" flags="readonly"/>
+<uc:Param id="cpu" type="float" flags="private readonly"/>
+<uc:Param id="cpuover" flags="private readonly"/>
+<uc:Param id="cpuUsage" type="string"/>
+<uc:Param id="currentItemIndex" type="int" min="-1" max="100000" flags="readonly"/>
+<uc:Param id="currentRecordTime" type="string" flags="readonly"/>
+<uc:Param id="currentScene" type="string"/>
+<uc:Param id="currentSectionIndex" type="int" min="-1" max="100000" flags="readonly"/>
+<uc:Param id="currentTransition" type="string"/>
+<uc:Param id="dawpostdsp" name="DAW Post DSP"/>
+<uc:Param id="destination" type="string" flags="readonly"/>
+<uc:Param id="deviceName" type="string" flags="readonly" name="Device"/>
+<uc:Param id="dim" name="Output Dim" type="toggle"/>
+<uc:Param id="disableCenter" />
+<uc:Param id="disc" type="float" flags="private readonly"/>
+<uc:Param id="discover" flags="private readonly"/>
+<uc:Param id="droppedFrames" type="int"/>
+<uc:Param id="dsplink" name="DSP Link"/>
+<uc:Param id="edit" name="Edit"/>
+<uc:Param id="editGroup" type="string" flags="readonly" name="Edit Group"/>
+<uc:Param id="editMode" type="list" units="SurroundPannerEditMode"/>
+<uc:Param id="effectName" type="string" flags="readonly"/> <!-- name of panner plug-in -->
+<uc:Param id="fastForward" name="FF"/>
+<uc:Param id="focusAutomationMode" type="list" units="AutomationMode"/>
+<uc:Param id="focusBypass"/>
+<uc:Param id="focusComponentClass" type="string"/>
+<uc:Param id="focusComponentEditor" type="string"/>
+<uc:Param id="focusComponentPath" type="string"/>
+<uc:Param id="focusDeviceFolder" type="string" flags="readonly"/>
+<uc:Param id="focusDeviceName" type="string" flags="readonly"/>
+<uc:Param id="focusPresetList" type="string"/>
+<uc:Param id="focusPresetName" type="string"/>
+<uc:Param id="fps" type="string"/>
+<uc:Param id="freeDisk" type="string"/>
+<uc:Param id="fulltitle" type="string" flags="readonly"/> <!-- name + path of panner -->
+<uc:Param id="gain" type="float" min="0" max="1.5" name="Gain"/>
+<uc:Param id="gain" type="float" range="InputGain" name="Input Gain"/>
+<uc:Param id="groupColor" type="color" name="Group Color"/>
+<uc:Param id="hardwarePath" type="string" flags="readonly"/>
+<uc:Param id="hostAppHue" type="float" flags="readonly"/>
+<uc:Param id="hostAppLuminance" type="float" flags="readonly"/>
+<uc:Param id="hostAppSaturation" type="float" flags="readonly"/>
+<uc:Param id="iconid" type="string" name="IconID"/>
+<uc:Param id="id" type="string" flags="readonly"/>
+<uc:Param id="identity" type="string" flags="readonly"/>
+<uc:Param id="input" type="string" flags="readonly" name="Input"/>
+<uc:Param id="inputQuantize" name="Input Quantize"/>
+<uc:Param id="inputSpeakerFormat" type="string" flags="readonly"/> <!-- not translated -->
+<uc:Param id="invertPhaseL" name="Polarity"/>
+<uc:Param id="invertPhaseR" name="Polarity Right"/>
+<uc:Param id="isGrouped" flags="readonly"/>
+<uc:Param id="isMixFxInput" flags="readonly"/>
+<uc:Param id="label" type="string" name="Title"/>
+<uc:Param id="label" type="string"/>
+<uc:Param id="level" type="float" range="Volume" name="Level"/>
+<uc:Param id="level1" type="float" flags="private"/>
+<uc:Param id="level2" type="float" flags="private"/>
+<uc:Param id="levelhold1" type="float" flags="private"/>
+<uc:Param id="levelhold2" type="float" flags="private"/>
+<uc:Param id="lfeLevel" type="float" min="0" max="1.2" def="1" units="gain.db" /> <!-- units ? -->
+<uc:Param id="listen" name="Listen"/>
+<uc:Param id="location" type="string" flags="readonly"/>
+<uc:Param id="lock" name="Lock"/>
+<uc:Param id="lockPan" />
+<uc:Param id="loop" name="Loop"/>
+<uc:Param id="loopRecordMode" type="list" units="LoopRecordMode" name="Loop Record Mode"/>
+<uc:Param id="macroEdit" name="Macro Editor"/>
+<uc:Param id="memoryUsage" type="string"/>
+<uc:Param id="meterFormat" type="string" flags="readonly"/> <!-- not translated -->
+<uc:Param id="midiIn" flags="private readonly"/>
+<uc:Param id="midiOut" flags="private readonly"/>
+<uc:Param id="mixFxColor" type="color" flags="readonly"/>
+<uc:Param id="monitor" name="Monitor"/>
+<uc:Param id="mono" name="Mono"/>
+<uc:Param id="mono" name="Output Mono" type="toggle"/>
+<uc:Param id="mute" name="Mute"/>
+<uc:Param id="mute" name="Output Mute" type="toggle"/>
+<uc:Param id="muteLfe" />
+<uc:Param id="number" type="int" max="10000" name="Number"/>
+<uc:Param id="numberString" type="string" name="Number"/>
+<uc:Param id="on"/>
+<uc:Param id="output" type="string" flags="readonly" name="Output"/>
+<uc:Param id="outputSpeakerFormat" type="string" flags="readonly"/> <!-- not translated -->
+<uc:Param id="pan" type="float" range="Pan" />
+<uc:Param id="pan" type="float" range="Pan" name="Pan"/>
+<uc:Param id="pannerType" type="string" flags="readonly"/>
+<uc:Param id="panWidth" type="float" units="percent" flags="mutable"/>
+<uc:Param id="panX1" type="float" range="Pan" flags="mutable"/>
+<uc:Param id="panX2" type="float" range="PanR" />
+<uc:Param id="passThrough" name="Passthrough"/>
+<uc:Param id="patchList" type="list" units="EmptyParamList" flags="mutable" />
+<uc:Param id="path" type="string" flags="readonly"/>
+<uc:Param id="performance" type="string" flags="readonly"/>
+<uc:Param id="pilot" type="float"/>
+<uc:Param id="polarity1" name="Polarity"/>
+<uc:Param id="polarity2" name="Polarity Right"/>
+<uc:Param id="port" type="string" flags="readonly"/>
+<uc:Param id="preampgain1" type="int" range="PreampGain" name="Preamp Gain" flags="mutable"/>
+<uc:Param id="preampgain2" type="int" range="PreampGain" name="Preamp Gain Right" flags="mutable"/>
+<uc:Param id="precount" name="Precount"/>
+<uc:Param id="precountDisplay" type="string" flags="readonly"/>
+<uc:Param id="prefader" name="Prefader"/>
+<uc:Param id="prefaderListen" name="PreFaderListen"/>
+<uc:Param id="preroll" name="Preroll"/>
+<uc:Param id="presentation" type="list" units="MacroControlsPresentation" flags="readonly"/>
+<uc:Param id="previewScene" type="string"/>
+<uc:Param id="primaryTime" type="string" flags="private"/>
+<uc:Param id="punch" name="Punch"/>
+<uc:Param id="record" name="Record"/>
+<uc:Param id="recordArmed" name="Armed"/>
+<uc:Param id="recording" type="toggle"/>
+<uc:Param id="recordingTime" type="string"/>
+<uc:Param id="recordLayersEnabled" name="Layers Enabled"/>
+<uc:Param id="recordLock" />
+<uc:Param id="recordMode" type="list" units="RecordMode" name="Record Mode"/>
+<uc:Param id="reduction" type="float" range="GainReduction" flags="private"/>
+<uc:Param id="remainingPercent" type="float" flags="readonly"/>
+<uc:Param id="remainingTime" type="string" flags="readonly"/>
+<uc:Param id="returnToZero" name="RTZ"/>
+<uc:Param id="rewind" name="Rewind"/>
+<uc:Param id="sceneList" type="list" units="EmptyParamList" flags="mutable" />
+<uc:Param id="secondaryTime" type="string" flags="private"/>
+<uc:Param id="sectionRepeats" type="int" min="0" max="100000" flags="readonly"/>
+<uc:Param id="selected" name="Select"/>
+<uc:Param id="sendLfe" />
+<uc:Param id="sensitivity1" name="Input Sensitivity" />
+<uc:Param id="sensitivity2" name="Input Sensitivity Right" />
+<uc:Param id="showChannelIcons" name="Show Channel Icons"/>
+<uc:Param id="showPan" flags="readonly"/>
+<uc:Param id="size" type="float" min="0" max="1" def="0" />
+<uc:Param id="size" type="float" min="0" max="1" def="0" units="percent" />
+<uc:Param id="sizeLock" flags="readonly"/>
+<uc:Param id="snap" />
+<uc:Param id="snap"/>
+<uc:Param id="solo" name="Solo"/>
+<uc:Param id="soundcheckInfo" type="string" flags="readonly"/>
+<uc:Param id="soundcheckMode" />
+<uc:Param id="soundcheckModeEnabled" flags="readonly"/>
+<uc:Param id="sourceList" type="list" units="EmptyParamList" flags="mutable" />
+<uc:Param id="sourceLocks" type="color" />
+<uc:Param id="sourceVisibles" type="color" />
+<uc:Param id="speakerFormat" type="string" flags="readonly"/> <!-- not translated -->
+<uc:Param id="speakerMute"  />
+<uc:Param id="speakerSetup" type="list" units="EmptyParamList" flags="mutable" />
+<uc:Param id="spread" type="float" min="-180" max="180" def="90" />
+<uc:Param id="spread" type="float" min="-2" max="2" def="1" units="percent" />
+<uc:Param id="start" name="Start"/>
+<uc:Param id="start"/>
+<uc:Param id="stereo" name="Stereo"/>
+<uc:Param id="stereoMode" type="list" units="PanStereoMode"/>
+<uc:Param id="stop" name="Stop"/>
+<uc:Param id="stop"/>
+<uc:Param id="streaming" type="toggle"/>
+<uc:Param id="streamingTime" type="string"/>
+<uc:Param id="studioMode" type="toggle"/>
+<uc:Param id="talk" name="Talkback On" type="toggle"/>
+<uc:Param id="targetSectionIndex" type="int" min="-1" max="100000" flags="readonly"/>
+<uc:Param id="tempo" type="float" range="Tempo" name="Tempo"/>
+<uc:Param id="text" type="string" flags="readonly"/>
+<uc:Param id="timeSignatureDenom" type="list" units="TimeSignatureDenom"/>
+<uc:Param id="timeSignatureNum" type="int" range="TimeSignatureNum"/>
+<uc:Param id="title" type="string" flags="readonly"/>
+<uc:Param id="totalFrames" type="int"/>
+<uc:Param id="totalRecordedTime" type="string" flags="readonly"/>
+<uc:Param id="transitionDuration" type="int" max="10000" min="0" units="ms"/>
+<uc:Param id="transitionsList" type="list" units="EmptyParamList" flags="mutable" />
+<uc:Param id="triggerTransition" type="toggle"/>
+<uc:Param id="type" type="int" max="4" flags="readonly" name="Type"/>
+<uc:Param id="type" type="string" flags="readonly" name="Type"/>
+<uc:Param id="type" type="string" flags="readonly"/>
+<uc:Param id="value" type="float"/>
+<uc:Param id="volume" type="float" range="Volume" name="Volume"/>
+<uc:Param id="x" type="float" min="0" max="1" def="0.5" flags="bipolar"/>
+<uc:Param id="y" type="float" min="0" max="1" def="1" flags="bipolar"/>
+<uc:Param id="z" type="float" min="0" max="1" def="0" />
+<uc:Param id="zeroLatency" name="Zero Latency"/>
+<uc:Parameters>
+<uc:ParamList id="Activity">
+<uc:ParamList id="AudioPanner">
+<uc:ParamList id="Channel">
+<uc:ParamList id="ChannelClick">
+<uc:ParamList id="ChannelGroup" inherit="Group"/>
+<uc:ParamList id="ChannelGui">
+<uc:ParamList id="Control">
+<uc:ParamList id="ControlSurface">
+<uc:ParamList id="CueMixOutput">
+<uc:ParamList id="CueMixSlot">
+<uc:ParamList id="DeviceFolder" inherit="Group" starttag="100">
+<uc:ParamList id="Document">
+<uc:ParamList id="FocusChannel">
+<uc:ParamList id="Group">
+<uc:ParamList id="HardwareGlobal">
+<uc:ParamList id="HardwareInput">
+<uc:ParamList id="InputFXParams">
+<uc:ParamList id="InsertSlot">
+<uc:ParamList id="ListenBusChannel" inherit="OutputChannel" starttag="200">
+<uc:ParamList id="MacroControl">
+<uc:ParamList id="MacroControlSet">
+<uc:ParamList id="Metronome">
+<uc:ParamList id="Mixer">
+<uc:ParamList id="MixFxFolder" inherit="DeviceFolder" starttag="150">
+<uc:ParamList id="ObjectPanner">
+<uc:ParamList id="Options">
+<uc:ParamList id="OutputChannel" inherit="Channel" starttag="100">
+<uc:ParamList id="RecordDiskSpace">
+<uc:ParamList id="RecordPanel">
+<uc:ParamList id="RemoteFXFolder" inherit="Group"/>
+<uc:ParamList id="RemoteFXSlot">
+<uc:ParamList id="SendSlot">
+<uc:ParamList id="Session">
+<uc:ParamList id="ShowPlayer">
+<uc:ParamList id="ShowPlayerList">
+<uc:ParamList id="ShowTransport">
+<uc:ParamList id="SimpleChannel">
+<uc:ParamList id="StreamingConnection">
+<uc:ParamList id="StreamingSources">
+<uc:ParamList id="StreamingStats">
+<uc:ParamList id="StreamingTransport">
+<uc:ParamList id="SurroundPanner">
+<uc:ParamList id="SurroundPannerChannel">
+<uc:ParamList id="Transport">
+<uc:Range id="GainReduction" min="-144" max="0" def="0"/>
+<uc:Range id="Volume" min="0" max="3.1622" def="1" curve="fadercurve" units="gain.db.value"/> <!-- -oo to +10dB -->
+<uc:StringList id="EmptyParamList">
+<uc:StringList id="MacroControlsPresentation">
+<uc:Template id="DAWAudioPanner" paramlist="AudioPanner" >
+<uc:Template id="DAWDocument" paramlist="Document"/>
+<uc:Template id="DAWGlobalMacroControls">
+<uc:Template id="DAWRemote" flags="public">
+<uc:Template id="SimpleDAWRemote" flags="public">
+<uc:Template id="StreamingDAWRemote" flags="public">
+<uc:Template id="{725CFBBB-1E41-48C9-85F3-869AFB98EF8B}" paramlist="ObjectPanner" classname="DAWObjectPanner" />
+<uc:Template id="{B90855F4-9F05-46EB-A647-49EC9A8161C7}" classname="DAWShowComponent">
+<uc:Template id="{EC794EDD-7518-4D2A-A7DD-B12295B84C4C}" paramlist="SurroundPanner" classname="DAWSurroundPanner" >
+<Value control="c$i.value" param="value" options="above"/>
+<Value control="p$i.value" param="value" options="above"/>
+__CxxFrameHandler4
+addParam
+algorithmVersion
+AliasParam
+application/json
+application/ubjson
+APPVERSION
+AudioDeviceChanged
+AudioMixer
+autoMappingSupported
+canMuteSolo
+CCL.XmlArchive
+Class:ComponentClassID
+Class:Version
+colorInversion
+ColorParam
+com.presonus.remoteservice
+CommandParam
+component
+Component
+ComponentAlias
+ComponentBuilder
+ComponentData
+ComponentExtender
+CompoundServerComponent
+ConfigurationComponent
+ControlContextMenu
+ControlInput
+Controllable
+ControllableDisable
+ControllableRebrowse
+ControllableRebuild
+ControllableRenamed
+ControllableRestored
+ControllableTerminate
+controls
+Copyright (c)2024 PreSonus Software Ltd.
+CrashReported
+CreateXmlParser
+CreateXmlWriter
+DAW controls available via UCNET (see also remotedevice.surface.xml):
+DAWAbstractGroupComponent
+DAWAliasComponent
+DAWDeviceFolder
+DAWDeviceSlot
+DAWGlobalMacroControls
+DAWGroupComponent
+DAWHardwareMixer
+DAWHardwareMixerGlobal
+DAWInputComponent
+DAWMacroControl
+DAWMixer
+DAWRemote
+dawremote.xml
+DAWREMOTE.XML
+DAWServerComponent
+DAWShowComponent
+DAWShowTransport
+DAWSurfaceFocusComponent
+DebugReportWarning
+DeepComponentAlias
+deferDestruction
+DEVICE/REMOTEDEVICE&#40;2X.PNG
+DEVICE/REMOTEDEVICE.PNG
+device/remotedevice.png
+device/remotedevice.surface.xml
+DEVICE/REMOTEDEVICE.SURFACE.XML
+DEVICE/REMOTEDEVICE.SURFACEDATA
+device/remotedevice.surfacedata
+DEVICE/REMOTEDEVICE.TXT
+device/remotedevice.txt
+Device:Attachment
+Device:HostData
+deviceAssociationChanged
+deviceClosed
+DeviceContainerID
+deviceDisabled
+DeviceEditorActivated
+deviceFamily
+DeviceIdentifier
+deviceInit
+DeviceModel
+DeviceModelSubtype
+deviceModified
+devicePixelRatio
+devicePresetInserted
+Devices
+Devices.AudioEngine
+Devices.Automation
+Devices.Channel.stripColorEnabled
+Devices.Console
+Devices.Controllable
+Devices.Editors
+Devices.Folder
+Devices.Music
+Devices.MusicDeviceLibrary
+Devices.Ports
+Devices.Record
+Devices.Surface
+Devices.Transport
+deviceSlotAdded
+deviceSlotRemoved
+deviceSlotReordered
+DeviceUnitSelected
+Document:FormatVersion
+E:\.jenkins\workspace\win\presonus\branches\studioone_6_6_1\build\cmake\win\x64\Release\Plugins\remoteservice.pdb
+editor.xml
+editorParam
+ExtendDeviceSlotMenu
+ExternalDevicePreset
+Failed to include component model '%s'!
+Failed to parse JSON data "%s" from UC XML!
+FileVersion
+findParameter
+FloatParam
+focusMappingPageCount
+formatVersion
+FrameworkOptionElement
+FullDAWServerComponent
+globalMappingPageCount
+GUI.Controls
+HardwareInputControls
+hardwaremixer
+hasDeviceAttachment
+hasParam[
+https://ccl.dev/xml
+https://www.presonus.software
+Ihttp://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl0
+IntParam
+isAggregableDevice
+isMPEDevice
+isNonMidiDevice
+isPlaybackOnlyDevice
+isRecordOnlyDevice
+iTXtXML:com.adobe.xmp
+JsonParse
+JsonStorableObject
+JsonStringify
+Lhttp://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt0
+Licenser:LocalizedProductName
+Licenser:ProductBundle
+Licenser:ProductID
+Licenser:ProductName
+ListParam
+macrocontrols
+mainOutVolumeLink
+maxVolume
+Media:Conductor
+Media:FrameType
+Media:IXmlChunk
+Media:Publisher
+Media:Remixer
+Media:SimpleHeader
+MenuParam
+Message
+MessageArgument
+MessageAttributes
+MixerConnectionReply
+mixers
+modeParam
+ModuleComponent
+ModuleComponent::loadTheme failed
+MultiParamProxyHandler
+MusicDevice
+MusicTrackDevice
+muteSoloChanged
+onmessage
+OpenDeviceEditor
+option.xml
+original: Parameter
+OSVersion
+outputPort
+Package:Version
+PACKAGEF<?xml version="1.0" encoding="utf-8"?>
+PaletteParam
+param: Parameter
+ParamCaptured
+ParamContainer
+ParamCurve
+paramEditable[
+ParamEditGrouped
+paramEnabled[
+Parameter
+ParameterData
+paramlist
+paramlist="SimpleChannel" classname="DAWSimpleChannel" />
+paramMax[
+paramMin[
+paramName
+ParamRenamed
+paramSelected
+ParamUndelivered
+paramValue[
+portAssignmentIn
+portAssignmentOut
+PortParm:extendPortMenu
+PortParm:portDestroyed
+PreSonus
+private-params
+productBranding
+productIdentity
+productKey
+ProductName
+productType
+ProductVersion
+QueryMixerConnection
+recordPort
+Remote
+Remote Control Support
+Remote Control Support User Option
+RemoteAllBank
+RemoteBank
+RemoteComponent
+REMOTEDEVICE&#40;2X.PNG
+REMOTEDEVICE.PNG
+REMOTEDEVICE.SURFACE.XML
+REMOTEDEVICE.SURFACEDATA
+REMOTEDEVICE.TXT
+RemoteDevice::EditorWrapper
+RemoteDeviceEditor
+remotefx
+RemoteFX
+remoteservice
+remoteservice.clients
+remoteservice.dll
+remotesupport
+remotesupport.clients
+RemoteUserOption
+restoringDevice
+RevealVolume
+ScanMusicDevices
+ScrollParam
+ServerAliasComponent
+ServerComponent
+ServerRootComponent
+session
+SessionInfo
+SetRecentParam
+ShowEdit/TransportHandler
+SilenceDevices
+SimpleDAWRemote
+SimpleDAWServerComponent
+skin.xml
+SlotRemoteFX
+soloSafe
+StringParam
+Subscribe
+Support for remote control apps via UCNET
+Support for remote control apps via UCNET. This device is added automatically.
+surface
+Surface Device: Custom control handler not connected: "%s"!
+surfacePlacementSize
+syncProxyParameter
+System.PortableDateTime
+template="DAWInputChannel" paramlist="Channel" classname="DAWChannel"/>
+template="DAWNormalChannel" paramlist="Channel" classname="DAWChannel"/>
+template="DAWOutputChannel" paramlist="OutputChannel" classname="DAWChannel"/>
+text/xml
+transport
+UBJsonParse
+UBJsonWrite
+UC Component Template not found: %s
+UC Component template not found: %s
+UC-XML Elements
+uc:Component
+uc:ComponentModel
+uc:foreachparam
+uc:Param
+uc:Param.flags
+uc:Param.type
+uc:Parameters
+uc:ParamList
+UCGetFileTransferManager
+UCGetNetworkActivityManager
+UCGetNetworkManager
+UCNET Remote
+ucnet.dll
+UCNET:%s
+UCNETIcon.png
+UCNETIcon@2x.png
+UCNETPagingButton.png
+UCNETPagingButton@2x.png
+UCNETRemoteBackground.png
+UCNETRemoteBackground@2x.png
+UCReportMessage
+UCSetReportFunction
+UniversalComponent
+UniversalComponentBuilder
+Unsubscribe
+useForExport
+UserLoginSucceeded
+version
+versionIdentity
+volume
+VolumeInfoChanged
+VolumesChanged
+VolumeSerialNumber
+VS_VERSION_INFO
+xiTXtXML:com.adobe.xmp
+XML.Parsers
+xmlns:x
+XmlSettings
+
+## cclnet.dll (721824 bytes)
+
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ PreSonus Audio Electronics, Inc.0
+ PreSonus Audio Electronics, Inc.1)0'
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
+<?xml version="1.0" encoding="utf-8" ?><D:lockinfo xmlns:D="DAV:"><D:lockscope><D:exclusive/></D:lockscope><D:locktype><D:write/></D:locktype><D:owner><D:href>
+<?xml version="1.0" encoding="utf-8" ?><D:propertyupdate xmlns:D="DAV:" xmlns:prs="https://ccl.dev" ><D:remove><D:prop>
+<?xml version="1.0" encoding="utf-8" ?><D:propertyupdate xmlns:D="DAV:" xmlns:prs="https://ccl.dev" ><D:set><D:prop>
+<?xml version="1.0" encoding="utf-8" ?><D:propfind xmlns:D="DAV:" xmlns:prs="https://ccl.dev">
+<?xml version="1.0" encoding="utf-8" ?><D:propfind xmlns:D='DAV:'><D:prop><D:lockdiscovery/></D:prop></D:propfind>
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>
+__CxxFrameHandler4
+application/json
+application/ubjson
+application/xml; charset="utf-8"
+ApplyControlToken
+CCL Cross-platform Framework
+CCL.XmlArchive
+Class:ComponentClassID
+Class:Version
+Could not parse file name from Content-Disposition header!
+CrashReported
+CreateXmlParser
+CreateXmlWriter
+Cross-platform Network Framework
+DebugReportWarning
+DecryptMessage
+deferDestruction
+device-pixel-ratio
+DeviceContainerID
+DeviceIdentifier
+DeviceModel
+DeviceModelSubtype
+devicePixelRatio
+E:\.jenkins\workspace\win\presonus\branches\studioone_6_6_1\build\cmake\win\x64\Release\cclnet.pdb
+EncryptMessage
+errorMessage
+FileVersion
+formatVersion
+GetDiscoveryHandler
+header, value
+HeaderList
+https://ccl.dev/xml
+Ihttp://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl0
+JsonParse
+JsonStorableObject
+JsonStringify
+Lhttp://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt0
+lockdiscovery
+Message
+MessageArgument
+messageReceived
+onmessage
+OSVersion
+Package:Version
+ProductName
+ProductVersion
+RemoteSession
+RevealVolume
+Sec-WebSocket-Accept
+Sec-WebSocket-Key
+Sec-WebSocket-Protocol
+Sec-WebSocket-Version
+setRequestHeader
+Socket bind error, address is already in use.
+supportedlock
+System.PortableDateTime
+text/xml
+Unspecified socket error, system error code %(1).
+version
+versionadd
+versionlist
+versionremove
+Volume
+VolumeHandler
+VolumeInfoChanged
+VolumesChanged
+VolumeSerialNumber
+VS_VERSION_INFO
+WebHeaderCollection
+websocket
+WebSocket
+WebSocketMessage
+XML.Parsers
+xml:lang
+XMLHttpRequest
+XmlNewsReader
+XmlNode
+xmlns:x
+XmlSettings
+XmlTree
+
+## Studio One.exe (57882536 bytes)
+
+        <Key name="Control+Command+A"/>
+        <Key name="Control+Command+O"/>
+        <Key name="Control+Command+Z"/>
+        <Key name="Control+R"/>
+        <Key name="Control+S"/>
+        <Key name="Control+Shift+M"/>
+        <Key name="Control+Shift+S"/>
+      <Key name="Control+,"/>
+      <Key name="Control+."/>
+      <Key name="Control+Down Arrow"/>
+      <Key name="Control+Left Arrow"/>
+      <Key name="Control+Right Arrow"/>
+      <Key name="Control+Up Arrow"/>
+    <!-- Automation/Devices -->
+    <!-- Transport -->
+    <Command category="Console" name="Global Mute">
+    <Command category="Console" name="Global Solo">
+    <Command category="Song" name="Export File"/> <!-- Song|Export Mixdown -->
+    <Command category="Song" name="Export Mixdown">
+    <Command category="Song" name="Export Stems">
+    <Command category="Song" name="Import File">
+    <Command category="Track" name="Solo">
+    <Command category="Transport" name="Autopunch In">
+    <Command category="Transport" name="Autopunch Out">
+    <Command category="Transport" name="Autopunch">
+    <Command category="Transport" name="Click">
+    <Command category="Transport" name="Forward Bar">
+    <Command category="Transport" name="Forward">
+    <Command category="Transport" name="Goto Loop End">
+    <Command category="Transport" name="Goto Time">
+    <Command category="Transport" name="Loop Selection">
+    <Command category="Transport" name="Preroll">
+    <Command category="Transport" name="Return to Zero">
+    <Command category="Transport" name="Rewind Bar">
+    <Command category="Transport" name="Rewind">
+    <property key="entc" name="End techniques">mute stra cupm buck hrmn ston stpd grwl pgcd pghf</property>
+    <property key="entc" name="End techniques">solo tutt a2vc a3vc</property>
+    <property key="excf" name="Expression conflict">mute</property>
+    <property key="excf" name="Expression conflict">plucking</property>
+    <property key="excf" name="Expression conflict">solo</property>
+    <property key="exid" name="Expression ident">mute</property>
+    <property key="exid" name="Expression ident">port</property>
+    <property key="exid" name="Expression ident">solo</property>
+    <property key="exim" name="Expression imports">arco</property>
+    <property key="exim" name="Expression imports">bucket;bucket mute</property>
+    <property key="exim" name="Expression imports">chorale mallets;with chorale mallets</property>
+    <property key="exim" name="Expression imports">cup;cup mute</property>
+    <property key="exim" name="Expression imports">fluttertongue;flutter tongue</property>
+    <property key="exim" name="Expression imports">gliss down;gliss. down;glissando down</property>
+    <property key="exim" name="Expression imports">gliss up;gliss. up;glissando up;gliss;glissando</property>
+    <property key="exim" name="Expression imports">hard mallets;with hard mallets</property>
+    <property key="exim" name="Expression imports">harmon;harmon mute</property>
+    <property key="exim" name="Expression imports">molto vib;molto vibrato</property>
+    <property key="exim" name="Expression imports">mute;with mute;muted</property>
+    <property key="exim" name="Expression imports">non-vib;non-vibrato</property>
+    <property key="exim" name="Expression imports">pizz;pizzicato</property>
+    <property key="exim" name="Expression imports">pont;sul pont</property>
+    <property key="exim" name="Expression imports">port;portamento</property>
+    <property key="exim" name="Expression imports">senza sord</property>
+    <property key="exim" name="Expression imports">soft mallets;with soft mallets</property>
+    <property key="exim" name="Expression imports">solo-tone;solotone</property>
+    <property key="exim" name="Expression imports">sord;con sord</property>
+    <property key="exim" name="Expression imports">stopped;hand stopped</property>
+    <property key="exim" name="Expression imports">straight;straight mute</property>
+    <property key="exim" name="Expression imports">sub-tone;subtone</property>
+    <property key="exim" name="Expression imports">tongue slaps;slap tongue</property>
+    <property key="exim" name="Expression imports">trem;tremolo;tremolando</property>
+    <property key="exim" name="Expression imports">vib;vibrato</property>
+    <property key="exnm" name="Expression name">Bucket mute</property>
+    <property key="exnm" name="Expression name">Cup mute</property>
+    <property key="exnm" name="Expression name">Harmon mute opening</property>
+    <property key="exnm" name="Expression name">Harmon mute</property>
+    <property key="exnm" name="Expression name">Mute off</property>
+    <property key="exnm" name="Expression name">Port.</property>
+    <property key="exnm" name="Expression name">Solo-tone mute</property>
+    <property key="exnm" name="Expression name">Solo</property>
+    <property key="exnm" name="Expression name">Straight mute</property>
+    <property key="exnm" name="Expression name">With mute</property>
+    <property key="exsh" name="Expression shortcuts">bucket</property>
+    <property key="exsh" name="Expression shortcuts">mute</property>
+    <property key="exsh" name="Expression shortcuts">port</property>
+    <property key="exsh" name="Expression shortcuts">solo-tone;solotone</property>
+    <property key="extx" name="Expression text">bucket</property>
+    <property key="extx" name="Expression text">mute off</property>
+    <property key="extx" name="Expression text">port.</property>
+    <property key="extx" name="Expression text">solo-tone</property>
+    <property key="extx" name="Expression text">solo</property>
+    <property key="extx" name="Expression text">straight mute</property>
+    <property key="extx" name="Expression text">with mute</property>
+    <property key="nttc" name="Note technique">port</property>
+    <property key="sttc" name="Start technique">mute</property>
+    <property key="sttc" name="Start technique">solo</property>
+    <property key="x2tk" name="X to tucked">-3.5</property>
+    <property key="x2tk" name="X to tucked">12</property>
+    <property key="x2tk" name="X to tucked">1</property>
+    <property key="x2tk" name="X to tucked">2</property>
+    <property key="x2tk" name="X to tucked">3</property>
+    <property key="x2tk" name="X to tucked">5</property>
+    url="https://www.presonus.com/products/notation-software"/>
+   Host.Interfaces.IComponent, 
+   Host.Interfaces.IController, 
+   Host.Interfaces.IParamObserver,
+  </packet>
+  <packet type="EXPD" name="Expression define">
+  <packet type="GYDF" name="Glyph define">
+  <packet type="GYSC" name="Glyphset control">
+  <packet type="TXTY" name="Text style">
+ * @param {boolean} exclusive  highlight exclusively, default true
+ * @param {boolean} show  show or hide view
+ * @param {boolean} show  show or hide window
+ * @param {number} delay  open delay in ms
+ * @param {string} className  name of class to instantiate
+ * @param {string} helpId  UI element help identifier
+ * @param {string} key  translation table id
+ * @param {string} tutorialId  tutorial identifier
+ * @returns {string}  audio device name
+ * Align tutorial viewer with a specified control.
+ * Discard any active control highlights.
+ * Highlight a control in the host UI.
+ * Indicate the begin / end of (multiple) modifications to control highlights.
+ * Lookup host audio device name.
+ * Lookup host MixerConsole.
+ * Utilize 'ControlLaneManager' param 'showLanes' to show/hide view.
+ <InstallDependent id="presonus.studioone.instruments"/>
+ PreSonus Audio Electronics, Inc.0
+ PreSonus Audio Electronics, Inc.1)0'
+"%(1)" does not support the selected file format.
+"id": "presonus.fatchannelplugins.$platform",
+"id": "presonus.studioone.instruments",
+"id": "presonus.studioone.instruments2",
+"id": "presonus.studioone.pluginsupport",
+"id": "presonus.studioone.remotesupport",
+"minVersion": "1.0.1"
+$controller
+%(1) Local:%(2) Remote:%(3) 
+%(1) mixer available in network
+%(1) mixers available in network
+%(1) not supported by %(2)
+%(1) packet without PROP_FLOW_DIRECTION
+%(1) packet without PROP_REGION_ID
+%(1) packet without PROP_SPECIFIC_COUNT
+%(1) packet without PROP_SPECIFIC_DIVIS
+%(1) packet without PROP_START_OR_END
+%(1) preset files were imported.
+%(1) sent you a direct message.
+%(1) was changed locally and remote.
+(Muted)
+.macrocontrols
+.MacroControls/Channel
+.MacroControls/SynthBus.macrocontrols
+.Publisher
+/* Pattern control lanes (step params). */
+/* Toggle automation control lanes button. */
+/** Basic GUI component definition. */
+/** Function to serve as Devices namespace. */
+/** Function to serve as Devices.JS namespace. */
+/** MediaPool signal: prepare locate missing files, arg[0]: LocateFilesComponent. */
+// Channel output port selector
+// Component
+// Copyright (c)2009-2022 PreSonus Software Ltd.
+// Copyright (c)2022 PreSonus Software Ltd.
+// create parameter list
+// Device Framework
+// Filename    : devices.js
+// IColumnHeaderList::ColumnFlags
+// IComponent
+// IParamObserver
+// Keep in sync with host IEditFunctions::FileImportFlags
+// Mixer 'Audio IO Setup' button
+// MixerConsole ChannelList indices
+// Multimedia Framework
+// This file is part of the CCL Cross-platform Framework. 
+/MultitrackVolumeInfo
+1nxMl`
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
+2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
+:uCVGO
+; === OS X version (company folder is "PreSonus Software") ===
+; === Windows and macOS version (company folder is "PreSonus" on both platforms) ===
+; === Windows version (company folder is "PreSonus") ===
+; copy other files (taken from x86 version)
+; copy settings from previous x64 version
+; copy settings from previous x86 version
+; Note: Plugins-xx.settings are not copied to force rescan by newer version!
+; user devices and mappings
+<!-- "Dolby Atmos Tutorial", requires spatial audio support (retail/demo only). -->
+<!-- *** Transport Menu (Project) ****************************************************** -->
+<!-- *** Transport Menu (Show) ****************************************************** -->
+<!-- *** Transport Menu (Song) ********************************************************* -->
+<!-- Devices  -->
+<!-- Sample Magic Loops and Kits -->
+<!-- Synth Session -->
+<?defined trackimport?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<Association key="Ableton Live" value="commands/abletonlive.xml"/>
+<Association key="Cakewalk" value="commands/sonar.xml"/>
+<Association key="Cubase" value="commands/cubase.xml"/>
+<Association key="FL Studio" value="commands/flstudio.xml"/>
+<Association key="Logic" value="commands/logic.xml"/>
+<Association key="Pro Tools" value="commands/protools.xml"/>
+<Association key="pt" value="Studio One Portuguese.langpack"/>
+<Attribute id="CCL.Win32.AppUserModelID" value="PreSonus.StudioOne.6"/>
+<Attribute id="CCL.Win32.MultiTouchEnabled" value="1"/>
+<Attribute id="exportName" value="Crash Cymbals"/>
+<Attribute id="exportName" value="Double Bass"/>
+<Attribute id="exportName" value="Glockenspiel"/>
+<Attribute id="exportName" value="Viola"/>
+<Attribute id="exportName" value="Violin I"/>
+<Attribute id="exportName" value="Violin II"/>
+<Attribute id="exportName" value="Violin"/>
+<Attribute id="exportName" value="Violoncello"/>
+<Attribute id="gmExportProgram" value="1"/>
+<Attribute id="gmExportProgram" value="106"/>
+<Attribute id="gmExportProgram" value="116"/>
+<Attribute id="gmExportProgram" value="117"/>
+<Attribute id="gmExportProgram" value="12"/>
+<Attribute id="gmExportProgram" value="14"/>
+<Attribute id="gmExportProgram" value="15"/>
+<Attribute id="gmExportProgram" value="16"/>
+<Attribute id="gmExportProgram" value="20"/>
+<Attribute id="gmExportProgram" value="22"/>
+<Attribute id="gmExportProgram" value="25"/>
+<Attribute id="gmExportProgram" value="26"/>
+<Attribute id="gmExportProgram" value="31"/>
+<Attribute id="gmExportProgram" value="33"/>
+<Attribute id="gmExportProgram" value="34"/>
+<Attribute id="gmExportProgram" value="41"/>
+<Attribute id="gmExportProgram" value="42"/>
+<Attribute id="gmExportProgram" value="43"/>
+<Attribute id="gmExportProgram" value="44"/>
+<Attribute id="gmExportProgram" value="47"/>
+<Attribute id="gmExportProgram" value="48"/>
+<Attribute id="gmExportProgram" value="5"/>
+<Attribute id="gmExportProgram" value="53"/>
+<Attribute id="gmExportProgram" value="57"/>
+<Attribute id="gmExportProgram" value="58"/>
+<Attribute id="gmExportProgram" value="59"/>
+<Attribute id="gmExportProgram" value="61"/>
+<Attribute id="gmExportProgram" value="65"/>
+<Attribute id="gmExportProgram" value="66"/>
+<Attribute id="gmExportProgram" value="67"/>
+<Attribute id="gmExportProgram" value="68"/>
+<Attribute id="gmExportProgram" value="69"/>
+<Attribute id="gmExportProgram" value="7"/>
+<Attribute id="gmExportProgram" value="70"/>
+<Attribute id="gmExportProgram" value="71"/>
+<Attribute id="gmExportProgram" value="72"/>
+<Attribute id="gmExportProgram" value="73"/>
+<Attribute id="gmExportProgram" value="74"/>
+<Attribute id="gmExportProgram" value="79"/>
+<Attribute id="gmExportProgram" value="8"/>
+<Attribute id="gmExportProgram" value="81"/>
+<Attribute id="gmExportProgram" value="9"/>
+<Attribute id="gmExportProgram" value="95"/>
+<Attribute id="gmImportPrograms" value="1 2 3 4"/>
+<Attribute id="gmImportPrograms" value="10 11"/>
+<Attribute id="gmImportPrograms" value="106"/>
+<Attribute id="gmImportPrograms" value="117"/>
+<Attribute id="gmImportPrograms" value="12"/>
+<Attribute id="gmImportPrograms" value="13"/>
+<Attribute id="gmImportPrograms" value="14"/>
+<Attribute id="gmImportPrograms" value="15"/>
+<Attribute id="gmImportPrograms" value="16"/>
+<Attribute id="gmImportPrograms" value="17 18 19 20 21"/>
+<Attribute id="gmImportPrograms" value="22 23 24"/>
+<Attribute id="gmImportPrograms" value="25"/>
+<Attribute id="gmImportPrograms" value="26"/>
+<Attribute id="gmImportPrograms" value="27 28 29 30 31 32"/>
+<Attribute id="gmImportPrograms" value="33"/>
+<Attribute id="gmImportPrograms" value="34 35 36 37 38 39 40"/>
+<Attribute id="gmImportPrograms" value="41 45 46 49 50 51 52 56"/>
+<Attribute id="gmImportPrograms" value="42"/>
+<Attribute id="gmImportPrograms" value="43"/>
+<Attribute id="gmImportPrograms" value="44"/>
+<Attribute id="gmImportPrograms" value="47"/>
+<Attribute id="gmImportPrograms" value="48"/>
+<Attribute id="gmImportPrograms" value="5 6"/>
+<Attribute id="gmImportPrograms" value="53"/>
+<Attribute id="gmImportPrograms" value="57 60 62 63 64"/>
+<Attribute id="gmImportPrograms" value="58"/>
+<Attribute id="gmImportPrograms" value="59"/>
+<Attribute id="gmImportPrograms" value="61"/>
+<Attribute id="gmImportPrograms" value="65"/>
+<Attribute id="gmImportPrograms" value="66"/>
+<Attribute id="gmImportPrograms" value="67"/>
+<Attribute id="gmImportPrograms" value="68"/>
+<Attribute id="gmImportPrograms" value="69"/>
+<Attribute id="gmImportPrograms" value="7"/>
+<Attribute id="gmImportPrograms" value="70"/>
+<Attribute id="gmImportPrograms" value="71"/>
+<Attribute id="gmImportPrograms" value="72"/>
+<Attribute id="gmImportPrograms" value="73"/>
+<Attribute id="gmImportPrograms" value="74 76 77"/>
+<Attribute id="gmImportPrograms" value="79"/>
+<Attribute id="gmImportPrograms" value="8"/>
+<Attribute id="gmImportPrograms" value="81 82 83 84 85 86 87 88"/>
+<Attribute id="gmImportPrograms" value="9"/>
+<Attribute id="gmImportPrograms" value="95"/>
+<Attribute id="iconName" value="Cuckoo"/>
+<Attribute id="iconName" value="DuckCall"/>
+<Attribute id="importGenre" value="cham"/>
+<Attribute id="importGenre" value="orch"/>
+<Attribute id="importGenre" value="popj"/>
+<Attribute id="importNames" value="12-string guitar,12-string"/>
+<Attribute id="importNames" value="accordion,accordian,keyboard.accordion"/>
+<Attribute id="importNames" value="acoustic guitar,ac. guitar,pluck.guitar,pluck.guitar.acoustic,pluck.guitar.steel-string"/>
+<Attribute id="importNames" value="agog
+<Attribute id="importNames" value="almglocken,metal.bells.almglocken,pitched-percussion.bells"/>
+<Attribute id="importNames" value="alto flute"/>
+<Attribute id="importNames" value="alto saxophone,alto sax,a. sax,wind.reed.saxophone.alto,alto sax full"/>
+<Attribute id="importNames" value="alto trombone,a. trombone,brass.trombone.alto"/>
+<Attribute id="importNames" value="anvil,metal.anvil"/>
+<Attribute id="importNames" value="banjo,pluck.banjo,pluck.banjo.tenor,pluck.guitjo,pluck.guitjo.double-neck"/>
+<Attribute id="importNames" value="bari saxophone,baritone saxophone,bari sax,wind.reed.saxophone.baritone,baritone sax full"/>
+<Attribute id="importNames" value="bass clarinet,bass clar,bs. clarinet"/>
+<Attribute id="importNames" value="bass drum,drum.bass-drum,drum.kick-drum,orchestral gran cassa"/>
+<Attribute id="importNames" value="bass flute,b. flute"/>
+<Attribute id="importNames" value="bass saxophone,bass sax,wind.reed.saxophone.bass"/>
+<Attribute id="importNames" value="bass trombone,bs. trombone,b. trombone,brass.trombone.bass"/>
+<Attribute id="importNames" value="bass trumpet,bs. trumpet,b. trumpet"/>
+<Attribute id="importNames" value="basset horn"/>
+<Attribute id="importNames" value="bassoon duo,bassoons,2 bassoons,fagotti"/>
+<Attribute id="importNames" value="bassoon,fagotto,fagotti,wind.reed.bassoon"/>
+<Attribute id="importNames" value="bell tree,metal.bells.bell-tree"/>
+<Attribute id="importNames" value="bodhr
+<Attribute id="importNames" value="bongos,drum.bongo"/>
+<Attribute id="importNames" value="brake drum,metal.brake-drums"/>
+<Attribute id="importNames" value="cabasa"/>
+<Attribute id="importNames" value="car horn,effect.car"/>
+<Attribute id="importNames" value="castanets,wood.castanets"/>
+<Attribute id="importNames" value="caxixi"/>
+<Attribute id="importNames" value="celeste,keyboard.celesta"/>
+<Attribute id="importNames" value="cello,cellos,violoncello,violoncellos,violoncelli,celli,strings.cello,cello section"/>
+<Attribute id="importNames" value="cello,violoncello,cello full"/>
+<Attribute id="importNames" value="champagne bottle"/>
+<Attribute id="importNames" value="chinese cymbals,bo,metal.cymbal.chinese,metal.cymbal.bo"/>
+<Attribute id="importNames" value="church bell,metal.bells.church"/>
+<Attribute id="importNames" value="clarinet duo,2 clarinets,clarinets,clarinetti,clarinet section"/>
+<Attribute id="importNames" value="clarinet section,clarinets,clarinetto section,clarinetti"/>
+<Attribute id="importNames" value="clarinet,clarinetto,clarinetti,wind.reed.clarinet,wind.reed.clarinet.a,wind.reed.clarinet.bflat,wind.reed.clarinet.eflat,wind.reed.saxonette,clarinet full"/>
+<Attribute id="importNames" value="classical guitar,nylon guitar,nylon,pluck.guitar.nylon-string"/>
+<Attribute id="importNames" value="claves,wood.claves"/>
+<Attribute id="importNames" value="clavinet,clav,clavi,keyboard.clavichord,keyboard.clavichord.synth,clavinet 1,clavinet 2,wide clav,clavinet 3,clavinet 4,clavinet 5,clavinet D6,clavinet 6"/>
+<Attribute id="importNames" value="contrabass clarinet,contrabass clar,cb. clarinet"/>
+<Attribute id="importNames" value="contrabass saxophone,contrabass sax,wind.reed.contrabass,wind.reed.saxophone.contrabass"/>
+<Attribute id="importNames" value="contrabassoon,wind.reed.contrabassoon"/>
+<Attribute id="importNames" value="cornet"/>
+<Attribute id="importNames" value="cowbell,metal.bells.cowbell"/>
+<Attribute id="importNames" value="crash cymbals,crash cymbal,metal.cymbal.crash,metal.cymbal.hand"/>
+<Attribute id="importNames" value="crotales,metal.crotales"/>
+<Attribute id="importNames" value="cu
+<Attribute id="importNames" value="cuckoo"/>
+<Attribute id="importNames" value="dobro"/>
+<Attribute id="importNames" value="double bass,bass,basses,basso,contrabass,contrabass full"/>
+<Attribute id="importNames" value="double bass,double basses,bass,basses,basso,bassi,strings.contrabass"/>
+<Attribute id="importNames" value="drum sticks,wood.drum-sticks"/>
+<Attribute id="importNames" value="drums,drumset,drum set,drum.group.set"/>
+<Attribute id="importNames" value="duck call,duck"/>
+<Attribute id="importNames" value="electric bass,el. bass,pluck.bass,pluck.bass.electric"/>
+<Attribute id="importNames" value="electric piano,el. piano,keyboard.piano.electric,electric grand"/>
+<Attribute id="importNames" value="english horn,corno inglese,e. horn,eh,cor anglais,wind.reed.english-horn"/>
+<Attribute id="importNames" value="euphonium,brass.euphonium"/>
+<Attribute id="importNames" value="finger cymbals,metal.cymbal.finger"/>
+<Attribute id="importNames" value="fingerstyle"/>
+<Attribute id="importNames" value="flexatone,metal.flexatone"/>
+<Attribute id="importNames" value="flower pots"/>
+<Attribute id="importNames" value="flugelhorn,fl
+<Attribute id="importNames" value="flute duo,2 flutes,flutes,flauti,flute section"/>
+<Attribute id="importNames" value="flute section,flauto section,flauti,flutes"/>
+<Attribute id="importNames" value="flute,flauto,flauti,wind.flutes.flute,wind.flutes.flute.alto,concert flute full,flute 1,flute 2"/>
+<Attribute id="importNames" value="ganza,rattle.ganza"/>
+<Attribute id="importNames" value="glockenspiel,pitched-percussion.glockenspiel,pitched-percussion.glockenspiel.alto,pitched-percussion.glockenspiel.soprano,glockenspiel basic"/>
+<Attribute id="importNames" value="guiro,wood.guiro"/>
+<Attribute id="importNames" value="guitar,electric guitar,el. guitar,pluck.guitar.electric"/>
+<Attribute id="importNames" value="hammer"/>
+<Attribute id="importNames" value="handbells,pitched-percussion.handbells"/>
+<Attribute id="importNames" value="handclap,clap"/>
+<Attribute id="importNames" value="harp,arpa,pluck.harp"/>
+<Attribute id="importNames" value="harpsichord,keyboard.harpsichord"/>
+<Attribute id="importNames" value="hautbois baryton"/>
+<Attribute id="importNames" value="horn section,horns,french horns,hns,french horn section"/>
+<Attribute id="importNames" value="horn,french horn,hn,brass.french-horn,french horn full"/>
+<Attribute id="importNames" value="lead pipe"/>
+<Attribute id="importNames" value="lion&apos;s roar,lion roar,roar,lion"/>
+<Attribute id="importNames" value="log drum"/>
+<Attribute id="importNames" value="long drum"/>
+<Attribute id="importNames" value="mandolin,pluck.mandolin,pluck.mandolin.octave"/>
+<Attribute id="importNames" value="maracas,rattle.maraca"/>
+<Attribute id="importNames" value="marimba,pitched-percussion.marimba,pitched-percussion.marimba.bass,marimba basic"/>
+<Attribute id="importNames" value="nightingale whistle,bird call,effect.bird,effect.bird.tweet,effect.bird.nightingale"/>
+<Attribute id="importNames" value="oboe d&apos;amore,oboe damore,ob. d&apos;amore,hautbois d&apos;amour"/>
+<Attribute id="importNames" value="oboe duo,oboes,2 oboes,oboi"/>
+<Attribute id="importNames" value="oboe,oboi,wind.reed.oboe"/>
+<Attribute id="importNames" value="ocean drum"/>
+<Attribute id="importNames" value="organ pedals"/>
+<Attribute id="importNames" value="organ,pipe organ,church organ,keyboard.organ,keyboard.organ.drawbar,keyboard.organ.percussive,keyboard.organ.pipe,keyboard.organ.reed,keyboard.organ.rotary"/>
+<Attribute id="importNames" value="pedal steel,pluck.guitar.pedal-steel"/>
+<Attribute id="importNames" value="piccolo clarinet,picc. clarinet"/>
+<Attribute id="importNames" value="piccolo snare,picc. snare"/>
+<Attribute id="importNames" value="piccolo trumpet,picc. trumpet,p. trumpet,picc. tpt."/>
+<Attribute id="importNames" value="piccolo,wind.flutes.flute.piccolo"/>
+<Attribute id="importNames" value="power toms,drum.tom-tom"/>
+<Attribute id="importNames" value="rainstick,effect.rain,rattle.rain-stick,synth.effects.rain"/>
+<Attribute id="importNames" value="ratchet,rattle.ratchet"/>
+<Attribute id="importNames" value="referee whistle,whistle,effect.whistle.police"/>
+<Attribute id="importNames" value="roto toms,roto-toms,drum.rototom"/>
+<Attribute id="importNames" value="sand blocks,wood.sand-block"/>
+<Attribute id="importNames" value="saw,metal.musical-saw"/>
+<Attribute id="importNames" value="side drum"/>
+<Attribute id="importNames" value="siren whistle"/>
+<Attribute id="importNames" value="siren,whistle.mouth-siren"/>
+<Attribute id="importNames" value="sizzle cymbal,metal.cymbal.sizzle"/>
+<Attribute id="importNames" value="sleigh bells,metal.bells.jingle-bell,metal.bells.sleigh-bells"/>
+<Attribute id="importNames" value="slide whistle,effect.whistle.slide,wind.flutes.whistle.slide"/>
+<Attribute id="importNames" value="snare drum,drum.snare-drum,orchestral snare"/>
+<Attribute id="importNames" value="sopranino saxophone,sopranino sax,wind.reed.saxophone"/>
+<Attribute id="importNames" value="soprano saxophone,soprano sax,sop. sax,s. sax,wind.reed.saxophone.sopranino,wind.reed.saxophone.sopranissimo,wind.reed.saxophone.soprano,soprano sax full"/>
+<Attribute id="importNames" value="soprano trumpet,sop. trumpet"/>
+<Attribute id="importNames" value="splash cymbal,metal.cymbal.splash"/>
+<Attribute id="importNames" value="suspended cymbal,sus. cymbal,metal.cymbal.suspended"/>
+<Attribute id="importNames" value="synth,synthesizer,pluck.bass.synth,pluck.bass.synth.lead"/>
+<Attribute id="importNames" value="tam-tam,tam tam,tamtam"/>
+<Attribute id="importNames" value="tambourine,tamb,drum.tambourine"/>
+<Attribute id="importNames" value="temple blocks,wood.temple-block"/>
+<Attribute id="importNames" value="tenor drum"/>
+<Attribute id="importNames" value="tenor saxophone,tenor sax,t. sax,wind.reed.saxophone.tenor,tenor sax full"/>
+<Attribute id="importNames" value="thunder sheet,thunder,effect.thunder,metal.thundersheet"/>
+<Attribute id="importNames" value="timpani,timp,drum.timpani"/>
+<Attribute id="importNames" value="train whistle,train,effect.whistle.train"/>
+<Attribute id="importNames" value="triangle,tri,metal.triangle"/>
+<Attribute id="importNames" value="trombone section,trombones,trbs,tbones,tenor trombones"/>
+<Attribute id="importNames" value="trombone,trb,tbone,brass.trombone,brass.trombone.alto,brass.trombone.tenor,trombone full,trombone xxl,tenor trombone"/>
+<Attribute id="importNames" value="trumpet section,trumpets,trps"/>
+<Attribute id="importNames" value="trumpet,trp,brass.trumpet,brass.trumpet.bflat,brass.trumpet.tenor,trumpet full,trumpet xxl"/>
+<Attribute id="importNames" value="tuba,brass.tuba,brass.tuba.bass,brass.tuba.subcontrabass,orchestral tuba"/>
+<Attribute id="importNames" value="tubular bells,chimes,metal.bells.chimes,pitched-percussion.tubular-bells"/>
+<Attribute id="importNames" value="tuned tongs"/>
+<Attribute id="importNames" value="ukulele"/>
+<Attribute id="importNames" value="upright bass,string bass,pluck.bass.acoustic,upright bass master"/>
+<Attribute id="importNames" value="vibraphone,vibes,vib,pitched-percussion.vibraphone,vibraphone basicdry"/>
+<Attribute id="importNames" value="vibraslap,rattle.vibraslap"/>
+<Attribute id="importNames" value="vibrastick"/>
+<Attribute id="importNames" value="viola,viola full"/>
+<Attribute id="importNames" value="viola,violas,viole,strings.viola,strings.viola-damore,viola section"/>
+<Attribute id="importNames" value="violin ii,violin 2,violino ii,violino 2"/>
+<Attribute id="importNames" value="violin,violin i,violin 1,violino,violino i,violino 1,strings.violin,violin full"/>
+<Attribute id="importNames" value="violin,violins,violin i,violin 1,violino,violino i,violino 1,strings.violin,strings.fiddle,strings.group,violin section"/>
+<Attribute id="importNames" value="voice,voice.vocals"/>
+<Attribute id="importNames" value="voice.alto"/>
+<Attribute id="importNames" value="voice.bass"/>
+<Attribute id="importNames" value="voice.child"/>
+<Attribute id="importNames" value="voice.soprano"/>
+<Attribute id="importNames" value="voice.tenor"/>
+<Attribute id="importNames" value="wagner tuba,wag. tuba,w. tuba"/>
+<Attribute id="importNames" value="water gong"/>
+<Attribute id="importNames" value="whip,effect.whip,wood.slapstick"/>
+<Attribute id="importNames" value="wind machine,wind,effect.wind"/>
+<Attribute id="importNames" value="wind.flutes.whistle,wind.flutes.whistle.tin,wind.flutes.whistle.tin.bflat,wind.flutes.whistle.tin.d"/>
+<Attribute id="importNames" value="wind.reed.saxophone.melody"/>
+<Attribute id="importNames" value="wine glasses,pitched-percussion.crystal-glasses"/>
+<Attribute id="importNames" value="wood block,wood blocks,wood.wood-block"/>
+<Attribute id="importNames" value="xylophone,xylo,xyl,pitched-percussion.xylophone,pitched-percussion.xylophone.alto,pitched-percussion.xylophone.bass,pitched-percussion.xylophone.soprano"/>
+<Attribute id="mixerGroup" value="Brass"/>
+<Attribute id="mixerGroup" value="Harps"/>
+<Attribute id="mixerGroup" value="Keybd"/>
+<Attribute id="mixerGroup" value="Other"/>
+<Attribute id="mixerGroup" value="Perc."/>
+<Attribute id="mixerGroup" value="Rhythm"/>
+<Attribute id="mixerGroup" value="Saxes"/>
+<Attribute id="mixerGroup" value="Sound FX"/>
+<Attribute id="mixerGroup" value="Strings"/>
+<Attribute id="mixerGroup" value="Vocal"/>
+<Attribute id="mixerGroup" value="WWinds"/>
+<Attribute id="partName" value="Cuckoo"/>
+<Attribute id="partNameShort" value="Cuckoo"/>
+<Attribute id="setupName" value="Cello (solo)"/>
+<Attribute id="setupName" value="Cuckoo"/>
+<Attribute id="setupName" value="Double-bass (solo)"/>
+<Attribute id="setupName" value="Viola (solo)"/>
+<Attribute id="setupName" value="Violin (solo)"/>
+<Attribute id="soundSetName.mobile" value="sectionsolo"/>
+<Attribute id="Toolbar.ControlLink" value="0"/>
+<Attribute id="Toolbar.ControlLink" value="1"/>
+<Attribute id="Transport.Cache" value="0"/>
+<Attribute id="Transport.Cache" value="1"/>
+<Attribute id="Transport.Key" value="0"/>
+<Attribute id="Transport.Key" value="1"/>
+<Attribute id="Transport.Loop" value="0"/>
+<Attribute id="Transport.Loop" value="1"/>
+<Attribute id="Transport.MarkerButtons" value="0"/>
+<Attribute id="Transport.MarkerButtons" value="1"/>
+<Attribute id="Transport.Metronome" value="0"/>
+<Attribute id="Transport.Metronome" value="1"/>
+<Attribute id="Transport.MidiMonitor" value="0"/>
+<Attribute id="Transport.MidiMonitor" value="1"/>
+<Attribute id="Transport.Performance" value="0"/>
+<Attribute id="Transport.Performance" value="1"/>
+<Attribute id="Transport.RecordTime" value="0"/>
+<Attribute id="Transport.RecordTime" value="1"/>
+<Attribute id="Transport.SampleRate" value="0"/>
+<Attribute id="Transport.SampleRate" value="1"/>
+<Attribute id="Transport.SecondaryTime" value="0"/>
+<Attribute id="Transport.Sync" value="0"/>
+<Attribute id="Transport.Tempo" value="1"/>
+<Attribute id="Transport.Timing" value="0"/>
+<Attribute id="Transport.Timing" value="1"/>
+<Command category="Audio Device" name="Dim"/>
+<Command category="Audio Device" name="Mono"/>
+<Command category="Audio Device" name="Mute"/>
+<Command category="Audio Device" name="Restore Audio Device Settings"/>
+<Command category="Audio Device" name="Speaker A"/>
+<Command category="Audio Device" name="Speaker B"/>
+<Command category="Audio Device" name="Speaker C"/>
+<Command category="Audio Device" name="Talkback"/>
+<Command category="Audio" name="Decrease Volume Fine"/>
+<Command category="Audio" name="Decrease Volume Fine">
+<Command category="Audio" name="Decrease Volume">
+<Command category="Audio" name="Edit Volume"/>
+<Command category="Audio" name="Export Audioloop"/>
+<Command category="Audio" name="Increase Volume Fine"/>
+<Command category="Audio" name="Increase Volume Fine">
+<Command category="Audio" name="Increase Volume">
+<Command category="Audio" name="New Clip Version"/>
+<Command category="Automation" name="Manage Parameters"/>
+<Command category="Automation" name="Next Parameter"/>
+<Command category="Automation" name="Next Parameter">
+<Command category="Automation" name="Previous Parameter">
+<Command category="Automation" name="Recently Touched"/>
+<Command category="Automation" name="Remove Current Parameter"/>
+<Command category="Automation" name="Remove Parameter"/>
+<Command category="Automation" name="Show Current Parameter"/>
+<Command category="Automation" name="Show Current Parameter">
+<Command category="Automation" name="Show Device"/>
+<Command category="Channel Components" name="Show Audio Device Controls"/>
+<Command category="Channel Components" name="Show Channel Icons"/>
+<Command category="Channel Components" name="Show Channel Notes"/>
+<Command category="Channel Components" name="Show Group Assignment"/>
+<Command category="Channel Components" name="Show I/O Connections"/>
+<Command category="Channel Components" name="Show I/O Connections">
+<Command category="Channel Components" name="Show Input Controls"/>
+<Command category="Channel Components" name="Show Sends/Cue mix"/>
+<Command category="Channel Components" name="Show Sends/Cue mix">
+<Command category="Channel Components" name="Show VCA Connections"/>
+<Command category="Console" name="Global Mute">
+<Command category="Console" name="Global Solo"/>
+<Command category="Console" name="Global Solo">
+<Command category="Console" name="Hide Muted Channels"/>
+<Command category="Console" name="Hide Soloed Channels"/>
+<Command category="Console" name="Mute Main Out"/>
+<Command category="Console" name="Show External Devices"/>
+<Command category="Console" name="Show Macro Controls"/>
+<Command category="Console" name="Show Muted Channels"/>
+<Command category="Console" name="Show Soloed Channels"/>
+<Command category="Console" name="Solo through Listen Bus"/>
+<Command category="Devices" name="Activate All Inserts"/>
+<Command category="Devices" name="All Notes Off"/>
+<Command category="Devices" name="All Notes Off">
+<Command category="Devices" name="Assign Current Parameter"/>
+<Command category="Devices" name="Assign Current Parameter">
+<Command category="Devices" name="Open Qwerty Keyboard">
+<Command category="Edit" name="Hide Muted Tracks"/>
+<Command category="Edit" name="Hide Soloed Tracks"/>
+<Command category="Edit" name="Select Muted Events"/>
+<Command category="Edit" name="Show Muted Tracks"/>
+<Command category="Edit" name="Show Soloed Tracks"/>
+<Command category="Event" name="Export Selection"/>
+<Command category="Event" name="Mute Events"/>
+<Command category="Event" name="Mute Events">
+<Command category="Event" name="Toggle Mute">
+<Command category="Event" name="Unmute Events"/>
+<Command category="File" name="Restore Version"/>
+<Command category="File" name="Save New Version">
+<Command category="Help" name="Create Diagnostics Report"/>
+<Command category="Instrument Parts" name="Export Musicloop"/>
+<Command category="Instrument Parts" name="Export Parts to MIDI File"/>
+<Command category="Macros" name="Macro Q3V0IFRvIE5ldyBUcmFjaw=="/>
+<Command category="Macros" name="Macro QWRkIEdhaW5Ucmlt"/>
+<Command category="Macros" name="Macro RGltaW5pc2hlZCBUcmlhZA=="/>
+<Command category="Macros" name="Macro TWVyZ2UgQWxsIEV2ZW50cyBvbiBTZWxlY3RlZCBUcmFja3M="/>
+<Command category="Macros" name="Macro U29yZGlubyBUcmVtb2xv"/>
+<Command category="Macros" name="Macro V2hvbGUgVG9uZSBUcmlsbA=="/>
+<Command category="Macros" name="Macro Wm9vbSBTZWxlY3RlZCBUcmFjaw=="/>
+<Command category="Mapping" name="Assign Current Parameter"/> <!-- Devices|Assign Current Parameter -->
+<Command category="Note Repeat" name="Key Remote"/>
+<Command category="Presets" name="Export Preset"/>
+<Command category="Presets" name="Import Preset"/>
+<Command category="Project" name="Import File"/>
+<Command category="Project" name="Locate Missing Devices"/>
+<Command category="Show" name="Locate Missing Devices"/>
+<Command category="Show" name="Select Mute Patch"/>
+<Command category="Song" name="Export Mixdown">
+<Command category="Song" name="Export Spatial Audio"/>
+<Command category="Song" name="Export Stems">
+<Command category="Song" name="Import File">
+<Command category="Song" name="Import Song Data">
+<Command category="Song" name="Locate Missing Devices"/>
+<Command category="Song" name="Set Frames at Cursor"/>
+<Command category="Track" name="Mute"/>
+<Command category="Track" name="Mute">
+<Command category="Track" name="Select Muted Tracks"/>
+<Command category="Track" name="Solo follows Selection"/>
+<Command category="Track" name="Solo Layer"/>
+<Command category="Track" name="Solo">
+<Command category="Transport" name="Autopunch In"/>
+<Command category="Transport" name="Autopunch Out"/>
+<Command category="Transport" name="Autopunch"/>
+<Command category="Transport" name="Autopunch">
+<Command category="Transport" name="Click"/>
+<Command category="Transport" name="Click">
+<Command category="Transport" name="Cursor follows Edit Position"/>
+<Command category="Transport" name="Enable Play Start Marker"/>
+<Command category="Transport" name="Enable Play Start Marker">
+<Command category="Transport" name="External Sync Options"/>
+<Command category="Transport" name="Forward Bar"/>
+<Command category="Transport" name="Forward Bar">
+<Command category="Transport" name="Forward">
+<Command category="Transport" name="Goto Loop End"/>
+<Command category="Transport" name="Goto Loop End">
+<Command category="Transport" name="Goto Loop Start"/>
+<Command category="Transport" name="Goto Loop Start">
+<Command category="Transport" name="Goto Next Event"/>
+<Command category="Transport" name="Goto Next Event">
+<Command category="Transport" name="Goto Previous Event"/>
+<Command category="Transport" name="Goto Previous Event">
+<Command category="Transport" name="Goto Time"/>
+<Command category="Transport" name="Goto Time">
+<Command category="Transport" name="Locate Mouse Cursor"/>
+<Command category="Transport" name="Locate Mouse Cursor">
+<Command category="Transport" name="Locate Selection End"/>
+<Command category="Transport" name="Locate Selection"/>
+<Command category="Transport" name="Locate Selection">
+<Command category="Transport" name="Loop Follows Selection"/>
+<Command category="Transport" name="Loop Follows Selection">
+<Command category="Transport" name="Loop Selection Snapped"/>
+<Command category="Transport" name="Loop Selection Snapped">
+<Command category="Transport" name="Loop Selection">
+<Command category="Transport" name="Metronome Setup"/>
+<Command category="Transport" name="Metronome Setup">
+<Command category="Transport" name="Play from Loop Start"/>
+<Command category="Transport" name="Play Selected Range"/>
+<Command category="Transport" name="Play Selected Range">
+<Command category="Transport" name="Precount"/>
+<Command category="Transport" name="Precount">
+<Command category="Transport" name="Preroll">
+<Command category="Transport" name="Record">
+<Command category="Transport" name="Return to Start on Stop"/>
+<Command category="Transport" name="Return to Start on Stop">
+<Command category="Transport" name="Return to Zero">
+<Command category="Transport" name="Rewind Bar"/>
+<Command category="Transport" name="Rewind Bar">
+<Command category="Transport" name="Rewind">
+<Command category="Transport" name="Set Loop End"/>
+<Command category="Transport" name="Set Loop End">
+<Command category="Transport" name="Set Loop Start"/>
+<Command category="Transport" name="Set Loop Start">
+<Command category="Transport" name="Set Play Start Marker"/>
+<Command category="Transport" name="Set Play Start Marker">
+<Command category="Transport" name="Shift Loop Backwards"/>
+<Command category="Transport" name="Shift Loop"/>
+<Command category="Transport" name="Start"/>
+<Command category="Transport" name="Start">
+<Command category="Transport" name="Stop">
+<Command category="Transport" name="Sync to External Devices"/>
+<Command category="Transport" name="Tap Tempo"/>
+<Command category="Transport" name="Toggle Loop Display"/>
+<Command category="Transport" name="Toggle Loop">
+<Command category="Transport" name="Toggle Start">
+<Command category="Video" name="Export Video"/>
+<Command category="Video" name="Import Video"/>
+<Command category="Video" name="Use Video Frame Rate in Timeline"/>
+<Command category="View" name="Controls"/>
+<Command category="View" name="Messages"/>
+<Command category="View" name="Toggle Detached MixerConsole"/> <!-- View|Toggle Detached Console -->
+<Commands name="Studio One" version="5">
+<CustomizationPreset name="Audio Editing" id="PreSonus.StudioOne.Customization.AudioEditing">
+<CustomizationPreset name="Basic" id="PreSonus.StudioOne.Customization.Basic">
+<CustomizationPreset name="Complete" id="PreSonus.StudioOne.Customization.Complete">
+<CustomizationPreset name="Minimal" id="PreSonus.StudioOne.Customization.Minimal">
+<InstallInclude url="resource:///installer/3rdparty.xml"/>
+<InstallManifest version="6.5">
+<Key name="Command+Control+F"/>
+<Key name="Control+Command+X"/>
+<Key name="Control+K"/>
+<Key name="Control+M"/>
+<Key name="Control+N"/>
+<Key name="Control+Option+Z"/>
+<Key name="Control+Shift+Tab"/>
+<Key name="Control+Tab"/>
+<Key name="Control+X"/>
+<Key name="Option+Control+V"/>
+<Key name="Shift+Control+K"/>
+<Key name="Shift+Control+Tab"/>
+<Menu name="Transport" title="Options">
+<Menu name="Transport" variant="project">
+<Menu name="Transport" variant="show">
+<Menu name="Transport" variant="song">
+<Menu title="Controls">
+<MenuItem category="Song"  name="Locate Missing Devices" follow="1"/>
+<MenuItem category="Song" name="Set Frames at Cursor" follow="1"/>
+<MenuItem category="Track" name="Mute" title="Mute Track"/>
+<MenuItem category="Track" name="Solo Layer"/>
+<MenuItem category="Track" name="Solo" title="Solo Track"/>
+<MenuItem category="Video"  name="Export Video" follow="1"/>
+<MenuItem name="Create Diagnostics Report" follow="1"/>
+<MenuItem name="Export Mixdown" follow="1"/>
+<MenuItem name="Export Stems" follow="1"/>
+<MenuItem name="Import File" follow="1"/>
+<MenuItem name="Import Song Data" follow="1"/>
+<MenuItem name="Locate Missing Devices" follow="1"/>
+<MenuItem name="Messages"/>
+<MenuItem name="Next Parameter"/>
+<MenuItem name="Previous Parameter"/>
+<MenuItem name="Restore Version" follow="1"/>
+<MenuItem name="Save New Version" follow="1"/>
+<MenuItem name="Select Muted Events"/>
+<MenuItem name="Show Location FaderPort" title="FaderPort User Guide"/>
+<MenuItem name="Sync to External Devices" />
+<MenuPlaceholder name="Export Spatial Audio"/>
+<Settings name="Weblinks" version="1">
+<Settings xmlns:x="http://www.presonussoftware.com/xml/ccl" name="PluginPresentation" version="3">
+<Settings xmlns:x="https://ccl.dev/xml" name="customization" version="1">
+<String text="Construction Kit"/>
+<String text="solo"/>
+<Url x:id="NotionShop"      url="https://shop.presonus.com/products/software/notion-prods"/>
+<Widget id="Controls" col="1" row="3"/>
+@iUcusmf
+__CxxFrameHandler4
+_invalid_parameter_noinfo_noreturn
+A device with this name already exists.
+about.xml
+Accessing remote storage
+Acquiring remote lock
+ActionJournalComponent
+Activate All Devices
+Activate Devices
+activeParam
+Add / Remove Parameters
+Add Device
+Add micro edit parameter "%(1)"
+Add Note Controller "%(1)"
+addDevice
+addDeviceParamName
+Additional versions available.
+addParam
+addParameter
+Adjust volume
+aggregateDeviceChanged
+algorithmVersion
+alias: AliasParam, paramName: string
+AliasParam
+allParamsChanged
+analyser.xml
+AnalyserSpectrumLevelsComponent
+analytics/Devices/
+analytics/Export/
+anyMute
+anySolo
+appAdditionalVersion
+AppComponents
+AppLaunchReport
+application/json
+application/ubjson
+application/x.ccl-colorpalette+json
+application/x.ccl-diagnostics-report
+application/x.presonus-artist
+application/x.presonus-audiobend+ubjson
+application/x.presonus-audiobend+xml
+application/x.presonus-audioloop
+application/x.presonus-audiopeak
+application/x.presonus-capture-session
+application/x.presonus-chord+ubjson
+application/x.presonus-chord+xml
+application/x.presonus-click+xml
+application/x.presonus-envelope+ubjson
+application/x.presonus-envelope+xml
+application/x.presonus-instrument
+application/x.presonus-ioconfig+xml
+application/x.presonus-keyswitches+xml
+application/x.presonus-license
+application/x.presonus-musicloop
+application/x.presonus-pattern+xml
+application/x.presonus-performance+ubjson
+application/x.presonus-performance+xml
+application/x.presonus-pitchlist+xml
+application/x.presonus-project
+application/x.presonus-projecttemplate
+application/x.presonus-quantize+xml
+application/x.presonus-show
+application/x.presonus-showtemplate
+application/x.presonus-song
+application/x.presonus-songtemplate
+application/x.presonus-soundset
+application/x.presonus-surfacedata+xml
+application/x.presonus-trackpreset
+application/x.presonus-videocache
+appNameAndVersion
+apptracking.xml
+appVersion
+APPVERSION
+AppVersionPackageFilter
+AppVersionPackageFilterComponent
+AraAudioFileExporter
+AraEventEditComponent
+Are you sure you want to delete all attachments of this version?
+ArrangerEditComponent
+ArrangerTrackComponent
+Assign Current Parameter
+Assign Input Ports Ascending
+Assign Output Ports Ascending
+Assign Parameter
+assignControl
+AssignParameterDragHandler
+ASWG-R001 PORTABLE
+AtlasMixerAssets.png
+AtlasMixerAssets@2x.png
+atlasusage.xml
+Audio Device
+Audio Device could not be started
+Audio device realtime thread priority could not be set.
+Audio device timestamp is off by %f, ignoring timestamps now
+Audio device timestamp is zero, ignoring timestamps now
+Audio Devices
+Audio Export
+audio/vnd.presonus.multitrack
+audio/x-fxpreset+xml
+audio/x-mfxpreset+xml
+AudioAggregateDevice
+audiochannel.narrow.xml
+audiochannel.small.xml
+audiochannel.styles.xml
+audiochannel.wide.xml
+audiochannel.xml
+AudioChannelControllable
+AudioChannelInputFXComponent
+AudioChannelListenComponent
+AudioChannelMacroControlSet
+AudioChannelMacroControlSet::ControllableInjector
+AudioChannelMeterComponent
+AudioChordsEditComponent
+AudioClipComponent
+AudioClipImporter
+AudioClipSpeakerMapComponent
+audiocodec.xml
+AudioDevice
+AudioDevice.png
+AudioDevice@2x.png
+AudioDeviceAsio.png
+AudioDeviceAsio@2x.png
+audiodeviceassignment
+AudioDeviceAssignments
+AudioDeviceAssignmentStore
+AudioDeviceChanged
+AudioDeviceInfoReply
+AudioDeviceInfoRequest
+AudioDeviceInput
+AudioDeviceNone.png
+AudioDeviceNone@2x.png
+AudioDeviceOutput
+audiodevices
+AUDIODEVICES.TXT
+AudioDiscPublisher
+audioediting.xml
+AudioEffectClip::MacroControlItem
+AudioEncoderComponent
+AudioEventFXComponent
+AudioEventFXComponentBase
+AudioEventVolumeSideEffect
+audioexport.xml
+AudioFaderComponent
+audiofile.xml
+AudioFileExporter
+AudioFilePublisher
+AudioFilePublisher.AudioCodec
+AudioFilePublisher.LoudnessNormalizer
+AudioFilePublisher.Publisher
+AudioFilePublisher::PublishedTrack
+audiofxeditor.xml
+AudioFXRoutingComponent
+AudioInsertSpeakerMapComponent
+AudioInsertSpeakerMapComponent::ListModel
+AudioMixer
+audioMixer
+audiomixer.xml
+AudioMixer/LevelMeterOptions
+AudioMixerEditFunctions
+AudioMixerSetup
+AudioMixFXComponent
+AudioMixFXComponent::SourceReceiveTask
+AudioPanner::Controllable
+AudioPortMerger
+AudioPortSplitter
+AudioRetuneComponent
+AudioSendComponent
+AudioSendControllable
+AudioSideChainComponent
+audioslices.xml
+AudioSpeakerMapComponent
+AudioSpeakerMapComponent::ListModel
+AudioSynth:PortIndex
+AudioSynthDirectInput::ThruChannel
+AudioTrackDevice
+AudioTrackTransformComponent
+audiotransform.xml
+AudioVolume
+AudioVolumeAction
+autoMappingSupported
+AutomatedControllable
+automation.xml
+AutomationAspectComponent
+AutomationControlComponent
+AutomationItemListComponent
+AutomationModeParam
+AutomationTrackComponent
+AutomationTrackListComponent
+AuxPortList
+availableDevicesChanged
+Backup restored successfully.
+Backup uploaded successfully.
+backup.xml
+BasicAudioMixerSetup
+BeatListParam
+BeatListParam::Palette
+BeatListParamZero
+Bend packet missing bend wtimes
+BendEditComponent
+Boxed::PortDescription
+branding.xml
+BreadcrumbsComponent
+Breath controller
+Breath Controller
+Broadcast.svg
+browser.xml
+BuiltinInstruments.xml
+burn.xml
+busDeviceManagerChanged
+buttons.xml
+BWFXML
+canMuteSolo
+Cannot disable session cache
+Cannot export spatial audio file.
+canSelectDeviceBlockSize
+canShowChannelGroupControl
+canShowChannelInputControls
+Capture Session
+captureControl
+CCL.JS.Component = function ()
+CCL.JS.Component.prototype.checkCommandCategory = function (category)
+CCL.JS.Component.prototype.getTheme = function ()
+CCL.JS.Component.prototype.initialize = function (context)
+CCL.JS.Component.prototype.interpretCommand = function (msg)
+CCL.JS.Component.prototype.notify = function (subject, msg)
+CCL.JS.Component.prototype.onExtendMenu = function (param, menu)
+CCL.JS.Component.prototype.paramChanged = function (param)
+CCL.JS.Component.prototype.terminate = function ()
+CCL.JS.highlightControl = function (helpId, exclusive = true)
+CCL.JS.kChanged = "changed"; // generic message kChanged
+CCL.JS.kExtendMenu = "extendMenu"; // IParameter::kExtendMenu
+CCL.JS.kRequestFocus = "requestFocus"; // IParameter::kRequestFocus
+CCL.XmlArchive
+CCL/RestoreDocumentVersion
+CCL/SaveNewVersionDialog
+cclcommon.xml
+cclplugins.xml
+changeDeviceBlockSize
+Channel Components
+Channel Controls
+channel: Channel, targetPort: Port
+ChannelControllable
+channeleditor.macrocontrols.xml
+channeleditor.xml
+ChannelFocusComponent
+channelGroupControlOffset
+ChannelGuiComponent
+channelInputControlsOffset
+ChannelMacroControls
+ChannelOutputMuted
+channelpanner.xml
+Checking remote location
+Checking remote lock
+Checking version of %(1)
+ChordEditComponent
+ChordTrackComponent
+Class:ComponentClassID
+Class:Version
+clearMapping
+Click Volume
+Click+Drag Parameter
+ClickController
+clip.framecolor
+Clipping has occurred. The signal was %float(1:2) dB over.
+closeAfterExport
+CloudUserComponent
+Codec not supported!
+collaboration.xml
+collaboration_file_new_message
+collaboration_new_message
+colorInversion
+ColorParam
+colorParam: Parameter, applyPresetPalette: bool = true
+colorscheme.xml
+com.presonus.studioapp
+COMMANDBLACKLIST.XML
+CommandParam
+COMMANDS.XML
+commands.xml
+COMMANDS/ABLETONLIVE.XML
+COMMANDS/CUBASE.XML
+COMMANDS/FLSTUDIO.XML
+COMMANDS/LOGIC.XML
+COMMANDS/PROTOOLS.XML
+COMMANDS/SONAR.XML
+COMMANDSCHEMES.XML
+CommandUsageReport
+common.xml
+community_direct_message
+CompatibleMixer
+Component
+component
+component.xml
+ComponentAlias
+ComponentBuilder
+ComponentControllable
+ComponentData
+ComponentEditAction
+ComponentExtender
+con sordino, sordino, muted, CS
+ConfigurationComponent
+Connect "%(1)" to %(2) Control
+Connect "%(1)" to %(2) Control %(3)
+connectAliasParam
+ConnectFromDeviceInfo
+ConnectPortAction
+ConsoleComponent
+Construction Kit
+Construction Kits
+content.xml
+content/version
+contentFrame
+ContentStateFilterComponent
+contextmenuforms.xml
+Control
+control
+Control 
+Control Sources
+Control Surface
+Control Surface Manager
+control%01x%01x%02x
+control%d
+Control/
+control2
+control: string, option: string, value: variant
+controlAdded
+controlAssignment
+controlAssignmentChanged
+controlBarColor
+ControlComponent
+ControlContextMenu
+controlEditType
+ControlEvent
+ControlFunction
+ControlHandler
+ControlHandlerList
+ControlInput
+Controllable
+ControllableBank
+ControllableBankAlias
+ControllableDisable
+ControllableFolder
+ControllableRebrowse
+ControllableRebuild
+ControllableRenamed
+ControllableRestored
+ControllableTerminate
+ControlLaneManager
+Controller
+controller
+Controller change
+ControlList
+controlList
+ControlListItem
+controlMessage
+ControlMidiHandler
+controlName
+ControlParam
+ControlPoints
+controlRemoved
+controlResultBarColor
+Controls
+controls
+ControlStack
+ControlSurface
+controlsVisible
+controlTitle
+controlType
+ControlType
+ControlType%d
+controlValue
+copyFile: installhistory.xml
+copyFile: MusicDevices.settings
+copyFolder-r: Surface Data
+copyFolder-r: Surface Data[1]
+copyFolder-r: User Devices
+Copyright (c)2024 PreSonus Software Ltd.
+CorrelationMeterComponent
+Could not import file!
+Could not import file! The file format is unsupported.
+cpuCores
+CrashReported
+Create device: %(1)
+Create Diagnostics Report
+createAudioTrackOnImport
+CreateDevice
+createDiagnosticsReport
+CreateFrameworkView
+createTrackFormatWithPort
+CreateXmlParser
+CreateXmlWriter
+CredentialComponent
+CueMixerEnabler
+cueMixMuteFollowsChannel
+cueMixMuteOptionChanged
+Current version: %(1)
+CustomizationComponent
+data.xml
+DawPageLayoutComponent
+DawPartSetupComponent
+Deactivate All Devices
+Deactivate Devices
+DebugMenuComponent
+DebugReportWarning
+DeepComponentAlias
+defaultComponent
+defaultParamMute
+defaultParamPan
+defaultParamVolume
+deferDestruction
+deferPortIncrement
+Delta control
+Delta edit header
+destPortID
+DetachedMixer
+Detected Device %(1)
+detectionParams
+DetectMixer
+device
+Device
+Device %(1)
+Device Block Size: %(1)
+Device information for %(1) received.
+Device/Port
+device:///
+Device:Attachment
+Device:AVDECCEnabled
+Device:Cascadable
+Device:ClassVisibility
+Device:FamilyDisplayName
+Device:FamilyTabID
+Device:HostData
+Device:LegacyDevice
+DeviceActions
+DeviceAssignment
+DeviceAssignmentData
+DeviceAssignmentPage
+deviceAssociationChanged
+DeviceAttachment.png
+DeviceAttachment@2x.png
+deviceBlockSize
+deviceBlockSizeCount
+DeviceBrowser
+DeviceBrowserExtension
+DeviceBypassAction
+deviceCategory
+deviceClassID
+DeviceClipboard
+deviceClipboard.memUsed
+DeviceClipboardUnit
+deviceClosed
+devicecolor
+DeviceComponent
+DeviceContainerID
+deviceControlsOffset
+deviceData
+deviceDataCopied
+deviceDescription
+DeviceDetector
+DeviceDisableAction
+deviceDisabled
+deviceEdit
+DeviceEditFunctions
+DeviceEditor
+DeviceEditorActivated
+DeviceEditorFollower
+DeviceEditorManager
+DeviceEnvironment
+deviceFamily
+DeviceFolder
+deviceFolder
+DeviceFolderActionMarker
+DeviceFolderBank
+DeviceFolderControllable
+deviceheader.xml
+deviceIcon
+DeviceIcon:UnresolvedConnection
+DEVICEICONS.SKIN
+deviceID
+deviceId
+DeviceIdentifier
+deviceImage
+deviceInit
+deviceInputLabel
+deviceInputLatency
+DeviceInsertAction
+DeviceJournal
+deviceList
+DeviceMapping
+DeviceMasterFolder
+deviceMenu
+DeviceModel
+deviceModel
+DeviceModelSubtype
+deviceModified
+deviceMonitorLatency
+deviceName
+deviceNotes
+deviceObserver
+deviceOutputLatency
+deviceParam
+DeviceParam
+DeviceParameterConfiguration
+DeviceParameterList
+DeviceParamFolder
+deviceParams
+devicePixelRatio
+DevicePortItem
+DevicePortMap
+devicePortNamesChanged
+DevicePresetAction
+devicePresetInserted
+DevicePresetRevealer
+DevicePresets
+DeviceProcessFolder
+DeviceRack
+DeviceRack::ParamDragHandler
+DeviceRack::PresetDragHandler
+DeviceRack::SlotDragHandler
+DeviceRemoveAction
+DeviceRenameAction
+DeviceReorderAction
+Devices
+devices
+Devices.Audio
+Devices.AudioChannel
+Devices.AudioEngine
+Devices.AudioIOManager
+Devices.AudioPanner
+Devices.AudioSetup
+Devices.AudioSynth
+Devices.Automation
+Devices.BlockSize
+Devices.Channel
+Devices.Channel.pluginSelectorMode
+Devices.Console
+Devices.Controllable
+Devices.Editing
+Devices.Editor
+Devices.Editors
+Devices.External
+Devices.Folder
+Devices.JS = function ()
+Devices.JS.ChannelEditorType = function () {}
+Devices.JS.ChannelEditorType.kChannel = "Channel";
+Devices.JS.ChannelEditorType.kInserts = "Inserts";
+Devices.JS.ChannelEditorType.kInstrument = "Instrument";
+Devices.JS.ChannelEditorType.kNoteFX = "Note FX";
+Devices.JS.ChannelEditorType.kOverview = "Overview";
+Devices.JS.ChannelEditorType.kPostInserts = "PostInserts";
+Devices.JS.ChannelEditorType.kRouting = "Routing";
+Devices.JS.ChannelEditorType.kSends = "Sends";
+Devices.JS.ChannelEditorType.kSoundVariationMap = "SoundVariationMap";
+Devices.JS.kExtendPortMenu = "PortParm:extendPortMenu";
+Devices.JS.kInputPort = 0;
+Devices.JS.kOutputPort = 1;
+Devices.JS.MixerConsole = function () {}
+Devices.JS.MixerConsole.kChannels = 1;
+Devices.JS.MixerConsole.kInputs = 0;
+Devices.JS.MixerConsole.kMasters = 3;
+Devices.JS.MixerConsole.kOutputs = 2;
+Devices.LowLatency
+Devices.Monitoring
+Devices.Music
+Devices.MusicDeviceLibrary
+Devices.Ports
+Devices.Record
+Devices.Surface
+Devices.Transport
+Devices.Transport.showLoopLength
+devices.xml
+Devices/
+Devices/AudioIOSetup
+Devices/AudioIOSetup.InputDeviceInfo
+Devices/AudioIOSetup.OutputDeviceInfo
+Devices/AudioSendSlotPopup
+Devices/AudioSetup
+Devices/AudioSynthChannelSetup
+Devices/AudioSynthChannelSetup.Micro
+Devices/ChannelIcon:
+Devices/ChannelOrganizerSetup
+Devices/CueMixSlotPopup
+Devices/EditGroupMiniProperties
+Devices/ExternalEffectEditor
+Devices/ExternalEffectMicroEditor
+Devices/FindChannelPopup
+Devices/GenericEditor
+Devices/GhostDeviceEditor
+Devices/MacroControlSetup
+Devices/MacroTargetCurve
+Devices/MicroEditor
+Devices/MicroEditSetupDialog
+Devices/MissingDeviceDialog
+Devices/MixerConsoleSizes
+Devices/MusicDeviceAddDialog
+Devices/MusicDeviceEditDialog
+Devices/MusicDeviceSetup
+Devices/MusicDeviceSlotAuxSetup
+Devices/MusicDeviceSlotAuxSetup.Micro
+Devices/PannerEditor
+Devices/PannerPopup
+Devices/ParameterSelector
+Devices/ParamValueMenuItem
+Devices/RoutingEditor
+Devices/SelectScenePopup
+Devices/SidechainIcon
+Devices/SideChainSourceEmpty
+Devices/SideChainSourceList
+Devices/SlotNodeEditView
+Devices/SplitterEditView
+Devices/SplitterFXSnapshot
+Devices/SplitterMicroView
+Devices/SurfaceControlItem
+Devices/SurfacePlacementEditor
+Devices/SuspendGroupPopup
+Devices/SynthCombinatorEditor
+Devices/SynthCombinatorMicroEditor
+Devices/SynthNodeEditView
+Devices/UnknownControlSurface
+Devices/UnknownInstrument
+Devices/UnknownKeyboard
+Devices::Boxed::ParamCaptureEvent
+Devices::LegacyMathPoint
+Devices::Surfaces
+DeviceSafety
+deviceSelected
+DeviceSlot
+DeviceSlot:bypass
+DeviceSlot:deviceName
+DeviceSlot:deviceUID
+DeviceSlot:disabled
+DeviceSlot:expanded
+DeviceSlot:ghostData
+DeviceSlot:slotUID
+DeviceSlot:softBypass
+deviceSlotAdded
+deviceSlotRemoved
+deviceSlotReordered
+DeviceSlotSelector
+deviceStates
+DeviceSynchronizer
+DeviceTrashItem
+deviceType
+DeviceUnitSelected
+DeviceUsageReport
+DeviceUsed
+deviceVendor
+Diagnostics Report
+DiagnosticsReport
+discardMessage-
+Disconnect "%(1)" from %(2) Control %(3)
+displayParamsChanged
+dividerParamName
+Do not publish
+Do you want to delete the exported file?
+Do you want to delete the exported files?
+Do you want to keep the backup as a version?
+Do you want to reconnect your external devices now?
+Do you want to remove these parameters from all parts?
+Do you want to remove these parameters?
+Do you want to remove this parameter from all parts?
+Do you want to remove this parameter?
+Do you want to replace the saved version "%(2)" with the current state, or discard the current state?
+Do you want to revert the keyboard mapping scheme to "%(1)"?
+Document version history timeout exceeded.
+Document:FormatVersion
+DocumentComponent
+DocumentPropertyFrame
+DocumentUsageReport
+DocumentVersions
+DragControl
+DropZoneFrame.png
+DropZoneFrame@2x.png
+DuplicateTrackDeviceAction
+E:\.jenkins\workspace\win\presonus\branches\studioone_6_6_1\build\cmake\win\x64\Release\Studio One.pdb
+Edit Device
+Edit Multiple Parameters
+Edit Pattern Parameter
+EditComponent
+EditControlManager
+editDevice
+EditGroupParam
+editgroups.xml
+EditGroupsComponent
+editMapping
+editor.xml
+EditorComponent
+editorParam
+Effect Control 1
+Effect Control 2
+EffectClipMacroControls
+Engine.MediaClipImporter
+Engine/AutomationAspectControls
+Engine/EmbeddedDeviceEditor
+Engine/LayerAspectControls
+Engine/LyricsLaneHeader
+Engine/NoteControllerLaneHeader
+Engine/SoundVariationLaneHeader
+Engine/SymbolLaneHeader
+Engine/TrackControlsInset
+EnvelopeEditComponent
+errorMessage
+errorReported
+EULAComponent
+euladialog.xml
+EventEditComponent
+eventediting.xml
+eventicon.mute
+eventinspector.xml
+eventtheme.xml
+eventTransparencySupported
+EventVolumeAction
+Export
+export
+Export 
+Export %(1)
+Export as Text
+Export Mixdown
+Export name
+Export Preset
+Export Selection
+Export Spatial Audio
+Export Stems
+Export Text
+Export to "%(1)"
+Export Video
+ExportAlternative
+exportDisabled
+ExportDocument
+Exported
+ExportEventsTask
+Exporting
+Exporting %(1)
+Exporting %(1)...
+Exporting...
+Exporting:
+exportLoadDuration
+exportName
+ExportRange
+exports
+exportSaveDuration
+exportSaveSize
+exportWarning
+Expression imports
+ExtendDeviceSlotMenu
+Extension:UseAppProductID
+extensionmanager.xml
+EXTENSIONS.JSON
+extensions.json
+External Devices
+ExternalDevicePreset
+externaleffect.xml
+ExternalEffectComponent
+f.@UDP[
+faderDividerParamName
+faderport
+FaderPort.png
+FaderPort16.png
+FaderPort16@2x.png
+FaderPort2.png
+FaderPort2@2x.png
+FaderPort2@3x.png
+FaderPort8.png
+FaderPort8@2x.png
+FaderPort8@3x.png
+FaderPort@2x.png
+Failed to create remote folder.
+Failed to export audio file.
+Failed to rename remote file to
+Failed to start remote connection
+Failed to start remote session.
+failedDevices
+featureSupported
+FeedListComponent
+fft.frameColor
+File version
+file="Sample Magic Loops and Kits.soundset"
+file="Synth Session.soundset"
+FileExport
+FileExportDraghandler
+FileExported
+FileExporter
+FileExportReport
+filefilter.xml
+FileInfoComponent
+FileInfoFrame
+FilePreviewComponent
+FileTypePackageFilterComponent
+FileVersion
+filterControllers
+findParameter
+FloatParam
+Focus Frame
+focusDeviceFolder
+focusDeviceFullName
+focusDeviceName
+focusKeyMute
+focusKeySolo
+focusMappingPageCount
+FocusNodeComponent
+focusPartSupported
+folder: DeviceFolder, preset_or_class: Preset | UID | string, position: int = -1
+FolderIcon:PreSonus
+folderMenuParamName
+FolderTrackAudioBusComponent
+FolderTrackComponent
+fontdemo.xml
+fonts.xml
+FontSelectorComponent
+FontSelectorComponent::ExampleView
+Foot Controller
+forImport: bool = false, mediaType: string = null
+formatGroupingId
+formatProductKey
+formatVersion
+frame.activecolor
+frame.disabledcolor
+frame.inactivecolor
+frame.selectedcolor
+frameCount
+frameOffset
+Framerate
+frameRate
+Frames
+frames
+frameShortTitle
+frameTitle
+frameType
+frameTypeFromVideo
+framewidth
+FrameworkOptionElement
+FrameworkService
+fretboard.xml
+function Devices ()
+fxeditor.xml
+fxgraph.xml
+FXGraphInsertRemoveDeviceSideEffect
+gainReductionEnabled
+Generic MIDI Control Surface, use for unknown gear. This device model features MIDI Learn.
+Generic MIDI Keyboard, use for unknown gear. This device model features MIDI Learn. Connecting the send port is optional.
+generic.xml
+GenericMapping
+getCurrentPort
+GetFrameworkConfiguration
+getGenericMapping
+getGlobalMapping
+getNextPort
+getOutputPortList
+getParamCount
+getParamTitle
+getParamTitleWithName
+getParamValue
+getPort
+getPortList
+getRecentParamMapping
+glissandoportamento
+Global Mute
+Global Solo
+globalControlsVisible
+GlobalMacroControlSet
+GlobalMacroFocusComponent
+GlobalMapping
+globalMappingPageCount
+GlobalTrackControls
+GlobalTrackItemComponent
+GlobalTrackListComponent
+GlobalTracksComponent
+GlobalTracksComponent::SignatureTrackItem
+Glyphset control
+GM export
+GM import
+gmExportProgram
+gmImportPrograms
+gUCEgJ
+gUcVyW
+GUI.Controls
+GUI.Controls.Knob
+GUI.Controls.Slider
+HardwareControls
+HardwareFX+Controls
+HardwareInputControls
+HardwareMixer
+HardwareMixerManager
+HardwareMixerState
+hasAddDeviceParam
+hasAudioDevice
+hasChild[CompatibleMixer]
+hasControlPanel
+hasControlTitle
+hasDeviceAttachment
+hasDisabledDevice
+hasExclusiveDevice
+hasExportWarning
+hasFolderMenuParam
+hasHeader
+hasManagedDevices
+hasMenuEntryForNoDevice
+hasParam[
+hasParam[speakerSetup]
+hasParameterTitle
+hasProductKey
+hasPublisher
+hasReceivePort
+hasSendPort
+hasSurfaces
+hasVersion
+header.backcolor
+header.instrumentColor
+header.instrumentfont
+header.shortNames
+headerItemShort
+headerItemTitle
+headersize
+headerText
+HeaderView
+HelpID.kAudioFXEditorFocusDevice = "takeFocus";
+HelpID.kChannelOutputPort = "outputPort"
+HelpID.kHomeDeviceSetup = "DeviceSetup"; // Device setup area
+HelpID.kMixerAudioIOSetup = "MixerAudioIOSetupButton";
+HelpID.kPatternControlLanes = "MusicPatternControlLanes";
+HelpID.kTrackControls0 = "TrackControls0";
+HelpID.kTrackControls1 = "TrackControls1";
+HelpID.kTransportPanel = "TransportPanel";
+HelpID.kVolume = "volume";
+HelpInfoControl
+HelpInfoViewComponent
+hEmtcPo
+hiddenChannelGroupControl
+hiddenChannelInputControls
+Hide in mixer
+Hide Muted Channels
+Hide Muted Tracks
+Hide Soloed Channels
+Hide Soloed Tracks
+hidePortLabel
+homepage.xml
+Host.GUI.Help.highlightControl (helpId, exclusive);
+HostUtils.getAudioDeviceName = function ()
+HostUtils.getMixerConsole = function ()
+http://www.presonus.com/studioone
+https://ccl.dev/xml
+HWControlsConsoleComponent
+icons.xml
+iconsDividerParamName
+id="presonus.studioone.3dir"
+id="presonus.studioone.adkits"
+id="presonus.studioone.agxt"
+id="presonus.studioone.ampclassics"
+id="presonus.studioone.bassesxt"
+id="presonus.studioone.bigfishloops"
+id="presonus.studioone.brassxt"
+id="presonus.studioone.demos.as1"
+id="presonus.studioone.demos.as2"
+id="presonus.studioone.demos.dolbytutorial"
+id="presonus.studioone.demos.nz1"
+id="presonus.studioone.eal"
+id="presonus.studioone.egxt"
+id="presonus.studioone.fmsounds"
+id="presonus.studioone.instruments"
+id="presonus.studioone.instruments2"
+id="presonus.studioone.IR"
+id="presonus.studioone.keysxt"
+id="presonus.studioone.malletxt"
+id="presonus.studioone.musicloops"
+id="presonus.studioone.mvploops"
+id="presonus.studioone.nva"
+id="presonus.studioone.pervocxt"
+id="presonus.studioone.samplemagicloops"
+id="presonus.studioone.sonefx"
+id="presonus.studioone.stringsxt"
+id="presonus.studioone.synthsession"
+id="presonus.studioone.teaser1"
+id="presonus.studioone.vintagekeys"
+id="presonus.studioone.windsxt"
+id="presonus.studioone6.de.help"
+id="presonus.studioone6.en.help"
+id="presonus.studioone6.es.help"
+id="presonus.studioone6.fr.help"
+id="presonus.studioone6.ja.help"
+id="samplemagic.studioone.impactxt"
+IDeviceSlot
+if(msg.id == CCL.JS.kExtendMenu) // sent by menu parameters
+if(param)
+Ihttp://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl0
+import
+Import
+Import as format
+Import DDP
+Import File
+Import Files
+Import Files into Pool:
+Import genre
+Import Meta Data
+Import names
+Import Preset
+Import Presets
+Import Song Data
+Import to Pool
+Import to Pool failed
+Import Video
+importAutomation
+importDDP
+imported
+importEvents
+importFile
+importFileAvailable
+importFiles
+importGenre
+Importing %(1)...
+Importing Preset
+Importing...
+importInserts
+importInstruments
+importLayers
+importMode
+importModes
+importNames
+importSends
+importsongdata.xml
+ImportSongDataOptions
+ImportSongOptions
+ImportSoundSets
+importToTrack
+ImportTrackDragHandler
+importVideo
+importVolume
+Incremental version
+infoview.xml
+Initialize device: %(1)
+InitializeDevice
+InplaceProgressComponent
+Input Controls
+InputChannelRemoteFXHandler
+inputControlsVisible
+inputDeviceList
+inputPort
+InputPort
+insertDevice
+insertDeviceClass
+insertDeviceIDs
+insertDevicePreset
+Inserts:DeviceUID
+InsertSlotRemoteFXConnector
+inspector.xml
+InspectorComponent
+installdata.xml
+INSTALLDATA.XML
+Installed version: %(1)
+INSTALLER/3RDPARTY.XML
+installhistory.xml
+InstallStatePackageFilterComponent
+instrumentPort
+IntParam
+invalid hash bucket count
+Invalid packet count
+Invalid packet size
+invalid packet type
+IPortFilter
+isAggregableDevice
+isDeviceParam
+isDeviceStorable
+isHeader
+isInputDevice
+isMidiDevice
+isMPEDevice
+isMuted
+isNonMidiDevice
+isOutputDevice
+isPadColoringSupported
+isPlaybackOnlyDevice
+isRecordOnlyDevice
+isRemote
+isRemoteServer
+isUserDevice
+ItemControls
+items: Object[], parameter: Parameter | AliasParam, flags: string | int
+ixmldata
+JsonParse
+JsonStorableObject
+JsonStringify
+Key Remote
+keyremoteactive
+keyremotebasepitch
+keyremoterange
+KeySignatureSelectorComponent
+killEditControl
+kReportError: 1<<3
+LANGUAGEPACKS.XML
+launchControlPanel
+LayerAspectComponent
+LayerEditComponent
+layerSolo
+Layout control
+let param = manager.findParameter ("masterEditor");
+let param = manager.findParameter ("showLanes");
+let url = "object://hostapp/DocumentManager/ActiveDocument/MusicPatternPartEditor/PatternEdit/ControlLaneManager";
+let url = "object://hostapp/Studio/ActiveEnvironment/MixerConsole";
+LevelMeterComponent
+Lhttp://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt0
+Licenser.ProductList
+licenser.xml
+Licenser:LocalizedProductName
+Licenser:ProductBundle
+Licenser:ProductID
+Licenser:ProductName
+ListEditComponent
+ListItemComponent
+ListParam
+ListViewEditComponent
+Loading Control Surface Data...
+Loading Device: %(1)
+LoadMixer.png
+LoadMixer@2x.png
+Local Control OnOff
+Local version was renamed to %(1).
+localPortIndex
+Locate Missing Devices
+LocateFilesComponent
+Lock Volume to Channel
+lockedParam
+lockRecentParameter
+login.xml
+logindesktop.xml
+loginmobile.xml
+lostDevice
+Lucida Grande
+Lucida Sans Unicode
+Lyric packet had no text (part %(1), marker %(2))
+LyricsComponent
+LyricsDisplay::DisplayComponent
+LyricsTrackComponent
+Macro Control
+Macro Controls
+MacroCellControllable
+MacroControlCell
+MacroControlCurve
+MacroControlCurve::Clipboard
+MacroControlCurveController
+MacroControlCurveView
+MacroControlEditFunctions
+macroControlPath
+MacroControls
+macrocontrols
+macroControls
+MacroControls.data
+macrocontrols.xml
+MacroControlsBackground.png
+MacroControlSet
+MacroControlSetup
+MacroControlSetup::ParamDragHandler
+MacroControlSetup::ViewFilter
+MacroControlsSideEffects
+MacroControlTarget
+MacroControlTransform
+MacroSetControllable
+MainController
+mainOutVolumeLink
+mainSynthDevice
+Manage Parameters
+Manager Parameters
+mapDeviceIDs
+mapping
+Mapping
+MappingHandler
+Mappings
+Marker packet in metapart has no marker property
+Marker packet in part %(1) has no marker property
+MarkerTrackComponent
+Master a set of tracks for publishing.
+Master Device: %(1)
+Master mute
+masterDevice
+masterDeviceChanged
+masterDeviceIcon
+masterDeviceName
+masterMute
+masterVolume
+matchingMixersInfo
+maxVersion
+maxVolume
+Media.ControllerClass
+Media.ControllerValue
+Media.MidiControllerName
+Media.MidiControllerNumber
+Media.MidiVolume
+Media:Conductor
+Media:FrameType
+Media:IXmlChunk
+Media:Publisher
+Media:Remixer
+Media:SimpleHeader
+MediaClipComponent
+MediaFrameTypeParam
+mediapool.xml
+MediaPoolComponent
+mediapreview.xml
+MediaPreviewComponent
+MediaTimeFormatParam
+MediaTimeLengthParam
+MediaTimeParam
+MediaTrackController
+MelodicPitchControls
+melodyne.xml
+menubar.xml
+MENUBAR.XML
+MenuParam
+Message
+message
+message-
+MessageArgument
+MessageAttributes
+messageType-
+metainfo.json
+metainfo.xml
+microEditControlsVisible
+microEditParamList
+microEditParams
+microEditParamsChanged
+MicroEditSetup::ParamListModel::ParamDescData
+microviews.xml
+MIDI Export
+MIDI file format not recognized: Header ID wrong
+MIDI file format not recognized: Header information wrong
+MIDI Port not found for Device %(1)!
+MidiDevice
+MidiMachineControlReader
+MidiMessage
+MidiPacket
+MidiPresentationParam
+MidiReceiverComponent
+MidiTransferEventImporter
+minimalBigMixerHeight
+minimalHeightForHardwareControls
+minimalMixerHeight
+minVersion
+Mismatch: Audio device has %(1)
+Missing Device
+Missing remote information
+MissingDevices
+Mixer group
+Mixer Snapshots
+MixerChannelTopSectionBG.png
+MixerChannelTopSectionBG@2x.png
+MixerConsole
+MixerConsoleSizes
+MixerControllable
+MixerDevice
+MixerEditFunctions
+mixerGroup
+mixerHasAutomationMode
+mixerHasChannelEdit
+mixerHasRecAndMonitor
+mixerId
+mixerList
+MixerManager
+mixerMenu
+mixername
+mixerName
+mixerNarrow
+MixerOutputChannelTopSectionBG.png
+MixerOutputChannelTopSectionBG@2x.png
+mixerReset
+mixers
+MixerScenes
+mixerScrollBarSpace
+mixerSize
+mixerSizeEnabled
+MixerSnapshot
+mixerSnapshot
+MixerSnapshot::ChannelState
+MixerSnapshot::SlotState
+MixerSnapshotComponent
+MixerSnapshotComponent::SetRecentAction
+MixerSnapshotComponent::SnapshotList
+MixerSnapshots
+mixerstrip
+modeParam
+Modify Volume Curve
+modifyVolume
+MonitoringParamsChanged
+monitorMutesPlayback
+monitorPort
+MtcSendDevice
+multiMixerChannels
+MultiOptionPackageFilterComponent
+MultiParamEditAction
+MultiParamProxyHandler
+multitrack.json
+multitrack.xml
+MultitrackVolumeInfo
+MultitrackVolumeInfoRegister
+MusicalScaleComponent
+MusicClipComponent
+MusicControlLaneManager
+MusicControlLaneManager::HeaderView
+MusicControlLaneManager::LaneClassParam
+MusicControlLaneManager::LaneState
+MusicDevice
+MusicDeviceAddDialog
+MusicDeviceBrowser
+MusicDeviceBrowserDialog
+MusicDeviceClockUnit
+MusicDeviceDescription
+MusicDeviceDialog
+MusicDeviceEditor
+MusicDeviceInputProcessor
+musicDeviceList
+MusicDeviceList
+MusicDeviceManager
+MusicDeviceProcessor
+MusicDeviceRack
+MusicDeviceRootNode
+MusicDevices
+musicdevices
+musicdevices.xml
+MusicDeviceSetup
+MusicDeviceSlot
+MusicDeviceSlotAuxSetup
+MusicDeviceSurfaceUnit
+MusicDeviceSynthUnit
+musicdialogs.xml
+MusicEditComponent
+musicfxeditor.xml
+MusicLoop:InstrumentPort
+MusicMute
+MusicNoteRepeaterComponent
+MusicNoteRepeaterComponent::PitchInfoView
+MusicPartToMidiFileExporter
+MusicPatternClipComponent
+MusicRecordComponent
+MusicStepRecordComponent
+MusicTrackComponent
+MusicTrackDevice
+MusicTrackSoundVariationComponent
+MusicTrackSoundVariationComponent::VariationMapModel
+MusicTrackTransformComponent
+Mute Event
+Mute Events
+Mute hidden parts
+Mute Main Out
+Mute Split Branch
+mute-%d
+muteAudio
+muteAutomation
+MuteAutomationAction
+mutebrightness
+muteButton
+mutedcolor
+mutedEventAlpha
+muteEvent
+MuteEventAction
+muteID
+MuteNoteAction
+mutesaturation
+muteSoloChanged
+MuteTask
+Napping
+navigator.xml
+New Clip Version
+New Control Surface
+NewAudioClipVersionTask
+NewRemote.png
+NewRemote@2x.png
+NewShowPropertyComponent
+NewSongPropertyComponent
+Next Device in Rack
+Next Parameter
+No Audio Device
+No Control Surfaces installed which could be grouped.
+No Device
+No devices are missing.
+No other versions of "%(1)" were saved.
+No versions found.
+NoAudioDevice
+NodeController
+NodeSorterComponent
+noeventframe
+nohandleframe
+Not enough free disk space. %(1) are required, but only %(2) are available on the selected volume.
+NOTATION/BUILTININSTRUMENTS.XML
+notationoverlays.xml
+Note Controller
+Note Controller Indicator
+note.mutedbright
+note.muteddark
+NoteControlEvent
+NoteController
+NoteControllerEnvelope
+NoteControllerFollowSideEffect
+noteControllerIndicator
+NoteControllerLane
+NoteControllerLaneFilter
+NoteControllerList
+NoteControllerRegionList
+noteControlPitch
+noteControlPressure
+noteControlTimbre
+noteControlType
+NoteEventEditComponent
+notepad.xml
+NotepadComponent
+NotepadItemComponent
+NoteParameter
+NoteRepeatControllable
+notesDividerParamName
+Nothing to export.
+Nothing to export. Please select format and set loop or markers first.
+Nothing to export. Please select one or more tracks and set Loop or Markers.
+NotificationComponent
+NotificationListComponent
+notion.xml
+NotionExport
+NotionExportComponent
+NotionExportComponent::BrowserExtension
+NotionExportComponent::Publisher
+NotionExportComponent::TransferDialog
+NotionExportComponent::TransferHandler
+NotionHeader.png
+NotionHeader@2x.png
+NotionHeaderTitle.png
+NotionHeaderTitle@2x.png
+NullControlHandler
+numHeaderItems
+numMessages
+numParameters
+OBSRemoteAdapter
+oldProductKey
+onDocumentComponentChanged
+onDocumentExported
+One preset file was imported.
+onmessage
+OpenDeviceEditor
+openDeviceEditor
+openVersion
+options.xml
+original: Parameter
+originalPositionSupported
+OriginPackageFilterComponent
+osVersion
+OSVersion
+outputDeviceList
+outputPort
+OutputPort
+outputPortID
+outputstates.xml
+overlays.xml
+Package:Version
+PackageComponent
+PackageComponentModel
+packagedetails.xml
+PackageFilterComponent
+packagemanager.xml
+PackageSearchComponent
+packagestyles.xml
+PackageVendorStore.xml
+PackageVolumeInfo
+PackageVolumeNode
+packet
+Packet error: %(1) (%(2) packet, %(3) property)
+packet was
+PacketEditFunctions
+packeteditor.xml
+packets were
+PacketWithPosition
+PadSectionChildComponent
+PadSectionCommandSetupComponent
+PadSectionCommandSetupComponent::PadCommandComponent
+PadSectionComponent
+PagesComponent
+PageUsageReport
+PagingComponent
+PagingComponentBase
+PaletteParam
+Palm mute
+Palm Mute
+PalmMuteTool
+panDeviceAutomation
+panDeviceClass
+param.setValue (show, true);
+param: Parameter
+param:///
+ParamCaptureControl
+ParamCaptured
+paramChanged
+ParamChangeList
+paramConfigurationChanged
+ParamContainer
+ParamControllable
+ParamCurve
+ParamDragControl
+paramEdit
+paramEditable[
+ParamEditAction
+ParamEditGrouped
+paramEnabled[
+Parameter
+Parameter %(1)
+ParameterBank
+parameterColor
+ParameterData
+parameterFinder
+parameterName
+parameters
+ParameterSelector
+parameterTree
+ParamFolderItem
+ParamFunction
+paramID
+ParamInvoke
+ParamInvokeElement
+paramList
+paramlist
+ParamList
+paramMax[
+paramMin[
+paramName
+paramName: string
+paramName: string, mode: int
+paramName:string, value: variant
+paramPath
+ParamProcessor
+ParamRenamed
+ParamReset
+ParamResetElement
+params
+paramSelected
+paramSelector
+ParamSelector
+paramTitle
+paramType
+ParamUndelivered
+paramValue
+paramValue[
+ParamVariant
+ParamVariantElement
+paramVersion
+Part control
+partControlChanged
+partPacketAdded
+partPacketChanged
+partPacketRemoved
+Pasteup: stopping after dirty region
+PatchListParam
+PathListComponent
+PatternBankComponent
+PatternBankComponent::PatternBankModel
+PatternControlLaneComponent
+PatternControlLaneManager
+PatternControlLaneManager::DeviceParamControl
+PatternControlLaneManager::ProbabilityControl
+PatternControlLaneManager::StepDelayControl
+PatternControlLaneManager::StepRepeatControl
+PatternControlLaneManager::VelocityControl
+PatternControlLaneView
+PatternControlParameter
+PatternControlParamList
+PatternEditComponent
+PatternEditFocusStepComponent
+performance.xml
+PerformanceParameter
+performPortActivation
+PhaseMeterComponent
+Pickle version
+pingAgain
+pingMode
+PlacementEditor::DeviceList
+PlacementEditor::DeviceList::DeviceItem
+Please ensure that no files or devices are missing!
+Please enter the Product Key of the $APPNAME version you have purchased.
+Please fix the following modifications before export:
+Please note that third-party plug-ins will appear smaller if they do not support scaling.
+Please plug in your removable MIDI devices now and dismiss this message when finished...
+Please select a different audio device if possible.
+PLEASE UPDATE DEVICE FIRMWARE!
+PluckATool
+PluckCTool
+plucking
+Plucking a
+Plucking A
+Plucking c
+Plucking C
+Plucking I
+Plucking i
+Plucking letters
+Plucking m
+Plucking M
+Plucking p
+Plucking P
+PluckITool
+PluckMTool
+PluckPTool
+Plugin params
+Plugin version
+PlugInCategoryParam
+PLUGINFILTER.XML
+pluginfilter.xml
+PlugInManagementComponent
+pluginmanager.xml
+PlugInMenuParam
+plugscanner.xml
+PooledControlEvent
+PooledNoteControlEvent
+PooledSymbolicControlEvent
+PopupEditFrame
+Port not found!
+port.svg
+port: number
+port_or_channel: Port | Channel
+portActivation
+PortActivationChanged
+portamento
+Portamento
+Portamento Control
+Portamento OnOff
+Portamento Time
+PortamentoTool
+Portaria 354
+portAssignment
+PortAssignment
+portAssignmentIn
+PortAssignmentList
+portAssignmentOut
+PortAssignmentParam
+PortAssignmentParam:extend
+portData
+PortDescription
+portID
+portId
+portIndex
+PortList
+PortListParam
+PortMapEntry
+PortParam
+PortParm:extendPortMenu
+PortParm:portDestroyed
+PortParm:portListAssigned
+Portrait
+PortSetup
+PortSetupChanged
+Preset file export failed.
+PresetComponent
+PresetManagementComponent
+PresetParam
+presetparts.xml
+presetsSupported
+PreSonus
+Presonus
+PRESONUS
+presonus
+presonus.studioone.demos
+presonus.studioone.factorypresets
+PreSonus.StudioOne.GettingStarted
+presonus.studioone.soundsetbuilder.
+presonus.xml
+PreSonus_StudioOne_OAuth
+PreSonus_StudioOne_WebLogin
+PreSonus_UserAccount
+presonusfolder.iconset
+PRESONUSFONTS.SKIN
+PresonusLogo.png
+PresonusLogo@2x.png
+PreSonusLogoSmall.png
+PreSonusLogoSmall@2x.png
+previewVolume
+Previous Device in Rack
+Previous Parameter
+private-params
+ProcessComponentWrapper
+processParams
+productBranding
+productFilter
+productId
+productIdentity
+productKey
+productKeyList
+ProductList
+productList.action
+ProductName
+products.json
+productType
+ProductVersion
+project.xml
+Project/AudioFilePublisher
+Project/editor.xml
+Project/mediapool.xml
+Project/project.xml
+Project/TrackControls
+ProjectAutomationTrackListComponent
+ProjectComponent
+ProjectEditComponent
+ProjectPropertyComponent
+ProjectPublisher
+ProjectTrackComponent
+ProjectTrackTransformComponent
+Property data is not valid for this packet: 
+publicstyles.xml
+PublishedImage
+Publisher
+publisherCount
+PublisherSelector
+PublisherSelector::Publisher
+PublishItem
+PublishList
+purchase.xml
+quantize.xml
+QuantizeComponent
+QuantizeComponentA
+QuantizeLengthComponent
+QuantizeSelectorComponent
+QuarterFrame
+Querying device information for %(1)...
+queryLockableParameters
+rBtcP6
+Reading remote lock information
+rebuildParameter
+RecallMarkerComponent
+recallMute
+recallVolume
+receivePort
+receivePortID
+Receiving %(1) finished successfully.
+Recent Parameters
+RecentFilesFrame
+Recently Touched
+RecentParamMapping
+recentTouchedEnabled
+recordDevice
+recordDeviceIcon
+recordDeviceName
+recordpanel.xml
+recordPort
+reduction
+reductionFrame
+reductionLevel
+reductionOffset
+reductionWidth
+region.framecolor
+region.mutedOverlay
+relatedPortIndex
+Releasing remote lock
+Remote
+Remote Base Pitch
+Remote excluded file
+Remote excluded file by extension
+Remote folder excluded
+Remote location can not be reached/found
+Remote location is available
+Remote location is locked by sync from this instance
+Remote modified file
+Remote new file
+Remote Range
+Remote up-to-date file
+Remote version was renamed to %(1).
+Remote workspace folder
+remote.iconset
+RemoteAccessHandler
+RemoteAccessHandler::AccessItem
+remoteactiveoverlay
+RemoteAllBank
+RemoteAudioEffect
+RemoteBank
+RemoteChanged
+RemoteComponent
+remoteEdit
+remoteEditStepsChanged
+remoteFolder
+remoteFolderId
+remoteFolderOriginalId
+remoteFolderPath
+RemoteFX
+RemoteFXEditor
+RemoteFXFolder
+RemoteFXHandlerBase
+RemoteFXRack
+RemoteFXSlot
+remoteFXVisibleCount
+RemoteId:%(1)
+RemotePages
+Remove Clip Version
+Remove Current Parameter
+Remove Device
+Remove Note Controller "%(1)"
+Remove Parameter
+Remove Parameter "%(1)"
+Remove Pattern Parameter
+removeAllNoteControllerEnvelopes
+removeDevice
+removeParameter
+Rename Device
+Renaming remote conflict file to 
+renderParamChanged
+repo.json
+RequiredFramework
+resetDevice
+resetFrames
+resetMidiDevice
+resetPanParams
+resource:///audiodevices.txt
+resource:///commandblacklist.xml
+resource:///commands.xml
+resource:///commandschemes.xml
+resource:///weblinks.xml
+resources.xml
+Restart requested by Audio Device!
+restartMessage
+Restore Audio Device Settings
+Restore Version
+restore-backup.xml
+restoreDevice
+restoreVersion
+Restoring version "%(1)".
+restoringDevice
+retunepresets.xml
+RETUNEPRESETS.XML
+return audioEngine.findParameter ("masterDeviceName").string;
+RevealVolume
+RIFF file seems to be broken - skipping!
+rootDeviceChanged
+RoutingControl
+RoutingControlInfo
+sampleRateMismatchMessage
+Save New Version
+saveDeviceAttachment
+Saving Device: %(1)
+scale.reducedtext
+scale.reductioncolor
+scale.reductionframecolor
+ScanMusicDevices
+Scanning remote folder
+Scene was converted from an earlier program version and contains visibility data only
+Score start frame
+ScoreChangeInstrumentComponent
+ScoreChordSelectorComponent
+ScoreCommandComponent
+ScoreContinuousHeaderView
+ScoreDrumsetComponent
+ScoreEdit.header
+ScoreEditComponent
+ScoreEditComponent::SetPartTypeCommandData
+scoreedittasks.xml
+ScoreFrame
+ScoreHarpTuningComponent
+ScoreKeySignatureComponent
+ScorePacket
+ScorePacketFactory
+ScorePageLayoutComponent
+ScorePartSetupComponent
+ScorePauseComponent
+ScorePopupEditComponent
+ScoreRepeatComponent
+ScoreStepRecordComponent
+ScoreStepRecordComponent::LocateStepAction
+ScoreStepRecordComponent::StepEditMarker
+ScoreStepRecordComponent::StepRecorder
+ScoreSwingComponent
+ScoreSymbolPalette::ItemListParam
+ScoreTempoComponent
+ScoreTextComponent
+ScoreTextStyleComponent
+ScoreTextStyleItemComponent
+ScoreTextStyleListComponent
+ScoreTimeSignatureComponent
+ScoreTransport
+ScoreTuningCapoComponent
+scoreVersion
+ScratchPadComponent
+ScriptErrorReporter
+ScrollParam
+SDK/DEVICES.JS
+SearchComponent
+Searching the root folder of a volume might be very slow.
+SectionHeader
+Select Clip Version
+Select Mute Patch
+selectDevice
+selectedItemFrameColor
+selectedItemFrameWidth
+selectedParameter
+selectedPort
+SelectionMenuComponent
+selectPort
+selectRecordDevice
+Send Mute
+Send mutes
+Sending %(1) finished successfully.
+sendMute
+sendPort
+sendPortID
+separatorcolor.device
+Session
+Set Frame Offset to Cursor
+Set Frames at Cursor
+Set Volume after Event FX
+setControlOption
+setCurrentPort
+setDropImportFile
+setFramesOneHour
+setInputDir: local://$USERPREFERENCES/PreSonus/Studio One
+setInputDir: local://$USERPREFERENCES/PreSonus/Studio One (x64)
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 2
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 2/x64
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 2/x86
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 3
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 3/x64
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 3/x86
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 4
+setInputDir: local://$USERSETTINGS/PreSonus Software/Studio One 4/x64
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 2
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 2/x64
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 2/x86
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 3
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 3/x64
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 3/x86
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 4
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 4/x64
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 5
+setInputDir: local://$USERSETTINGS/PreSonus/Studio One 5/x64
+SetListComponent
+SetListItemComponent
+setPadColoringSupported
+SetPanDeviceClassAction
+setParamMode
+setParamValue
+setPortFilter
+setPortList
+SetRecentParam
+setSongFrameRateOnImport
+settings.xml
+Setup Micro Edit Parameters
+setupParams
+shared.xml
+sharedforms.xml
+shouldNotifyLostDevices
+Show Audio Device Controls
+Show Current Parameter
+Show Device
+Show Input Controls
+Show Macro Controls
+Show Micro Edit Controls
+Show Muted Channels
+Show Muted Tracks
+Show Parameter
+Show Soloed Channels
+Show Soloed Tracks
+show.xml
+Show/editor.xml
+Show/mediapool.xml
+Show/PlayerControls
+Show/show.xml
+Show/ShowPlaybackModeFrames[%s]
+Show/TrackControls.
+showAudioDeviceControls
+showChannelGroupControl
+showChannelInputControls
+ShowComponent
+showControllers
+showDeviceName
+showDeviceNotes
+showdialogs.xml
+ShowEditComponent
+ShowEnvironment::MacroControlPresentationHandler
+showFrameNumbers
+ShowPlayerListComponent
+ShowPropertyComponent
+ShowTransportHandler
+ShowTransportHandler::SectionComponent
+ShowTransportHandler::SectionList
+ShowUIComponentBase
+SHOWWIDGETLAYOUT.XML
+signature.xml
+SignedMessage
+SignedXmlMessage
+silenceDevices
+SilenceDevices
+SinglePackageFilterComponent
+skin.xml
+SlotFocusComponent
+SlotRemoteFX
+Slur control points 1
+Slur control points 2
+snapshots.json
+social.xml
+SoftwareMonitoringDevice
+Solo follows Selection
+Solo Layer
+Solo through Listen Bus
+solo-%d
+soloButton
+soloFollowsSelection
+soloLayer
+soloLayerChanged
+soloSafe
+soloSave
+soloThroughListenBus
+Some files could not be received successfully in %(1).
+Some files could not be sent successfully in %(1).
+Some items will be exported in stereo because their speaker setup is not supported by the selected format.
+Song alreay has the same frame rate %(1) as the video file.
+Song frame rate set to %(1).
+Song has missing devices!
+song.xml
+Song/AudioExport
+Song/editor.xml
+Song/mediapool.xml
+Song/SetFramesAtCursor
+Song/song.xml
+Song/SpatialAudioExport
+Song/TrackExport
+Song/VideoExport
+SongDataImporter
+SongDataImporter::BrowserExtension
+SongDataImporter::ImportOptionsDialog
+SongDataImporter::TrackSelector
+SongDataImporter::TrackSelector::SpecialItem
+songdialogs.xml
+SongDocumentController
+SongExportRangeSelector
+SongMarkerComponent
+SongMasterComponent
+SongPopupComponent
+SongPropertyComponent
+SongRenderer.Publisher
+SongSetupReport
+Sound Controller 10
+Sound Set "%(1)" has been updated to version %(2).
+soundselector.xml
+soundsets.json
+SOUNDSETS.JSON
+soundvariationmap.xml
+SoundVariationSetupComponent
+Source device
+sourceCodecsSupported
+SpatialAudioExporter
+SpatialAudioManager::Controllable
+SpeakerFormatMappingStream
+SpeakerMappingStream
+SpectrumComponent
+Split Volume
+Staff control
+Start a new recording and mixing session.
+Starting External Devices...
+startup.xml
+StaticFileTypePackageFilterComponent
+Stem export not possible for some items because they are incompatible with the %(1) output setup.
+stemGroupingId
+StepEditHeaderView
+StepEditMelodicPitchControls
+stepMuteColor
+StringListComponent
+StringParam
+studiomagic.png
+studiomagic@2x.png
+styles.xml
+subDeviceIndex
+subdevices
+subDevices
+Subscribe
+subscription.xml
+successors
+supported
+supportKeyboardLayout
+supportsCustomization
+supportsMediaTracks
+supportsProject
+supportsSyncPoint
+suppressFailedDevices
+Surface
+Surface Data
+Surface Device: Bank "%s" not found for element "%s"!
+Surface Device: Control "%s" not found for parameter "%s"!
+Surface Device: Control "%s" not found!
+Surface Device: Handler "%s" argument "%s" not found!
+Surface Elements
+SurfaceAssignmentData
+SurfaceAssignmentPage
+SurfaceClient
+SurfaceControl
+surfacedata
+SurfaceData
+SurfaceDataAvailable
+SurfaceDataPool
+SurfaceDeviceAssignment
+SurfaceEditor
+SurfaceEditorLearn
+SurfaceEditorStatic
+SurfaceFocusComponent
+SurfaceHostComponent
+surfaceID
+SurfaceManager
+SurfaceMapping
+SurfaceModel
+SurfacePlacement
+surfacePlacementGroup
+surfacePlacementOrder
+surfacePlacementSize
+SurfaceRemapper
+Surfaces
+surfaces.xml
+SurfaceTypeLib
+suspendInBackgroundSupported
+Swap Macro Controls
+Switching to Audio Device %(1)...
+SymbolicControlEvent
+SymbolicControlEventList
+Sync frame
+Sync to External Devices
+SyncParam
+syncPointSupported
+syncProxyParameter
+synthcombinator.xml
+SynthCombinatorComponent
+SynthCombinatorComponent::PitchInfoProvider
+synthDevice
+synthDeviceID
+synthPort
+synthPortIndex
+synthrack.xml
+System DPI Scaling for third-party plug-ins requires Windows 10 version 1803 or later.
+System.PortableDateTime
+tabStaffSupported
+TAGCATEGORIES.XML
+tagcategories.xml
+TagPackageFilterComponent
+targetPort
+taskParams
+TEMPLATE_CLASS_TYPE_ARGUMENT (RemoteSection<T>)
+TEMPLATE_CLASS_TYPE_ARGUMENT (ScorePacket::ListProperty<VectorType>)
+TempoEditComponent
+text/xml
+textcolor.volume
+TextCompletionComponent
+textfont.volume
+textParamName
+The audio codec does not support the current sample rate. The rate will be converted to %(1) kHz.
+The audio codec does not support the output speaker format. It will be converted to %(1).
+The audio device %(1) could not be initialized. Please check your hardware configuration and try again.
+The audio device %(1) has failed to start correctly before. Do you want to try it again?
+The audio device does not have enough outputs.
+The audio device does not support this value.
+The device could not be opened
+The Device Model "%(1)" is not used anymore. Do you want to remove it from User Devices?
+The file does not begin with header packets.
+The file does not contain wrapper packets.
+The file does not have metapart packets.
+The file has been created with an older version of $APPNAME. After saving the file you will not be able to load it in the old version again.
+The file is incompatible with this version.
+The following issues occurred during export:
+The format of this file is not supported.
+The local folder could not be found. Please join again or open your local folder for this collaboration to get the most recent version.
+The Mix FX does not support speaker format %(1). It will be processed on the left and right channel.
+The original file will be kept as a version then.
+The rate the device has: %(2)
+The remote location cannot be reached. Please check your internet connection and the remote location (%(1)). If the remote location was permanently removed, you might want to unlink your document.
+The remote workspace does not allow sending
+The sample rate does not match your audio device configuration.
+The selected format does not support %(1)
+The selected format does not support %(1). The format will be exported in stereo.
+The upload size exceeds the available remote space (%(1)).
+The version could not be identified!
+theme.xml
+There is a new version available.
+These %(1) files could not be imported:
+These files could not be imported:
+This device can not be removed right now!
+This file contains data that can not be imported this way.
+This file could not be imported:
+This file is not compatible because it has been created with a newer version of $APPNAME.
+This port is already in use. Connecting multiple devices to the same port may lead to copied transmission of MIDI events.
+This version: %(1)
+This will unlink your local copy and keep files in the remote location.
+this.paramList = 0;
+this.paramList = ccl_new ("CCL:ParamList");
+this.paramList.controller = 0; // list holds a reference to our stub object!
+this.paramList.controller = this;
+TimeEdit.TimeEditComponent
+TimeEditComponent
+TimeLineComponent
+TimeScrollParam
+TimeZoneComponent
+title="Sample Magic Loops and Kits"
+title="Synth Session"
+Toggle Mute
+toggleTypeParams
+toolbar.xml
+tools.xml
+ToolTouchHandler
+TopLevelMapping
+totalSessionTime
+TouchPrimitive
+Track mute
+Track solo
+track, slot, portIndex, recordExclusive
+TrackAspectComponent
+TrackChannelRemoteFXHandler
+TrackComponent
+TrackController
+TrackController::ParameterCollection
+TrackControls
+trackcontrols.styles.xml
+trackcontrols.xml
+TrackControlsAspectShadowTop.png
+TrackControlsContextMenu
+TrackControlsInset
+TrackControlsView
+TrackControlView
+trackexport
+trackimport
+TrackItemComponent
+TrackLayerComponent
+TrackListChordEditComponent
+TrackListComponent
+tracklistinspector.xml
+TrackListPoolComponent
+TrackPresetComponent
+TrackPresetComponent::PresetInfoComponent
+TrackPresetComponent::SelectPresetComponent
+transfers.xml
+TransformedAutomationParam
+TransformedAutomationState::ParamItem
+translucentBrightnessAdjustor
+transmuteDivider.enabled
+transmuteDivider.height
+Transport
+transport
+transport.xml
+TransportDevice
+TransportDeviceAlias
+TransportDisplayBack.png
+TransportDisplayBack@2x.png
+TransportHandler
+TransportOptions
+TransportPanel
+TransportPanel::KeySigComponent
+TransportQuickOptions
+TransportScheduler
+TransportScheduler::LoopJumpMap
+transportStateChanged
+transportTimeChanged
+TransportTimeDialog
+TrashBinComponent
+Tucked
+tutorialviewer.xml
+UBJsonParse
+UBJsonWrite
+uc:Component
+uc:foreachparam
+uc:Param
+uc:Parameters
+uc:ParamList
+ucC0e_RLM
+uCD91u
+UCGetFileTransferManager
+UCGetNetworkManager
+UCiRHv
+UCMixerConnector
+UCMixerSelector
+ucnet.dll
+UCNET:%s
+UCSetReportFunction
+Uct754c
+UcTgoEM
+UCtpae
+UczMUn_
+Udp0Tsf
+ufUcSwr
+UniversalComponent
+UniversalComponentBuilder
+unknownDeviceSelected
+UnknownMusicDeviceNode
+Unmute Event
+Unmute Events
+Unnamed Device
+Unrecognized packet key found:  
+Unrecognized packet type found:  
+Unsubscribe
+updateAnyTargetsParam
+updateDeviceParamControls
+updateFrameParams
+updateMidiDevice
+UpdateMixerInfo
+url="https://api.presonus.com/v2"/>
+url="https://connect.presonus.com"/>
+url="https://registration.presonus.com"/>
+url="https://updates.presonus.com/feed.action"/>
+url="https://www.presonus.com/registration"/>
+url="https://www.presonus.com/studioone"/>
+url="https://www.presonus.com/upgrade-studioone"/>
+Use to play an external MIDI Instrument and record controller movements. When connecting the receive port, be careful to avoid doubled events if the same port is used by a Keyboard device.
+Use Video Frame Rate in Timeline
+useDeviceClipboardForSave
+usedPorts
+useForExport
+UserCommandPagingComponent
+UserCommandSectionComponent
+UserCommandSectionComponent::UserCommandComponent
+UserControl
+UserControl::DragHandler
+UserControl::MouseHandler
+UserInputReport
+UserLoginSucceeded
+UserSystemReport
+Using different codecs might affect the export speed.
+uux.xml
+VCAChannelControllable
+vcaInputPort
+vcaPortsVisible
+vcaPortsVisibleState
+VCAReceivePort
+VCASendPort
+VelocityEditComponent
+VelocityParam
+Version
+version
+version.action
+versionIdentity
+Video codec not supported
+Video control
+Video frame rate %(1) is not supported as song frame rate.
+Video Frames
+Video start frame
+Video Support Not Installed
+Video volume
+VideoClipComponent
+VideoExport
+videoplayer.xml
+VideoPlayer::TimeDisplayComponent
+VideoTrackController
+Volume
+volume
+Volume Envelope
+Volume Serial
+volumeAutomation
+volumeColorIndex.
+VolumeCurve
+volumeCurve
+volumeCurveEnabled
+VolumeFileInfo
+VolumeIcon:
+VolumeIcon:WebRoot
+VolumeInfoChanged
+VolumeInfoComponent
+volumeLabel
+volumelist.iconset
+VolumeListNode
+volumelocal.iconset
+VolumeNode
+volumeoptical.iconset
+volumeremote.iconset
+volumeremovable.iconset
+Volumes
+VolumesChanged
+VolumeSerialNumber
+VolumeSliderBack.png
+VolumeSliderHandle.png
+VS_VERSION_INFO
+vst-xml
+wasMute
+wasMute-%d
+WatchdogComponent
+WebFileInfoComponent
+webfsbrowser.xml
+weblinks.xml
+WEBLINKS.XML
+webpackagemanager.xml
+webvolume
+WebVolumeNode
+window.xml
+windowclasses.xml
+Workspace/perspective.xml
+workspace:%(1) folder:%(2) remote:%(3)
+X to tucked
+xml.iconset
+XML.Parsers
+XmlNode
+xmlns:x
+XmlSettings
+XmlTagInfo
+XmlTree
+You need a newer version of $APPNAME.
+Your MIDI configuration has changed. This might be due to removable devices currently not plugged in.
+Your version is up-to-date.
+zipdocument.xml
+ZipDocumentPublisher
+ZipExportDialog
+~Mute~

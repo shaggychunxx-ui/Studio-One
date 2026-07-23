@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Nudge Beat Back" group="" description="">
+	<CommandElement category="Quantize" name="1/16"/>
+	<CommandElement category="Edit" name="Toggle Snap">
+		<CommandArgument name="State" value="1"/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Nudge Back"/>
+	<CommandElement category="Edit" name="Nudge Back"/>
+	<CommandElement category="Edit" name="Nudge Back"/>
+	<CommandElement category="Edit" name="Nudge Back"/>
+	<CommandElement category="Edit" name="Toggle Snap">
+		<CommandArgument name="State" value="0"/>
+	</CommandElement>
+</Macro>

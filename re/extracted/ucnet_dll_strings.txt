@@ -1,0 +1,41 @@
+Win32 Thread
+UDP mapping for %s set to %d
+Can't send periodic event to %s!!!
+Outgoing socket is in error state!!!
+Incoming socket is in error state!!!
+Failed to bind listening socket (error code %d)
+Started listening on TCP port %d (%d sockets)
+TCP listen socket(s) rebuild, reason is %s!
+UCNETLocalDiscoveryRegistry
+UC Discovery sending query event to %s
+UC Discovery time out for server %s:%d!
+Adding server via UDP discovery %s : tcp %d udp %d (alive event)
+Server name changed via UDP discovery %s : %s (alive event)
+Server flags changed via UDP discovery %s : 0x%08x (alive event)
+Removing server via UDP discovery %s : tcp %d udp %d (leave event)
+UC Discovery reply to query event to %s
+File transfer %d removed - File transfer failed with error FileDataEvent::kFailed
+File transfer %d removed - FileDataEvent with error status received.
+File transfer %d removed - FileAbortEvent received.
+Enabled UDP multicast on official port %d (%d sockets)
+Local UDP port bound to %d (%d sockets)
+UDP multicast socket(s) rebuild, reason is %s!
+UDP unicast socket(s) rebuild, reason is %s!
+Process thread terminated!!!
+Event too large!!!
+Sending events to network before shutdown
+SetThreadPriority
+GetCurrentThreadId
+ResumeThread
+TerminateThread
+GetThreadPriority
+CreateThread
+SetThreadIdealProcessor
+GetThreadTimes
+OpenThread
+CreateFileMappingA
+OpenFileMappingA
+AvSetMmThreadCharacteristicsW
+AvSetMmThreadPriority
+__CxxFrameHandler4
+DisableThreadLibraryCalls

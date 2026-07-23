@@ -1,0 +1,6 @@
+<uc:ParamList id="StreamingTransport">
+			<uc:Param id="studioMode" type="toggle"/>
+			<uc:Param id="streaming" type="toggle"/>
+			<uc:Param id="recording" type="toggle"/>
+			<uc:Param id="triggerTransition" type="toggle"/>
+		</uc:ParamList>

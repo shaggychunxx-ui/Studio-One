@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Align Transients" group="Align" description="">
+	<CommandElement category="Audio" name="Dissolve Audio Part"/>
+	<CommandElement category="Audio" name="Detect Transients"/>
+	<CommandElement category="Audio" name="Split at Bend Markers"/>
+	<CommandElement category="Event" name="Quantize on Track"/>
+	<CommandElement category="Event" name="Fill Gaps">
+		<CommandArgument name="Overlap" value=""/>
+	</CommandElement>
+	<CommandElement category="Audio" name="Create Autofades">
+		<CommandArgument name="Length" value="0,0002"/>
+	</CommandElement>
+	<CommandElement category="Event" name="Bounce Selection">
+		<CommandArgument name="Snap" value=""/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Deselect All"/>
+</Macro>

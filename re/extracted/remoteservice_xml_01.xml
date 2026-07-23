@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uc:ComponentModel xmlns:uc="http://www.presonus.com/xml/uc"
+				   namespace="Presonus:DAWRemote"
+				   localization="DAWRemote">
+		
+	<uc:Definitions>
+	
+		<uc:Range id="Volume" min="0" max="3.1622" def="1" curve="fadercurve" units="gain.db.value"/> <!-- -oo to +10dB -->
+		<uc:Range id="Pan" min="0" max="1" def="0.5" units="pan.100"/>
+		<uc:Range id="PanR" min="0" max="1" def="1" units="pan.100"/>
+		<uc:Range id="GainReduction" min="-144" max="0" def="0"/>
+		
+		<uc:Range id="PreampGain" min="0" max="60" curve="linear" units="gain.0"/>
+		<uc:Range id="InputGain" min="-24" max="24" def="0" curve="linear" units="gain.0"/>
+
+		<uc:Range id="Tempo" min="10" max="400" def="120" units="bpm.value"/>
+		<uc:Range id="TimeSignatureNum" min="1" max="32" def="4"/>
+
+		<uc:StringList id="AutomationMode">
+			<uc:String text="Auto: Off"/>
+			<uc:String text="Read"/>
+			<uc:String text="Touch"/>
+			<uc:String text="Latch"/>
+			<uc:String text="Write"/>
+		</uc:StringList>
+
+		<uc:StringList id="TimeSignatureDenom">
+			<uc:String text="2"/>
+			<uc:String text="4"/>
+			<uc:String text="8"/>
+			<uc:String text="16"/>
+			<uc:String text="32"/>
+		</uc:StringList>
+
+		<uc:StringList id="RecordMode">
+			<uc:String text="Overdub"/>
+			<uc:String text="Replace"/>
+		</uc:StringList>
+
+		<uc:StringList id="LoopRecordMode">
+			<uc:String text="Takes"/>
+			<uc:String text="Mix"/>
+		</uc:StringList>
+		
+		<uc:StringList id="SetListItemPlaybackMode">
+			<uc:String text="Continue"/>
+			<uc:String text="Stop at End"/>
+			<uc:String text="Loop"/>
+		</uc:StringList>
+
+		<uc:StringList id="SectionPlaybackMode">
+			<uc:String text="Continue"/>
+			<uc:String text="Loop"/>
+			<uc:String text="Loop And Continue"/>
+		</uc:StringList>
+
+		<uc:StringList id="MacroControlsPresentation">
+			<uc:String text="8 Buttons + 8 Knobs + 8 Faders"/>
+			<uc:String text="16 Knobs"/>
+			<uc:String text="16 Faders"/>
+			<uc:String text="16 Buttons"/>
+		</uc:StringList>
+
+		<uc:StringList id="EmptyParamList">
+			<uc:String text="" />
+		</uc:StringList>
+
+		<uc:StringList id="PanStereoMode">
+			<uc:String text="Balance"/>
+			<uc:String text="Dual"/>
+			<uc:String text="Binaural"/>
+		</uc:StringList>
+
+		<uc:StringList id="SurroundPannerEditMode">
+			<uc:String text="Pan"/>
+			<uc:String text="Balance"/>
+		</uc:StringList>
+
+	</uc:Definitions>

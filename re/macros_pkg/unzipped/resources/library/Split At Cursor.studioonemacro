@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Split At Cursor" group="Hotkey" description="">
+	<CommandElement category="Edit" name="Split at Cursor"/>
+</Macro>

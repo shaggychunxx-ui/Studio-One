@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Consolidate Track Edits" group="Podcast" description="">
+	<CommandElement category="Edit" name="Select All on Tracks"/>
+	<CommandElement category="Event" name="Bounce Selection">
+		<CommandArgument name="Snap" value=""/>
+	</CommandElement>
+</Macro>

@@ -1,0 +1,10 @@
+<uc:Template id="DAWInput">
+			<!-- Generic layout for remote control apps (c0 - c27) -->
+			<uc:foreach id="$i" min="0" max="27">
+				<uc:Component id="c$i" paramlist="Control"/>
+			</uc:foreach>
+			<!-- CS18AI control surface layout (p0 - p24) -->
+			<uc:foreach id="$i" min="0" max="24">
+				<uc:Component id="p$i" paramlist="Control"/>
+			</uc:foreach>
+		</uc:Template>

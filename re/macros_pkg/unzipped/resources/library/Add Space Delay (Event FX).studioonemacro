@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Add Space Delay (Event FX)" group="Event FX" description="">
+	<CommandElement category="Audio" name="Insert Event FX">
+		<CommandArgument name="mode" value="1"/>
+		<CommandArgument name="cid" value="{BFBEA41B-679A-41F2-AACA-ED9D51137412}"/>
+		<CommandArgument name="preset" value="Ping Pong/8th Ping Pong"/>
+		<CommandArgument name="tail" value="8"/>
+	</CommandElement>
+	<CommandElement category="Audio" name="Open Event FX Editor"/>
+</Macro>

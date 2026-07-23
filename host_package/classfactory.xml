@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+    <ScriptClass
+        classID="{F0010001-FULL-CTRL-0001-PROCESSQUEUE0001}"
+        category="EditTask"
+        subCategory="TrackEdit"
+        name="S1 Full Control: Process Queue"
+        sourceFile="code.js"
+        functionName="createProcessQueue"
+        metaClassID="{F0010001-FULL-CTRL-0001-PROCESSQUEUE0002}">
+        <Attribute id="menuPriority" value="0"/>
+    </ScriptClass>
+
+    <ScriptClass
+        classID="{F0010002-FULL-CTRL-0002-MUTESELECTED0001}"
+        category="EditTask"
+        subCategory="TrackEdit"
+        name="S1 Full Control: Mute Selected"
+        sourceFile="code.js"
+        functionName="createMuteSelected"
+        metaClassID="{F0010002-FULL-CTRL-0002-MUTESELECTED0002}">
+        <Attribute id="menuPriority" value="0"/>
+    </ScriptClass>
+
+    <ScriptClass
+        classID="{F0010003-FULL-CTRL-0003-UNMUTEALL000001}"
+        category="EditTask"
+        subCategory="TrackEdit"
+        name="S1 Full Control: Unmute All"
+        sourceFile="code.js"
+        functionName="createUnmuteAll"
+        metaClassID="{F0010003-FULL-CTRL-0003-UNMUTEALL000002}">
+        <Attribute id="menuPriority" value="0"/>
+    </ScriptClass>
+
+    <ScriptClass
+        classID="{F0010004-FULL-CTRL-0004-LISTTRACKS00001}"
+        category="EditTask"
+        subCategory="TrackEdit"
+        name="S1 Full Control: List Tracks"
+        sourceFile="code.js"
+        functionName="createListTracks"
+        metaClassID="{F0010004-FULL-CTRL-0004-LISTTRACKS00002}">
+        <Attribute id="menuPriority" value="0"/>
+    </ScriptClass>
+
+    <ScriptClass
+        classID="{F0010005-FULL-CTRL-0005-DUMPCHANNELS001}"
+        category="EditTask"
+        subCategory="TrackEdit"
+        name="S1 Full Control: Dump Channels"
+        sourceFile="code.js"
+        functionName="createDumpChannels"
+        metaClassID="{F0010005-FULL-CTRL-0005-DUMPCHANNELS002}">
+        <Attribute id="menuPriority" value="0"/>
+    </ScriptClass>
+</ClassFactory>

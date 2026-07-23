@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="VO Insert" group="Podcast" description="Cursor marks insertion point">
+	<CommandElement category="Edit" name="Toggle Ripple Edit">
+		<CommandArgument name="State" value="1"/>
+	</CommandElement>
+	<CommandElement category="Edit" name="Paste"/>
+	<CommandElement category="Edit" name="Toggle Ripple Edit">
+		<CommandArgument name="State" value=""/>
+	</CommandElement>
+</Macro>

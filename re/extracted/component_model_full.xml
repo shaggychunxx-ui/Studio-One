@@ -1,0 +1,676 @@
+<uc:ComponentModel xmlns:uc="http://www.presonus.com/xml/uc"
+				   namespace="Presonus:DAWRemote"
+				   localization="DAWRemote">
+		
+	<uc:Definitions>
+	
+		<uc:Range id="Volume" min="0" max="3.1622" def="1" curve="fadercurve" units="gain.db.value"/> <!-- -oo to +10dB -->
+		<uc:Range id="Pan" min="0" max="1" def="0.5" units="pan.100"/>
+		<uc:Range id="PanR" min="0" max="1" def="1" units="pan.100"/>
+		<uc:Range id="GainReduction" min="-144" max="0" def="0"/>
+		
+		<uc:Range id="PreampGain" min="0" max="60" curve="linear" units="gain.0"/>
+		<uc:Range id="InputGain" min="-24" max="24" def="0" curve="linear" units="gain.0"/>
+
+		<uc:Range id="Tempo" min="10" max="400" def="120" units="bpm.value"/>
+		<uc:Range id="TimeSignatureNum" min="1" max="32" def="4"/>
+
+		<uc:StringList id="AutomationMode">
+			<uc:String text="Auto: Off"/>
+			<uc:String text="Read"/>
+			<uc:String text="Touch"/>
+			<uc:String text="Latch"/>
+			<uc:String text="Write"/>
+		</uc:StringList>
+
+		<uc:StringList id="TimeSignatureDenom">
+			<uc:String text="2"/>
+			<uc:String text="4"/>
+			<uc:String text="8"/>
+			<uc:String text="16"/>
+			<uc:String text="32"/>
+		</uc:StringList>
+
+		<uc:StringList id="RecordMode">
+			<uc:String text="Overdub"/>
+			<uc:String text="Replace"/>
+		</uc:StringList>
+
+		<uc:StringList id="LoopRecordMode">
+			<uc:String text="Takes"/>
+			<uc:String text="Mix"/>
+		</uc:StringList>
+		
+		<uc:StringList id="SetListItemPlaybackMode">
+			<uc:String text="Continue"/>
+			<uc:String text="Stop at End"/>
+			<uc:String text="Loop"/>
+		</uc:StringList>
+
+		<uc:StringList id="SectionPlaybackMode">
+			<uc:String text="Continue"/>
+			<uc:String text="Loop"/>
+			<uc:String text="Loop And Continue"/>
+		</uc:StringList>
+
+		<uc:StringList id="MacroControlsPresentation">
+			<uc:String text="8 Buttons + 8 Knobs + 8 Faders"/>
+			<uc:String text="16 Knobs"/>
+			<uc:String text="16 Faders"/>
+			<uc:String text="16 Buttons"/>
+		</uc:StringList>
+
+		<uc:StringList id="EmptyParamList">
+			<uc:String text="" />
+		</uc:StringList>
+
+		<uc:StringList id="PanStereoMode">
+			<uc:String text="Balance"/>
+			<uc:String text="Dual"/>
+			<uc:String text="Binaural"/>
+		</uc:StringList>
+
+		<uc:StringList id="SurroundPannerEditMode">
+			<uc:String text="Pan"/>
+			<uc:String text="Balance"/>
+		</uc:StringList>
+
+	</uc:Definitions>
+
+	<uc:Parameters>
+
+		<uc:ParamList id="Transport">
+			<uc:Param id="start" name="Start"/>
+			<uc:Param id="stop" name="Stop"/>
+			<uc:Param id="record" name="Record"/>			
+			<uc:Param id="returnToZero" name="RTZ"/>
+			<uc:Param id="fastForward" name="FF"/>
+			<uc:Param id="rewind" name="Rewind"/>			
+			<uc:Param id="loop" name="Loop"/>
+			<uc:Param id="punch" name="Punch"/>
+			<uc:Param id="preroll" name="Preroll"/>
+			<uc:Param id="precount" name="Precount"/>
+			
+			<uc:Param id="primaryTime" type="string" flags="private"/>
+			<uc:Param id="secondaryTime" type="string" flags="private"/>
+
+			<uc:Param id="tempo" type="float" range="Tempo" name="Tempo"/>
+			<uc:Param id="timeSignatureNum" type="int" range="TimeSignatureNum"/>
+			<uc:Param id="timeSignatureDenom" type="list" units="TimeSignatureDenom"/>
+		</uc:ParamList>		
+		
+		<uc:ParamList id="Metronome">
+			<uc:Param id="clickOn" name="Click"/>
+			<uc:Param id="precountDisplay" type="string" flags="readonly"/>
+		</uc:ParamList>		
+
+		<uc:ParamList id="RecordPanel">
+			<uc:Param id="recordMode" type="list" units="RecordMode" name="Record Mode"/>
+			<uc:Param id="loopRecordMode" type="list" units="LoopRecordMode" name="Loop Record Mode"/>
+			<uc:Param id="inputQuantize" name="Input Quantize"/>
+			<uc:Param id="recordLayersEnabled" name="Layers Enabled"/>
+		</uc:ParamList>		
+
+		<uc:ParamList id="ChannelGui">
+			<uc:Param id="showChannelIcons" name="Show Channel Icons"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="Mixer">
+			<uc:Param id="anySolo" name="Any Solo"/>
+			<uc:Param id="anyMute" name="Any Mute"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="FocusChannel">
+			<uc:Param id="path" type="string" flags="readonly"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="Group">
+			<uc:Param id="count" type="int" max="1000" flags="readonly"/>
+		</uc:ParamList>	
+
+		<uc:ParamList id="ChannelGroup" inherit="Group"/>
+		
+		<uc:ParamList id="DeviceFolder" inherit="Group" starttag="100">
+			<uc:Param id="bypassAll" name="Bypass All"/>		
+		</uc:ParamList>	
+		
+		<uc:ParamList id="RemoteFXFolder" inherit="Group"/>
+
+		<uc:ParamList id="MixFxFolder" inherit="DeviceFolder" starttag="150">
+			<uc:Param id="passThrough" name="Passthrough"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="Channel">
+			<uc:Param id="type" type="string" flags="readonly" name="Type"/>
+			<uc:Param id="input" type="string" flags="readonly" name="Input"/>
+			<uc:Param id="output" type="string" flags="readonly" name="Output"/>
+
+			<uc:Param id="label" type="string" name="Title"/>
+			<uc:Param id="number" type="int" max="10000" name="Number"/>
+			<uc:Param id="color" type="color" name="Color"/>
+			<uc:Param id="iconid" type="string" name="IconID"/>
+			<uc:Param id="selected" name="Select"/>
+			<uc:Param id="edit" name="Edit"/>
+			<uc:Param id="macroEdit" name="Macro Editor"/>
+			
+			<uc:Param id="volume" type="float" range="Volume" name="Volume"/>
+			<uc:Param id="pan" type="float" range="Pan" name="Pan"/>
+			<uc:Param id="stereo" name="Stereo"/>
+
+			<uc:Param id="level1" type="float" flags="private"/>
+			<uc:Param id="level2" type="float" flags="private"/>
+			<uc:Param id="clip" type="int" max="99999"/>
+			
+			<uc:Param id="mute" name="Mute"/>
+			<uc:Param id="solo" name="Solo"/>
+			<uc:Param id="monitor" name="Monitor"/>
+			<uc:Param id="recordArmed" name="Armed"/>
+			
+			<uc:Param id="automationMode" type="list" units="AutomationMode" name="Armed"/>
+
+			<uc:Param id="levelhold1" type="float" flags="private"/>
+			<uc:Param id="levelhold2" type="float" flags="private"/>
+
+			<uc:Param id="reduction" type="float" range="GainReduction" flags="private"/>
+
+			<uc:Param id="identity" type="string" flags="readonly"/>
+			<uc:Param id="hardwarePath" type="string" flags="readonly"/>
+			<uc:Param id="isMixFxInput" flags="readonly"/>
+			<uc:Param id="mixFxColor" type="color" flags="readonly"/>
+			<uc:Param id="editGroup" type="string" flags="readonly" name="Edit Group"/>
+			<uc:Param id="isGrouped" flags="readonly"/>
+			<uc:Param id="groupColor" type="color" name="Group Color"/>
+
+			<uc:Param id="speakerSetup" type="list" units="EmptyParamList" flags="mutable" />
+			<uc:Param id="speakerFormat" type="string" flags="readonly"/> <!-- not translated -->
+			<uc:Param id="meterFormat" type="string" flags="readonly"/> <!-- not translated -->
+
+		</uc:ParamList>
+
+		<uc:ParamList id="SimpleChannel">
+			<uc:Param id="label" type="string" name="Title"/>
+			<uc:Param id="numberString" type="string" name="Number"/>
+			<uc:Param id="stereo" name="Stereo"/>
+			<uc:Param id="selected" name="Select"/>
+			<uc:Param id="mute" name="Mute"/>
+			<uc:Param id="solo" name="Solo"/>
+			<uc:Param id="recordArmed" name="Armed"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="AudioPanner">
+			<uc:Param id="panX1" type="float" range="Pan" flags="mutable"/>
+			<uc:Param id="panX2" type="float" range="PanR" />
+			<uc:Param id="panWidth" type="float" units="percent" flags="mutable"/>
+			<uc:Param id="pan" type="float" range="Pan" />
+			<uc:Param id="stereoMode" type="list" units="PanStereoMode"/>							
+			<uc:Param id="pannerType" type="string" flags="readonly"/>
+			<uc:Param id="inputSpeakerFormat" type="string" flags="readonly"/> <!-- not translated -->
+			<uc:Param id="outputSpeakerFormat" type="string" flags="readonly"/> <!-- not translated -->
+			<uc:Param id="effectName" type="string" flags="readonly"/> <!-- name of panner plug-in -->
+			<uc:Param id="fulltitle" type="string" flags="readonly"/> <!-- name + path of panner -->
+
+		</uc:ParamList>
+
+		<uc:ParamList id="SurroundPanner">
+			<uc:Param id="editMode" type="list" units="SurroundPannerEditMode"/>
+			<uc:Param id="azimuth" type="float" min="-180" max="180" def="0" flags="bipolar"/> 
+			<uc:Param id="altitude" type="float" min="0" max="90" def="0" />
+			<uc:Param id="spread" type="float" min="-2" max="2" def="1" units="percent" />
+			<uc:Param id="size" type="float" min="0" max="1" def="0" units="percent" />
+			<uc:Param id="balanceAzimuth" type="float" min="-180" max="180" def="0" flags="bipolar"  />
+			<uc:Param id="balanceAmount" type="float" min="0" max="1" def="0" units="percent" />
+			<uc:Param id="lfeLevel" type="float" min="0" max="1.2" def="1" units="gain.db" /> <!-- units ? -->
+			<uc:Param id="centerLevel" type="float" min="0" max="1.2" def="1" units="gain.db"/> <!-- units ? -->
+			<uc:Param id="disableCenter" />
+			<uc:Param id="muteLfe" />
+			<uc:Param id="sendLfe" />
+			<uc:Param id="snap"/>
+			<uc:Param id="sizeLock" flags="readonly"/>
+
+			<!-- foreach does not work with parameter lists :-( -->
+		</uc:ParamList>
+
+		<uc:ParamList id="SurroundPannerChannel">
+			<uc:Param id="speakerMute"  />			
+		</uc:ParamList>
+
+		<uc:ParamList id="ObjectPanner">
+			<uc:Param id="x" type="float" min="0" max="1" def="0.5" flags="bipolar"/>
+			<uc:Param id="y" type="float" min="0" max="1" def="1" flags="bipolar"/>
+			<uc:Param id="z" type="float" min="0" max="1" def="0" />
+			<uc:Param id="size" type="float" min="0" max="1" def="0" />
+			<uc:Param id="spread" type="float" min="-180" max="180" def="90" />
+			<uc:Param id="snap" />						
+		</uc:ParamList>
+
+		<uc:ParamList id="OutputChannel" inherit="Channel" starttag="100">
+			<uc:Param id="mono" name="Mono"/>
+		</uc:ParamList>	
+
+		<uc:ParamList id="ListenBusChannel" inherit="OutputChannel" starttag="200">
+			<uc:Param id="listen" name="Listen"/>
+			<uc:Param id="prefaderListen" name="PreFaderListen"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="ChannelClick">
+			<uc:Param id="on"/>
+			<uc:Param id="gain" type="float" min="0" max="1.5" name="Gain"/>
+		</uc:ParamList>	
+		
+		<uc:ParamList id="InputFXParams">
+			<uc:Param id="gain" type="float" range="InputGain" name="Input Gain"/>
+			<uc:Param id="invertPhaseL" name="Polarity"/>
+			<uc:Param id="invertPhaseR" name="Polarity Right"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="HardwareInput">
+			<!-- Preamp gain range can change for devices with combo jacks! -->
+			<uc:Param id="connected" flags="readonly" type="int" min="0" max="2"/>
+			<uc:Param id="preampgain1" type="int" range="PreampGain" name="Preamp Gain" flags="mutable"/>
+			<uc:Param id="polarity1" name="Polarity"/>
+			<uc:Param id="48v1" name="48V"/>
+			<uc:Param id="sensitivity1" name="Input Sensitivity" />				
+			<uc:Param id="preampgain2" type="int" range="PreampGain" name="Preamp Gain Right" flags="mutable"/>
+			<uc:Param id="polarity2" name="Polarity Right"/>
+			<uc:Param id="48v2" name="48V Right"/>
+			<uc:Param id="sensitivity2" name="Input Sensitivity Right" />
+			<uc:Param id="dawpostdsp" name="DAW Post DSP"/>
+		</uc:ParamList>	
+
+		<uc:ParamList id="HardwareGlobal">
+			<uc:Param id="mono" name="Output Mono" type="toggle"/>
+			<uc:Param id="dim" name="Output Dim" type="toggle"/>
+			<uc:Param id="mute" name="Output Mute" type="toggle"/>
+			<uc:Param id="talk" name="Talkback On" type="toggle"/>
+		</uc:ParamList>	
+
+		<uc:ParamList id="SendSlot">
+			<uc:Param id="port" type="string" flags="readonly"/>
+			<uc:Param id="level" type="float" range="Volume" name="Level"/>
+			<uc:Param id="pan" type="float" range="Pan" name="Pan"/>
+			<uc:Param id="prefader" name="Prefader"/>
+			<uc:Param id="bypass" name="Bypass"/>
+			<uc:Param id="lockPan" />
+			<uc:Param id="showPan" flags="readonly"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="InsertSlot">
+			<uc:Param id="deviceName" type="string" flags="readonly" name="Device"/>
+			<uc:Param id="edit" name="Edit"/>
+			<uc:Param id="bypass" name="Bypass"/>
+			<uc:Param id="dsplink" name="DSP Link"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="RemoteFXSlot">
+			<uc:Param id="deviceName" type="string" flags="readonly" name="Device"/>
+			<uc:Param id="edit" name="Edit"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="CueMixSlot">
+			<uc:Param id="destination" type="string" flags="readonly"/>
+			<uc:Param id="level" type="float" range="Volume" name="Level"/>
+			<uc:Param id="pan" type="float" range="Pan" name="Pan"/>
+			<uc:Param id="mute" name="Mute"/>
+			<uc:Param id="zeroLatency" name="Zero Latency"/>
+			<uc:Param id="lock" name="Lock"/>
+			<uc:Param id="lockPan" />
+		</uc:ParamList>
+		
+		<uc:ParamList id="CueMixOutput">
+			<uc:Param id="label" type="string"/>		
+		</uc:ParamList>
+		
+		<uc:ParamList id="Control">
+			<uc:Param id="value" type="float"/>
+			<uc:Param id="text" type="string" flags="readonly"/>
+			<uc:Param id="title" type="string" flags="readonly"/>
+		</uc:ParamList>
+	
+		<uc:ParamList id="ControlSurface">
+			<uc:Param id="focusDeviceName" type="string" flags="readonly"/>
+			<uc:Param id="focusDeviceFolder" type="string" flags="readonly"/>
+			<uc:Param id="focusBypass"/>
+			<uc:Param id="focusAutomationMode" type="list" units="AutomationMode"/>
+			<uc:Param id="focusPresetName" type="string"/>
+			<uc:Param id="focusPresetList" type="string"/>
+			<uc:Param id="focusComponentPath" type="string"/>
+			<uc:Param id="focusComponentClass" type="string"/>
+			<uc:Param id="focusComponentEditor" type="string"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="MacroControlSet">
+			<uc:Param id="presentation" type="list" units="MacroControlsPresentation" flags="readonly"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="MacroControl">
+			<uc:Param id="pilot" type="float"/>
+			<uc:Param id="text" type="string" flags="readonly"/>
+			<uc:Param id="title" type="string" flags="readonly"/>
+			<uc:Param id="color" type="color" name="Color"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="Document">
+			<uc:Param id="active" flags="readonly"/>
+			<uc:Param id="title" type="string" flags="readonly"/>
+			<uc:Param id="type" type="string" flags="readonly"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="Activity">
+			<uc:Param id="cpu" type="float" flags="private readonly"/>
+			<uc:Param id="cpuover" flags="private readonly"/>
+			<uc:Param id="disc" type="float" flags="private readonly"/>
+			<uc:Param id="discover" flags="private readonly"/>
+			<uc:Param id="midiIn" flags="private readonly"/>
+			<uc:Param id="midiOut" flags="private readonly"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="RecordDiskSpace">
+			<uc:Param id="remainingTime" type="string" flags="readonly"/>
+			<uc:Param id="remainingPercent" type="float" flags="readonly"/>
+			<uc:Param id="alertState" flags="readonly"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="Session">
+			<uc:Param id="title" type="string" flags="readonly"/>
+			<uc:Param id="artist" type="string" flags="readonly"/>
+			<uc:Param id="performance" type="string" flags="readonly"/>
+			<uc:Param id="location" type="string" flags="readonly"/>
+			<uc:Param id="totalRecordedTime" type="string" flags="readonly"/>
+			<uc:Param id="currentRecordTime" type="string" flags="readonly"/>
+			<uc:Param id="soundcheckMode" />
+			<uc:Param id="soundcheckModeEnabled" flags="readonly"/>
+			<uc:Param id="soundcheckInfo" type="string" flags="readonly"/>
+			<uc:Param id="recordLock" />
+			<uc:Param id="armAll" />
+		</uc:ParamList>
+
+		<uc:ParamList id="Options">
+			<uc:Param id="colorizeChannels" flags="readonly"/>
+			<uc:Param id="channelColors" type="color" flags="mutable"/>
+			<uc:Param id="hostAppLuminance" type="float" flags="readonly"/>
+			<uc:Param id="hostAppSaturation" type="float" flags="readonly"/>
+			<uc:Param id="hostAppHue" type="float" flags="readonly"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="StreamingConnection">
+			<uc:Param id="connected" flags="readonly"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="StreamingTransport">
+			<uc:Param id="studioMode" type="toggle"/>
+			<uc:Param id="streaming" type="toggle"/>
+			<uc:Param id="recording" type="toggle"/>
+			<uc:Param id="triggerTransition" type="toggle"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="StreamingStats">	
+			<uc:Param id="cpuUsage" type="string"/>
+			<uc:Param id="memoryUsage" type="string"/>
+			<uc:Param id="freeDisk" type="string"/>
+			<uc:Param id="recordingTime" type="string"/>
+			<uc:Param id="streamingTime" type="string"/>
+			<uc:Param id="totalFrames" type="int"/>
+			<uc:Param id="fps" type="string"/>
+			<uc:Param id="droppedFrames" type="int"/>
+			<uc:Param id="congestion" type="string"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="StreamingSources">	
+			<uc:Param id="sceneList" type="list" units="EmptyParamList" flags="mutable" />
+			<uc:Param id="currentScene" type="string"/>
+			<uc:Param id="previewScene" type="string"/>
+			<uc:Param id="sourceList" type="list" units="EmptyParamList" flags="mutable" />
+			<uc:Param id="sourceLocks" type="color" />
+			<uc:Param id="sourceVisibles" type="color" />
+			<uc:Param id="transitionsList" type="list" units="EmptyParamList" flags="mutable" />
+			<uc:Param id="currentTransition" type="string"/>
+			<uc:Param id="transitionDuration" type="int" max="10000" min="0" units="ms"/>
+		</uc:ParamList>
+		
+		<uc:ParamList id="ShowPlayer">
+			<uc:Param id="id" type="string" flags="readonly"/>
+			<uc:Param id="type" type="int" max="4" flags="readonly" name="Type"/>
+			<uc:Param id="color" type="color" name="Color"/>
+			<uc:Param id="patchList" type="list" units="EmptyParamList" flags="mutable" />
+		</uc:ParamList>
+
+		<uc:ParamList id="ShowPlayerList">
+			<uc:Param id="count" type="int" max="32" flags="readonly"/>
+		</uc:ParamList>
+
+		<uc:ParamList id="ShowTransport">
+			<uc:Param id="sectionRepeats" type="int" min="0" max="100000" flags="readonly"/>
+			<uc:Param id="currentItemIndex" type="int" min="-1" max="100000" flags="readonly"/>
+			<uc:Param id="currentSectionIndex" type="int" min="-1" max="100000" flags="readonly"/>
+			<uc:Param id="targetSectionIndex" type="int" min="-1" max="100000" flags="readonly"/>
+			<uc:Param id="start"/>
+			<uc:Param id="stop"/>
+		</uc:ParamList>
+
+	</uc:Parameters>
+
+	<uc:Templates>
+	
+		<!--
+			DAW controls available via UCNET (see also remotedevice.surface.xml):
+			
+			Generic layout:
+			* c0 - c7   : Knob 1 - 8
+			* c8 - c15  : Knob 9 - 16
+			* c16, c17  : Pad 1 X / Y
+			* c18, c19  : Pad 2 X / Y
+			* c20 - c27 : Button 1 - 8
+			
+			CS18AI layout:
+			* p0 - p15  : 16 Knobs
+			* p16 - p24 : 9 Buttons
+		-->		
+		<uc:Template id="DAWInput">
+			<!-- Generic layout for remote control apps (c0 - c27) -->
+			<uc:foreach id="$i" min="0" max="27">
+				<uc:Component id="c$i" paramlist="Control"/>
+			</uc:foreach>
+			<!-- CS18AI control surface layout (p0 - p24) -->
+			<uc:foreach id="$i" min="0" max="24">
+				<uc:Component id="p$i" paramlist="Control"/>
+			</uc:foreach>
+		</uc:Template>
+		
+		<uc:Template id="DAWDocument" paramlist="Document"/>
+
+		<uc:Template id="DAWInserts">
+			<uc:foreach id="$i" min="1" max="8">
+				<uc:Component id="slot$i" paramlist="InsertSlot" classname="DAWDeviceSlot"/>
+			</uc:foreach>			
+		</uc:Template>
+
+		<uc:Template id="DAWSends">
+			<uc:foreach id="$i" min="1" max="8">
+				<uc:Component id="slot$i" paramlist="SendSlot" classname="DAWDeviceSlot">
+					<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround"/>	
+				</uc:Component>
+			</uc:foreach>			
+		</uc:Template>
+
+		<uc:Template id="DAWCueMix">
+			<uc:foreach id="$i" min="1" max="8">
+				<uc:Component id="slot$i" paramlist="CueMixSlot" classname="DAWDeviceSlot">
+					<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround" />	
+				</uc:Component>
+			</uc:foreach>			
+		</uc:Template>
+		
+		<uc:Template id="DAWAudioPanner" paramlist="AudioPanner" >
+			<uc:Component id="effect" flags="mutable" condition="surround" />
+		</uc:Template>
+
+		<uc:Template id="DAWMixFX">
+			<uc:Component id="slot1" paramlist="InsertSlot" classname="DAWDeviceSlot"/> <!-- single slot only -->
+		</uc:Template>
+		
+		<uc:Template id="DAWChannel">
+			<uc:Component id="inserts" template="DAWInserts" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+		</uc:Template>
+
+		<uc:Template id="DAWInputChannel" inherit="DAWChannel">
+			<!-- Software Parameters -->
+			<uc:Component id="inputfx" paramlist="InputFXParams"/>
+			<!-- Hardware Parameters -->
+			<uc:Component id="hardware" paramlist="HardwareInput"/>
+		</uc:Template>
+
+		<uc:Template id="DAWNormalChannel" inherit="DAWChannel">
+			<!-- Panner -->
+			<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround" />	
+			<!-- Sends -->
+			<uc:Component id="sends" template="DAWSends" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>							
+			<!-- Cue Mix -->
+			<uc:Component id="cuemix" template="DAWCueMix" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+			<!-- Software Parameters -->
+			<uc:Component id="inputfx" paramlist="InputFXParams"/>
+			<!-- Hardware Parameters -->
+			<uc:Component id="hardware" paramlist="HardwareInput"/>
+			<!-- Mix FX -->
+			<uc:Component id="mixfx" template="DAWMixFX" paramlist="MixFxFolder" classname="DAWDeviceFolder"/>
+		</uc:Template>
+
+		<uc:Template id="DAWOutputChannel" inherit="DAWChannel">
+			<!-- Post-Fader Inserts -->
+			<uc:Component id="posts" template="DAWInserts" paramlist="DeviceFolder" classname="DAWDeviceFolder"/>
+			<!-- Click -->
+			<uc:Component id="click" paramlist="ChannelClick" classname="DAWChannelClick"/>
+			<!-- Mix FX -->
+			<uc:Component id="mixfx" template="DAWMixFX" paramlist="MixFxFolder" classname="DAWDeviceFolder"/>
+		</uc:Template>
+
+		<uc:Template id="{EC794EDD-7518-4D2A-A7DD-B12295B84C4C}" paramlist="SurroundPanner" classname="DAWSurroundPanner" >
+			<uc:foreach id="$i" min="0" max="31">
+				<uc:Component id="channel$i" paramlist="SurroundPannerChannel" classname="DAWSurroundPannerChannel"  />
+			</uc:foreach>
+		</uc:Template>
+
+		<uc:Template id="{725CFBBB-1E41-48C9-85F3-869AFB98EF8B}" paramlist="ObjectPanner" classname="DAWObjectPanner" />
+
+		<uc:Template id="DAWShowPlayerList">
+			<uc:foreach id="$i" min="1" max="32">
+				<uc:Component id="player$i" paramlist="ShowPlayer" classname="DAWShowPlayer"/>
+			</uc:foreach>
+		</uc:Template>
+
+		<uc:Template id="DAWGlobalMacroControls">
+			<!-- 16 float values (float-1 - float-16) -->
+			<uc:foreach id="$i" min="1" max="16">
+				<uc:Component id="float-$i" paramlist="MacroControl" classname="DAWMacroControl"/>
+			</uc:foreach>
+			<!-- 16 bool values (bool-1 - bool-16) -->
+			<uc:foreach id="$i" min="1" max="16">
+				<uc:Component id="bool-$i" paramlist="MacroControl" classname="DAWMacroControl"/>
+			</uc:foreach>
+		</uc:Template>
+
+		<uc:Template id="{B90855F4-9F05-46EB-A647-49EC9A8161C7}" classname="DAWShowComponent">
+			<uc:Component id="players" template="DAWShowPlayerList" paramlist="ShowPlayerList" classname="DAWShowPlayerList"/>
+			<uc:Component id="transport" paramlist="ShowTransport" classname="DAWShowTransport"/>
+			<uc:Component id="macrocontrols" template="DAWGlobalMacroControls" paramlist="MacroControlSet" classname="DAWGlobalMacroControls"/>
+		</uc:Template>
+
+		<uc:Template id="DAWRemote" flags="public">			
+			<uc:Component id="transport" paramlist="Transport" classname="DAWTransport"/>
+			<uc:Component id="metronome" paramlist="Metronome"/>
+			<uc:Component id="recordpanel" paramlist="RecordPanel"/>
+			<uc:Component id="channelgui" paramlist="ChannelGui"/>
+									
+			<!-- NOTE: total number of remote channels is limited to 512 for now! -->				
+			<uc:Component id="mixer" paramlist="Mixer" classname="DAWMixer">
+				<uc:Component id="focus" paramlist="FocusChannel" classname="DAWFocusChannel"/>
+			
+				<!-- Inputs -->
+				<uc:Component id="input" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="64">
+						<uc:Component id="ch$i"	template="DAWInputChannel" paramlist="Channel" classname="DAWChannel"/>
+					</uc:foreach>				
+				</uc:Component>
+
+				<!-- Audio, Instruments, Buses, FX -->
+				<uc:Component id="channel" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="384">
+						<uc:Component id="ch$i"	template="DAWNormalChannel" paramlist="Channel" classname="DAWChannel"/>
+					</uc:foreach>				
+				</uc:Component>
+
+				<!-- Sub Outs -->
+				<uc:Component id="sub" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="62"> <!-- -2 for main out and optional listen bus-->
+						<uc:Component id="ch$i"	template="DAWOutputChannel" paramlist="OutputChannel" classname="DAWChannel"/>
+					</uc:foreach>				
+				</uc:Component>
+
+				<!-- Main Out -->
+				<uc:Component id="main" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:Component id="ch1" template="DAWOutputChannel" paramlist="OutputChannel" classname="DAWChannel"/>
+				</uc:Component>
+				
+				<!-- Listen Bus -->
+				<uc:Component id="listen" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:Component id="ch1" template="DAWOutputChannel" paramlist="ListenBusChannel" classname="DAWChannel"/>
+				</uc:Component>
+			</uc:Component>		
+
+			<uc:Component id="cuemixrouter" classname="DAWCueMixRouter">
+				<uc:foreach id="$i" min="1" max="8">
+					<uc:Component id="output$i" paramlist="CueMixOutput"/>
+				</uc:foreach>			
+			</uc:Component>
+			
+			<uc:Component id="hardwaremixer" classname="DAWHardwareMixer">
+				<uc:Component id="global" paramlist="HardwareGlobal" classname="DAWHardwareMixerGlobal"/>
+				<uc:Component id="input" paramlist="ChannelGroup" classname="DAWHardwareChannelGroup">
+					<uc:foreach id="$i" min="1" max="64">
+						<uc:Component id="ch$i" classname="DAWHardwareChannel">
+							<uc:Component id="remotefx" paramlist="RemoteFXFolder" classname="DAWDeviceFolder">
+								<uc:foreach id="$i" min="1" max="2"> <!-- limited to 2 for now -->
+									<uc:Component id="slot$i" paramlist="RemoteFXSlot" classname="DAWDeviceSlot"/>
+								</uc:foreach>			
+							</uc:Component>
+						</uc:Component>
+					</uc:foreach>				
+				</uc:Component>
+			</uc:Component>
+			
+			<uc:Component id="controls" template="DAWInput"/>
+			<uc:Component id="surface" paramlist="ControlSurface" classname="DAWSurfaceFocusComponent"/>
+			<uc:Component id="document" template="DAWDocument"/>
+			<uc:Component id="activity" paramlist="Activity"/>
+			<uc:Component id="options" paramlist="Options"/>
+			<uc:Component id="recorddiskspace" paramlist="RecordDiskSpace"/>
+
+			<uc:Component id="show" flags="mutable"/> <!-- optional (DAWShowComponent), only  in show document -->
+		</uc:Template>
+
+		<uc:Template id="SimpleDAWRemote" flags="public">
+			
+			<uc:Component id="transport" paramlist="Transport"/>
+			<uc:Component id="document" template="DAWDocument"/>
+			<uc:Component id="recorddiskspace" paramlist="RecordDiskSpace"/>
+			<uc:Component id="session" paramlist="Session"/> <!-- provided by the 'SessionInfo' controller in Capture -->
+			<uc:Component id="activity" paramlist="Activity"/>
+
+			<uc:Component id="mixer" paramlist="Mixer" classname="DAWMixer">
+				<uc:Component id="channel" paramlist="ChannelGroup" classname="DAWChannelGroup">
+					<uc:foreach id="$i" min="1" max="384">
+						<uc:Component id="ch$i"	paramlist="SimpleChannel" classname="DAWSimpleChannel" />
+					</uc:foreach>
+				</uc:Component>
+			</uc:Component>
+			
+		</uc:Template>
+		
+		<uc:Template id="StreamingDAWRemote" flags="public">
+			<uc:Component id="stats" paramlist="StreamingStats" classname="StreamingDAWStatisticsComponent"/>	
+			<uc:Component id="transport" paramlist="StreamingTransport" classname="StreamingDAWTransportComponent"/>
+			<uc:Component id="sources" paramlist="StreamingSources" classname="StreamingDAWSourcesComponent"/>
+		</uc:Template>
+
+	</uc:Templates>
+		
+</uc:ComponentModel>

@@ -1,0 +1,13 @@
+<uc:ParamList id="Session">
+			<uc:Param id="title" type="string" flags="readonly"/>
+			<uc:Param id="artist" type="string" flags="readonly"/>
+			<uc:Param id="performance" type="string" flags="readonly"/>
+			<uc:Param id="location" type="string" flags="readonly"/>
+			<uc:Param id="totalRecordedTime" type="string" flags="readonly"/>
+			<uc:Param id="currentRecordTime" type="string" flags="readonly"/>
+			<uc:Param id="soundcheckMode" />
+			<uc:Param id="soundcheckModeEnabled" flags="readonly"/>
+			<uc:Param id="soundcheckInfo" type="string" flags="readonly"/>
+			<uc:Param id="recordLock" />
+			<uc:Param id="armAll" />
+		</uc:ParamList>

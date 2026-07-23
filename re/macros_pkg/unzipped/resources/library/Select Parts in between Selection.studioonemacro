@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Select Parts in between Selection" group="Hotkey" description="">
+	<CommandElement category="Transport" name="Locate Selection"/>
+	<CommandElement category="Edit" name="Create Ranges on Tracks"/>
+	<CommandElement category="Transport" name="Locate Selection End"/>
+	<CommandElement category="Edit" name="Range End to Cursor"/>
+	<CommandElement category="Transport" name="Locate Selection"/>
+	<CommandElement category="Edit" name="Select Events in Range"/>
+</Macro>

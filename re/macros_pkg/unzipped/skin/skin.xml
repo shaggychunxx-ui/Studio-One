@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Skin>
+	<Externals>
+		<External name="@Main.*"/>
+		<External name="Standard.*"/>
+	</Externals>
+
+	<Resources>
+	
+		<ColorScheme name="Main">
+			<ColorScheme.Color name="MyPanelBackgroundColor" color="hsl(212,6,14)" saturation="8:0/10/25" luminance="7:9" invertedvalue="74"/>
+			<ColorScheme.Color name="MyPanelBackgroundMOColor" color="hsl(212,4,18)" saturation="8:0/10/25" luminance="7:9" invertedvalue="80"/>
+			<ColorScheme.Color name="MySelectBoxArrowColor" color="hsl(0,0,100,40)" saturation="0" luminance="0" huefixed="true" invertedvalue="0"/>
+		</ColorScheme>
+		
+		<Image name="MacroGadgetMenuIcon" url="images/GadgetMenuIcon.png" template="true"/> <!-- used by Gadget! -->
+<!--		<Image name="MacroGadgetButton" url="images/GadgetButton.png" frames="normal normalOn"/>-->
+		<Image name="MacroGadgetButtonAtlas" url="images/GadgetButton.png"/> <!-- used by Gadget! -->
+		
+		<Image name="MacroGadgetButton">
+			<ImagePart name="normal" image="MacroGadgetButtonAtlas" size="0,0,50,27">
+				<ImageFilter name="colorize"	color="@Main.LabelColor.Secondary"/>
+			</ImagePart>
+			<ImagePart name="mouseover" image="MacroGadgetButtonAtlas" size="0,0,50,27">
+				<ImageFilter name="colorize"	color="@Main.LabelColor.Primary"/>
+			</ImagePart>
+			<ImagePart name="pressed" image="MacroGadgetButtonAtlas" size="0,0,50,27">
+				<ImageFilter name="colorize"	color="@Main.LabelColor.Primary"/>
+			</ImagePart>
+<!--			<ImagePart name="pressed" image="MacroGadgetButtonAtlas" size="0,27,50,27"/>-->
+			<ImagePart name="normalOn" image="MacroGadgetButtonAtlas" size="0,27,50,27"/>
+		</Image>
+
+		<Image name="MacroToolbarIcon" url="images/ToolbarIcon.png"/>
+		
+		<ShapeImage name="MySelectBoxArrow"	url="MySelectBoxArrowShape"/>
+		<ShapeImage name="TitleButtonBackground"	url="TitleButtonBackgroundShape" frames="embedded"/>
+		
+		<ShapeImage name="MacroPanelButtonMaskLSmall"	url="MacroPanelButtonMaskLSmallShape"/>
+		<ShapeImage name="MacroPanelButtonMaskRSmall"	url="MacroPanelButtonMaskRSmallShape"/>
+		
+		<!-- copied from Standard skin -->
+		<Image name="MacroScrollArrowLeft" template="true">	
+			<ShapeImage name="normal"		url="images/svgs/MacroScrollArrowLeft.svg" template="true">
+				<ShapeColorMapping name="rgb(0,173,248)" color="@Main.LabelColor.Secondary"/>
+			</ShapeImage>
+			<ShapeImage name="mouseover"		url="images/svgs/MacroScrollArrowLeft.svg" template="true">
+				<ShapeColorMapping name="rgb(0,173,248)" color="@Main.LabelColor"/>
+			</ShapeImage>
+			<ShapeImage name="pressed"		url="images/svgs/MacroScrollArrowLeft.svg" template="true">
+				<ShapeColorMapping name="rgb(0,173,248)" color="@Main.LabelColor.Primary"/>
+			</ShapeImage>
+		</Image>
+		<Image name="MacroScrollArrowRight" template="true">	
+			<ShapeImage name="normal"		url="images/svgs/MacroScrollArrowRight.svg" template="true">
+				<ShapeColorMapping name="rgb(0,173,248)" color="@Main.LabelColor.Secondary"/>
+			</ShapeImage>
+			<ShapeImage name="mouseover"		url="images/svgs/MacroScrollArrowRight.svg" template="true">
+				<ShapeColorMapping name="rgb(0,173,248)" color="@Main.LabelColor"/>
+			</ShapeImage>
+			<ShapeImage name="pressed"		url="images/svgs/MacroScrollArrowRight.svg" template="true">
+				<ShapeColorMapping name="rgb(0,173,248)" color="@Main.LabelColor.Primary"/>
+			</ShapeImage>
+		</Image>
+	</Resources>
+
+	<Shapes>
+		<Shape name="MacroPanelButtonMaskLSmallShape" size="0,0,10,29" style="scale">
+			<Rectangle size="-2,-2,20,33" style="stroke" Pen.color="@Main.MyPanelBackgroundColor" Pen.width="3" radius="6"/>
+		</Shape>
+		<Shape name="MacroPanelButtonMaskRSmallShape" size="0,0,10,29" style="scale">
+			<Rectangle size="-10,-2,22,33" style="stroke" Pen.color="@Main.MyPanelBackgroundColor" Pen.width="3" radius="6"/>
+		</Shape>
+		<Shape name="MySelectBoxArrowShape" size="0,0,22,29">
+			<Triangle style="fill" point1="8,13" point2="16,13" point3="12,18" Brush.color="@Main.MySelectBoxArrowColor"/>
+		</Shape>
+		<Shape name="TitleButtonBackgroundShape" style="scale">
+			<Shape name="normal"/>
+			<Shape name="mouseover" style="scale">
+				<Rectangle size="0,0,10,10"	style="fill tiled" Brush.color="@Main.MyPanelBackgroundMOColor" radius="3"/>
+			</Shape>
+		</Shape>
+	</Shapes>
+	
+	<Styles>
+		<Style name="MacroPanelButtonMaskLSmall">
+			<Image name="background" image="MacroPanelButtonMaskLSmall"/>
+		</Style>
+		<Style name="MacroPanelButtonMaskRSmall">
+			<Image name="background" image="MacroPanelButtonMaskRSmall"/>
+		</Style>
+		<Style name="NameEditor" inherit="Standard.Label" textcolor="black" backcolor="white"/>
+
+		<!-- Import shared styles provided by the application -->
+		<Style name="SectionDividerH" inherit="Standard.AddIn.SectionDividerH"/>
+		<Style name="SectionDividerV" inherit="Standard.AddIn.SectionDividerV"/>
+		<Style name="MyTitleButton" inherit="Standard.AddIn.Title">
+			<Metric name="padding.left"	value="3"/>
+			<Image name="background"	image="TitleButtonBackground"/>
+		</Style>
+		<Style name="MyLabel" inherit="Standard.AddIn.Label"/>		
+		<Style name="MyButton" inherit="Standard.AddIn.Button">
+			<Metric name="padding.top" value="1"/>
+			<Metric name="padding.left" value="4"/>
+			<Metric name="padding.right" value="4"/>
+			<Metric name="buttonMinWidth" value="44"/>
+		</Style>
+		<Style name="MyButtonL" inherit="Standard.AddIn.ButtonL"/>		
+		<Style name="MyButtonR" inherit="Standard.AddIn.ButtonR"/>		
+		<Style name="MyButtonC" inherit="Standard.AddIn.ButtonC"/>		
+		<Style name="MySlider" inherit="Standard.AddIn.Slider"/>		
+		<Style name="MyEditBox" inherit="Standard.AddIn.EditBox"/>		
+		<Style name="MySelectBox" inherit="Standard.AddIn.SelectBox"/>
+		<Style name="MyMenuHeader" inherit="Standard.Menu.MenuHeader"/>
+		<Style name="MyMenuHeaderEditBox" inherit="Standard.Menu.MenuHeaderEditBox"/>
+		<Style name="MyMenuHeaderCheckBox" inherit="Standard.Menu.MenuHeaderCheckBox"/>
+
+		<Style name="MySelectButton" inherit="MyButton">
+			<Metric name="padding.left" value="6"/>
+			<Metric name="padding.right" value="0"/>
+		</Style>
+		<Style name="MyPageMenuButton" inherit="MySelectButton">
+			<Align name="textalign"	align="left"/>
+			<Metric name="buttonMinWidth" value="92"/>
+		</Style>
+		
+		<Style name="MenuSelectBox" inherit="MySelectBox">
+			<Metric name="extended" value="1"/> <!-- use extended menu instead of tree presentation -->
+			<Align name="textalign"	align="right"/>
+		</Style>
+		
+
+		<Style name="CommandBarStyle">
+			<Color name="backcolor" color="@Main.MyPanelBackgroundColor"/> <!-- background color used when resizing icons -->
+			<Metric name="maxIconWidth" value="44"/>
+			<Metric name="maxIconHeight" value="22"/>
+		</Style>
+
+		<Style name="TriggerSelectBox">
+			<Triggers>
+				<Trigger event="onSingleTap onSwipe">
+					<Invoker target="parent.parent" name="showMenu" arg1="1"/>
+				</Trigger>
+			</Triggers>
+		</Style>
+
+		<Style name="TriggerDisableParent">
+			<Triggers>
+				<Trigger event="onAttached">
+					<Setter property="parent.enabled" value="0"/>
+				</Trigger>
+			</Triggers>
+		</Style>
+
+		<Style name="FocusSearchField">
+			<Triggers>
+				<Trigger event="onAttached">
+					<Invoker target="controller" name="focusSearchField"/>
+				</Trigger>
+			</Triggers>
+		</Style>
+		
+		<Style name="MacroButtonsScrollViewStyle">
+			<Color name="backcolor"		color="@Main.MyPanelBackgroundColor"/>
+			<Image name="hButtonDown"	image="TitleButtonBackground"/>
+			<Image name="hButtonUp"		image="TitleButtonBackground"/>
+			<Image name="hIconDown"		image="MacroScrollArrowLeft"/>
+			<Image name="hIconUp"		image="MacroScrollArrowRight"/><!-- right -->
+			<Metric name="buttonSize"	value="40"/>
+		</Style>
+	</Styles>
+
+	<Forms>
+		<!-- ******************************************************************************************** -->
+		<!-- Macro Panel -->
+		<!-- ******************************************************************************************** -->
+
+		<Form name="MacroPanel" title="Macros" windowstyle="floating" attach="all fitsize">
+			<switch controller="$frame" property="isWindow">
+				<case value="1">
+					<View name="MacroPanel.Detached" attach="all fitsize"/> 
+				</case>
+				<default>
+					<View name="MacroPanel.Inplace" attach="all hfit"/>
+				</default>
+			</switch>
+		</Form>
+
+		<!-- Inplace variant is using the same pixel height as built-in application panels -->
+		<Form name="MacroPanel.Inplace">
+			<View attach="top bottom" sizeLimits="0,50,-1,50"/>	<!-- force vertical limit -->
+<!--			<Horizontal margin="0" spacing="0" attach="all hfit" height="54">-->
+				<CommandBarView name="macroBar" height="49" attach="all hfit" style="CommandBarStyle"/>
+<!--			</Horizontal>-->
+		</Form>
+
+		<!-- Detached variant with vertical alignment and no left/right decoration -->
+		<Form name="MacroPanel.Detached" options="windowmovable">
+			<Space height="63"/> <!-- force minimum height in horizontal orientation (add margin) -->
+			<CommandBarView name="macroBar" size="0,5" attach="all fitsize" options="horizontal vertical" style="CommandBarStyle"/>
+		</Form>
+	
+		<!-- ******************************************************************************************** -->
+		<!-- Macro Organizer -->
+		<!-- ******************************************************************************************** -->
+
+		<Form name="MacroOrganizer" title="Macro Organizer" helpid="studioonemacros" windowstyle="dialogstyle sizable restorepos restoresize" attach="all" sizeLimits="300,300,-1,-1">
+			<Vertical spacing="0" attach="all">
+				<Horizontal margin="0" attach="all">
+					<DialogGroup options="secondary" attach="all">
+						<Vertical margin="5" spacing="0" attach="all">
+							<View width="720" attach="left right">
+								<TriggerView height="5" style="FocusSearchField"/>
+								<View name="MacroSearchBar" width="720" attach="left right"/>
+							</View>
+							<Space height="4"/>
+							<ListView name="fileList" width="720" height="300" options="header selection swallowalphachars" scrolloptions="border autohideboth transparent" persistence.id="MacroOrganizer.fileList" attach="all"/>
+						</Vertical>
+					</DialogGroup>
+					<Vertical margin="0" options="unifysizes">
+						<Space height="32"/>
+						<Button name="new" title="New..." attach="left right"/>
+						<Button name="edit" title="Edit..." attach="left right"/>
+						<Button name="editShortcut" title="Shortcut..." attach="left right"/>
+						<Button name="delete" title="Delete" attach="left right"/>
+						<Space/>
+						<Button name="refresh" title="Refresh" attach="left right"/>
+						<Space/>
+					</Vertical>
+				</Horizontal>
+				<Space height="5"/>	
+				<Link name="showFolder" title="Show Macros Folder in Explorer/Finder" attach="bottom"/>
+			</Vertical>
+		</Form>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Macro Editor -->
+		<!-- ******************************************************************************************** -->
+		
+		<Form name="MacroEditor" title="Edit Macro" buttons="okay cancel" windowstyle="dialogstyle sizable restorepos restoresize" attach="all" sizeLimits="500,300,-1,-1">
+			<Horizontal margin="0" options="unifysizes" attach="all">
+                <DialogGroup options="secondary" attach="all">
+                    <Vertical margin="5" spacing="0" attach="all">
+                    	<Label title="Commands" attach="hcenter"/>
+						<using controller="commandSelector">
+							<View name="MacroSearchBar" width="310" attach="left right"/>
+							<Space height="2"/>
+							<Vertical margin="5" attach="all">
+								<TreeView name="commandTree" width="300" height="300" options="noroot noicons nodrag selectfullwidth selection exclusive autoexpand swallowalphachars" scrolloptions="autohideboth transparent" attach="all"/>
+							</Vertical>
+						</using>
+                    </Vertical>
+                </DialogGroup>
+
+				<Vertical margin="0" attach="top" options="unifysizes">
+					<Space/>
+					<Space/>
+					<Space height="1"/>
+					<Button name="add" title="Add &gt;&gt;" attach="left right"/>
+					<Button name="remove" title="&lt;&lt; Remove" attach="left right"/>
+					<Space/>
+					<Space/>
+					<Button name="moveUp" title="Up" attach="left right"/>
+					<Button name="moveDown" title="Down" attach="left right"/>
+					<Button name="edit" title="Edit" attach="left right"/>
+				</Vertical>
+				
+                <DialogGroup options="secondary" attach="all">
+                    <Vertical margin="5" spacing="0" attach="all">
+                    	<Label title="Macro" attach="hcenter"/>
+						<Table margin="5" width="310" columns="2" attach="left right">
+							<Label title="Title" attach="vcenter"/>
+							<EditBox name="title" height="20" attach="left right fill"/>
+							<Label title="Group" attach="vcenter"/>
+							<EditBox name="group" height="20" attach="left right fill"/>
+							<Label title="Description" attach="vcenter"/>
+							<EditBox name="description" height="20" attach="left right fill"/>
+						</Table>
+						<Space height="2"/>
+						<Vertical margin="5" attach="all">
+                        	<ListView name="macroList" width="300" height="244" options="header selection swallowalphachars" scrolloptions="autohideboth transparent" attach="all" persistence.id="MacroEditor.macroList"/>
+						</Vertical>
+                    </Vertical>					
+                </DialogGroup>
+			</Horizontal>
+		</Form>
+		
+		<!-- ******************************************************************************************** -->
+		<!-- Macro Search Bar -->
+		<!-- ******************************************************************************************** -->
+
+		<Form name="MacroSearchBar">
+			<Horizontal margin="5" spacing="0" options="unifysizes" attach="left right">
+				<ImageView style="Standard.SearchBox" attach="left right">
+					<EditBox name="searchString" size="0,0,100,20" options="immediate transparent" style="Standard.SearchBox" attach="left right"/>
+					<Button name="clear" size="100,0,20,20" tooltip="Clear" attach="right" options="transparent" style="Standard.SearchBox"/>
+				</ImageView>
+			</Horizontal>
+		</Form>
+		
+		<!-- ******************************************************************************************** -->
+		<!-- Event Name Editor -->
+		<!-- ******************************************************************************************** -->
+		
+		<!-- not finished yet -->
+		<Form name="EventNameEditor" title="Edit Names" buttons="okay cancel" windowstyle="dialogstyle sizable restorepos restoresize" attach="all" sizeLimits="200,200,-1,-1">
+			<Vertical margin="0" attach="all">
+				<EditBox name="text" width="400" height="400" attach="all" options="multiline" style="NameEditor"/>
+			</Vertical>
+		</Form>
+		
+		<!-- ******************************************************************************************** -->
+		<!-- Command Bar Item -->
+		<!-- ******************************************************************************************** -->
+		
+		<Form name="CommandBarItem" attach="all">
+			<switch property="type">
+				<case value="Button">
+					<Button name="command" title="$title" icon="$icon" size="0,0,0,29" style="MyButton" tooltip="@cmd.title[]"/>
+				</case>
+				
+				<case value="Menu">
+					<switch property="commandName">
+						<case value="setupMenu">
+							<SelectBox name="command" options="hidebutton" style="MenuSelectBox" attach="fitsize">
+								<TriggerView style="TriggerSelectBox" gesturepriority="high" attach="fitsize"> <!-- otherwise the blind button steals touch -->
+									<Button icon="$icon" width="27" height="29" options="transparent" style="MyButton"/>	
+								</TriggerView>
+							</SelectBox>
+						</case>
+						<case value="pageMenu">
+							<SelectBox name="command" options="trailingbutton" style="MenuSelectBox" attach="fitsize">
+								<TriggerView style="TriggerSelectBox" gesturepriority="high" attach="fitsize"> <!-- otherwise the blind button steals touch -->
+									<Button titlename="selectedPageTitle" icon="$icon" options="transparent" height="29" style="MyPageMenuButton"/>
+								</TriggerView>
+							</SelectBox>
+						</case>
+						<default>
+							<SelectBox name="command" options="trailingbutton" style="MenuSelectBox" attach="fitsize">						
+								<TriggerView style="TriggerSelectBox" gesturepriority="high" attach="fitsize"> <!-- otherwise the blind button steals touch -->
+									<Button title="$title" icon="$icon" height="29" options="transparent" style="MySelectButton"/>
+								</TriggerView>
+							</SelectBox>
+						</default>
+					</switch>
+				</case>
+				
+				<case value="Group SetupGroup">
+					<Vertical margin="0" spacing="1" options="unifysizes" attach="all">
+						<Button titlename="title" style="MyTitleButton" options="nocontextmenu" height="18" attach="left right"/>
+						<View attach="left right">
+							<Horizontal margin="0" spacing="-10" height="30" attach="left right">
+								<Horizontal margin="0" spacing="1" height="30" attach="left right">
+									<foreach variable="$i" count="numChilds">
+										<View name="@child[$i]" attach="hfit"/>
+									</foreach>
+									<if property="numChilds" value="0">
+										<Space width="40"/>
+									</if>
+								</Horizontal>
+								<ImageView style="MacroPanelButtonMaskRSmall" width="10" height="29">
+									<TriggerView style="TriggerDisableParent"/>
+								</ImageView>
+							</Horizontal>
+							<ImageView style="MacroPanelButtonMaskLSmall" width="10" height="29">
+								<TriggerView style="TriggerDisableParent"/>
+							</ImageView>
+						</View>
+					</Vertical>
+				</case>
+
+				<case value="Page">
+					<switch property="orientation">
+						<case value="vertical">
+							<Vertical margin="0" spacing="0" attach="all fitsize" options="unifysizes">
+								<foreach variable="$i" count="numChilds">
+									<View width="5"/>
+									<Horizontal margin="0" spacing="0" attach="left right">
+										<View name="@child[$i]" attach="hfit"/>
+									</Horizontal>
+									<Space height="10"/>
+								</foreach>
+							</Vertical>
+						</case>
+						<default>
+							<Horizontal margin="0" spacing="0" height="49" attach="left right">
+								<foreach variable="$i" count="numChilds">
+<!--									<View width="10"/>-->
+									<View name="@child[$i]" attach="hfit"/>
+									<View width="12"/>
+								</foreach>
+							</Horizontal>
+						</default>
+					</switch>
+				</case>
+				
+				<case value="Root">
+					<switch property="orientation">
+						<case value="vertical">
+							<Vertical margin="10" spacing="0" attach="all fitsize" options="unifysizes">
+								<foreach variable="$i" count="numChilds">
+									<switch property="child[$i].type">
+										<case value="Group SetupGroup">
+											<View name="@child[$i]"/>
+										</case>
+										<default>
+											<define si="@property:selectedPageIndex" isSelected="@eval:$i=$si+1">
+												<if property="$isSelected">
+													<View height="10"/>
+													<View name="@child[$i]" sizeLimits="none"/>
+												</if>
+											</define>
+										</default>
+									</switch>
+								</foreach>
+							</Vertical>
+						</case>
+						<default>
+							<Horizontal margin="0" spacing="0" attach="all">
+								<Space width="10"/>
+								<foreach variable="$i" count="numChilds">
+									<switch property="child[$i].type">
+										<case value="Group SetupGroup">
+<!--											<View width="1"/>-->
+											<View name="@child[$i]"/>
+											<Space width="10"/>
+										</case>
+										<default>
+											<define si="@property:selectedPageIndex" isSelected="@eval:$i=$si+1">
+												<if property="$isSelected">
+													<ScrollView name="ContextMenuDelegateTarget" height="49" options="canscrollh autobuttonsh extendtarget noscreenscroll" style="MacroButtonsScrollViewStyle" hscroll.style="MacroButtonsScrollViewStyle" attach="left right"/>
+												</if>
+											</define>
+										</default>
+									</switch>
+								</foreach>
+							</Horizontal>
+						</default>
+					</switch>
+				</case>
+				
+				<case value="Tabs">
+					<TabView name="tab">
+						<foreach variable="$i" count="numChilds">
+							<View name="@child[$i]"/>
+						</foreach>
+					</TabView>
+				</case>
+				
+			</switch>
+		</Form>
+		
+		<Form name="ContextMenuDelegateTarget">
+			<AlignView attach="left right hfit" options="passcontextmenu" name="://Workspace/studioapp/~/CustomParams/addInPanelAlign">
+				<View name="ContextMenuDelegate">
+					<Horizontal margin="0" spacing="0" attach="all">
+						<View name="@child[$i]" sizeLimits="none"/>
+					</Horizontal>
+				</View>
+			</AlignView>
+		</Form>
+		
+		<!-- ******************************************************************************************** -->
+		<!-- Command Bar Context Menu -->
+		<!-- ******************************************************************************************** -->
+		
+		<Form name="CommandBarContextMenu" style="MyMenuHeader" options="colorize" attach="left right">
+			<EditBox name="title" options="transparent doubleclick" size="16,0,164,28" style="MyMenuHeader"/>
+		</Form>
+		
+	</Forms>
+</Skin>

@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Local machine config / runtime
+config/settings.json
+config/VERIFY_REPORT.*
+config/MIXER_30S_REPORT.txt
+config/mixer_30s_results.json
+config/plugin_maps.local.json
+Documents/
+
+# Host queue (user Documents is outside repo, but just in case)
+**/S1FullControl/
+
+# Large RE binaries (APKs / native libs — keep extract scripts, not blobs)
+re/apk/**/*.apk
+re/apk/**/*.so
+re/apk/**/*.zip
+re/apk/**/classes.dex
+re/apk/**/resources.arsc
+re/apk/dawremote_unzip/
+re/apk/ucremote_libs/
+re/captures/
+re/**/*.etl
+re/**/*.pcap*
+re/**/*.log
+
+# Packages built locally (rebuild with: py -m s1remote full package)
+scripts/*.package
+scripts/S1FullControl.package
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

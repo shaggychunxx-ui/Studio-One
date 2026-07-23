@@ -1,0 +1,5 @@
+<uc:ParamList id="RemoteFXFolder" inherit="Group"/>
+
+		<uc:ParamList id="MixFxFolder" inherit="DeviceFolder" starttag="150">
+			<uc:Param id="passThrough" name="Passthrough"/>
+		</uc:ParamList>

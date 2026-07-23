@@ -1,0 +1,5 @@
+<uc:Template id="{EC794EDD-7518-4D2A-A7DD-B12295B84C4C}" paramlist="SurroundPanner" classname="DAWSurroundPanner" >
+			<uc:foreach id="$i" min="0" max="31">
+				<uc:Component id="channel$i" paramlist="SurroundPannerChannel" classname="DAWSurroundPannerChannel"  />
+			</uc:foreach>
+		</uc:Template>

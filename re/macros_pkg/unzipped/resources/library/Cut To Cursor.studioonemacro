@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Cut To Cursor" group="" description="">
+	<CommandElement category="Edit" name="Split at Cursor"/>
+	<CommandElement category="Navigation" name="Previous Event"/>
+	<CommandElement category="Edit" name="Delete"/>
+</Macro>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ControlSurface>
+	<!-- ******************************************************************************************** -->
+	<!-- CONTROL DEFINITIONS -->
+	<!-- ******************************************************************************************** -->
+
+	<Controls>
+		<!-- ******************************************************************************************** -->
+		<!-- Layout 1 (generic layout for remote control apps) -->
+		<!-- ******************************************************************************************** -->
+	
+		<!-- Knobs 1 - 8 -->
+		<Control name="c0.value" title="Control 1" type="knob" options="receive transmit public"/>
+		<Control name="c1.value" title="Control 2" type="knob" options="receive transmit public"/>
+		<Control name="c2.value" title="Control 3" type="knob" options="receive transmit public"/>
+		<Control name="c3.value" title="Control 4" type="knob" options="receive transmit public"/>
+		<Control name="c4.value" title="Control 5" type="knob" options="receive transmit public"/>
+		<Control name="c5.value" title="Control 6" type="knob" options="receive transmit public"/>
+		<Control name="c6.value" title="Control 7" type="knob" options="receive transmit public"/>
+		<Control name="c7.value" title="Control 8" type="knob" options="receive transmit public"/>
+
+		<!-- Knobs 9 - 16 -->
+		<Control name="c8.value"  title="Control 9"  type="knob" options="receive transmit public"/>
+		<Control name="c9.value"  title="Control 10" type="knob" options="receive transmit public"/>
+		<Control name="c10.value" title="Control 11" type="knob" options="receive transmit public"/>
+		<Control name="c11.value" title="Control 12" type="knob" options="receive transmit public"/>
+		<Control name="c12.value" title="Control 13" type="knob" options="receive transmit public"/>
+		<Control name="c13.value" title="Control 14" type="knob" options="receive transmit public"/>
+		<Control name="c14.value" title="Control 15" type="knob" options="receive transmit public"/>
+		<Control name="c15.value" title="Control 16" type="knob" options="receive transmit public"/>
+
+		<!-- 2 x XY-Pads -->
+		<Control name="c16.value" title="Pad 1 X" type="knob" options="receive transmit public"/>
+		<Control name="c17.value" title="Pad 1 Y" type="knob" options="receive transmit public"/>
+		<Control name="c18.value" title="Pad 2 X" type="knob" options="receive transmit public"/>
+		<Control name="c19.value" title="Pad 2 Y" type="knob" options="receive transmit public"/>
+		
+		<!-- 8 x Buttons -->
+		<Control name="c20.value" title="Button 1" type="button" options="receive transmit public"/>
+		<Control name="c21.value" title="Button 2" type="button" options="receive transmit public"/>
+		<Control name="c22.value" title="Button 3" type="button" options="receive transmit public"/>
+		<Control name="c23.value" title="Button 4" type="button" options="receive transmit public"/>
+		<Control name="c24.value" title="Button 5" type="button" options="receive transmit public"/>
+		<Control name="c25.value" title="Button 6" type="button" options="receive transmit public"/>
+		<Control name="c26.value" title="Button 7" type="button" options="receive transmit public"/>
+		<Control name="c27.value" title="Button 8" type="button" options="receive transmit public"/>
+
+		<!-- Edit states (touch-sensitivity) -->
+		<Control name="c0.value.edit" type="trigger" options="receive"/>
+		<Control name="c1.value.edit" type="trigger" options="receive"/>
+		<Control name="c2.value.edit" type="trigger" options="receive"/>
+		<Control name="c3.value.edit" type="trigger" options="receive"/>
+		<Control name="c4.value.edit" type="trigger" options="receive"/>
+		<Control name="c5.value.edit" type="trigger" options="receive"/>
+		<Control name="c6.value.edit" type="trigger" options="receive"/>
+		<Control name="c7.value.edit" type="trigger" options="receive"/>
+
+		<Control name="c8.value.edit"  type="trigger" options="receive"/>
+		<Control name="c9.value.edit"  type="trigger" options="receive"/>
+		<Control name="c10.value.edit" type="trigger" options="receive"/>
+		<Control name="c11.value.edit" type="trigger" options="receive"/>
+		<Control name="c12.value.edit" type="trigger" options="receive"/>
+		<Control name="c13.value.edit" type="trigger" options="receive"/>
+		<Control name="c14.value.edit" type="trigger" options="receive"/>
+		<Control name="c15.value.edit" type="trigger" options="receive"/>
+
+		<Control name="c16.value.edit" type="trigger" options="receive"/>
+		<Control name="c17.value.edit" type="trigger" options="receive"/>
+		<Control name="c18.value.edit" type="trigger" options="receive"/>
+		<Control name="c19.value.edit" type="trigger" options="receive"/>
+		
+		<Control name="c20.value.edit" type="trigger" options="receive"/>
+		<Control name="c21.value.edit" type="trigger" options="receive"/>
+		<Control name="c22.value.edit" type="trigger" options="receive"/>
+		<Control name="c23.value.edit" type="trigger" options="receive"/>
+		<Control name="c24.value.edit" type="trigger" options="receive"/>
+		<Control name="c25.value.edit" type="trigger" options="receive"/>
+		<Control name="c26.value.edit" type="trigger" options="receive"/>
+		<Control name="c27.value.edit" type="trigger" options="receive"/>
+		
+		<!-- Assignment (parameter value) -->
+		<Control name="c0.text" type="textdisplay" options="transmit"/>
+		<Control name="c1.text" type="textdisplay" options="transmit"/>
+		<Control name="c2.text" type="textdisplay" options="transmit"/>
+		<Control name="c3.text" type="textdisplay" options="transmit"/>
+		<Control name="c4.text" type="textdisplay" options="transmit"/>
+		<Control name="c5.text" type="textdisplay" options="transmit"/>
+		<Control name="c6.text" type="textdisplay" options="transmit"/>
+		<Control name="c7.text" type="textdisplay" options="transmit"/>
+
+		<Control name="c8.text"  type="textdisplay" options="transmit"/>
+		<Control name="c9.text"  type="textdisplay" options="transmit"/>
+		<Control name="c10.text" type="textdisplay" options="transmit"/>
+		<Control name="c11.text" type="textdisplay" options="transmit"/>
+		<Control name="c12.text" type="textdisplay" options="transmit"/>
+		<Control name="c13.text" type="textdisplay" options="transmit"/>
+		<Control name="c14.text" type="textdisplay" options="transmit"/>
+		<Control name="c15.text" type="textdisplay" options="transmit"/>
+
+		<Control name="c16.text" type="textdisplay" options="transmit"/>
+		<Control name="c17.text" type="textdisplay" options="transmit"/>
+		<Control name="c18.text" type="textdisplay" options="transmit"/>
+		<Control name="c19.text" type="textdisplay" options="transmit"/>
+
+		<Control name="c20.text" type="textdisplay" options="transmit"/>
+		<Control name="c21.text" type="textdisplay" options="transmit"/>
+		<Control name="c22.text" type="textdisplay" options="transmit"/>
+		<Control name="c23.text" type="textdisplay" options="transmit"/>
+		<Control name="c24.text" type="textdisplay" options="transmit"/>
+		<Control name="c25.text" type="textdisplay" options="transmit"/>
+		<Control name="c26.text" type="textdisplay" options="transmit"/>
+		<Control name="c27.text" type="textdisplay" options="transmit"/>
+
+		<!-- Assignment (parameter title) -->
+		<Control name="c0.title" type="textdisplay" options="transmit"/>
+		<Control name="c1.title" type="textdisplay" options="transmit"/>
+		<Control name="c2.title" type="textdisplay" options="transmit"/>
+		<Control name="c3.title" type="textdisplay" options="transmit"/>
+		<Control name="c4.title" type="textdisplay" options="transmit"/>
+		<Control name="c5.title" type="textdisplay" options="transmit"/>
+		<Control name="c6.title" type="textdisplay" options="transmit"/>
+		<Control name="c7.title" type="textdisplay" options="transmit"/>
+		
+		<Control name="c8.title"  type="textdisplay" options="transmit"/>
+		<Control name="c9.title"  type="textdisplay" options="transmit"/>
+		<Control name="c10.title" type="textdisplay" options="transmit"/>
+		<Control name="c11.title" type="textdisplay" options="transmit"/>
+		<Control name="c12.title" type="textdisplay" options="transmit"/>
+		<Control name="c13.title" type="textdisplay" options="transmit"/>
+		<Control name="c14.title" type="textdisplay" options="transmit"/>
+		<Control name="c15.title" type="textdisplay" options="transmit"/>
+
+		<Control name="c16.title" type="textdisplay" options="transmit"/>
+		<Control name="c17.title" type="textdisplay" options="transmit"/>
+		<Control name="c18.title" type="textdisplay" options="transmit"/>
+		<Control name="c19.title" type="textdisplay" options="transmit"/>
+		
+		<Control name="c20.title" type="textdisplay" options="transmit"/>
+		<Control name="c21.title" type="textdisplay" options="transmit"/>
+		<Control name="c22.title" type="textdisplay" options="transmit"/>
+		<Control name="c23.title" type="textdisplay" options="transmit"/>
+		<Control name="c24.title" type="textdisplay" options="transmit"/>
+		<Control name="c25.title" type="textdisplay" options="transmit"/>
+		<Control name="c26.title" type="textdisplay" options="transmit"/>
+		<Control name="c27.title" type="textdisplay" options="transmit"/>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Layout 2 (CS18AI control surface) -->
+		<!-- ******************************************************************************************** -->
+		
+		<!-- 16 x Knobs -->
+		<Control name="p0.value" title="Knob 1" type="knob" options="receive transmit public"/>
+		<Control name="p1.value" title="Knob 2" type="knob" options="receive transmit public"/>
+		<Control name="p2.value" title="Knob 3" type="knob" options="receive transmit public"/>
+		<Control name="p3.value" title="Knob 4" type="knob" options="receive transmit public"/>
+		<Control name="p4.value" title="Knob 5" type="knob" options="receive transmit public"/>
+		<Control name="p5.value" title="Knob 6" type="knob" options="receive transmit public"/>
+		<Control name="p6.value" title="Knob 7" type="knob" options="receive transmit public"/>
+		<Control name="p7.value" title="Knob 8" type="knob" options="receive transmit public"/>
+		<Control name="p8.value"  title="Knob 9"  type="knob" options="receive transmit public"/>
+		<Control name="p9.value"  title="Knob 10" type="knob" options="receive transmit public"/>
+		<Control name="p10.value" title="Knob 11" type="knob" options="receive transmit public"/>
+		<Control name="p11.value" title="Knob 12" type="knob" options="receive transmit public"/>
+		<Control name="p12.value" title="Knob 13" type="knob" options="receive transmit public"/>
+		<Control name="p13.value" title="Knob 14" type="knob" options="receive transmit public"/>
+		<Control name="p14.value" title="Knob 15" type="knob" options="receive transmit public"/>
+		<Control name="p15.value" title="Knob 16" type="knob" options="receive transmit public"/>
+		
+		<!-- 9 x Buttons -->
+		<Control name="p16.value" title="Button 1" type="button" options="receive transmit public"/>
+		<Control name="p17.value" title="Button 2" type="button" options="receive transmit public"/>
+		<Control name="p18.value" title="Button 3" type="button" options="receive transmit public"/>
+		<Control name="p19.value" title="Button 4" type="button" options="receive transmit public"/>
+		<Control name="p20.value" title="Button 5" type="button" options="receive transmit public"/>
+		<Control name="p21.value" title="Button 6" type="button" options="receive transmit public"/>
+		<Control name="p22.value" title="Button 7" type="button" options="receive transmit public"/>
+		<Control name="p23.value" title="Button 8" type="button" options="receive transmit public"/>
+		<Control name="p24.value" title="Button 9" type="button" options="receive transmit public"/>
+		
+		<!-- Assignment (parameter value) -->
+		<Control name="p0.text" type="textdisplay" options="transmit"/>
+		<Control name="p1.text" type="textdisplay" options="transmit"/>
+		<Control name="p2.text" type="textdisplay" options="transmit"/>
+		<Control name="p3.text" type="textdisplay" options="transmit"/>
+		<Control name="p4.text" type="textdisplay" options="transmit"/>
+		<Control name="p5.text" type="textdisplay" options="transmit"/>
+		<Control name="p6.text" type="textdisplay" options="transmit"/>
+		<Control name="p7.text" type="textdisplay" options="transmit"/>
+		<Control name="p8.text"  type="textdisplay" options="transmit"/>
+		<Control name="p9.text"  type="textdisplay" options="transmit"/>
+		<Control name="p10.text" type="textdisplay" options="transmit"/>
+		<Control name="p11.text" type="textdisplay" options="transmit"/>
+		<Control name="p12.text" type="textdisplay" options="transmit"/>
+		<Control name="p13.text" type="textdisplay" options="transmit"/>
+		<Control name="p14.text" type="textdisplay" options="transmit"/>
+		<Control name="p15.text" type="textdisplay" options="transmit"/>
+		<Control name="p16.text" type="textdisplay" options="transmit"/>
+		<Control name="p17.text" type="textdisplay" options="transmit"/>
+		<Control name="p18.text" type="textdisplay" options="transmit"/>
+		<Control name="p19.text" type="textdisplay" options="transmit"/>
+		<Control name="p20.text" type="textdisplay" options="transmit"/>
+		<Control name="p21.text" type="textdisplay" options="transmit"/>
+		<Control name="p22.text" type="textdisplay" options="transmit"/>
+		<Control name="p23.text" type="textdisplay" options="transmit"/>
+		<Control name="p24.text" type="textdisplay" options="transmit"/>
+		
+		<!-- Assignment (parameter title) -->
+		<Control name="p0.title" type="textdisplay" options="transmit"/>
+		<Control name="p1.title" type="textdisplay" options="transmit"/>
+		<Control name="p2.title" type="textdisplay" options="transmit"/>
+		<Control name="p3.title" type="textdisplay" options="transmit"/>
+		<Control name="p4.title" type="textdisplay" options="transmit"/>
+		<Control name="p5.title" type="textdisplay" options="transmit"/>
+		<Control name="p6.title" type="textdisplay" options="transmit"/>
+		<Control name="p7.title" type="textdisplay" options="transmit"/>		
+		<Control name="p8.title"  type="textdisplay" options="transmit"/>
+		<Control name="p9.title"  type="textdisplay" options="transmit"/>
+		<Control name="p10.title" type="textdisplay" options="transmit"/>
+		<Control name="p11.title" type="textdisplay" options="transmit"/>
+		<Control name="p12.title" type="textdisplay" options="transmit"/>
+		<Control name="p13.title" type="textdisplay" options="transmit"/>
+		<Control name="p14.title" type="textdisplay" options="transmit"/>
+		<Control name="p15.title" type="textdisplay" options="transmit"/>
+		<Control name="p16.title" type="textdisplay" options="transmit"/>
+		<Control name="p17.title" type="textdisplay" options="transmit"/>
+		<Control name="p18.title" type="textdisplay" options="transmit"/>
+		<Control name="p19.title" type="textdisplay" options="transmit"/>
+		<Control name="p20.title" type="textdisplay" options="transmit"/>
+		<Control name="p21.title" type="textdisplay" options="transmit"/>
+		<Control name="p22.title" type="textdisplay" options="transmit"/>
+		<Control name="p23.title" type="textdisplay" options="transmit"/>
+		<Control name="p24.title" type="textdisplay" options="transmit"/>
+		
+	</Controls>
+	
+	<!-- ******************************************************************************************** -->
+	<!-- REMOTE PAGING SECTIONS -->
+	<!-- ******************************************************************************************** -->
+
+	<Sections>
+		<!-- Knobs -->
+		<GenericSection name="main" rows="1" columns="16">
+			<foreach variable="$i" count="16">
+				<Slot control="c$i.value" row="0" column="$i"/>
+			</foreach>
+		</GenericSection>
+		<!-- Buttons -->
+		<GenericSection name="mainbuttons" rows="1" columns="8">
+			<Slot control="c20.value" row="0" column="0"/>
+			<Slot control="c21.value" row="0" column="1"/>
+			<Slot control="c22.value" row="0" column="2"/>
+			<Slot control="c23.value" row="0" column="3"/>
+			<Slot control="c24.value" row="0" column="4"/>
+			<Slot control="c25.value" row="0" column="5"/>
+			<Slot control="c26.value" row="0" column="6"/>
+			<Slot control="c27.value" row="0" column="7"/>
+		</GenericSection>
+		<!-- XY Pad 1 -->
+		<SpecialSection name="xypad">
+			<Slot control="c16.value" role="x"/>
+			<Slot control="c17.value" role="y"/>
+		</SpecialSection>
+		<!-- XY Pad 2 -->
+		<SpecialSection name="xypad">
+			<Slot control="c18.value" role="x"/>
+			<Slot control="c19.value" role="y"/>
+		</SpecialSection>
+	</Sections>
+
+	<!-- ******************************************************************************************** -->
+	<!-- SURFACE MAPPINGS -->
+	<!-- ******************************************************************************************** -->
+
+	<Mappings>
+	
+		<!-- ******************************************************************************************** -->
+        <!-- GENERIC MAPPING (used for "on the fly" control assignment) -->
+        <!-- ******************************************************************************************** -->
+
+		<GenericMapping>
+			<Bank>
+				<!-- Layout 1 -->
+				<foreach variable="$i" count="28">	
+					<Strip name="c$i.value">
+						<Value control="c$i.value" param="value" options="above"/>
+						<Touch control="c$i.value.edit" param="value" options="above"/>
+						<String control="c$i.text" param="value"/>
+						<String control="c$i.title" param="title"/>
+					</Strip>
+				</foreach>
+				<!-- Layout 2 -->
+				<foreach variable="$i" count="25">	
+					<Strip name="p$i.value">
+						<Value control="p$i.value" param="value" options="above"/>
+						<String control="p$i.text" param="value"/>
+						<String control="p$i.title" param="title"/>
+					</Strip>
+				</foreach>
+			</Bank>
+		</GenericMapping>
+
+	</Mappings>
+
+</ControlSurface>

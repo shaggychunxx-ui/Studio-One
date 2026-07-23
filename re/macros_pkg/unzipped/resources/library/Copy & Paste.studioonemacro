@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Copy &amp; Paste" group="Hotkey" description="">
+	<CommandElement category="Edit" name="Copy"/>
+	<CommandElement category="Edit" name="Paste"/>
+</Macro>

@@ -1,0 +1,7 @@
+<uc:Template id="DAWSends">
+			<uc:foreach id="$i" min="1" max="8">
+				<uc:Component id="slot$i" paramlist="SendSlot" classname="DAWDeviceSlot">
+					<uc:Component id="panner" template="DAWAudioPanner" classname="DAWAudioPanner" condition="surround"/>	
+				</uc:Component>
+			</uc:foreach>			
+		</uc:Template>

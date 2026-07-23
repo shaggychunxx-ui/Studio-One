@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Double Tempo" group="Tempo" description="">
+	<CommandElement category="Musical Functions" name="Stretch">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="Value" value="1"/>
+	</CommandElement>
+</Macro>

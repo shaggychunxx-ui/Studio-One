@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Humanize" group="Musical" description="">
+	<CommandElement category="Musical Functions" name="Humanize">
+		<CommandArgument name="VelocityFrom" value="-0.1500000059604644775390625"/>
+		<CommandArgument name="VelocityTo" value="0.1500000059604644775390625"/>
+		<CommandArgument name="NoteStartFrom" value="-0.0625"/>
+		<CommandArgument name="NoteStartTo" value="0.0625"/>
+	</CommandElement>
+</Macro>

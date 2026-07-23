@@ -1,0 +1,7 @@
+<uc:Template id="DAWDocument" paramlist="Document"/>
+
+		<uc:Template id="DAWInserts">
+			<uc:foreach id="$i" min="1" max="8">
+				<uc:Component id="slot$i" paramlist="InsertSlot" classname="DAWDeviceSlot"/>
+			</uc:foreach>			
+		</uc:Template>

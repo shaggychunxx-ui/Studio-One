@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Quantize Note End 1/1" group="Quantize Notes" description="">
+	<CommandElement category="Musical Functions" name="Quantize Notes">
+		<CommandArgument name="Base" value="4"/>
+		<CommandArgument name="Type" value="0"/>
+		<CommandArgument name="Swing" value="0"/>
+		<CommandArgument name="Strength" value="1"/>
+		<CommandArgument name="Range" value="1"/>
+		<CommandArgument name="QuantizeNoteStart" value="0"/>
+		<CommandArgument name="QuantizeNoteEnd" value="1"/>
+	</CommandElement>
+</Macro>

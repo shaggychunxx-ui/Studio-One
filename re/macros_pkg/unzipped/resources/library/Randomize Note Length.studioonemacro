@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Randomize Note Length" group="Randomize Notes" description="">
+	<CommandElement category="Musical Functions" name="Randomize Notes">
+		<CommandArgument name="RandomizePitch" value="0"/>
+		<CommandArgument name="PitchMode" value="0"/>
+		<CommandArgument name="PitchFrom" value="48"/>
+		<CommandArgument name="PitchTo" value="72"/>
+		<CommandArgument name="PitchStrength" value="1"/>
+		<CommandArgument name="PitchApplyScale" value="0"/>
+		<CommandArgument name="RandomizeVelocity" value="0"/>
+		<CommandArgument name="VelocityFrom" value="0"/>
+		<CommandArgument name="VelocityTo" value="1"/>
+		<CommandArgument name="VelocityStrength" value="1"/>
+		<CommandArgument name="RandomizeNoteLength" value="1"/>
+		<CommandArgument name="NoteLengthFrom" value="1"/>
+		<CommandArgument name="NoteLengthTo" value="16"/>
+		<CommandArgument name="NoteLengthStrength" value="1"/>
+		<CommandArgument name="ShuffleNotes" value="0"/>
+	</CommandElement>
+</Macro>

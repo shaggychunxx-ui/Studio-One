@@ -1,0 +1,4 @@
+<uc:ParamList id="RemoteFXSlot">
+			<uc:Param id="deviceName" type="string" flags="readonly" name="Device"/>
+			<uc:Param id="edit" name="Edit"/>
+		</uc:ParamList>

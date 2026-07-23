@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Fill 8/16" group="Create Notes" description="">
+	<CommandElement category="Musical Functions" name="Fill with Notes">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="UseWholeNotes" value="0"/>
+		<CommandArgument name="UseHalfNotes" value="0"/>
+		<CommandArgument name="UseQuarterNotes" value="0"/>
+		<CommandArgument name="Use8thNotes" value="1"/>
+		<CommandArgument name="Use16thNotes" value="1"/>
+		<CommandArgument name="Use32ndNotes" value="0"/>
+		<CommandArgument name="Use64thNotes" value="0"/>
+		<CommandArgument name="UseDotted" value="0"/>
+		<CommandArgument name="UseTriplets" value="0"/>
+		<CommandArgument name="InsertOnlyIfStepIsEmpty" value="0"/>
+		<CommandArgument name="PitchMode" value="2"/>
+		<CommandArgument name="PitchFrom" value="36"/>
+		<CommandArgument name="PitchTo" value="84"/>
+		<CommandArgument name="Velocity" value="0.5"/>
+		<CommandArgument name="ApplyScale" value="1"/>
+	</CommandElement>
+</Macro>

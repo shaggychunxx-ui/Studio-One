@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Plug-In Manager" group="" description="">
+	<CommandElement category="View" name="Plug-In Manager">
+		<CommandArgument name="State" value=""/>
+	</CommandElement>
+</Macro>

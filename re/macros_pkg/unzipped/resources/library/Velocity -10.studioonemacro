@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Velocity -10" group="Musical" description="">
+	<CommandElement category="Musical Functions" name="Velocity">
+		<CommandArgument name="Mode" value="0"/>
+		<CommandArgument name="AddValue" value="-0.078740157186985015869140625"/>
+		<CommandArgument name="SetValue" value="0.791666686534881591796875"/>
+		<CommandArgument name="MultiplyValue" value="1"/>
+	</CommandElement>
+</Macro>

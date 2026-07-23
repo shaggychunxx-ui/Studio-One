@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Distribute Notes 100%" group="Distribute Notes" description="">
+	<CommandElement category="Musical Functions" name="Distribute Notes">
+		<CommandArgument name="Amount" value="1"/>
+	</CommandElement>
+</Macro>

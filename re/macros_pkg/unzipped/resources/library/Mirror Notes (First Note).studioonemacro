@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Macro title="Mirror Notes (First Note)" group="Mirror Notes" description="">
+	<CommandElement category="Musical Functions" name="Mirror Notes">
+		<CommandArgument name="MirrorHorizontally" value="1"/>
+		<CommandArgument name="HorizontalMode" value="1"/>
+		<CommandArgument name="HorizontalCustomAxis" value="72"/>
+		<CommandArgument name="MirrorVertically" value="0"/>
+	</CommandElement>
+</Macro>
