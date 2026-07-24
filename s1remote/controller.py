@@ -28,18 +28,25 @@ class S1Remote:
         self,
         out_port: Optional[str] = None,
         in_port: Optional[str] = None,
+        instrument_out_port: Optional[str] = None,
         auto_connect: bool = False,
     ) -> None:
         settings = config.load_settings()
         self.settings = settings
+        # MCU + Control Link on Mackie cable
         self.bridge = MidiBridge(
             out_name=out_port or settings.get("midi_out_port", ""),
             in_name=in_port or settings.get("midi_in_port", ""),
             on_message=self._on_midi_in,
         )
+        # Live notes for Instrument Tracks on a SEPARATE loopMIDI port
+        notes_out = instrument_out_port or settings.get("instrument_midi_out_port") or ""
+        if not notes_out:
+            notes_out = out_port or settings.get("midi_out_port", "")
+        self.notes_bridge = MidiBridge(out_name=notes_out, in_name="", on_message=None)
         self.mcu = MackieControl(self.bridge, channels=int(settings.get("mcu_channels", 8)))
         self.link = ControlLink(self.bridge, maps_path=config.MAPS_PATH)
-        self.instrument = InstrumentMidi(self.bridge)
+        self.instrument = InstrumentMidi(self.notes_bridge)
         self._feedback: list[str] = []
         if auto_connect:
             self.connect()
@@ -56,21 +63,35 @@ class S1Remote:
         self,
         out_port: Optional[str] = None,
         in_port: Optional[str] = None,
+        instrument_out_port: Optional[str] = None,
         *,
         open_input: bool = True,
     ) -> None:
         self.bridge.connect(out_port, in_port, open_input=open_input)
+        notes = instrument_out_port or self.settings.get("instrument_midi_out_port") or self.notes_bridge.out_name
+        try:
+            self.notes_bridge.connect(notes, "", open_input=False)
+        except Exception:
+            # Fall back to MCU out so notes still go somewhere
+            self.notes_bridge.connect(self.bridge.out_name, "", open_input=False)
         self.settings["midi_out_port"] = self.bridge.out_name
         if self.bridge.in_name:
             self.settings["midi_in_port"] = self.bridge.in_name
+        if self.notes_bridge.out_name:
+            self.settings["instrument_midi_out_port"] = self.notes_bridge.out_name
         config.save_settings(self.settings)
 
     def disconnect(self) -> None:
+        self.notes_bridge.disconnect()
         self.bridge.disconnect()
 
     @property
     def connected(self) -> bool:
         return self.bridge.connected
+
+    @property
+    def notes_connected(self) -> bool:
+        return self.notes_bridge.connected
 
     def status(self) -> dict[str, Any]:
         ports = list_ports()
@@ -79,6 +100,8 @@ class S1Remote:
             "midi_connected": self.connected,
             "midi_out": self.bridge.out_name,
             "midi_in": self.bridge.in_name,
+            "instrument_midi_out": self.notes_bridge.out_name,
+            "instrument_midi_connected": self.notes_connected,
             "available_inputs": ports["inputs"],
             "available_outputs": ports["outputs"],
             "plugin_maps": self.link.list_plugins(),

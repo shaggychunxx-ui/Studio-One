@@ -14,6 +14,8 @@ MAPS_PATH = CONFIG_DIR / "plugin_maps.json"
 DEFAULTS: dict[str, Any] = {
     "midi_out_port": "S1 Controller 1",
     "midi_in_port": "S1 Controller 0",
+    # Notes for Instrument Tracks (Keyboard device). Keep separate from Mackie MCU.
+    "instrument_midi_out_port": "S1 Notes",
     "api_host": "127.0.0.1",
     "api_port": 8765,
     "mcu_channels": 8,

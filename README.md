@@ -6,9 +6,9 @@ Uses supported surfaces only (no process injection):
 
 | Layer | Controls | How |
 | --- | --- | --- |
-| **Mackie Control (MCU)** | Transport, 8-ch faders, mute/solo/rec/select, banks, V-Pots, **plugin mode** | Virtual MIDI |
-| **Control Link** | Named VST / stock params (after map + optional learn) | MIDI CC |
-| **Instrument MIDI** | Notes, velocity, program change | MIDI |
+| **Mackie Control (MCU)** | Transport, 8-ch faders, mute/solo/rec/select, banks, V-Pots, **plugin mode** | Virtual MIDI (`S1 Controller`) |
+| **Control Link** | Named VST / stock params (after map + optional learn) | MIDI CC (MCU cable) |
+| **Instrument MIDI** | Notes, velocity, program change for **live record** | **Separate** port (`S1 Notes`) |
 | **Hotkeys / menus** | Views, file, edit, menu bar paths | Focus window + keys |
 | **In-host package** | Track/channel mute/volume by index | Studio One Scripts |
 | **UCNET** | Discovery working; TCP param session still RE | UDP 47809 / TCP session |
@@ -29,13 +29,30 @@ set PYTHONPATH=%CD%
 py -3.12 -m s1remote setup
 ```
 
-1. **loopMIDI** — ports e.g. `S1 Controller 0` / `S1 Controller 1`
+1. **loopMIDI** — **two** cables:
+   - `S1 Controller` → MCU (out `S1 Controller 1`, in `S1 Controller 0`)
+   - `S1 Notes` → instrument notes only (agent out `S1 Notes 2`, S1 in `S1 Notes 1`)
 2. Studio One → **Options → External Devices → Add → Mackie → Control**
-   - **Receive From** = this tool’s OUT (`S1 Controller 1`)
+   - **Receive From** = MCU OUT (`S1 Controller 1`)
    - **Send To** = feedback (`S1 Controller 0`)
-3. Optional: **New Keyboard** on the same cable for notes / Control Link CCs
+3. **New Keyboard** (or existing Keyboard) for live notes:
+   - **Receive From = `S1 Notes 1`** (not the MCU port)
+4. See **`S1_NOTES_PORT_SETUP.md`** and **`STUDIO_ONE_RECORD_MIDI.md`**
 
-> We open a MIDI **output**. That must be what Studio One **receives from**. If nothing moves, swap ports in `config/settings.json`.
+> MCU and notes must **not** share one port. Notes on the Mackie cable collide with surface note-numbers and do not record reliably.
+
+## Docs (manual walk + ops)
+
+| File | Purpose |
+|------|---------|
+| `docs/AGENT_OPS_LEARNED.md` | Live arm/port failures and agent policy |
+| `docs/MANUAL_WALKTHROUGH_CATALOG.md` | Full manual walk catalog |
+| `docs/FULL_MANUAL_WALK_REPORT.md` | Ch.1–22 results |
+| `docs/MANUAL_MISSED_REPORT.md` | Follow-up missed ops |
+| `S1_NOTES_PORT_SETUP.md` | Dual loopMIDI wiring |
+| `STUDIO_ONE_RECORD_MIDI.md` | Record-enable order from 6.6 manual |
+
+Manual chapter text lives in the **Music-producer** repo: `studio-one-6.6-agent-knowledge/`.
 
 ## Verify
 
