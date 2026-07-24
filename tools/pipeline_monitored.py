@@ -8,7 +8,10 @@ Phases:
   stream-drums    — stream drums.mid (default track 1)
   stream-bass     — stream bass.mid (default track 2)
   stream-lead     — stream lead.mid
-  continue        — status + compose-lead + stop for arm mouse if needed
+  continue        — status + compose-lead + stream-drums auto-armed
+
+Arm policy: agent calls arm_and_verify (MCU + hotkey [R] + screenshot).
+Only asks user if all retries fail.  Pass --user-armed to skip agent arm.
 
 Producer eyes: screenshots via s1_tools.eyes
 
@@ -17,7 +20,8 @@ Env: S1_SONG_DIR, S1_REMOTE
 Usage:
   set S1_SONG_DIR=D:\\Songs\\MySong
   py -3.12 tools/pipeline_monitored.py --phase=status
-  py -3.12 tools/pipeline_monitored.py --phase=stream-drums --armed
+  py -3.12 tools/pipeline_monitored.py --phase=stream-drums
+  py -3.12 tools/pipeline_monitored.py --phase=stream-drums --user-armed
 """
 
 from __future__ import annotations
@@ -155,11 +159,6 @@ def phase_stream(args, *, mid_name: str, track: int, label: str) -> int:
         log(f"FATAL missing {path}")
         return 1
 
-    if not args.armed and not args.auto_arm:
-        log("MOUSE / ARM required: leave Rec RED on target track, then re-run with --armed")
-        log(f"  target track {track} file {path.name}")
-        return 10
-
     with FullControl() as s1:
         st = s1.status()
         log(f"  notes_ok={st.get('instrument_midi_connected')} out={st.get('instrument_midi_out')}")
@@ -172,14 +171,19 @@ def phase_stream(args, *, mid_name: str, track: int, label: str) -> int:
         except Exception:
             pass
         time.sleep(GAP)
-        if args.auto_arm:
-            strip = track - 1
-            try:
-                s1.select(strip)
-                s1.remote.mcu.rec_arm(strip)
-                log(f"  auto-arm MCU strip {strip} (verify eyes — may not arm Arrange)")
-            except Exception as e:
-                log(f"  auto-arm warn: {e}")
+
+        if not args.user_armed:
+            log(f"  arm_and_verify track={track} (MCU + hotkey [R] + screenshot)")
+            armed = s1.arm_and_verify(track, eyes_dir=eyes.directory)
+            if not armed:
+                log(
+                    f"  WARN: arm_and_verify could not confirm Rec red on track {track}. "
+                    "Please arm manually (Rec button red) and press Enter, or Ctrl-C to abort."
+                )
+                input("  Press Enter once Rec is red: ")
+        else:
+            log("  user-armed: skipping agent arm")
+
         eyes.shot(f"before_{label}")
         s1.record()
         time.sleep(0.45)
@@ -206,8 +210,12 @@ def main() -> int:
     ap.add_argument("--track", type=int, default=None)
     ap.add_argument("--midi", type=Path, default=None)
     ap.add_argument("--max-sec", type=float, default=None)
-    ap.add_argument("--armed", action="store_true")
-    ap.add_argument("--auto-arm", action="store_true")
+    ap.add_argument(
+        "--user-armed",
+        action="store_true",
+        default=False,
+        help="Skip agent arm — user must set Rec red manually",
+    )
     ap.add_argument("--no-eyes", action="store_true")
     ap.add_argument("--eyes-dir", type=Path, default=None)
     args = ap.parse_args()
@@ -246,9 +254,8 @@ def main() -> int:
         ensure_s1remote_on_path(args.s1_remote)
         set_log_file(default_log_path(song, "pipeline_monitored_latest.log"))
         compose_lead(song / "MIDI")
-        log("STOP for arm: set Rec red on track 1, then:")
-        log("  py -3.12 tools/pipeline_monitored.py --phase=stream-drums --armed --song-dir ...")
-        return 10
+        log("Continuing: stream-drums with arm_and_verify")
+        return phase_stream(args, mid_name="drums.mid", track=args.track or 1, label="DRUMS")
 
     log(f"unknown phase {phase}")
     return 1

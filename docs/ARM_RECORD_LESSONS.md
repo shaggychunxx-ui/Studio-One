@@ -2,13 +2,15 @@
 
 Grounded in Studio One 6.6 Recording chapter + 2026-07 live automation sessions.
 
+**Control method priority: keyboard shortcuts → MIDI (MCU) → ask user. No mouse movements.**
+
 ## Manual order (do not skip)
 
 1. Song open  
 2. Keyboard device: **Receive From** = notes port (**S1 Notes 1**), not MCU  
-3. Instrument Track with **Output** = real instrument (user drag)  
+3. Instrument Track with **Output** = real instrument (agent: `browser_load` or UIA menu)  
 4. Track **Input** = that Keyboard  
-5. **Record Enable red** on that track  
+5. **Record Enable red** on that track (agent: `arm_and_verify`)  
 6. Meter moves when notes arrive  
 7. Transport **Record**  
 8. Stream notes  
@@ -41,27 +43,30 @@ Without step 5, Record does not capture MIDI to the track.
 
 ## Preferred agent policies
 
-### A. User-armed (most reliable)
+### A. `arm_and_verify` (default — keyboard + MIDI only)
 
-1. User: disarm all; arm **only** target track (Rec red).  
-2. Agent: **no** `[R]`, **no** MCU rec, optional soft rewind only.  
-3. Transport Record → stream **S1 Notes** → Stop.  
-4. **Eyes:** screenshots before/during/after under `_vision/arm_watch/`.  
+1. Call `FullControl.arm_and_verify(track)`.
+   - Attempt 1: MCU `select(strip)` + `rec_arm(strip)` (MIDI).
+   - Screenshot; if Rec red → done.
+   - Attempt 2+: hotkey `[R]` on focused track (keyboard).
+   - Screenshot after each; stop when red or retries exhausted.
+2. If `arm_and_verify` returns `False` after all retries → ask user once to confirm Rec red.
+3. Transport Record → stream **S1 Notes** → Stop.
+4. **Eyes:** screenshots before/during/after under `_vision/arm_watch/`.
 5. User confirms clip on correct track.
 
 ### B. Import path (no live arm)
 
-- **Song → Import File** / Browser Files drag `.mid` onto instrument track.  
-- Tool: `tools/import_and_verify_midi.py` (song-dir CLI).  
+- **Song → Import File** / Browser Files drag `.mid` onto instrument track.
+- Tool: `tools/import_and_verify_midi.py` (song-dir CLI).
 - Still need instrument on track to hear.
 
-### C. If agent must arm once
+### C. User-armed fallback (only when A fails)
 
-1. Focus S1 Song page.  
-2. Select **one** target (user-named track preferred).  
-3. **One** `[R]` **or** one Rec click — not both.  
-4. Screenshot; if not red, **stop and ask for mouse** — do not thrash.  
-5. Transport Record immediately; mid-stream **never** press `[R]`/MCU rec.
+Pass `--user-armed` to any tool. The agent skips arm entirely.
+User sets Rec red manually before the tool runs.
+
+**No mouse hunting.** If the agent cannot arm via keyboard/MIDI, it asks the user once and waits.
 
 ## Producer “eyes” (UI watch)
 
