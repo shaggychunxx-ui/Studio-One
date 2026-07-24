@@ -204,6 +204,29 @@ def cmd_hotkeys(args) -> int:
     return 0
 
 
+def cmd_operator(args) -> int:
+    """DAW Operator — dump all knowledge contained in s1-remote."""
+    from .daw_operator import DawOperator
+
+    op = DawOperator()
+    action = args.op_action
+
+    if action == "info":
+        print(json.dumps(op.info(), indent=2))
+        return 0
+
+    if action == "commands":
+        print(json.dumps(op.commands(args.query or ""), indent=2))
+        return 0
+
+    if action == "coverage":
+        print(json.dumps(op.coverage(), indent=2))
+        return 0
+
+    print(f"Unknown operator action {action}", file=sys.stderr)
+    return 1
+
+
 def cmd_api(args) -> int:
     from .api import run_server
 
@@ -708,6 +731,20 @@ def build_parser() -> argparse.ArgumentParser:
     vs.add_argument("control", type=int)
     vs.add_argument("--channel", type=int, default=0)
     vs.set_defaults(func=cmd_vst, _need_midi=False)
+
+    # ---- DAW Operator (full knowledge dump) ----
+    s = sub.add_parser("operator", help="DAW Operator: full knowledge base of all capabilities and policies")
+    op_sub = s.add_subparsers(dest="op_action", required=True)
+
+    os_ = op_sub.add_parser("info", help="Dump all knowledge: layers, ports, commands, policies, limits")
+    os_.set_defaults(func=cmd_operator, op_action="info", _need_midi=False)
+
+    os_ = op_sub.add_parser("commands", help="Search command catalog")
+    os_.add_argument("query", nargs="?", default="")
+    os_.set_defaults(func=cmd_operator, op_action="commands", _need_midi=False)
+
+    os_ = op_sub.add_parser("coverage", help="Command count by layer")
+    os_.set_defaults(func=cmd_operator, op_action="coverage", _need_midi=False)
 
     s = sub.add_parser("ucnet-discover", help="UCNET UDP discovery (Studio One Remote protocol)")
     s.add_argument("--timeout", type=float, default=2.0)
