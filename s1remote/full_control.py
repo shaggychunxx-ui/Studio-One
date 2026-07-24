@@ -99,6 +99,77 @@ class FullControl:
                 self._remote_params = {}
         return self._remote_params
 
+    # ---- arm + verify ----
+
+    def arm_and_verify(
+        self,
+        track: int,
+        eyes_dir: Optional[Path] = None,
+        retries: int = 3,
+    ) -> bool:
+        """
+        Arm a track and confirm via screenshot. Tries MCU rec_arm on the first
+        attempt and hotkey [R] on subsequent retries. Returns True when the
+        screenshot shows Rec red; returns False only after all retries fail
+        (caller should then ask the user).
+
+        ``track`` is 1-based (Arrange track number). ``retries`` is total
+        attempts before giving up.
+        """
+        import sys as _sys
+
+        _sys.path.insert(0, str(ROOT / "tools"))
+        try:
+            from s1_tools.eyes import Eyes, scan_rec_red  # type: ignore[import]
+        except ImportError:
+            # Eyes / PIL unavailable — attempt arm but cannot verify
+            self._arm_once_mcu(track - 1)
+            return False
+
+        eyes_path = eyes_dir or (Path.cwd() / "_vision" / "arm_watch")
+        eyes = Eyes(eyes_path, enabled=True)
+        strip = track - 1
+
+        # Check current state before touching anything
+        pre = eyes.shot(f"arm_pre_t{track}")
+        if scan_rec_red(pre):
+            return True  # already armed
+
+        for attempt in range(1, retries + 1):
+            if attempt == 1:
+                # Primary: MCU select + rec_arm
+                self._arm_once_mcu(strip)
+            else:
+                # Fallback: hotkey [R] on selected track
+                self._arm_once_hotkey()
+            time.sleep(0.4)
+            shot = eyes.shot(f"arm_attempt{attempt}_t{track}")
+            if scan_rec_red(shot):
+                return True
+            if attempt < retries:
+                time.sleep(0.3)
+
+        return False
+
+    def _arm_once_mcu(self, strip: int) -> None:
+        """Single MCU select + rec_arm (0-based strip)."""
+        try:
+            self.select(strip)
+            time.sleep(0.25)
+            self.remote.mcu.rec_arm(strip)
+        except Exception:
+            pass
+
+    def _arm_once_hotkey(self) -> None:
+        """Single hotkey [R] press on the currently focused track."""
+        try:
+            from .hotkeys import focus_studio_one, run_action
+            focus_studio_one()
+            time.sleep(0.15)
+            run_action("arm", focus=False)
+        except Exception:
+            pass
+
     # ---- transport ----
 
     def play(self) -> None:

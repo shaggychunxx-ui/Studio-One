@@ -31,10 +31,30 @@ See `S1_NOTES_PORT_SETUP.md` and `STUDIO_ONE_RECORD_MIDI.md`.
 
 ## Agent policy
 
-- Dual bridge: MCU on Controller, notes on Notes (see `s1remote/controller.py`)
-- Do not thrash `[R]` mid-stream
-- Prompt user for mouse: instrument drag, exclusive arm, confirm Rec red
-- Screenshots under song `_vision/` when debugging arm
+**Default: independent.** The agent completes every step it can without interrupting the user.
+It asks for help only when a capability is genuinely unavailable (instrument drag in the Browser,
+one-time External Devices wiring, subjective pocket approval).
+
+### Step-by-step autonomous loop
+
+1. Create instrument tracks: `add_instrument_tracks` (UIA menu).
+2. Load instrument: `FullControl.browser_load(name)` — keyboard search + Enter.
+3. Arm track: `FullControl.arm_and_verify(track)` — MCU rec_arm, then hotkey `[R]` retries,
+   screenshot-verified. Returns `True` when Rec is confirmed red.
+4. Record: `s1.record()` → stream notes → `s1.stop()`.
+5. Verify: check eyes screenshots for blue MIDI part on the correct lane.
+
+### Escalate to user only when
+
+- `arm_and_verify` returns `False` after all retries → ask user to set Rec red.
+- `browser_load` did not assign the correct VST → ask user to drag from Browser.
+- Pocket / lead / bed approval is needed (creative taste, cannot automate).
+
+### Anti-patterns (do not do)
+
+- Do not thrash `[R]` or MCU rec without screenshot verification between presses.
+- Do not claim "recorded" from `note_ons` count alone — verify eyes + Arrange clip.
+- Do not arm with both `[R]` and `rec_arm` in one pass (double toggle often disarms).
 
 ## Manual walk docs in this repo
 

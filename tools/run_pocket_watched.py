@@ -6,8 +6,8 @@ Streams drums.mid → track 1, bass.mid → track 2 by default.
 Uses screenshots as eyes — does not claim success from note counts alone.
 
 Arm policy (see docs/ARM_RECORD_LESSONS.md):
-  --user-armed   (default) no [R] / no MCU rec — you leave Rec red
-  --auto-arm     one MCU select + one MCU rec_arm (risky; not Arrange-proof)
+  default        arm_and_verify: MCU rec_arm + hotkey [R] retries + screenshot check
+  --user-armed   skip agent arm entirely — user leaves Rec red before running
 
 Env:
   S1_SONG_DIR   song with MIDI/drums.mid MIDI/bass.mid
@@ -15,6 +15,7 @@ Env:
 
 Usage:
   set S1_SONG_DIR=D:\\Songs\\MySong
+  py -3.12 tools/run_pocket_watched.py
   py -3.12 tools/run_pocket_watched.py --user-armed
   py -3.12 tools/run_pocket_watched.py --song-dir ... --max-sec 12 --drums-only
 """
@@ -108,7 +109,6 @@ def record_pass(
     label: str,
     eyes: Eyes,
     user_armed: bool,
-    auto_arm: bool,
     max_sec=None,
 ) -> int:
     strip = track - 1
@@ -120,17 +120,31 @@ def record_pass(
     rewind(s1)
     eyes.shot(f"01_home_{label}")
 
-    if user_armed and not auto_arm:
+    if user_armed:
         log("  user-armed: NO [R], NO MCU rec — only transport + stream")
     else:
+        log(f"  auto-arm: arm_and_verify track={track} (MCU + hotkey + screenshot)")
         try:
-            s1.select(strip)
-            time.sleep(0.25)
-            s1.remote.mcu.rec_arm(strip)
-            time.sleep(0.35)
-            log(f"  MCU select+rec once strip={strip} (may not arm Arrange — watch eyes)")
-        except Exception as e:
-            log(f"  auto-arm warn: {e}")
+            armed = s1.arm_and_verify(track, eyes_dir=eyes.directory)
+        except AttributeError:
+            # Fallback for older FullControl without arm_and_verify
+            armed = False
+            try:
+                s1.select(strip)
+                time.sleep(0.25)
+                s1.remote.mcu.rec_arm(strip)
+                time.sleep(0.35)
+            except Exception as e:
+                log(f"  arm warn: {e}")
+        else:
+            pass
+        if not armed:
+            log(
+                f"  WARN: arm_and_verify could not confirm Rec red on track {track}. "
+                "Please arm manually (Rec button red) before continuing."
+            )
+            # Wait for user to intervene rather than streaming into an unarmed track
+            input("  Press Enter once Rec is red, or Ctrl-C to abort: ")
 
     eyes.shot(f"02_armed_{label}")
     log("  TRANSPORT RECORD")
@@ -160,10 +174,20 @@ def main() -> int:
     ap.add_argument("--max-sec", type=float, default=None)
     ap.add_argument("--drums-only", action="store_true")
     ap.add_argument("--bass-only", action="store_true")
-    ap.add_argument("--user-armed", action="store_true", default=True)
-    ap.add_argument("--auto-arm", action="store_true", help="MCU rec once (risky)")
+    ap.add_argument(
+        "--user-armed",
+        action="store_true",
+        default=False,
+        help="Skip agent arm — user must set Rec red manually before running",
+    )
     ap.add_argument("--no-eyes", action="store_true")
     ap.add_argument("--eyes-dir", type=Path, default=None)
+    ap.add_argument(
+        "--arm-retries",
+        type=int,
+        default=3,
+        help="Max arm_and_verify attempts before asking user (default 3)",
+    )
     args = ap.parse_args()
 
     song = resolve_song_dir(args.song_dir)
@@ -181,9 +205,8 @@ def main() -> int:
         log(f"FATAL missing MIDI: {drums} / {bass}")
         return 1
 
-    user_armed = not args.auto_arm
     log("POCKET WATCHED — eyes on Arrange Rec + clips")
-    log(f"  song={song} user_armed={user_armed} auto_arm={args.auto_arm}")
+    log(f"  song={song} user_armed={args.user_armed} arm_retries={args.arm_retries}")
 
     try:
         with FullControl() as s1:
@@ -204,8 +227,7 @@ def main() -> int:
                     track=args.drums_track,
                     label="DRUMS",
                     eyes=eyes,
-                    user_armed=user_armed,
-                    auto_arm=args.auto_arm,
+                    user_armed=args.user_armed,
                     max_sec=args.max_sec,
                 )
                 time.sleep(0.5)
@@ -216,8 +238,7 @@ def main() -> int:
                     track=args.bass_track,
                     label="BASS",
                     eyes=eyes,
-                    user_armed=user_armed,
-                    auto_arm=args.auto_arm,
+                    user_armed=args.user_armed,
                     max_sec=args.max_sec,
                 )
 

@@ -61,3 +61,32 @@ class Eyes:
         if self._watch is not None:
             self._watch.join(timeout=2.0)
             self._watch = None
+
+
+def scan_rec_red(path: "Path | None") -> bool:
+    """
+    Heuristic: scan a screenshot for bright-red pixels that indicate
+    a Rec button is armed in Studio One (Rec Enable = red).
+
+    Returns True if enough red pixels are found (likely armed),
+    False if uncertain or PIL unavailable.
+    """
+    if path is None or not Path(path).exists():
+        return False
+    try:
+        from PIL import Image
+        img = Image.open(str(path)).convert("RGB")
+        pixels = img.load()
+        w, h = img.size
+        red_count = 0
+        # Sample every 4th pixel for speed; count bright-red hits
+        for x in range(0, w, 4):
+            for y in range(0, h, 4):
+                r, g, b = pixels[x, y]
+                if r > 180 and g < 80 and b < 80:
+                    red_count += 1
+                    if red_count > 30:
+                        return True
+        return False
+    except Exception:
+        return False
