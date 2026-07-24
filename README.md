@@ -45,14 +45,18 @@ py -3.12 -m s1remote setup
 
 | File | Purpose |
 |------|---------|
+| `docs/S1_UI_PIPELINE.md` | **Preferred use** — S1-first agent/user split |
+| `docs/ARM_RECORD_LESSONS.md` | Deep arm/record failures + eyes policy |
 | `docs/AGENT_OPS_LEARNED.md` | Live arm/port failures and agent policy |
 | `docs/MANUAL_WALKTHROUGH_CATALOG.md` | Full manual walk catalog |
 | `docs/FULL_MANUAL_WALK_REPORT.md` | Ch.1–22 results |
 | `docs/MANUAL_MISSED_REPORT.md` | Follow-up missed ops |
 | `S1_NOTES_PORT_SETUP.md` | Dual loopMIDI wiring |
 | `STUDIO_ONE_RECORD_MIDI.md` | Record-enable order from 6.6 manual |
+| `tools/` | Path-agnostic scripts + **producer eyes** (screenshots) |
 
-Manual chapter text lives in the **Music-producer** repo: `studio-one-6.6-agent-knowledge/`.
+Manual chapter text + full production workflow live in **Music-producer**:
+`studio-one-6.6-agent-knowledge/`, `production-workflow-knowledge/`.
 
 ## Verify
 
