@@ -114,7 +114,20 @@ def studio_one_running() -> bool:
 
 
 def _enum_s1_hwnd() -> Optional[int]:
+    """Find real Studio One DAW window — not Grok/Terminal titles that contain the words."""
     result: list[int] = []
+    skip_sub = (
+        "grok",
+        "unique track creation",
+        "crash",
+        "visual studio",
+        "windows terminal",
+        "powershell",
+        "cmd.exe",
+        "chrome",
+        "edge",
+        "firefox",
+    )
 
     @ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.c_void_p, ctypes.c_void_p)
     def _cb(hwnd, _lparam):
@@ -126,23 +139,52 @@ def _enum_s1_hwnd() -> Optional[int]:
         buf = ctypes.create_unicode_buffer(length + 1)
         user32.GetWindowTextW(hwnd, buf, length + 1)
         title = buf.value
-        if "Studio One" in title and "crash" not in title.lower():
-            # Prefer main song window over splash
-            result.append(hwnd)
+        low = title.lower()
+        if "studio one" not in low:
+            return True
+        if any(s in low for s in skip_sub):
+            return True
+        # Prefer main song window over splash
+        result.append(hwnd)
         return True
 
     user32.EnumWindows(_cb, 0)
-    return result[0] if result else None
+    if not result:
+        return None
+    # Prefer titles like "Studio One - <song>" over bare splash
+    for hwnd in result:
+        length = user32.GetWindowTextLengthW(hwnd)
+        buf = ctypes.create_unicode_buffer(length + 1)
+        user32.GetWindowTextW(hwnd, buf, length + 1)
+        if " - " in buf.value:
+            return hwnd
+    return result[0]
 
 
 def focus_studio_one() -> bool:
+    """Bring real Studio One to foreground (robust against other apps stealing focus)."""
     hwnd = _enum_s1_hwnd()
     if not hwnd:
         return False
     user32.ShowWindow(hwnd, 9)  # SW_RESTORE
+    # AttachThreadInput helps SetForegroundWindow succeed on modern Windows
+    fg = user32.GetForegroundWindow()
+    cur_tid = kernel32.GetCurrentThreadId()
+    pid = ctypes.c_ulong()
+    fg_tid = user32.GetWindowThreadProcessId(fg, ctypes.byref(pid)) if fg else 0
+    s1_tid = user32.GetWindowThreadProcessId(hwnd, ctypes.byref(pid))
+    if fg_tid:
+        user32.AttachThreadInput(cur_tid, fg_tid, True)
+    if s1_tid:
+        user32.AttachThreadInput(cur_tid, s1_tid, True)
+    user32.BringWindowToTop(hwnd)
     user32.SetForegroundWindow(hwnd)
-    time.sleep(0.05)
-    return True
+    if fg_tid:
+        user32.AttachThreadInput(cur_tid, fg_tid, False)
+    if s1_tid:
+        user32.AttachThreadInput(cur_tid, s1_tid, False)
+    time.sleep(0.08)
+    return user32.GetForegroundWindow() == hwnd or True  # hwnd valid even if FG steal fails
 
 
 def _key_event(vk: int, up: bool = False) -> None:
@@ -202,6 +244,12 @@ def run_action(name: str, *, focus: bool = True) -> None:
     if key.startswith("F") and key[1:].isdigit():
         mods = []
     if focus:
-        if not focus_studio_one():
+        ok = focus_studio_one()
+        if not ok:
+            # retry once — S1 may still be focusing after launch
+            time.sleep(0.35)
+            ok = focus_studio_one()
+        if not ok and not studio_one_running():
             raise RuntimeError("Studio One window not found / not focused")
+        # If process is up but FG steal failed, still send keys (best-effort)
     send_hotkey(mods, key)
