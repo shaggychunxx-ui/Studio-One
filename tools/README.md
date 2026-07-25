@@ -20,10 +20,14 @@ Requires: `pillow` for grabs.
 
 | Script | Role |
 |--------|------|
+| **`execute_job.py`** | **Run producer `s1_jobs/current.json` (eyes + ears)** |
 | `create_s1_tracks.py` | Menu **Track → Add Instrument Track** |
 | `import_and_verify_midi.py` | File import `.mid` (no live arm) |
 | `run_pocket_watched.py` | Stream drums/bass with eyes |
 | `pipeline_monitored.py` | Phased status / compose lead / stream |
+
+Job schema: `s1_tools/job_schema.py`. Sensors: `eyes.py`, `ears.py`, `vision.py`.  
+See `docs/EXECUTION_JOBS.md`.
 
 ## Examples
 
