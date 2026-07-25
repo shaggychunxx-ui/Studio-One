@@ -75,7 +75,8 @@ def stream_mid(s1, path: Path, *, label: str, eyes: Eyes, max_sec=None) -> int:
     total = float(mid.length) or 1.0
     bridge = s1.remote.instrument.bridge
     log(f"  STREAM {path.name} ~{total:.1f}s port={bridge.out_name!r}")
-    eyes.start_watch(label, 8.0)
+    # Live vision: denser frames during record
+    eyes.start_watch(label, 2.5 if getattr(eyes, "live", True) else 8.0)
     t0 = time.perf_counter()
     target = 0.0
     n_on = 0
@@ -133,6 +134,7 @@ class JobRunner:
         self.eyes = Eyes(
             default_eyes_dir(self.song),
             enabled=not self.opts.get("no_eyes"),
+            live=True,
         )
         self.ears_dir = self.song / "_vision" / "ears"
         self.step_results: List[Dict[str, Any]] = []
@@ -140,11 +142,56 @@ class JobRunner:
         self.audio_reports: List[Dict[str, Any]] = []
         self.s1 = None
         self._fatal: Optional[str] = None
+        self._last_failure: Optional[Dict[str, Any]] = None
 
     def _record_step(self, op: str, **kw: Any) -> Dict[str, Any]:
         row = {"op": op, **kw}
         self.step_results.append(row)
         return row
+
+    def _fail(
+        self,
+        domain: str,
+        primary_cause: str,
+        *,
+        op: str = "",
+        remediations: Optional[List[str]] = None,
+        next_action: str = "inspect_last_failure_json",
+        evidence: Optional[Dict[str, Any]] = None,
+        causes: Optional[List[str]] = None,
+        error: Optional[str] = None,
+        also_named: Optional[str] = None,
+        record_step: bool = True,
+        **ctx: Any,
+    ) -> Dict[str, Any]:
+        """Structured failure (same shape as arm diagnosis) for every fail path."""
+        from s1_tools.failure_log import record_failure
+
+        rec = record_failure(
+            self.song,
+            domain=domain,
+            primary_cause=primary_cause,
+            causes=causes,
+            remediations=remediations,
+            next_action=next_action,
+            evidence=evidence,
+            context={"op": op, "job_id": self.job.get("id"), **ctx},
+            error=error,
+            also_named=also_named or f"{domain}_failure",
+        )
+        self._last_failure = rec
+        if record_step and op:
+            self._record_step(
+                op,
+                ok=False,
+                error=error or primary_cause,
+                primary_cause=primary_cause,
+                causes=rec.get("causes"),
+                remediations=rec.get("remediations"),
+                next_action=rec.get("next_action"),
+                failure=rec,
+            )
+        return rec
 
     def _shot(self, tag: str) -> Optional[Path]:
         p = self.eyes.shot(tag)
@@ -170,7 +217,19 @@ class JobRunner:
     def run(self) -> Dict[str, Any]:
         errs = validate_job(self.job)
         if errs:
-            return self._finish(False, error="invalid_job", detail=errs)
+            self._fail(
+                "job",
+                "invalid_job",
+                op="validate",
+                remediations=[
+                    "Fix s1_jobs/current.json against job_schema KNOWN_OPS",
+                    "Producer: re-run plan mvp / plan stream",
+                ],
+                next_action="fix_job_json",
+                evidence={"validation_errors": errs},
+                also_named="job_failure",
+            )
+            return self._finish(False, error="invalid_job", detail=errs, failure=self._last_failure)
 
         if self.dry_run:
             log("DRY RUN — validate + list steps only (not a real capture)")
@@ -186,9 +245,13 @@ class JobRunner:
         ensure_s1remote_on_path()
         from s1remote.full_control import FullControl  # noqa: E402
         from s1remote.hotkeys import focus_studio_one, run_action, studio_one_running  # noqa: E402
+        from s1_tools.failure_log import failure_s1_not_running  # noqa: E402
 
         if not studio_one_running():
-            return self._finish(False, error="studio_one_not_running")
+            rec = failure_s1_not_running(self.song, job_id=self.job.get("id"))
+            self._last_failure = rec
+            self._fatal = rec["primary_cause"]
+            return self._finish(False, error=self._fatal, failure=rec)
 
         set_log_file(default_log_path(self.song, "execute_job_latest.log"))
         log(f"EXECUTE job id={self.job.get('id')} song={self.song}")
@@ -216,15 +279,52 @@ class JobRunner:
                         ok = self._dispatch(step, focus_studio_one, run_action)
                     except Exception as e:
                         log(f"  FAIL step: {e}")
-                        self._record_step(op, ok=False, error=str(e))
+                        self._fail(
+                            "job",
+                            "step_exception",
+                            op=op,
+                            error=str(e),
+                            remediations=[
+                                "Read traceback in execute_job_latest.log",
+                                "Check S1 still open and focused",
+                            ],
+                            next_action="retry_step_after_fix",
+                            evidence={"exception": str(e)},
+                            step_index=i,
+                        )
                         if not step.get("optional"):
                             self._fatal = f"step_{i}_{op}: {e}"
                             break
                         continue
                     if not ok and not step.get("optional"):
-                        self._fatal = f"step_{i}_{op} failed"
+                        # Prefer structured failure already recorded on step
+                        last = self.step_results[-1] if self.step_results else {}
+                        if not last.get("failure") and not last.get("primary_cause"):
+                            self._fail(
+                                "job",
+                                last.get("error") or f"{op}_failed",
+                                op=op,
+                                remediations=[
+                                    "See step result in last_result.json",
+                                    "Open last_failure.json for remediations",
+                                ],
+                                next_action="inspect_last_failure_json",
+                                evidence={"step": last},
+                                step_index=i,
+                            )
+                        self._fatal = (
+                            (last.get("primary_cause") or last.get("error") or f"step_{i}_{op} failed")
+                        )
                         break
         except Exception as e:
+            self._fail(
+                "job",
+                "step_exception",
+                op="FullControl",
+                error=str(e),
+                remediations=["Restart S1 Notes/MCU ports", "Relaunch Studio One"],
+                next_action="recover_s1_ui",
+            )
             self._fatal = str(e)
             log(f"FATAL: {e}")
 
@@ -235,11 +335,18 @@ class JobRunner:
                 run_action("save", focus=True)
                 self._record_step("save", ok=True, auto=True)
             except Exception as e:
-                self._record_step("save", ok=False, error=str(e), auto=True)
+                self._fail(
+                    "save",
+                    "save_failed",
+                    op="save",
+                    error=str(e),
+                    remediations=["Ctrl+S manually", "Check disk full / song path writable"],
+                    next_action="manual_save",
+                )
 
         self._shot("job_end")
         ok = self._fatal is None
-        return self._finish(ok, error=self._fatal)
+        return self._finish(ok, error=self._fatal, failure=self._last_failure)
 
     def _dispatch(self, step: Dict[str, Any], focus_studio_one, run_action) -> bool:
         op = step["op"]
@@ -250,31 +357,63 @@ class JobRunner:
             notes_ok = bool(st.get("instrument_midi_connected"))
             mcu_ok = bool(st.get("midi_connected"))
             running = bool(st.get("studio_one_running", True))
+            snip = {
+                k: st.get(k)
+                for k in (
+                    "studio_one_running",
+                    "midi_connected",
+                    "instrument_midi_out",
+                    "instrument_midi_connected",
+                )
+            }
+            ok = notes_ok and running
             self._record_step(
                 op,
-                ok=notes_ok and running,
+                ok=ok,
                 instrument_midi=notes_ok,
                 mcu=mcu_ok,
                 studio_one_running=running,
-                status_snip={
-                    k: st.get(k)
-                    for k in (
-                        "studio_one_running",
-                        "midi_connected",
-                        "instrument_midi_out",
-                        "instrument_midi_connected",
-                    )
-                },
+                status_snip=snip,
             )
-            if not notes_ok:
-                log("  FAIL: instrument MIDI (S1 Notes) not connected")
+            if not running:
+                from s1_tools.failure_log import failure_s1_not_running
+
+                self._last_failure = failure_s1_not_running(self.song, op=op)
                 return False
+            if not notes_ok:
+                from s1_tools.failure_log import failure_midi_port
+
+                self._last_failure = failure_midi_port(self.song, status=snip, op=op)
+                return False
+            if not mcu_ok:
+                self._fail(
+                    "setup",
+                    "mcu_midi_not_connected",
+                    op=op,
+                    remediations=[
+                        "loopMIDI S1 Controller pair",
+                        "External Devices Mackie Receive/Send ports",
+                    ],
+                    next_action="fix_mcu_ports",
+                    evidence={"status": snip},
+                    record_step=False,
+                )
+                # MCU optional for notes stream — warn only
+                log("  WARN: MCU not connected (transport may be limited)")
             return True
 
         if op == "ensure_workspace":
+            from s1_tools.eyes import check_display_dpi, is_studio_one_arrange_shot
+            from s1remote.hotkeys import studio_one_running
+            from s1_tools.failure_log import failure_s1_not_running, failure_not_arrange
+
+            if not studio_one_running():
+                self._last_failure = failure_s1_not_running(self.song, op=op)
+                self._record_step(op, ok=False, error="s1_not_running", failure=self._last_failure)
+                return False
+            dpi = check_display_dpi()
             focus_studio_one()
             time.sleep(0.2)
-            # Crash recovery modal blocks all DAW work — UIA only (pixel green is noisy)
             if detect_safety_dialog_uia():
                 dismissed = dismiss_safety_dialog()
                 time.sleep(1.2)
@@ -282,21 +421,51 @@ class JobRunner:
                 shot = self._shot("after_safety_dismiss")
                 rep = analyze_shot(shot)
                 still = detect_safety_dialog_uia()
+                ok = dismissed and not still
                 self._record_step(
                     op,
-                    ok=dismissed and not still,
+                    ok=ok,
                     safety_dismissed=dismissed,
                     safety_still_present=still,
                     vision=rep.to_dict(),
                 )
                 if still:
-                    log("  FAIL: Studio One Safety dialog still blocking")
+                    self._fail(
+                        "workspace",
+                        "safety_dialog_blocking",
+                        op=op,
+                        remediations=[
+                            "Click OK on Studio One Safety dialog",
+                            "Or press Enter when Safety is focused",
+                        ],
+                        next_action="dismiss_safety_dialog",
+                        evidence={"vision": rep.to_dict()},
+                        record_step=False,
+                    )
                     return False
                 return True
             shot = self._shot("workspace")
             rep = analyze_shot(shot)
-            self._record_step(op, ok=True, vision=rep.to_dict())
-            return True
+            is_arr = is_studio_one_arrange_shot(shot)
+            if not is_arr:
+                log("  WARN: workspace shot not S1 arrange — refocus once")
+                focus_studio_one()
+                time.sleep(0.4)
+                shot = self._shot("workspace_retry")
+                rep = analyze_shot(shot)
+                is_arr = is_studio_one_arrange_shot(shot)
+            self._record_step(
+                op,
+                ok=is_arr,
+                vision=rep.to_dict(),
+                is_s1_arrange=is_arr,
+                dpi=dpi,
+            )
+            if not is_arr:
+                self._last_failure = failure_not_arrange(
+                    self.song, op=op, dpi=dpi, vision=rep.to_dict()
+                )
+            return is_arr
 
         if op == "create_tracks":
             count = int(step.get("count") or 1)
@@ -388,17 +557,42 @@ class JobRunner:
         if op == "stream_record":
             return self._stream_record(step, focus_studio_one)
 
-        self._record_step(op, ok=False, error="unknown_op")
+        self._fail(
+            "job",
+            "unknown_job_op",
+            op=op,
+            remediations=["Use only KNOWN_OPS from job_schema.py", "Re-plan job from producer"],
+            next_action="fix_job_json",
+            evidence={"op": op},
+        )
         return False
 
     def _stream_record(self, step: Dict[str, Any], focus_studio_one) -> bool:
         s1 = self.s1
-        track = int(step["track"])
+        # Resolve role name (drums/bass/…) via tracks.json before arm
+        try:
+            from s1_tools.tracks_map import resolve_track
+
+            track = resolve_track(self.song, step.get("role") or step.get("track"))
+        except Exception:
+            track = int(step["track"])
         label = str(step.get("label") or f"T{track}")
         midi_field = step.get("midi") or ""
         midi = resolve_midi_path(self.song, midi_field)
         if midi is None:
-            self._record_step("stream_record", ok=False, error="midi_missing", midi=midi_field)
+            from s1_tools.failure_log import failure_midi_missing
+
+            self._last_failure = failure_midi_missing(
+                self.song, midi=str(midi_field), label=label, track=track
+            )
+            self._record_step(
+                "stream_record",
+                ok=False,
+                error="midi_missing",
+                midi=midi_field,
+                failure=self._last_failure,
+                primary_cause="midi_file_missing",
+            )
             return False
 
         max_sec = step.get("max_sec", self.opts.get("max_sec"))
@@ -415,78 +609,218 @@ class JobRunner:
         time.sleep(GAP)
 
         user_armed = bool(self.opts.get("user_armed") or step.get("user_armed"))
+        prefer_import = bool(self.opts.get("prefer_import") or step.get("prefer_import"))
         armed = False
         method = "stream"
+        if prefer_import and not user_armed:
+            log(f"  prefer_import: File import path for {label}")
+            try:
+                from import_and_verify_midi import import_one_file
+                from s1remote.menus import open_menu_path
+                from s1remote.hotkeys import focus_studio_one as _f
+
+                ok_imp = import_one_file(midi, open_menu_path=open_menu_path, focus_studio_one=_f)
+                after_i = self._shot(f"import_{label}")
+                self._record_step(
+                    "stream_record",
+                    ok=bool(ok_imp),
+                    label=label,
+                    track=track,
+                    midi=str(midi),
+                    method="import_fallback",
+                    imported=bool(ok_imp),
+                    note_ons=0,
+                    armed_confirmed=False,
+                    clip_growth=None,
+                    vision={"after": analyze_shot(after_i).to_dict() if after_i else {}},
+                )
+                return bool(ok_imp)
+            except Exception as e:
+                log(f"  import fallback fail ({e}) — try live stream")
+
         if user_armed:
             log("  user_armed: skip agent arm")
             armed = True
         else:
-            log(f"  arm_and_verify track={track}")
+            allow_mouse = bool(self.opts.get("allow_mouse") or step.get("allow_mouse"))
+            log(
+                f"  arm_and_verify track={track} "
+                f"(keyboard→MIDI only; mouse={'ON' if allow_mouse else 'OFF'})"
+            )
+            arm_diag: Dict[str, Any] = {}
             try:
-                armed = s1.arm_and_verify(track, eyes_dir=self.eyes.directory)
+                armed = s1.arm_and_verify(
+                    track,
+                    eyes_dir=self.eyes.directory,
+                    retries=3,
+                    allow_mouse=allow_mouse,
+                    song_dir=self.song,
+                )
+                arm_diag = getattr(s1, "last_arm_result", None) or {}
             except Exception as e:
                 log(f"  arm_and_verify error: {e}")
                 armed = False
+                arm_diag = {"ok": False, "error": str(e), "primary_cause": "exception"}
             if not armed:
-                # Re-check: thrashing may have armed something
                 from s1_tools.eyes import scan_rec_red as _scan
 
                 recheck = self._shot(f"arm_recheck_{label}")
-                if _scan(recheck, track) or _scan(recheck):
-                    log("  arm recheck: Rec red visible — proceeding with stream")
+                if _scan(recheck, track, allow_fallback=False):
+                    log("  arm recheck: Rec red on target — proceed")
                     armed = True
-                elif self.opts.get("no_prompt"):
-                    log("  WARN: arm unconfirmed — still streaming (autonomy best-effort)")
-                    # Do not abort: stream may still land if a track is partially armed
-                    armed = False  # continue to record+stream below
                 else:
-                    try:
-                        input("  Press Enter once Rec is red, or Ctrl-C to abort: ")
-                        armed = True
-                    except EOFError:
+                    # Record *why* so next run can fix root cause (not thrash)
+                    primary = arm_diag.get("primary_cause") or "arm_failed"
+                    next_act = arm_diag.get("next_action") or "inspect_arm_diagnosis_json"
+                    log(f"  ARM FAILED — primary_cause={primary} next={next_act}")
+                    for rem in (arm_diag.get("remediations") or [])[:4]:
+                        log(f"  → {rem}")
+
+                    # Optional import only after diagnosis is saved
+                    if self.opts.get("import_on_arm_fail", True):
+                        log("  after diagnosis: try import_midi (no mouse thrash)")
+                        try:
+                            from import_and_verify_midi import import_one_file
+                            from s1remote.menus import open_menu_path
+                            from s1remote.hotkeys import focus_studio_one as _f
+
+                            ok_imp = import_one_file(
+                                midi, open_menu_path=open_menu_path, focus_studio_one=_f
+                            )
+                            self._record_step(
+                                "stream_record",
+                                ok=bool(ok_imp),
+                                label=label,
+                                track=track,
+                                midi=str(midi),
+                                method="import_fallback",
+                                imported=bool(ok_imp),
+                                note_ons=0,
+                                armed_confirmed=False,
+                                arm_diagnosis=arm_diag,
+                                error=None if ok_imp else f"arm_fail:{primary}",
+                            )
+                            return bool(ok_imp)
+                        except Exception as e:
+                            log(f"  import fallback error: {e}")
+
+                    if not self.opts.get("no_prompt"):
+                        try:
+                            input(
+                                f"  Arm failed ({primary}). "
+                                "Arm target track with [R] manually, then Enter: "
+                            )
+                            armed = True
+                        except EOFError:
+                            self._record_step(
+                                "stream_record",
+                                ok=False,
+                                error=f"arm_failed:{primary}",
+                                track=track,
+                                arm_diagnosis=arm_diag,
+                            )
+                            return False
+                    else:
+                        from s1_tools.failure_log import wrap_arm_diagnosis
+
+                        if arm_diag and arm_diag.get("primary_cause"):
+                            self._last_failure = wrap_arm_diagnosis(arm_diag, self.song)
+                        else:
+                            self._fail(
+                                "arm",
+                                primary,
+                                op="stream_record",
+                                remediations=arm_diag.get("remediations") if arm_diag else None,
+                                next_action=next_act,
+                                evidence={"arm_diagnosis": arm_diag},
+                                track=track,
+                                label=label,
+                                record_step=False,
+                            )
                         self._record_step(
                             "stream_record",
                             ok=False,
-                            error="arm_unconfirmed_no_tty",
+                            error=f"arm_failed:{primary}",
                             track=track,
+                            label=label,
+                            arm_diagnosis=arm_diag,
+                            next_action=next_act,
+                            primary_cause=primary,
+                            failure=self._last_failure,
                         )
                         return False
 
+        from s1_tools.eyes import lane_clip_growth, count_lane_clips, annotate_rec_hud, locate_track_rec_buttons
+
         pre = self._shot(f"before_{label}")
         pre_v = analyze_shot(pre)
+        pre_lane = count_lane_clips(pre, track)
         s1.record()
         time.sleep(0.45)
         rec = self._shot(f"rec_{label}")
         rec_v = analyze_shot(rec)
+        try:
+            annotate_rec_hud(
+                rec,
+                locate_track_rec_buttons(rec) if rec else [],
+                armed_row=track if rec_v.rec_red else None,
+                label=f"REC {label} t{track}",
+            )
+        except Exception:
+            pass
 
-        n = stream_mid(s1, midi, label=label, eyes=self.eyes, max_sec=max_sec)
+        # Cap long streams for efficiency unless step asks full
+        stream_cap = max_sec
+        if stream_cap is None and self.opts.get("probe_first", True):
+            stream_cap = float(self.opts.get("probe_sec") or 15.0)
+            log(f"  probe_first: stream cap {stream_cap}s (set options.probe_first=false for full)")
 
-        listen_sec = float(step.get("listen_sec") or min(3.0, max_sec or 3.0))
+        n = stream_mid(s1, midi, label=label, eyes=self.eyes, max_sec=stream_cap)
+
+        listen_sec = float(step.get("listen_sec") or min(3.0, stream_cap or 3.0))
         try:
             s1.stop()
         except Exception:
             pass
-        time.sleep(0.2)
+        time.sleep(0.25)
+        # Live ears: play + capture; then null bus check after stop
+        audio: Dict[str, Any]
+        null_bus: Dict[str, Any] = {}
         try:
             s1.remote.mcu.rewind()
             s1.play()
             audio = self._ears(f"after_{label}", listen_sec)
             s1.stop()
+            time.sleep(0.3)
+            from s1_tools.ears import null_bus_check
+
+            null_bus = null_bus_check(
+                self.song / "_vision" / "ears",
+                tag=f"null_{label}",
+                enabled=not self.opts.get("no_ears"),
+            )
         except Exception as e:
             audio = {"ok": False, "error": str(e)}
 
         after = self._shot(f"after_{label}")
         after_v = analyze_shot(after)
-        clip_growth = (after_v.blue_pixel_hits or 0) > (pre_v.blue_pixel_hits or 0) + 80
+        growth = lane_clip_growth(pre, after, track)
+        clip_growth = bool(growth.get("growth"))
+        # Global blue fallback only if lane map failed
+        if not clip_growth and (after_v.blue_pixel_hits or 0) > (pre_v.blue_pixel_hits or 0) + 120:
+            clip_growth = True
+            growth["global_blue_fallback"] = True
 
-        # Success: notes went out AND (armed OR rec red OR clips grew OR audio)
-        ok = n > 0 and (
-            armed or rec_v.rec_red or pre_v.rec_red or clip_growth or bool(audio.get("has_signal"))
-        )
-        # Even weak: notes + blue clips already present counts as partial success
-        if not ok and n > 0 and (after_v.blue_pixel_hits or 0) > 500:
-            ok = True
-            method = "stream_partial"
+        # Success requires evidence: lane clips OR audio signal (not notes alone)
+        ok = n > 0 and (clip_growth or bool(audio.get("has_signal")))
+        if n > 0 and armed and (rec_v.rec_red or pre_v.rec_red) and not ok:
+            method = "stream_attempted_no_clip"
+            ok = False
+        elif ok and clip_growth:
+            method = "stream"
+        elif ok and audio.get("has_signal"):
+            method = "stream_audio_only"
+
         self._record_step(
             "stream_record",
             ok=ok,
@@ -494,20 +828,45 @@ class JobRunner:
             track=track,
             midi=str(midi),
             note_ons=n,
-            armed_confirmed=bool(rec_v.rec_red or pre_v.rec_red or armed),
+            armed_confirmed=bool(
+                rec_v.rec_red
+                or armed
+            ),
             method=method,
             clip_growth=clip_growth,
+            lane=growth,
+            lane_blue_before=pre_lane,
             vision={
                 "pre": pre_v.to_dict(),
                 "rec": rec_v.to_dict(),
                 "after": after_v.to_dict(),
             },
             audio=audio,
+            null_bus=null_bus,
+            live_shots=len(getattr(self.eyes, "last_live", []) or []),
         )
         log(
-            f"  stream_record {label}: notes={n} rec_red={rec_v.rec_red} "
-            f"clips+={clip_growth} audio={audio.get('has_signal')} ok={ok}"
+            f"  stream_record {label}: notes={n} lane {growth.get('before')}→{growth.get('after')} "
+            f"growth={clip_growth} audio={audio.get('has_signal')} ok={ok}"
         )
+        if not ok:
+            from s1_tools.failure_log import failure_stream_no_evidence
+
+            self._last_failure = failure_stream_no_evidence(
+                self.song,
+                note_ons=n,
+                clip_growth=clip_growth,
+                has_signal=bool(audio.get("has_signal")),
+                arm_diagnosis=None,
+                label=label,
+                track=track,
+                method=method,
+                lane=growth,
+            )
+            # attach to last step if just recorded
+            if self.step_results and self.step_results[-1].get("op") == "stream_record":
+                self.step_results[-1]["failure"] = self._last_failure
+                self.step_results[-1]["primary_cause"] = self._last_failure.get("primary_cause")
         return ok
 
     def _finish(self, ok: bool, **extra: Any) -> Dict[str, Any]:

@@ -72,4 +72,31 @@ python -m song_pipeline_kb cycle --song-dir "%S1_SONG_DIR%" --execute --max-sec 
 - Use `observe` for confidence; user listens for pocket approval
 - **Studio One Safety** (crash recovery) is detected via UIA + green-button pixels and auto-dismissed on `ensure_workspace` / preflight
 - Eyes: `<song>/_vision/arm_watch/` — programmers must open PNGs, not trust logs alone
+
+## Structured failures (all domains)
+
+Every failure is logged the same way (arm, stream, setup, workspace, template, produce):
+
+```json
+{
+  "ok": false,
+  "domain": "arm|stream|setup|workspace|template|produce|job|save",
+  "primary_cause": "machine_readable_code",
+  "causes": ["..."],
+  "remediations": ["concrete fix 1", "..."],
+  "next_action": "orchestrator_hint",
+  "evidence": {},
+  "context": {},
+  "finished_at": "ISO-8601"
+}
+```
+
+| File | Role |
+|------|------|
+| `s1_jobs/last_failure.json` | Most recent failure |
+| `s1_jobs/failures.jsonl` | Append-only history |
+| `s1_jobs/arm_diagnosis.json` | Arm domain (also unified) |
+| `s1_jobs/*_failure.json` | Domain copy when applicable |
+
+Do **not** thrash after failure — fix `primary_cause` then retry.
 - Ears: Realtek loopback via `soundcard` (WASAPI pyaudiowpatch often hangs; skipped with timeout)

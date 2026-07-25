@@ -49,6 +49,21 @@ Without step 5, Record does not capture MIDI to the track.
 
 Diagnostic: `py -3.12 tools/diagnose_arm.py` (offline shots + optional `--live`).
 
+### Policy 2026-07 (efficiency + accuracy)
+
+| Rule | Detail |
+|------|--------|
+| **No thrash** | Max **3** arm attempts; max **2** human clicks per arm; never grid-search 50 points |
+| **Human-like click** | `s1_tools/human_input.py` — smooth move, single press, DPI-aware |
+| **Live vision** | Eyes watch every ~2.5s during stream (`live_*.png` + HUD) |
+| **Live hearing** | Short probe + play listen + null-bus check after stop |
+| **Lane accuracy** | Multi-color clip count (blue/cyan/green) per track row, before/after delta |
+| **Import fallback** | On arm fail → File Import (no more click spam) |
+| **tracks.json** | Role → track number from Template defaults |
+| **Orchestrator** | `tools/produce.py` — one part per job |
+
+Diagnostic DPI: this machine often runs at **150%** scale — `ensure_dpi_aware()` must run before grab/click.
+
 ## MCU strip vs Arrange track
 
 - Mackie select/rec operate on the **mixer surface bank**, not a guaranteed 1:1 with Arrange instrument rows.  
@@ -57,17 +72,23 @@ Diagnostic: `py -3.12 tools/diagnose_arm.py` (offline shots + optional `--live`)
 
 ## Preferred agent policies
 
-### A. `arm_and_verify` (default — keyboard + MIDI only)
+### A. `arm_and_verify` (default — **keyboard + MIDI only**)
 
-1. Call `FullControl.arm_and_verify(track)`.
-   - Attempt 1: MCU `select(strip)` + `rec_arm(strip)` (MIDI).
-   - Screenshot; if Rec red → done.
-   - Attempt 2+: hotkey `[R]` on focused track (keyboard).
-   - Screenshot after each; stop when red or retries exhausted.
-2. If `arm_and_verify` returns `False` after all retries → ask user once to confirm Rec red.
-3. Transport Record → stream **S1 Notes** → Stop.
-4. **Eyes:** screenshots before/during/after under `_vision/arm_watch/`.
-5. User confirms clip on correct track.
+1. Call `FullControl.arm_and_verify(track, allow_mouse=False)` (default).
+   - Attempt 1: **keyboard** — select arrange track + **one** `[R]`.
+   - Screenshot; if Rec red on **target row** → done.
+   - Attempt 2: **MCU** select + rec_arm once (may fail map — used for transport more than arm).
+   - **Mouse is OFF** unless `allow_mouse=True` (then one Rec-column click only).
+2. If still fail → **do not thrash**. Write `s1_jobs/arm_diagnosis.json` with:
+   - `primary_cause` (e.g. `wrong_track_armed`, `no_rec_red_anywhere`, `not_s1_arrange_ui`)
+   - `remediations` (fix select, tracks.json, ports, user arm once)
+   - `next_action` for the orchestrator
+3. Optional: import MIDI fallback **after** diagnosis is saved.
+4. Or ask user once to set Rec red (`user_armed`).
+5. Transport Record → stream **S1 Notes** → Stop.
+6. **Eyes:** `_vision/arm_watch/` + HUD; never claim success from note_ons alone.
+
+**Why diagnose:** arm fail is usually wrong track selected, MCU≠arrange, double-toggle, focus loss, or DPI — not “need more clicks.”
 
 ### B. Import path (no live arm)
 

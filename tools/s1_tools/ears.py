@@ -22,6 +22,9 @@ from .logutil import log
 
 DEFAULT_SR = 48000
 DEFAULT_DEVICE_SUBSTR = "Realtek"
+# Accuracy thresholds for "live hearing"
+SIGNAL_PEAK_DB = -45.0  # above this ≈ something on bus
+PROBE_SECONDS = 2.5
 
 
 @dataclass
@@ -359,11 +362,42 @@ def capture(
         meta.write_text(json.dumps(report.to_dict(), indent=2), encoding="utf-8")
     except Exception:
         pass
+    # Accuracy: also accept moderate peaks (live bus may be quieter)
+    if not has_signal and report.peak_db > SIGNAL_PEAK_DB and report.activity_ratio > 0.02:
+        report.has_signal = True
+        has_signal = True
     log(
         f"  ears 🎧 peak={report.peak_db:.1f}dB rms={report.rms_db:.1f}dB "
         f"act={report.activity_ratio:.0%} signal={report.has_signal} ({backend})"
     )
     return report
+
+
+def live_probe(
+    directory: Path,
+    *,
+    tag: str = "live_probe",
+    seconds: float = PROBE_SECONDS,
+    enabled: bool = True,
+) -> AudioReport:
+    """Short live hearing snapshot (2–3s) for mid-stream / post-part checks."""
+    return capture(directory, tag=tag, seconds=float(seconds), enabled=enabled)
+
+
+def null_bus_check(
+    directory: Path,
+    *,
+    tag: str = "null_bus",
+    seconds: float = 1.5,
+    enabled: bool = True,
+) -> Dict[str, Any]:
+    """
+    After stop: bus should be quieter than during play.
+    Returns {silent: bool, report: ...} — silent True if no meaningful signal.
+    """
+    rep = capture(directory, tag=tag, seconds=seconds, enabled=enabled)
+    silent = (not rep.has_signal) or rep.peak_db < SIGNAL_PEAK_DB - 5
+    return {"silent": silent, "report": rep.to_dict()}
 
 
 def analyze_wav(path: Path) -> AudioReport:

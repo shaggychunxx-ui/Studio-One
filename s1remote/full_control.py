@@ -105,101 +105,208 @@ class FullControl:
         self,
         track: int,
         eyes_dir: Optional[Path] = None,
-        retries: int = 4,
+        retries: int = 3,
+        *,
+        allow_mouse: bool = False,
+        song_dir: Optional[Path] = None,
     ) -> bool:
         """
-        Arm Arrange track N and confirm Rec red via screenshot.
+        Arm Arrange track N; confirm Rec red via screenshot.
 
-        Strategy (one action per attempt — avoid double-toggle):
-          1) Keyboard select track + single [R]  (preferred — docs)
-          2) Vision-locate **Rec** (not Monitor) → single click
-          3) MCU select + rec_arm (mixer bank — last resort)
-          4) Fraction click in Rec X band only
+        **Control priority (default): keyboard → MIDI (MCU) → fail + diagnose.**
+        Mouse is **off unless** ``allow_mouse=True``.
 
-        ``track`` is 1-based visible arrange row when using vision, or absolute
-        track number for keyboard walk-from-top.
+        On failure: writes structured diagnosis (causes + remediations) so the
+        next fix addresses *why*, not more thrash. See ``last_arm_result``.
 
-        Root-cause fixes (2026-07):
-          - Never treat Monitor-speaker click as arm (Rec X band 605–655 only)
-          - Reject screenshots that are not S1 arrange (focus loss / crash)
-          - Do not accept global any-red as success (false positive)
+        ``track`` is 1-based arrange index (from tracks.json / Template order).
         """
         import sys as _sys
 
         _sys.path.insert(0, str(ROOT / "tools"))
+        self.last_arm_result: Dict[str, Any] = {"ok": False, "track": track}
+
         try:
             from s1_tools.eyes import (  # type: ignore[import]
                 Eyes,
                 scan_rec_red,
                 is_studio_one_arrange_shot,
                 locate_track_rec_buttons,
+                list_armed_visible_rows,
+                annotate_rec_hud,
             )
             from s1_tools.logutil import log  # type: ignore[import]
+            from s1_tools.arm_diagnose import (  # type: ignore[import]
+                diagnose_arm_failure,
+                write_diagnosis,
+                suggest_next_action,
+            )
         except ImportError:
             self._arm_once_keyboard(track)
+            self.last_arm_result = {
+                "ok": False,
+                "error": "s1_tools_import_failed",
+                "track": track,
+            }
             return False
 
         from .hotkeys import focus_studio_one, studio_one_running
 
-        if not studio_one_running():
-            log("  arm_and_verify: Studio One not running")
+        # Hard cap — keyboard + MCU only (no thrash)
+        retries = min(max(1, int(retries)), 3)
+        eyes_path = Path(eyes_dir) if eyes_dir else (Path.cwd() / "_vision" / "arm_watch")
+        eyes = Eyes(eyes_path, enabled=True, live=True)
+        strip = max(0, track - 1)
+        shots: Dict[str, Any] = {}
+        attempts: List[Dict[str, Any]] = []
+        mcu_used = False
+        keyboard_used = False
+
+        def _snapshot(tag: str, method: str) -> Path | None:
+            shot = eyes.shot(tag, hud=f"{method} t{track}")
+            if shot is None:
+                return None
+            target_red = scan_rec_red(shot, track=track, allow_fallback=False)
+            any_red = scan_rec_red(shot, track=None)
+            armed_rows = (
+                list_armed_visible_rows(shot)
+                if is_studio_one_arrange_shot(shot)
+                else []
+            )
+            attempts.append(
+                {
+                    "method": method,
+                    "shot": str(shot),
+                    "target_red": target_red,
+                    "any_red": any_red,
+                    "armed_rows": armed_rows,
+                    "is_arrange": is_studio_one_arrange_shot(shot),
+                }
+            )
+            return shot
+
+        def _fail(early_cause: Optional[str] = None) -> bool:
+            st = {}
+            try:
+                st = self.status()
+            except Exception:
+                st = {"studio_one_running": studio_one_running()}
+            shots["final"] = shots.get("final") or eyes.shot(f"arm_fail_final_t{track}")
+            diag = diagnose_arm_failure(
+                track=track,
+                shots=shots,
+                attempts=attempts,
+                status=st,
+                allow_mouse=allow_mouse,
+                mcu_used=mcu_used,
+                keyboard_used=keyboard_used,
+            )
+            if early_cause:
+                diag["causes"] = [early_cause] + [
+                    c for c in diag.get("causes", []) if c != early_cause
+                ]
+                diag["primary_cause"] = early_cause
+            diag["next_action"] = suggest_next_action(diag)
+            # Persist
+            write_to = Path(song_dir) if song_dir else eyes_path
+            try:
+                path = write_diagnosis(write_to, diag)
+                diag["path"] = str(path)
+            except Exception as e:
+                log(f"  arm diagnosis write fail: {e}")
+            self.last_arm_result = diag
+            log(
+                f"  arm_and_verify FAIL t{track} primary={diag.get('primary_cause')} "
+                f"next={diag.get('next_action')}"
+            )
             return False
 
-        eyes_path = Path(eyes_dir) if eyes_dir else (Path.cwd() / "_vision" / "arm_watch")
-        eyes = Eyes(eyes_path, enabled=True)
-        strip = max(0, track - 1)
+        if not studio_one_running():
+            log("  arm_and_verify: Studio One not running")
+            return _fail("s1_not_running")
 
         focus_studio_one()
         time.sleep(0.2)
-        pre = eyes.shot(f"arm_pre_t{track}")
+        pre = _snapshot(f"arm_pre_t{track}", "pre")
+        shots["pre"] = pre
         if pre is None or not is_studio_one_arrange_shot(pre):
-            log("  arm_and_verify: screenshot is not S1 arrange — refocus")
+            log("  arm_and_verify: not S1 arrange — refocus once")
             focus_studio_one()
             time.sleep(0.35)
-            pre = eyes.shot(f"arm_pre2_t{track}")
+            pre = _snapshot(f"arm_pre2_t{track}", "pre_retry")
+            shots["pre"] = pre
             if pre is None or not is_studio_one_arrange_shot(pre):
-                log("  arm_and_verify: FATAL still not S1 UI (focus/crash)")
-                return False
+                return _fail("not_s1_arrange_ui")
 
-        # Strict: target row only (no global red fallback)
         if scan_rec_red(pre, track=track, allow_fallback=False):
             log(f"  arm_and_verify: already armed track={track}")
+            self.last_arm_result = {"ok": True, "track": track, "already": True}
             return True
 
-        for attempt in range(1, retries + 1):
+        # --- Attempt plan: keys first, then MCU; mouse only if allow_mouse ---
+        # Each attempt = ONE action (no double-toggle).
+        plan: List[str] = ["keyboard"]
+        if retries >= 2:
+            plan.append("mcu")
+        if allow_mouse and retries >= 3:
+            plan.append("mouse_rec_once")
+        plan = plan[:retries]
+
+        for attempt, method in enumerate(plan, start=1):
             focus_studio_one()
-            time.sleep(0.12)
-            if attempt == 1:
-                # Prefer keyboard — docs: [R] on selected arrange track
+            time.sleep(0.15)
+            if method == "keyboard":
+                keyboard_used = True
+                log(f"  arm try {attempt}: keyboard select + single [R]")
                 self._arm_once_keyboard(track)
-            elif attempt == 2:
-                self._arm_once_vision_click(track, eyes)
-            elif attempt == 3:
-                # Click Rec only (never Monitor)
-                pts = locate_track_rec_buttons(eyes.shot(f"arm_reloc_t{track}"))
-                if pts and 1 <= track <= len(pts):
-                    x, y = pts[track - 1]
-                    log(f"  arm vision Rec click t{track} @ ({x},{y})")
-                    self._click_screen(x, y)
-                else:
-                    self._arm_once_click(track, search=True)
-            else:
+            elif method == "mcu":
+                mcu_used = True
+                log(
+                    f"  arm try {attempt}: MCU select+rec_arm strip={strip} "
+                    "(may not match arrange — diagnostic only if fail)"
+                )
                 self._arm_once_mcu(strip)
-            time.sleep(0.55)
-            shot = eyes.shot(f"arm_attempt{attempt}_t{track}")
-            if shot is None or not is_studio_one_arrange_shot(shot):
-                log(f"  arm attempt {attempt}: lost S1 UI")
+            elif method == "mouse_rec_once":
+                log(f"  arm try {attempt}: ONE vision Rec click (allow_mouse)")
+                self._arm_once_vision_click(track, eyes)
+            else:
                 continue
-            # STRICT row check only — never global any-red
+            time.sleep(0.55)
+            shot = _snapshot(f"arm_attempt{attempt}_{method}_t{track}", method)
+            shots["final"] = shot
+            if shot is None or not is_studio_one_arrange_shot(shot):
+                log(f"  arm attempt {attempt}: lost S1 UI — stop (no thrash)")
+                break
             if scan_rec_red(shot, track=track, allow_fallback=False):
-                log(f"  arm_and_verify OK track={track} attempt={attempt}")
+                log(f"  arm_and_verify OK track={track} via {method}")
+                try:
+                    annotate_rec_hud(
+                        shot,
+                        locate_track_rec_buttons(shot),
+                        armed_row=track,
+                        label=f"ARMED t{track} {method}",
+                    )
+                except Exception:
+                    pass
+                self.last_arm_result = {
+                    "ok": True,
+                    "track": track,
+                    "method": method,
+                    "attempts": attempts,
+                }
                 return True
-            # If something else armed, do not claim success
-            if scan_rec_red(shot, track=None):
-                log(f"  arm attempt {attempt}: red elsewhere, not track {track}")
+            armed_else = list_armed_visible_rows(shot)
+            if armed_else:
+                log(
+                    f"  arm attempt {attempt}: Rec red on {armed_else}, "
+                    f"not target {track} — will diagnose (no more thrash on wrong track)"
+                )
+                # Stop: further [R] on wrong selection makes diagnosis worse
+                if method == "keyboard":
+                    break
             time.sleep(0.1)
-        log(f"  arm_and_verify FAIL track={track}")
-        return False
+
+        return _fail()
 
     def _select_arrange_track(self, track: int) -> None:
         """Best-effort keyboard focus on Arrange track N (1-based)."""
@@ -284,14 +391,25 @@ class FullControl:
             pass
         return None
 
-    def _click_screen(self, x: int, y: int) -> None:
+    def _click_screen(self, x: int, y: int, *, alt: bool = False) -> None:
+        """Human-like click (smooth move + single press). Never grid-spam."""
+        import sys as _sys
+
+        _sys.path.insert(0, str(ROOT / "tools"))
+        try:
+            from s1_tools.human_input import click_human  # type: ignore[import]
+
+            click_human(int(x), int(y), alt=alt)
+            return
+        except Exception:
+            pass
         import ctypes
 
         user32 = ctypes.windll.user32
         user32.SetCursorPos(int(x), int(y))
-        time.sleep(0.03)
+        time.sleep(0.05)
         user32.mouse_event(0x0002, 0, 0, 0, 0)
-        time.sleep(0.02)
+        time.sleep(0.04)
         user32.mouse_event(0x0004, 0, 0, 0, 0)
 
     def _arm_once_vision_click(self, track: int, eyes) -> bool:

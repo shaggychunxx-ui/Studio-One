@@ -367,6 +367,14 @@ def start_new_song_from_template(
 
     song_dir.mkdir(parents=True, exist_ok=True)
     scaffold_agent_dirs(song_dir, name)
+    try:
+        from s1_tools.tracks_map import ensure_default_tracks
+        from s1_tools.state import set_state
+
+        ensure_default_tracks(song_dir)
+        set_state(song_dir, "template_saved" if open_s1 else "none", note="start_from_template")
+    except Exception as e:
+        log(f"  tracks/state init warn: {e}")
 
     vision = song_dir / "_vision" / "start_template"
     vision.mkdir(parents=True, exist_ok=True)
@@ -395,26 +403,98 @@ def start_new_song_from_template(
         return summary
 
     if not template_p.is_file():
-        return {"ok": False, "error": f"template missing: {template_p}"}
+        try:
+            from s1_tools.failure_log import record_failure
+
+            record_failure(
+                song_dir,
+                domain="template",
+                primary_cause="template_song_missing",
+                remediations=[
+                    f"Create or restore {template_p}",
+                    "Set S1_TEMPLATE_SONG env if Template lives elsewhere",
+                ],
+                next_action="restore_template_song",
+                evidence={"template": str(template_p)},
+                also_named="template_failure",
+            )
+        except Exception:
+            pass
+        return {"ok": False, "error": f"template missing: {template_p}", "primary_cause": "template_song_missing"}
 
     eyes = Eyes(vision)
     if not open_template(template_p, eyes):
-        return {"ok": False, "error": "could not open Template song UI", "song_dir": str(song_dir)}
+        try:
+            from s1_tools.failure_log import record_failure
+
+            record_failure(
+                song_dir,
+                domain="template",
+                primary_cause="not_s1_arrange_ui",
+                remediations=[
+                    "Wait for S1 to finish loading Template",
+                    "Dismiss Safety dialog",
+                    "Confirm Template.song opens manually",
+                ],
+                next_action="recover_s1_ui",
+                evidence={"template": str(template_p)},
+                also_named="template_failure",
+            )
+        except Exception:
+            pass
+        return {
+            "ok": False,
+            "error": "could not open Template song UI",
+            "song_dir": str(song_dir),
+            "primary_cause": "not_s1_arrange_ui",
+        }
 
     if song_file.parent.resolve() == template_p.parent.resolve():
-        return {"ok": False, "error": "refused to Save As into Template folder"}
+        return {"ok": False, "error": "refused to Save As into Template folder", "primary_cause": "save_as_into_template"}
 
     if not save_as_new_song(song_file, eyes):
         eyes.shot("save_as_failed")
-        return {"ok": False, "error": "Save As failed", "song_dir": str(song_dir)}
+        try:
+            from s1_tools.failure_log import record_failure
+
+            record_failure(
+                song_dir,
+                domain="template",
+                primary_cause="save_as_failed",
+                remediations=[
+                    "Ctrl+Shift+S manually and save under Songs/<Name>/",
+                    "Check Save As dialog focus / path permissions",
+                    "Never save over Template folder",
+                ],
+                next_action="manual_save_as",
+                evidence={"dest": str(song_file)},
+                also_named="template_failure",
+            )
+        except Exception:
+            pass
+        return {
+            "ok": False,
+            "error": "Save As failed",
+            "song_dir": str(song_dir),
+            "primary_cause": "save_as_failed",
+        }
 
     time.sleep(1.0)
     if detect_safety_dialog_uia():
         dismiss_safety_dialog()
         time.sleep(0.8)
     wait_song_ui(eyes, name_hint=name, timeout=45)
-    final = eyes.shot("ready_production")
+    final = eyes.shot("ready_production", hud=f"READY {name}")
     vis = analyze_shot(final).to_dict() if final else {}
+    try:
+        from s1_tools.tracks_map import ensure_default_tracks, load_tracks
+        from s1_tools.state import set_state
+
+        ensure_default_tracks(song_dir)
+        set_state(song_dir, "tracks_ready", note="Save As complete; Template instruments assumed")
+        tracks = load_tracks(song_dir)
+    except Exception:
+        tracks = {}
 
     os.environ["S1_SONG_DIR"] = str(song_dir)
     os.environ["STUDIO_ONE_SONG"] = str(song_dir)
@@ -427,6 +507,7 @@ def start_new_song_from_template(
         "song_file": str(resolved_song),
         "template": str(template_p),
         "s1_song_dir_env": str(song_dir),
+        "tracks": tracks,
         "final_vision": vis,
         "final_shot": str(final) if final else None,
         "started_at": datetime.now().isoformat(timespec="seconds"),

@@ -41,8 +41,10 @@ Requires: `pillow` for grabs.
 | Script | Role |
 |--------|------|
 | **`start_from_template.py`** | **Open Template → Save As new song → set S1_SONG_DIR** |
+| **`produce.py`** | **Orchestrator: template → one-part jobs → live eyes/ears** |
 | **`execute_job.py`** | **Run producer `s1_jobs/current.json` (eyes + ears)** |
 | `live_make_song.py` | Compose + stream (`--from-template` for full start) |
+| `diagnose_arm.py` | Rec-arm offline/live diagnosis |
 | `create_s1_tracks.py` | Menu **Track → Add Instrument Track** |
 | `import_and_verify_midi.py` | File import `.mid` (no live arm) |
 | `run_pocket_watched.py` | Stream drums/bass with eyes |

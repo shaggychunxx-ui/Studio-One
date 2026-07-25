@@ -11,31 +11,51 @@ import threading
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from .logutil import log
 
 
 class Eyes:
-    def __init__(self, directory: Path, *, enabled: bool = True):
+    def __init__(self, directory: Path, *, enabled: bool = True, live: bool = True):
         self.directory = Path(directory)
         self.enabled = enabled
+        self.live = live  # denser live vision during record
         self._watch: threading.Thread | None = None
         self._stop = threading.Event()
         self.shot_count = 0
+        self.last_live: List[Path] = []
 
-    def shot(self, tag: str) -> Path | None:
+    def shot(self, tag: str, *, annotate: bool = False, hud: Optional[str] = None) -> Path | None:
         if not self.enabled:
             return None
         try:
-            from PIL import ImageGrab
+            from PIL import ImageGrab, ImageDraw
         except ImportError:
             log("  eyes: PIL not installed (pip install pillow) — skip shot")
             return None
         try:
+            # Align grab coords with human clicks under DPI scaling
+            try:
+                from .human_input import ensure_dpi_aware
+
+                ensure_dpi_aware()
+            except Exception:
+                pass
             self.directory.mkdir(parents=True, exist_ok=True)
             path = self.directory / f"{datetime.now().strftime('%H%M%S')}_{tag}.png"
-            ImageGrab.grab().save(str(path))
+            img = ImageGrab.grab()
+            if annotate or hud:
+                dr = ImageDraw.Draw(img)
+                x0, x1 = 605, 655  # Rec X band guide (matches REC_X_BAND)
+                try:
+                    x0, x1 = REC_X_BAND  # defined later in module; runtime OK
+                except NameError:
+                    pass
+                dr.rectangle([x0, 140, x1, 720], outline=(0, 200, 255), width=1)
+                if hud:
+                    dr.text((16, 14), hud[:80], fill=(0, 255, 120))
+            img.save(str(path))
             self.shot_count += 1
             log(f"  eyes 📷 {path.name}")
             return path
@@ -43,19 +63,28 @@ class Eyes:
             log(f"  eyes shot fail: {e}")
             return None
 
-    def start_watch(self, label: str, interval: float = 8.0) -> None:
+    def start_watch(self, label: str, interval: float | None = None) -> None:
+        """Live vision: denser frames during record (default 2.5s when live=True)."""
         if not self.enabled:
             return
+        if interval is None:
+            interval = 2.5 if self.live else 8.0
         self._stop.clear()
+        self.last_live = []
 
         def _run() -> None:
             n = 0
             while not self._stop.wait(interval):
                 n += 1
-                self.shot(f"watch_{label}_{n:02d}")
+                p = self.shot(f"live_{label}_{n:02d}", hud=f"LIVE {label} #{n}")
+                if p:
+                    self.last_live.append(p)
+                    if len(self.last_live) > 40:
+                        self.last_live = self.last_live[-40:]
 
         self._watch = threading.Thread(target=_run, daemon=True)
         self._watch.start()
+        log(f"  eyes LIVE watch '{label}' every {interval:.1f}s")
 
     def stop_watch(self) -> None:
         self._stop.set()
@@ -133,15 +162,17 @@ def scan_rec_red(
         return False
 
 
-def count_lane_blue(
+def count_lane_clips(
     path: "Path | None",
     visible_row: int,
     *,
-    half_band_px: int = 14,
+    half_band_px: int = 18,
+    cy: int | None = None,
 ) -> int:
     """
-    Count blue-ish arrange-clip pixels in the MIDI lane for a visible track row.
-    Uses located Rec Y as the row center; grid X is right of the header.
+    Count MIDI-part pixels (blue OR cyan OR green) in one arrange lane.
+
+    Mojito/Impact parts are often green/cyan — blue-only checks false-failed.
     """
     if path is None or not Path(path).exists() or visible_row < 1:
         return 0
@@ -152,24 +183,108 @@ def count_lane_blue(
         img = Image.open(str(path)).convert("RGB")
         arr = np.asarray(img, dtype=np.int16)
         h, w = arr.shape[:2]
-        pts = locate_track_rec_buttons(path)
-        if pts and visible_row <= len(pts):
-            cy = pts[visible_row - 1][1]
-        else:
-            rows = find_rec_row_centers_frac(path)
-            if rows and visible_row <= len(rows):
-                cy = int(h * rows[visible_row - 1])
+        if cy is None:
+            pts = locate_track_rec_buttons(path)
+            if pts and visible_row <= len(pts):
+                cy = pts[visible_row - 1][1]
             else:
-                cy = int(h * (0.20 + (visible_row - 1) * 0.042))
+                rows = find_rec_row_centers_frac(path)
+                if rows and visible_row <= len(rows):
+                    cy = int(h * rows[visible_row - 1])
+                else:
+                    cy = int(h * (0.20 + (visible_row - 1) * 0.042))
         y1, y2 = max(0, cy - half_band_px), min(h, cy + half_band_px)
-        # Arrange grid (right of track headers / left of browser)
         x1, x2 = int(w * 0.40), int(w * 0.72)
         region = arr[y1:y2, x1:x2]
         r, g, b = region[:, :, 0], region[:, :, 1], region[:, :, 2]
-        blue = (b > 120) & (b > r + 20) & (b > g + 10) & (r < 200)
-        return int(blue.sum())
+        blue = (b > 120) & (b > r + 15) & (b > g + 5) & (r < 210)
+        cyan = (b > 100) & (g > 100) & (b > r + 15) & (g > r + 5)
+        green = (g > 115) & (g > r + 18) & (g > b + 5) & (r < 190)
+        return int((blue | cyan | green).sum())
     except Exception:
         return 0
+
+
+def count_lane_blue(
+    path: "Path | None",
+    visible_row: int,
+    *,
+    half_band_px: int = 14,
+) -> int:
+    """Backward-compatible alias → multi-color lane clips."""
+    return count_lane_clips(path, visible_row, half_band_px=half_band_px)
+
+
+def lane_clip_growth(
+    before: "Path | None",
+    after: "Path | None",
+    visible_row: int,
+    *,
+    min_delta: int = 50,
+) -> Dict[str, Any]:
+    """Before/after per-lane accuracy check."""
+    b = count_lane_clips(before, visible_row)
+    a = count_lane_clips(after, visible_row)
+    return {
+        "before": b,
+        "after": a,
+        "delta": a - b,
+        "growth": (a - b) >= min_delta or (b < 120 and a > 250),
+    }
+
+
+def annotate_rec_hud(
+    path: "Path | None",
+    pts: List[Tuple[int, int]],
+    *,
+    armed_row: int | None = None,
+    label: str = "",
+) -> Path | None:
+    """Draw Rec targets on a copy of the shot for human/agent review."""
+    if path is None or not Path(path).exists():
+        return None
+    try:
+        from PIL import Image, ImageDraw
+
+        im = Image.open(path).convert("RGB")
+        dr = ImageDraw.Draw(im)
+        dr.rectangle([REC_X_BAND[0], 140, REC_X_BAND[1], 720], outline=(0, 200, 255), width=1)
+        for i, (x, y) in enumerate(pts):
+            col = (255, 60, 60) if armed_row == i + 1 else (0, 255, 0)
+            dr.ellipse([x - 8, y - 8, x + 8, y + 8], outline=col, width=2)
+            dr.text((x + 12, y - 8), f"T{i+1}", fill=(255, 255, 0))
+        if label:
+            dr.text((16, 14), label[:90], fill=(0, 255, 180))
+        out = Path(path).with_name(Path(path).stem + "_hud.png")
+        im.save(out)
+        return out
+    except Exception:
+        return None
+
+
+def check_display_dpi() -> Dict[str, Any]:
+    """Warn if Windows DPI scaling may break click coords vs ImageGrab."""
+    try:
+        import ctypes
+
+        user32 = ctypes.windll.user32
+        try:
+            ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        except Exception:
+            try:
+                user32.SetProcessDPIAware()
+            except Exception:
+                pass
+        dc = user32.GetDC(0)
+        dpi = ctypes.windll.gdi32.GetDeviceCaps(dc, 88)  # LOGPIXELSX
+        user32.ReleaseDC(0, dc)
+        scale = dpi / 96.0
+        ok = 0.95 <= scale <= 1.05
+        if not ok:
+            log(f"  WARN display DPI scale={scale:.2f} (dpi={dpi}) — clicks may miss Rec")
+        return {"dpi": dpi, "scale": scale, "ok": ok}
+    except Exception as e:
+        return {"ok": True, "error": str(e)}
 
 
 def list_armed_visible_rows(path: "Path | None") -> List[int]:

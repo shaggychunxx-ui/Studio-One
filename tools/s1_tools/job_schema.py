@@ -56,8 +56,8 @@ def validate_job(job: Dict[str, Any]) -> List[str]:
         if op == "stream_record":
             if not step.get("midi"):
                 errs.append(f"step[{i}] stream_record needs midi")
-            if step.get("track") is None:
-                errs.append(f"step[{i}] stream_record needs track (1-based)")
+            if step.get("track") is None and not step.get("role"):
+                errs.append(f"step[{i}] stream_record needs track (1-based) or role")
         if op == "create_tracks" and step.get("count") is not None:
             try:
                 if int(step["count"]) < 1:
@@ -78,6 +78,11 @@ def normalize_options(job: Dict[str, Any]) -> Dict[str, Any]:
         "user_armed": False,
         "no_prompt": False,
         "no_eyes": False,
+        "probe_first": True,
+        "probe_sec": 15.0,
+        "import_on_arm_fail": True,
+        "prefer_import": False,
+        "allow_mouse": False,
         "no_ears": False,
         "max_sec": None,
         "save_after": True,
