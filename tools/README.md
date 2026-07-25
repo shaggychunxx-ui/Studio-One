@@ -7,7 +7,27 @@ Producer automation for an **open** Studio One Song. No hardcoded user paths or 
 | Variable | Purpose |
 |----------|---------|
 | `S1_REMOTE` | Root of this repo (optional if you run from checkout) |
-| `S1_SONG_DIR` | Song folder (`MIDI/`, optional `_vision/`) |
+| `S1_SONG_DIR` | Song folder (`MIDI/`, optional `_vision/`) after Save As |
+| `S1_TEMPLATE_SONG` | Override Template.song path |
+| `S1_SONGS_ROOT` | Override Songs parent folder |
+
+## Song start policy (required)
+
+1. Open `Documents\Studio One\Songs\Template\Template.song`
+2. **Save As** a new song name (never write into Template)
+3. Set `S1_SONG_DIR` to the new folder
+4. Only then run production (MIDI, arm, stream, mix)
+
+```bat
+cd %S1_REMOTE%
+set PYTHONPATH=%CD%;%CD%\tools
+py -3.12 tools\start_from_template.py --name "MySong"
+:: then
+set S1_SONG_DIR=...\Songs\MySong
+py -3.12 tools\execute_job.py
+```
+
+Or one shot: `py -3.12 tools\live_make_song.py --from-template --name "MySong"`
 
 ## Eyes (producer UI watch)
 
@@ -20,7 +40,9 @@ Requires: `pillow` for grabs.
 
 | Script | Role |
 |--------|------|
+| **`start_from_template.py`** | **Open Template → Save As new song → set S1_SONG_DIR** |
 | **`execute_job.py`** | **Run producer `s1_jobs/current.json` (eyes + ears)** |
+| `live_make_song.py` | Compose + stream (`--from-template` for full start) |
 | `create_s1_tracks.py` | Menu **Track → Add Instrument Track** |
 | `import_and_verify_midi.py` | File import `.mid` (no live arm) |
 | `run_pocket_watched.py` | Stream drums/bass with eyes |
@@ -33,8 +55,10 @@ See `docs/EXECUTION_JOBS.md`.
 
 ```bat
 cd %S1_REMOTE%
-set PYTHONPATH=%CD%
-set S1_SONG_DIR=D:\Studio One\Songs\MySong
+set PYTHONPATH=%CD%;%CD%\tools
+
+py -3.12 tools\start_from_template.py --name MySong
+call %S1_SONG_DIR%\s1_jobs\set_song_env.cmd
 
 py -3.12 tools\create_s1_tracks.py --count 2
 py -3.12 tools\import_and_verify_midi.py --files drums.mid bass.mid

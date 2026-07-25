@@ -6,6 +6,23 @@ import os
 import sys
 from pathlib import Path
 
+# Standing production defaults (override with env)
+DEFAULT_SONGS_ROOT = Path(r"C:\Users\Box One\Documents\Studio One\Songs")
+DEFAULT_TEMPLATE_SONG = DEFAULT_SONGS_ROOT / "Template" / "Template.song"
+
+
+def default_songs_root() -> Path:
+    env = os.environ.get("S1_SONGS_ROOT", "").strip()
+    return Path(env).expanduser().resolve() if env else DEFAULT_SONGS_ROOT
+
+
+def default_template_song() -> Path:
+    """Studio One template package — always open this first, then Save As."""
+    env = os.environ.get("S1_TEMPLATE_SONG", "").strip()
+    if env:
+        return Path(env).expanduser().resolve()
+    return DEFAULT_TEMPLATE_SONG
+
 
 def resolve_s1_remote(explicit: Path | str | None = None) -> Path:
     """

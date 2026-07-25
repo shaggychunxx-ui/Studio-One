@@ -25,6 +25,7 @@ Without step 5, Record does not capture MIDI to the track.
 | Keyboard **`[R]`** | **Toggle** Rec Enable on selected track |
 | MCU channel **Rec** | **Toggle** on that mixer strip |
 | Press either when already red | **Disarms** |
+| **Alt+click Rec** | Exclusive Rec Enable (only that track) |
 
 ### Anti-patterns that broke takes
 
@@ -34,6 +35,19 @@ Without step 5, Record does not capture MIDI to the track.
 4. MCU `rec_arm(0)` assuming it arms Arrange **Track 1** — live screenshots showed **Arrange Rec stayed grey**.  
 5. Keyboard nav + `[R]` arming **wrong** track (e.g. Track 2 while intending Track 1).  
 6. Streaming while claiming success from **note_ons count** with empty timeline.
+
+### Root causes found 2026-07 (ralph song / multi-track)
+
+| # | Bug | Evidence | Fix |
+|---|-----|----------|-----|
+| 1 | **Clicked Monitor, not Rec** | Annotate maps put markers on speaker icons; Rec red lives **x≈619–652**, Monitor **x≥665** | `locate_track_rec_buttons` restricted to Rec X band `605–655` |
+| 2 | **Focus loss / S1 crash** | `081418_arm_fail.png` is **Grok TUI**, not S1 — hundreds of arm clicks hit the agent window | `is_studio_one_arrange_shot()` gate; refuse arm if shot is not arrange |
+| 3 | **False arm success** | `scan_rec_red` fell back to “any red” (inspector Mute/Rec, wrong row) | Strict row-only check (`allow_fallback=False`) for verify |
+| 4 | **Wrong track index** | Visible rows ≠ S1 track numbers when scrolled; 12 “rows” from Rec+Monitor peaks | One Rec peak per track, min spacing; map by visible order after scroll-to-top |
+| 5 | **Green clips missed** | Mojito parts are green; blue-only growth said “fail” when bass landed | Count blue **or** cyan **or** green lane pixels |
+| 6 | **Double-toggle thrash** | Grid search Alt+plain spam arms then disarms | One action per attempt in `arm_and_verify` |
+
+Diagnostic: `py -3.12 tools/diagnose_arm.py` (offline shots + optional `--live`).
 
 ## MCU strip vs Arrange track
 

@@ -10,11 +10,25 @@ Music-producer writes `s1_jobs/current.json`. This repo runs it and writes
 | Music-producer | What / when / gates / plan jobs / **observe cues** |
 | Studio-One | Execute only + capture eyes/ears evidence |
 
+## Song start (required)
+
+Always begin from the standing Template, then Save As a new song **before** production:
+
+```bat
+cd C:\Users\Box One\s1-remote
+set PYTHONPATH=%CD%;%CD%\tools
+py -3.12 tools\start_from_template.py --name YourSong
+:: sets S1_SONG_DIR to ...\Songs\YourSong and writes s1_jobs\session.json
+```
+
+Template path (default): `Documents\Studio One\Songs\Template\Template.song`  
+Never save production work into the Template folder.
+
 ## Run
 
 ```bat
 cd C:\Users\Box One\s1-remote
-set PYTHONPATH=%CD%
+set PYTHONPATH=%CD%;%CD%\tools
 set S1_SONG_DIR=C:\Users\Box One\Documents\Studio One\Songs\YourSong
 
 py -3.12 tools\execute_job.py

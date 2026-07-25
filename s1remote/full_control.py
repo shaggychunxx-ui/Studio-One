@@ -111,44 +111,94 @@ class FullControl:
         Arm Arrange track N and confirm Rec red via screenshot.
 
         Strategy (one action per attempt — avoid double-toggle):
-          1) Vision-locate Rec circle for that track row → single click
-          2) Keyboard select track + [R]
-          3) MCU select + rec_arm
-          4) Fraction-based click fallback
+          1) Keyboard select track + single [R]  (preferred — docs)
+          2) Vision-locate **Rec** (not Monitor) → single click
+          3) MCU select + rec_arm (mixer bank — last resort)
+          4) Fraction click in Rec X band only
 
-        ``track`` is 1-based. Returns False only after retries fail.
+        ``track`` is 1-based visible arrange row when using vision, or absolute
+        track number for keyboard walk-from-top.
+
+        Root-cause fixes (2026-07):
+          - Never treat Monitor-speaker click as arm (Rec X band 605–655 only)
+          - Reject screenshots that are not S1 arrange (focus loss / crash)
+          - Do not accept global any-red as success (false positive)
         """
         import sys as _sys
 
         _sys.path.insert(0, str(ROOT / "tools"))
         try:
-            from s1_tools.eyes import Eyes, scan_rec_red  # type: ignore[import]
+            from s1_tools.eyes import (  # type: ignore[import]
+                Eyes,
+                scan_rec_red,
+                is_studio_one_arrange_shot,
+                locate_track_rec_buttons,
+            )
+            from s1_tools.logutil import log  # type: ignore[import]
         except ImportError:
             self._arm_once_keyboard(track)
+            return False
+
+        from .hotkeys import focus_studio_one, studio_one_running
+
+        if not studio_one_running():
+            log("  arm_and_verify: Studio One not running")
             return False
 
         eyes_path = Path(eyes_dir) if eyes_dir else (Path.cwd() / "_vision" / "arm_watch")
         eyes = Eyes(eyes_path, enabled=True)
         strip = max(0, track - 1)
 
+        focus_studio_one()
+        time.sleep(0.2)
         pre = eyes.shot(f"arm_pre_t{track}")
-        if scan_rec_red(pre, track=track):
+        if pre is None or not is_studio_one_arrange_shot(pre):
+            log("  arm_and_verify: screenshot is not S1 arrange — refocus")
+            focus_studio_one()
+            time.sleep(0.35)
+            pre = eyes.shot(f"arm_pre2_t{track}")
+            if pre is None or not is_studio_one_arrange_shot(pre):
+                log("  arm_and_verify: FATAL still not S1 UI (focus/crash)")
+                return False
+
+        # Strict: target row only (no global red fallback)
+        if scan_rec_red(pre, track=track, allow_fallback=False):
+            log(f"  arm_and_verify: already armed track={track}")
             return True
 
         for attempt in range(1, retries + 1):
+            focus_studio_one()
+            time.sleep(0.12)
             if attempt == 1:
-                self._arm_once_vision_click(track, eyes)
-            elif attempt == 2:
+                # Prefer keyboard — docs: [R] on selected arrange track
                 self._arm_once_keyboard(track)
+            elif attempt == 2:
+                self._arm_once_vision_click(track, eyes)
             elif attempt == 3:
-                self._arm_once_mcu(strip)
+                # Click Rec only (never Monitor)
+                pts = locate_track_rec_buttons(eyes.shot(f"arm_reloc_t{track}"))
+                if pts and 1 <= track <= len(pts):
+                    x, y = pts[track - 1]
+                    log(f"  arm vision Rec click t{track} @ ({x},{y})")
+                    self._click_screen(x, y)
+                else:
+                    self._arm_once_click(track, search=True)
             else:
-                self._arm_once_click(track, search=False)
-            time.sleep(0.5)
+                self._arm_once_mcu(strip)
+            time.sleep(0.55)
             shot = eyes.shot(f"arm_attempt{attempt}_t{track}")
-            if scan_rec_red(shot, track=track) or scan_rec_red(shot, track=None):
+            if shot is None or not is_studio_one_arrange_shot(shot):
+                log(f"  arm attempt {attempt}: lost S1 UI")
+                continue
+            # STRICT row check only — never global any-red
+            if scan_rec_red(shot, track=track, allow_fallback=False):
+                log(f"  arm_and_verify OK track={track} attempt={attempt}")
                 return True
-            time.sleep(0.15)
+            # If something else armed, do not claim success
+            if scan_rec_red(shot, track=None):
+                log(f"  arm attempt {attempt}: red elsewhere, not track {track}")
+            time.sleep(0.1)
+        log(f"  arm_and_verify FAIL track={track}")
         return False
 
     def _select_arrange_track(self, track: int) -> None:
@@ -245,15 +295,18 @@ class FullControl:
         user32.mouse_event(0x0004, 0, 0, 0, 0)
 
     def _arm_once_vision_click(self, track: int, eyes) -> bool:
-        """Single click on vision-located Rec for track N."""
+        """Single click on vision-located Rec for track N (never Monitor)."""
         import sys as _sys
 
         _sys.path.insert(0, str(ROOT / "tools"))
         try:
             from s1_tools.eyes import (  # type: ignore[import]
-                find_rec_row_centers_frac,
+                locate_track_rec_buttons,
                 rec_click_point_for_track,
+                is_studio_one_arrange_shot,
+                REC_X_BAND,
             )
+            from s1_tools.logutil import log  # type: ignore[import]
             from .hotkeys import focus_studio_one
         except ImportError:
             return False
@@ -261,33 +314,37 @@ class FullControl:
         focus_studio_one()
         time.sleep(0.1)
         shot = eyes.shot(f"arm_locate_t{track}")
+        if shot is None or not is_studio_one_arrange_shot(shot):
+            log("  vision arm: not S1 arrange shot")
+            return False
+        pts = locate_track_rec_buttons(shot)
+        log(f"  vision Rec pts={len(pts)} for track={track}")
+        if pts and 1 <= track <= len(pts):
+            x, y = pts[track - 1]
+            if x >= 660:
+                x = (REC_X_BAND[0] + REC_X_BAND[1]) // 2
+            log(f"  vision Rec click @ ({x},{y})")
+            self._click_screen(x, y)
+            time.sleep(0.35)
+            return True
         rect = self._main_window_rect()
         wr = None
         if rect is not None:
             wr = (int(rect.left), int(rect.top), int(rect.width()), int(rect.height()))
-        rows = find_rec_row_centers_frac(shot)
-        if rows:
-            from .hotkeys import focus_studio_one as _f
-
-            _f()
-            # log row count for debugging autonomy
-            try:
-                from s1_tools.logutil import log  # type: ignore[import]
-
-                log(f"  vision rows={len(rows)} for arm track={track}")
-            except Exception:
-                pass
         pt = rec_click_point_for_track(shot, track, window_rect=wr)
         if pt is None:
             return False
-        self._click_screen(pt[0], pt[1])
+        x, y = int(pt[0]), int(pt[1])
+        if x >= 660:
+            x = (REC_X_BAND[0] + REC_X_BAND[1]) // 2
+        self._click_screen(x, y)
         time.sleep(0.35)
         return True
 
     def _arm_once_click(self, track: int, *, search: bool = False) -> bool:
         """
-        Click Arrange Rec Enable using window-relative coordinates.
-        Calibrated S1 6.6 layout; one click (or few if search).
+        Click Arrange Rec Enable using Rec X band (not Monitor).
+        Calibrated S1 6.6 @ 1920: Rec ~x 605–655.
         """
         rect = self._main_window_rect()
         if rect is None:
@@ -302,12 +359,12 @@ class FullControl:
 
         left, top = int(rect.left), int(rect.top)
         w, h = int(rect.width()), int(rect.height())
-        xf = 0.33
+        rec_x = left + 635 if w >= 1800 else left + int(w * 0.33)
         yf = 0.20 + max(0, track - 1) * 0.042
-        points = [(xf, yf)]
+        ys = [top + int(h * yf)]
         if search:
-            for dy in (-0.015, 0.015, -0.03, 0.03):
-                points.append((xf, yf + dy))
+            for dy in (-18, 18, -36, 36, -54, 54):
+                ys.append(top + int(h * yf) + dy)
 
         import sys as _sys
 
@@ -315,17 +372,15 @@ class FullControl:
         try:
             from s1_tools.eyes import Eyes, scan_rec_red  # type: ignore[import]
         except ImportError:
-            self._click_screen(left + int(w * xf), top + int(h * yf))
+            self._click_screen(rec_x, ys[0])
             return True
 
         eyes = Eyes(Path.cwd() / "_vision" / "arm_watch", enabled=True)
-        for x_frac, y_frac in points:
-            x = left + int(w * x_frac)
-            y = top + int(h * max(0.12, min(0.85, y_frac)))
-            self._click_screen(x, y)
+        for y in ys:
+            self._click_screen(rec_x, y)
             time.sleep(0.4)
             shot = eyes.shot(f"arm_frac_t{track}")
-            if scan_rec_red(shot, track=track) or scan_rec_red(shot):
+            if scan_rec_red(shot, track=track, allow_fallback=False):
                 return True
         return False
 
