@@ -274,14 +274,14 @@ class JobRunner:
         if op == "ensure_workspace":
             focus_studio_one()
             time.sleep(0.2)
-            # Crash recovery modal blocks all DAW work — clear it first
+            # Crash recovery modal blocks all DAW work — UIA only (pixel green is noisy)
             if detect_safety_dialog_uia():
                 dismissed = dismiss_safety_dialog()
                 time.sleep(1.2)
                 focus_studio_one()
                 shot = self._shot("after_safety_dismiss")
                 rep = analyze_shot(shot)
-                still = detect_safety_dialog_uia() or rep.safety_dialog
+                still = detect_safety_dialog_uia()
                 self._record_step(
                     op,
                     ok=dismissed and not still,
@@ -295,19 +295,6 @@ class JobRunner:
                 return True
             shot = self._shot("workspace")
             rep = analyze_shot(shot)
-            if rep.safety_dialog:
-                dismissed = dismiss_safety_dialog()
-                time.sleep(1.0)
-                shot2 = self._shot("after_safety_dismiss")
-                rep2 = analyze_shot(shot2)
-                ok = dismissed and not rep2.safety_dialog
-                self._record_step(
-                    op,
-                    ok=ok,
-                    safety_dismissed=dismissed,
-                    vision=rep2.to_dict(),
-                )
-                return ok
             self._record_step(op, ok=True, vision=rep.to_dict())
             return True
 

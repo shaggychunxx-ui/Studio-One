@@ -63,30 +63,45 @@ class Eyes:
             self._watch = None
 
 
-def scan_rec_red(path: "Path | None") -> bool:
+def scan_rec_red(path: "Path | None", track: int | None = None) -> bool:
     """
     Heuristic: scan a screenshot for bright-red pixels that indicate
     a Rec button is armed in Studio One (Rec Enable = red).
 
-    Returns True if enough red pixels are found (likely armed),
-    False if uncertain or PIL unavailable.
+    Focuses on the Arrange track-header band. If ``track`` (1-based) is
+    given, only that row's vertical band is checked (avoids false OK when
+    another track is still armed).
     """
     if path is None or not Path(path).exists():
         return False
     try:
         from PIL import Image
+        import numpy as np
+
         img = Image.open(str(path)).convert("RGB")
-        pixels = img.load()
-        w, h = img.size
-        red_count = 0
-        # Sample every 4th pixel for speed; count bright-red hits
-        for x in range(0, w, 4):
-            for y in range(0, h, 4):
-                r, g, b = pixels[x, y]
-                if r > 180 and g < 80 and b < 80:
-                    red_count += 1
-                    if red_count > 30:
-                        return True
-        return False
+        # Downsample but keep enough detail for ~12px Rec dots
+        scale = max(1, img.width // 960)
+        if scale > 1:
+            img = img.resize((img.width // scale, img.height // scale))
+        arr = np.asarray(img, dtype=np.int16)
+        h, w = arr.shape[:2]
+        # Rec column ~25–45% width of full grab
+        x1 = int(w * 0.25)
+        x2 = int(w * 0.48)
+        if track is not None and track >= 1:
+            # Calibrated: track1 ~20% height, pitch ~4.2%
+            y_mid = 0.20 + (track - 1) * 0.042
+            half = 0.022
+            y1 = int(h * max(0.10, y_mid - half))
+            y2 = int(h * min(0.90, y_mid + half))
+        else:
+            y1 = int(h * 0.12)
+            y2 = int(h * 0.88)
+        region = arr[y1:y2, x1:x2]
+        r, g, b = region[:, :, 0], region[:, :, 1], region[:, :, 2]
+        # Rec enable is saturated red/orange-red
+        mask = (r > 160) & (g < 100) & (b < 100) & (r > g + 50) & (r > b + 50)
+        red_count = int(mask.sum())
+        return red_count >= 6
     except Exception:
         return False

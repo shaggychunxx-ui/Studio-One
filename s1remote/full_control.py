@@ -105,16 +105,18 @@ class FullControl:
         self,
         track: int,
         eyes_dir: Optional[Path] = None,
-        retries: int = 3,
+        retries: int = 5,
     ) -> bool:
         """
-        Arm a track and confirm via screenshot. Tries MCU rec_arm on the first
-        attempt and hotkey [R] on subsequent retries. Returns True when the
-        screenshot shows Rec red; returns False only after all retries fail
-        (caller should then ask the user).
+        Arm a track and confirm via screenshot.
 
-        ``track`` is 1-based (Arrange track number). ``retries`` is total
-        attempts before giving up.
+        Strategy (no double-toggle of the same control in one attempt):
+          1) Keyboard-select Arrange track N, then [R] once
+          2) MCU select+rec_arm (strip N-1) if still grey
+          3) Repeat select+[R] with extra settle time
+
+        ``track`` is 1-based Arrange order. Returns False only after all
+        retries fail (caller may ask the user).
         """
         import sys as _sys
 
@@ -122,34 +124,86 @@ class FullControl:
         try:
             from s1_tools.eyes import Eyes, scan_rec_red  # type: ignore[import]
         except ImportError:
-            # Eyes / PIL unavailable — attempt arm but cannot verify
-            self._arm_once_mcu(track - 1)
+            self._arm_once_keyboard(track)
             return False
 
         eyes_path = eyes_dir or (Path.cwd() / "_vision" / "arm_watch")
         eyes = Eyes(eyes_path, enabled=True)
-        strip = track - 1
+        strip = max(0, track - 1)
 
-        # Check current state before touching anything
         pre = eyes.shot(f"arm_pre_t{track}")
-        if scan_rec_red(pre):
-            return True  # already armed
+        if scan_rec_red(pre, track=track):
+            return True
 
         for attempt in range(1, retries + 1):
             if attempt == 1:
-                # Primary: MCU select + rec_arm
+                # Click first — most reliable for Arrange Rec on this machine
+                self._arm_once_click(track)
+            elif attempt == 2:
+                self._arm_once_keyboard(track)
+            elif attempt == 3:
                 self._arm_once_mcu(strip)
             else:
-                # Fallback: hotkey [R] on selected track
-                self._arm_once_hotkey()
-            time.sleep(0.4)
+                self._arm_once_click(track, search=True)
+            time.sleep(0.55)
             shot = eyes.shot(f"arm_attempt{attempt}_t{track}")
-            if scan_rec_red(shot):
+            if scan_rec_red(shot, track=track):
                 return True
-            if attempt < retries:
-                time.sleep(0.3)
+            time.sleep(0.2)
 
+        # Final dedicated click pass with wider y search
+        if self._arm_once_click(track, search=True):
+            shot = eyes.shot(f"arm_click_final_t{track}")
+            if scan_rec_red(shot, track=track):
+                return True
         return False
+
+    def _select_arrange_track(self, track: int) -> None:
+        """Best-effort keyboard focus on Arrange track N (1-based)."""
+        from .hotkeys import focus_studio_one, send_hotkey
+        from pywinauto.keyboard import send_keys
+
+        focus_studio_one()
+        time.sleep(0.15)
+        # Escape overlays, then walk from top of track list
+        try:
+            send_keys("{ESC}{ESC}")
+        except Exception:
+            pass
+        time.sleep(0.1)
+        # Many S1 builds: Ctrl+Home focuses start; then Up thrash to top
+        try:
+            send_hotkey(["ctrl"], "HOME")
+        except Exception:
+            try:
+                send_keys("^{HOME}")
+            except Exception:
+                pass
+        time.sleep(0.1)
+        for _ in range(24):
+            try:
+                send_keys("{UP}")
+            except Exception:
+                break
+        time.sleep(0.08)
+        for _ in range(max(0, track - 1)):
+            try:
+                send_keys("{DOWN}")
+            except Exception:
+                break
+            time.sleep(0.04)
+        time.sleep(0.12)
+
+    def _arm_once_keyboard(self, track: int) -> None:
+        """Select Arrange track then toggle Rec Enable with [R] once."""
+        try:
+            from .hotkeys import run_action
+
+            self._select_arrange_track(track)
+            time.sleep(0.1)
+            run_action("arm", focus=False)
+        except Exception:
+            pass
 
     def _arm_once_mcu(self, strip: int) -> None:
         """Single MCU select + rec_arm (0-based strip)."""
@@ -161,14 +215,93 @@ class FullControl:
             pass
 
     def _arm_once_hotkey(self) -> None:
-        """Single hotkey [R] press on the currently focused track."""
+        """Single hotkey [R] on currently focused track (legacy)."""
         try:
             from .hotkeys import focus_studio_one, run_action
+
             focus_studio_one()
             time.sleep(0.15)
             run_action("arm", focus=False)
         except Exception:
             pass
+
+    def _main_window_rect(self):
+        """Screen rect of Studio One song window, or None."""
+        try:
+            from pywinauto import Desktop
+
+            for w in Desktop(backend="uia").windows():
+                try:
+                    t = (w.window_text() or "").strip()
+                except Exception:
+                    continue
+                if t.startswith("Studio One") and "Safety" not in t and w.is_visible():
+                    return w.rectangle()
+        except Exception:
+            pass
+        return None
+
+    def _arm_once_click(self, track: int, *, search: bool = False) -> bool:
+        """
+        Click Arrange Rec Enable using window-relative coordinates.
+
+        Calibrated on S1 6.6 1920-class layout: Rec column ~32% width,
+        track 1 ~20% height, row pitch ~4.2% height.
+        """
+        import ctypes
+
+        user32 = ctypes.windll.user32
+        rect = self._main_window_rect()
+        if rect is None:
+            return False
+        try:
+            from .hotkeys import focus_studio_one
+
+            focus_studio_one()
+        except Exception:
+            pass
+        time.sleep(0.1)
+
+        def click(x: int, y: int) -> None:
+            user32.SetCursorPos(int(x), int(y))
+            time.sleep(0.03)
+            user32.mouse_event(0x0002, 0, 0, 0, 0)
+            time.sleep(0.02)
+            user32.mouse_event(0x0004, 0, 0, 0, 0)
+
+        left, top = int(rect.left), int(rect.top)
+        w, h = int(rect.width()), int(rect.height())
+        # Primary calibrated point
+        xf = 0.32
+        yf = 0.20 + max(0, track - 1) * 0.042
+        xs = [xf]
+        ys = [yf]
+        if search:
+            xs = [0.30, 0.32, 0.34, 0.36, 0.38]
+            ys = [yf + dy for dy in (-0.02, -0.01, 0.0, 0.01, 0.02)]
+
+        import sys as _sys
+
+        _sys.path.insert(0, str(ROOT / "tools"))
+        try:
+            from s1_tools.eyes import Eyes, scan_rec_red  # type: ignore[import]
+        except ImportError:
+            x = left + int(w * xf)
+            y = top + int(h * yf)
+            click(x, y)
+            return True
+
+        eyes = Eyes(Path.cwd() / "_vision" / "arm_watch", enabled=True)
+        for y_frac in ys:
+            for x_frac in xs:
+                x = left + int(w * x_frac)
+                y = top + int(h * max(0.12, min(0.85, y_frac)))
+                click(x, y)
+                time.sleep(0.35)
+                shot = eyes.shot(f"arm_click_t{track}_{int(x_frac*100)}_{int(y_frac*100)}")
+                if scan_rec_red(shot):
+                    return True
+        return False
 
     # ---- transport ----
 

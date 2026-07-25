@@ -178,10 +178,11 @@ def analyze_shot(path: Optional[Path]) -> VisionReport:
         mean_luma = float(luma)
         rec_red = red_hits > 30
         safety_uia = detect_safety_dialog_uia()
-        # Pixel heuristic: modal dark UI + green diagnostics button
-        safety_px = green_hits > 80 and 30.0 < mean_luma < 90.0
-        safety = safety_uia or safety_px
-        # Song UI: not safety, not empty
+        # Pixel-only heuristic is weak (browser/plugin greens false-positive).
+        # Hard block only when UIA sees the Safety dialog; pixel is a soft note.
+        safety_px = green_hits > 400 and 40.0 < mean_luma < 75.0
+        safety = bool(safety_uia)
+        # Song UI: not UIA-safety, not empty
         likely_song = (
             not safety
             and 15.0 < mean_luma < 220.0
@@ -190,10 +191,9 @@ def analyze_shot(path: Optional[Path]) -> VisionReport:
         notes: List[str] = []
         if safety:
             notes.append("safety_dialog_blocking")
-            if safety_uia:
-                notes.append("safety_uia")
-            if safety_px:
-                notes.append("safety_green_button_hint")
+            notes.append("safety_uia")
+        elif safety_px:
+            notes.append("safety_green_pixel_hint_only")
         if rec_red:
             notes.append("rec_red_likely")
         if blue_hits > 200:
