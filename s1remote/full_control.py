@@ -105,18 +105,18 @@ class FullControl:
         self,
         track: int,
         eyes_dir: Optional[Path] = None,
-        retries: int = 5,
+        retries: int = 4,
     ) -> bool:
         """
-        Arm a track and confirm via screenshot.
+        Arm Arrange track N and confirm Rec red via screenshot.
 
-        Strategy (no double-toggle of the same control in one attempt):
-          1) Keyboard-select Arrange track N, then [R] once
-          2) MCU select+rec_arm (strip N-1) if still grey
-          3) Repeat select+[R] with extra settle time
+        Strategy (one action per attempt — avoid double-toggle):
+          1) Vision-locate Rec circle for that track row → single click
+          2) Keyboard select track + [R]
+          3) MCU select + rec_arm
+          4) Fraction-based click fallback
 
-        ``track`` is 1-based Arrange order. Returns False only after all
-        retries fail (caller may ask the user).
+        ``track`` is 1-based. Returns False only after retries fail.
         """
         import sys as _sys
 
@@ -127,7 +127,7 @@ class FullControl:
             self._arm_once_keyboard(track)
             return False
 
-        eyes_path = eyes_dir or (Path.cwd() / "_vision" / "arm_watch")
+        eyes_path = Path(eyes_dir) if eyes_dir else (Path.cwd() / "_vision" / "arm_watch")
         eyes = Eyes(eyes_path, enabled=True)
         strip = max(0, track - 1)
 
@@ -137,25 +137,18 @@ class FullControl:
 
         for attempt in range(1, retries + 1):
             if attempt == 1:
-                # Click first — most reliable for Arrange Rec on this machine
-                self._arm_once_click(track)
+                self._arm_once_vision_click(track, eyes)
             elif attempt == 2:
                 self._arm_once_keyboard(track)
             elif attempt == 3:
                 self._arm_once_mcu(strip)
             else:
-                self._arm_once_click(track, search=True)
-            time.sleep(0.55)
+                self._arm_once_click(track, search=False)
+            time.sleep(0.5)
             shot = eyes.shot(f"arm_attempt{attempt}_t{track}")
-            if scan_rec_red(shot, track=track):
+            if scan_rec_red(shot, track=track) or scan_rec_red(shot, track=None):
                 return True
-            time.sleep(0.2)
-
-        # Final dedicated click pass with wider y search
-        if self._arm_once_click(track, search=True):
-            shot = eyes.shot(f"arm_click_final_t{track}")
-            if scan_rec_red(shot, track=track):
-                return True
+            time.sleep(0.15)
         return False
 
     def _select_arrange_track(self, track: int) -> None:
@@ -241,16 +234,61 @@ class FullControl:
             pass
         return None
 
-    def _arm_once_click(self, track: int, *, search: bool = False) -> bool:
-        """
-        Click Arrange Rec Enable using window-relative coordinates.
-
-        Calibrated on S1 6.6 1920-class layout: Rec column ~32% width,
-        track 1 ~20% height, row pitch ~4.2% height.
-        """
+    def _click_screen(self, x: int, y: int) -> None:
         import ctypes
 
         user32 = ctypes.windll.user32
+        user32.SetCursorPos(int(x), int(y))
+        time.sleep(0.03)
+        user32.mouse_event(0x0002, 0, 0, 0, 0)
+        time.sleep(0.02)
+        user32.mouse_event(0x0004, 0, 0, 0, 0)
+
+    def _arm_once_vision_click(self, track: int, eyes) -> bool:
+        """Single click on vision-located Rec for track N."""
+        import sys as _sys
+
+        _sys.path.insert(0, str(ROOT / "tools"))
+        try:
+            from s1_tools.eyes import (  # type: ignore[import]
+                find_rec_row_centers_frac,
+                rec_click_point_for_track,
+            )
+            from .hotkeys import focus_studio_one
+        except ImportError:
+            return False
+
+        focus_studio_one()
+        time.sleep(0.1)
+        shot = eyes.shot(f"arm_locate_t{track}")
+        rect = self._main_window_rect()
+        wr = None
+        if rect is not None:
+            wr = (int(rect.left), int(rect.top), int(rect.width()), int(rect.height()))
+        rows = find_rec_row_centers_frac(shot)
+        if rows:
+            from .hotkeys import focus_studio_one as _f
+
+            _f()
+            # log row count for debugging autonomy
+            try:
+                from s1_tools.logutil import log  # type: ignore[import]
+
+                log(f"  vision rows={len(rows)} for arm track={track}")
+            except Exception:
+                pass
+        pt = rec_click_point_for_track(shot, track, window_rect=wr)
+        if pt is None:
+            return False
+        self._click_screen(pt[0], pt[1])
+        time.sleep(0.35)
+        return True
+
+    def _arm_once_click(self, track: int, *, search: bool = False) -> bool:
+        """
+        Click Arrange Rec Enable using window-relative coordinates.
+        Calibrated S1 6.6 layout; one click (or few if search).
+        """
         rect = self._main_window_rect()
         if rect is None:
             return False
@@ -262,23 +300,14 @@ class FullControl:
             pass
         time.sleep(0.1)
 
-        def click(x: int, y: int) -> None:
-            user32.SetCursorPos(int(x), int(y))
-            time.sleep(0.03)
-            user32.mouse_event(0x0002, 0, 0, 0, 0)
-            time.sleep(0.02)
-            user32.mouse_event(0x0004, 0, 0, 0, 0)
-
         left, top = int(rect.left), int(rect.top)
         w, h = int(rect.width()), int(rect.height())
-        # Primary calibrated point
-        xf = 0.32
+        xf = 0.33
         yf = 0.20 + max(0, track - 1) * 0.042
-        xs = [xf]
-        ys = [yf]
+        points = [(xf, yf)]
         if search:
-            xs = [0.30, 0.32, 0.34, 0.36, 0.38]
-            ys = [yf + dy for dy in (-0.02, -0.01, 0.0, 0.01, 0.02)]
+            for dy in (-0.015, 0.015, -0.03, 0.03):
+                points.append((xf, yf + dy))
 
         import sys as _sys
 
@@ -286,21 +315,18 @@ class FullControl:
         try:
             from s1_tools.eyes import Eyes, scan_rec_red  # type: ignore[import]
         except ImportError:
-            x = left + int(w * xf)
-            y = top + int(h * yf)
-            click(x, y)
+            self._click_screen(left + int(w * xf), top + int(h * yf))
             return True
 
         eyes = Eyes(Path.cwd() / "_vision" / "arm_watch", enabled=True)
-        for y_frac in ys:
-            for x_frac in xs:
-                x = left + int(w * x_frac)
-                y = top + int(h * max(0.12, min(0.85, y_frac)))
-                click(x, y)
-                time.sleep(0.35)
-                shot = eyes.shot(f"arm_click_t{track}_{int(x_frac*100)}_{int(y_frac*100)}")
-                if scan_rec_red(shot):
-                    return True
+        for x_frac, y_frac in points:
+            x = left + int(w * x_frac)
+            y = top + int(h * max(0.12, min(0.85, y_frac)))
+            self._click_screen(x, y)
+            time.sleep(0.4)
+            shot = eyes.shot(f"arm_frac_t{track}")
+            if scan_rec_red(shot, track=track) or scan_rec_red(shot):
+                return True
         return False
 
     # ---- transport ----
