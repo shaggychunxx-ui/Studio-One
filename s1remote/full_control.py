@@ -225,6 +225,27 @@ class FullControl:
             log("  arm_and_verify: Studio One not running")
             return _fail("s1_not_running")
 
+        # UI gate: stop if New/Safety/dialogs block arrange (stay on current song)
+        try:
+            from s1_tools.ui_gate import check_ui_available  # type: ignore[import]
+
+            gate = check_ui_available(
+                expected_song=Path(song_dir).name if song_dir else None,
+                eyes=eyes,
+                auto_dismiss=True,
+                song_dir=Path(song_dir) if song_dir else None,
+                log_failure=bool(song_dir),
+            )
+            if not gate.available:
+                log(f"  arm_and_verify: UI unavailable {gate.reasons}")
+                if gate.blocking_dialogs:
+                    return _fail("blocking_dialog")
+                if gate.safety_present:
+                    return _fail("safety_dialog_blocking")
+                return _fail("not_s1_arrange_ui")
+        except Exception as e:
+            log(f"  arm ui_gate warn: {e}")
+
         focus_studio_one()
         time.sleep(0.2)
         pre = _snapshot(f"arm_pre_t{track}", "pre")

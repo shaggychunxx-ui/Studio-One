@@ -22,12 +22,14 @@ See Studio-One repo: `S1_NOTES_PORT_SETUP.md`.
 
 ## Session rules
 
-1. Stay on **Song page** (not Start).  
+1. Stay on **Song page** (not Start) — e.g. keep **Meridian_Pulse**, never abandon for a New song.  
 2. MVP: drums + bass tracks only until pocket approved.  
 3. **Instrument on track before any stream** (never empty track).  
 4. Agent arms and verifies Rec red via `arm_and_verify` before Transport Record.  
 5. One part at a time after pocket lock.  
-6. Stream logs (`note_ons`) ≠ UI proof — confirm parts on the right track.
+6. Stream logs (`note_ons`) ≠ UI proof — confirm parts on the right track.  
+7. **UI gate** (`s1_tools/ui_gate.py`): if New/Safety/dialog/wrong title/S1 dead → **STOP** + structured `last_failure.json` (why). Cancel New; never OK it mid-session.  
+8. Block accidental **Ctrl+N** (`new_song` hotkey) unless `S1_ALLOW_NEW_SONG=1`.
 
 ## Track numbering
 

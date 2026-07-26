@@ -24,6 +24,15 @@ KNOWN_OPS: Set[str] = {
     "shot",
     "rewind",
     "stop",
+    # Autonomy / production-quality ops
+    "transport",
+    "set_fader",
+    "set_pan",
+    "mix_balance",
+    "export_mixdown",
+    "sleep",
+    "ears_check",
+    "program_change",
 }
 
 REQUIRED_TOP = ("version", "id", "steps")
@@ -69,6 +78,29 @@ def validate_job(job: Dict[str, Any]) -> List[str]:
                 float(step["seconds"])
             except (TypeError, ValueError):
                 errs.append(f"step[{i}] play_listen seconds invalid")
+        if op == "transport":
+            act = step.get("action") or step.get("do")
+            if act not in ("play", "stop", "record", "rewind", None):
+                errs.append(f"step[{i}] transport action invalid")
+        if op == "set_fader":
+            if step.get("channel") is None and step.get("track") is None and not step.get("role"):
+                errs.append(f"step[{i}] set_fader needs channel|track|role")
+        if op == "mix_balance" and not isinstance(step.get("levels"), dict) and not step.get("preset"):
+            # preset optional with defaults
+            pass
+        if op == "export_mixdown":
+            # path optional — default song/Masters/
+            pass
+        if op == "sleep":
+            try:
+                float(step.get("seconds", step.get("sec", 0)))
+            except (TypeError, ValueError):
+                errs.append(f"step[{i}] sleep requires seconds")
+        if op == "ears_check":
+            try:
+                float(step.get("seconds", 2.0))
+            except (TypeError, ValueError):
+                errs.append(f"step[{i}] ears_check seconds invalid")
     return errs
 
 
@@ -87,6 +119,9 @@ def normalize_options(job: Dict[str, Any]) -> Dict[str, Any]:
         "max_sec": None,
         "save_after": True,
         "listen_sec": 4.0,
+        "min_peak_db": -45.0,
+        "require_clip_or_audio": True,
+        "retry_once": True,
     }
     for k, v in defaults.items():
         opts.setdefault(k, v)

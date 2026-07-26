@@ -128,7 +128,20 @@ def window_titles() -> list[str]:
     return out
 
 
+_SKIP_TITLE = (
+    "grok",
+    "connect studio one and producer",
+    "windows terminal",
+    "powershell",
+    "cursor",
+    "visual studio",
+    "chrome",
+    "edge",
+)
+
+
 def find_dialog(titles: tuple[str, ...], timeout: float = 6.0):
+    """Find a real Save/Open dialog — never match agent/TUI windows."""
     deadline = time.time() + timeout
     while time.time() < deadline:
         for backend in ("uia", "win32"):
@@ -141,6 +154,9 @@ def find_dialog(titles: tuple[str, ...], timeout: float = 6.0):
                     if not t or not w.is_visible():
                         continue
                     tl = t.lower()
+                    if any(s in tl for s in _SKIP_TITLE):
+                        continue
+                    # Prefer classic file dialog class when available
                     for want in titles:
                         if want.lower() in tl:
                             return w, backend, t
@@ -220,12 +236,12 @@ def open_template(template: Path, eyes: Eyes) -> bool:
         return False
 
     log(f"Opening template: {template}")
-    if studio_one_running():
-        # Open into existing process
-        subprocess.Popen([str(exe), str(template)])
-    else:
-        subprocess.Popen([str(exe), str(template)])
+    # Always pass song path; second instance hands off if S1 already running
+    subprocess.Popen([str(exe), str(template)])
+    if not studio_one_running():
         time.sleep(6)
+    else:
+        time.sleep(2.5)
 
     # Boot + safety
     for i in range(8):
@@ -454,30 +470,49 @@ def start_new_song_from_template(
 
     if not save_as_new_song(song_file, eyes):
         eyes.shot("save_as_failed")
+        # Reliable fallback: clone Template.song to the new path and reopen
+        # (Save As dialog often matches wrong windows under automation)
         try:
-            from s1_tools.failure_log import record_failure
+            import shutil
 
-            record_failure(
-                song_dir,
-                domain="template",
-                primary_cause="save_as_failed",
-                remediations=[
-                    "Ctrl+Shift+S manually and save under Songs/<Name>/",
-                    "Check Save As dialog focus / path permissions",
-                    "Never save over Template folder",
-                ],
-                next_action="manual_save_as",
-                evidence={"dest": str(song_file)},
-                also_named="template_failure",
-            )
-        except Exception:
-            pass
-        return {
-            "ok": False,
-            "error": "Save As failed",
-            "song_dir": str(song_dir),
-            "primary_cause": "save_as_failed",
-        }
+            log(f"  Save As UI failed — clone Template → {song_file}")
+            song_file.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(template_p, song_file)
+            subprocess.Popen([str(studio_one_exe()), str(song_file)])
+            time.sleep(4)
+            if detect_safety_dialog_uia():
+                dismiss_safety_dialog()
+                time.sleep(1)
+            wait_song_ui(eyes, name_hint=name, timeout=90)
+            if not song_file.is_file():
+                raise FileNotFoundError(str(song_file))
+            log("  clone+open fallback OK")
+        except Exception as e:
+            log(f"  clone fallback fail: {e}")
+            try:
+                from s1_tools.failure_log import record_failure
+
+                record_failure(
+                    song_dir,
+                    domain="template",
+                    primary_cause="save_as_failed",
+                    remediations=[
+                        "Ctrl+Shift+S manually and save under Songs/<Name>/",
+                        f"Or copy Template.song to {song_file} and open it",
+                        "Never save over Template folder",
+                    ],
+                    next_action="manual_save_as",
+                    evidence={"dest": str(song_file), "error": str(e)},
+                    also_named="template_failure",
+                )
+            except Exception:
+                pass
+            return {
+                "ok": False,
+                "error": "Save As failed",
+                "song_dir": str(song_dir),
+                "primary_cause": "save_as_failed",
+            }
 
     time.sleep(1.0)
     if detect_safety_dialog_uia():

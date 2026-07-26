@@ -277,9 +277,22 @@ def send_hotkey(modifiers: list[str], key: str) -> None:
         _key_event(mv, True)
 
 
-def run_action(name: str, *, focus: bool = True) -> None:
+def run_action(name: str, *, focus: bool = True, allow_new_song: bool = False) -> None:
+    """
+    Send a named hotkey. Production policy: block file.new (Ctrl+N) unless
+    allow_new_song=True — accidental New dialog steals Meridian_Pulse etc.
+    """
+    import os
+
     if name not in ACTIONS:
         raise KeyError(f"Unknown hotkey action: {name}. Try: {', '.join(sorted(ACTIONS))}")
+    # Hard block New Song mid-production (stays on current song)
+    if name == "new_song" and not allow_new_song:
+        if os.environ.get("S1_ALLOW_NEW_SONG", "").strip() not in ("1", "true", "yes"):
+            raise RuntimeError(
+                "Blocked hotkey new_song (Ctrl+N): would leave current song. "
+                "Set allow_new_song=True or S1_ALLOW_NEW_SONG=1 only when intentional."
+            )
     mods, key = ACTIONS[name]
     # F-keys stored oddly for console etc.
     if key.startswith("F") and key[1:].isdigit():

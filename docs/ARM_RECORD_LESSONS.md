@@ -49,6 +49,15 @@ Without step 5, Record does not capture MIDI to the track.
 
 Diagnostic: `py -3.12 tools/diagnose_arm.py` (offline shots + optional `--live`).
 
+### Stay on the open song (UI availability)
+
+Before arm/stream, `ui_gate.check_ui_available(expected_song=song.name)`:
+
+- S1 running, title matches song, no **New**/Safety/Save As/Import, arrange visible  
+- Blockers → **Cancel/ESC only** (never OK New mid-session)  
+- Still blocked → **STOP** + `last_failure.json` with why  
+- Hotkey `new_song` (Ctrl+N) **blocked** unless `S1_ALLOW_NEW_SONG=1` (prevents song “going away”)
+
 ### Policy 2026-07 (efficiency + accuracy)
 
 | Rule | Detail |

@@ -256,12 +256,38 @@ class JobRunner:
         set_log_file(default_log_path(self.song, "execute_job_latest.log"))
         log(f"EXECUTE job id={self.job.get('id')} song={self.song}")
         self._shot("job_start")
-        # Clear crash-recovery modal before any MIDI/arm work
-        if detect_safety_dialog_uia():
-            log("  preflight: dismissing Studio One Safety dialog")
-            dismiss_safety_dialog()
-            time.sleep(1.0)
-            self._shot("after_preflight_safety")
+
+        # Hard UI gate: stay on this song; clear New/Safety; STOP if unavailable
+        expected = self.song.name  # e.g. Meridian_Pulse
+        try:
+            from s1_tools.ui_gate import check_ui_available
+
+            gate = check_ui_available(
+                expected_song=expected,
+                eyes=self.eyes,
+                auto_dismiss=True,
+                song_dir=self.song,
+                log_failure=True,
+            )
+            if not gate.available:
+                self._last_failure = {
+                    "ok": False,
+                    "domain": "workspace",
+                    "primary_cause": "ui_unavailable",
+                    "causes": gate.reasons,
+                    "blocking_dialogs": gate.blocking_dialogs,
+                    "remediations": [
+                        f"Stay on {expected}; Cancel New/Open dialogs",
+                        "Do not continue until arrange is free",
+                    ],
+                    "next_action": "clear_blockers_stay_on_song",
+                    "evidence": gate.to_dict(),
+                }
+                self._fatal = "ui_unavailable"
+                log(f"  STOP: UI unavailable — {gate.reasons}")
+                return self._finish(False, error="ui_unavailable", failure=self._last_failure)
+        except Exception as e:
+            log(f"  ui_gate preflight warn: {e}")
 
         try:
             with FullControl() as s1:
@@ -403,69 +429,46 @@ class JobRunner:
             return True
 
         if op == "ensure_workspace":
-            from s1_tools.eyes import check_display_dpi, is_studio_one_arrange_shot
-            from s1remote.hotkeys import studio_one_running
-            from s1_tools.failure_log import failure_s1_not_running, failure_not_arrange
+            from s1_tools.eyes import check_display_dpi
+            from s1_tools.ui_gate import check_ui_available
 
-            if not studio_one_running():
-                self._last_failure = failure_s1_not_running(self.song, op=op)
-                self._record_step(op, ok=False, error="s1_not_running", failure=self._last_failure)
-                return False
             dpi = check_display_dpi()
-            focus_studio_one()
-            time.sleep(0.2)
-            if detect_safety_dialog_uia():
-                dismissed = dismiss_safety_dialog()
-                time.sleep(1.2)
-                focus_studio_one()
-                shot = self._shot("after_safety_dismiss")
-                rep = analyze_shot(shot)
-                still = detect_safety_dialog_uia()
-                ok = dismissed and not still
-                self._record_step(
-                    op,
-                    ok=ok,
-                    safety_dismissed=dismissed,
-                    safety_still_present=still,
-                    vision=rep.to_dict(),
-                )
-                if still:
-                    self._fail(
-                        "workspace",
-                        "safety_dialog_blocking",
-                        op=op,
-                        remediations=[
-                            "Click OK on Studio One Safety dialog",
-                            "Or press Enter when Safety is focused",
-                        ],
-                        next_action="dismiss_safety_dialog",
-                        evidence={"vision": rep.to_dict()},
-                        record_step=False,
-                    )
-                    return False
-                return True
-            shot = self._shot("workspace")
-            rep = analyze_shot(shot)
-            is_arr = is_studio_one_arrange_shot(shot)
-            if not is_arr:
-                log("  WARN: workspace shot not S1 arrange — refocus once")
-                focus_studio_one()
-                time.sleep(0.4)
-                shot = self._shot("workspace_retry")
-                rep = analyze_shot(shot)
-                is_arr = is_studio_one_arrange_shot(shot)
+            gate = check_ui_available(
+                expected_song=self.song.name,
+                eyes=self.eyes,
+                auto_dismiss=True,
+                song_dir=self.song,
+                log_failure=True,
+            )
             self._record_step(
                 op,
-                ok=is_arr,
-                vision=rep.to_dict(),
-                is_s1_arrange=is_arr,
+                ok=gate.available,
+                vision={"shot": gate.shot},
+                is_s1_arrange=gate.is_arrange,
                 dpi=dpi,
+                ui_gate=gate.to_dict(),
+                blocking_dialogs=gate.blocking_dialogs,
+                song_title=gate.song_title,
             )
-            if not is_arr:
-                self._last_failure = failure_not_arrange(
-                    self.song, op=op, dpi=dpi, vision=rep.to_dict()
-                )
-            return is_arr
+            if not gate.available:
+                self._last_failure = {
+                    "ok": False,
+                    "domain": "workspace",
+                    "primary_cause": (
+                        "blocking_dialog"
+                        if gate.blocking_dialogs
+                        else "ui_unavailable"
+                    ),
+                    "causes": gate.reasons,
+                    "remediations": [
+                        f"Stay on {self.song.name}",
+                        "Cancel New/Open/Save As if open (never OK a new song mid-session)",
+                        "Dismiss Safety if present",
+                    ],
+                    "next_action": "clear_blockers_stay_on_song",
+                    "evidence": gate.to_dict(),
+                }
+            return gate.available
 
         if op == "create_tracks":
             count = int(step.get("count") or 1)
@@ -554,6 +557,144 @@ class JobRunner:
             )
             return midi is not None or bool(step.get("optional"))
 
+        if op == "transport":
+            act = (step.get("action") or step.get("do") or "stop").lower()
+            try:
+                if act == "play":
+                    s1.play()
+                elif act == "stop":
+                    s1.stop()
+                elif act == "record":
+                    s1.record()
+                elif act == "rewind":
+                    s1.stop()
+                    s1.remote.mcu.rewind()
+                    time.sleep(0.1)
+                    s1.remote.mcu.rewind()
+                else:
+                    self._record_step(op, ok=False, error=f"bad action {act}")
+                    return False
+                self._record_step(op, ok=True, action=act)
+                return True
+            except Exception as e:
+                self._record_step(op, ok=False, action=act, error=str(e))
+                return False
+
+        if op == "set_fader":
+            try:
+                from s1_tools.tracks_map import resolve_track
+
+                if step.get("role") is not None:
+                    track = resolve_track(self.song, step["role"])
+                    ch = max(0, track - 1)
+                elif step.get("track") is not None:
+                    ch = max(0, int(step["track"]) - 1)
+                else:
+                    ch = int(step.get("channel", 0))
+                db = float(step.get("db", step.get("level", -6.0)))
+                s1.fader(ch, db)
+                self._record_step(op, ok=True, channel=ch, db=db)
+                return True
+            except Exception as e:
+                self._record_step(op, ok=False, error=str(e))
+                return bool(step.get("optional"))
+
+        if op == "set_pan":
+            try:
+                ch = int(step.get("channel", 0))
+                # MCU V-Pot pan in channel mode — delta-ish; absolute pan not always available
+                delta = int(step.get("delta", 0))
+                if hasattr(s1, "vpot"):
+                    s1.vpot(ch, delta)
+                self._record_step(op, ok=True, channel=ch, delta=delta, note="MCU vpot delta")
+                return True
+            except Exception as e:
+                self._record_step(op, ok=False, error=str(e))
+                return bool(step.get("optional"))
+
+        if op == "mix_balance":
+            try:
+                from s1_tools.mix_ops import apply_mix_balance
+
+                result = apply_mix_balance(
+                    s1,
+                    self.song,
+                    levels=step.get("levels"),
+                    preset=step.get("preset") or "full_static",
+                )
+                self._record_step(op, ok=bool(result.get("ok")), **result)
+                return bool(result.get("ok")) or bool(step.get("optional"))
+            except Exception as e:
+                self._record_step(op, ok=False, error=str(e))
+                return bool(step.get("optional"))
+
+        if op == "export_mixdown":
+            try:
+                from s1_tools.mix_ops import export_mixdown_hotkey
+
+                # Save first
+                try:
+                    run_action("save", focus=True)
+                except Exception:
+                    pass
+                result = export_mixdown_hotkey(run_action, focus=True)
+                masters = self.song / "Masters"
+                masters.mkdir(parents=True, exist_ok=True)
+                result["masters_dir"] = str(masters)
+                result["requested_path"] = step.get("path") or str(masters / "Auto_Master.wav")
+                self._record_step(op, **result)
+                return bool(result.get("ok")) or bool(step.get("optional"))
+            except Exception as e:
+                self._record_step(op, ok=False, error=str(e))
+                return bool(step.get("optional"))
+
+        if op == "sleep":
+            sec = float(step.get("seconds", step.get("sec", 0.5)))
+            time.sleep(max(0.0, sec))
+            self._record_step(op, ok=True, seconds=sec)
+            return True
+
+        if op == "ears_check":
+            seconds = float(step.get("seconds") or 2.5)
+            min_peak = float(step.get("min_peak_db", self.opts.get("min_peak_db", -45.0)))
+            tag = step.get("tag") or "ears_check"
+            # Optionally play first
+            if step.get("play", True):
+                try:
+                    s1.play()
+                except Exception:
+                    pass
+            audio = self._ears(tag, seconds)
+            if step.get("play", True):
+                try:
+                    s1.stop()
+                except Exception:
+                    pass
+            peak_db = float(audio.get("peak_db", -120))
+            ok = bool(audio.get("has_signal")) and peak_db >= min_peak
+            self._record_step(
+                op,
+                ok=ok,
+                audio=audio,
+                min_peak_db=min_peak,
+                peak_db=peak_db,
+            )
+            return ok or bool(step.get("optional"))
+
+        if op == "program_change":
+            try:
+                program = int(step.get("program", step.get("pc", 0)))
+                channel = int(step.get("channel", 0))
+                bridge = s1.remote.instrument.bridge
+                import mido as _mido
+
+                bridge.send(_mido.Message("program_change", channel=channel, program=program))
+                self._record_step(op, ok=True, program=program, channel=channel)
+                return True
+            except Exception as e:
+                self._record_step(op, ok=False, error=str(e))
+                return bool(step.get("optional"))
+
         if op == "stream_record":
             return self._stream_record(step, focus_studio_one)
 
@@ -598,6 +739,39 @@ class JobRunner:
         max_sec = step.get("max_sec", self.opts.get("max_sec"))
         if max_sec is not None:
             max_sec = float(max_sec)
+
+        # Re-check UI before arm/stream — stop if New/Safety/wrong song
+        try:
+            from s1_tools.ui_gate import check_ui_available
+
+            gate = check_ui_available(
+                expected_song=self.song.name,
+                eyes=self.eyes,
+                auto_dismiss=True,
+                song_dir=self.song,
+                log_failure=True,
+            )
+            if not gate.available:
+                self._record_step(
+                    "stream_record",
+                    ok=False,
+                    error="ui_unavailable",
+                    primary_cause="ui_unavailable",
+                    label=label,
+                    track=track,
+                    ui_gate=gate.to_dict(),
+                )
+                self._last_failure = {
+                    "ok": False,
+                    "domain": "workspace",
+                    "primary_cause": "ui_unavailable",
+                    "causes": gate.reasons,
+                    "next_action": "clear_blockers_stay_on_song",
+                    "evidence": gate.to_dict(),
+                }
+                return False
+        except Exception as e:
+            log(f"  stream ui_gate warn: {e}")
 
         focus_studio_one()
         time.sleep(0.15)
