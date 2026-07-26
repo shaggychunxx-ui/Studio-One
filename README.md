@@ -1,4 +1,4 @@
-# s1-remote
+﻿# s1-remote
 
 External remote control for **PreSonus Studio One 6** on Windows.
 
@@ -29,10 +29,10 @@ set PYTHONPATH=%CD%
 py -3.12 -m s1remote setup
 ```
 
-1. **loopMIDI** — **two** cables:
-   - `S1 Controller` → MCU (out `S1 Controller 1`, in `S1 Controller 0`)
-   - `S1 Notes` → instrument notes only (agent out `S1 Notes 2`, S1 in `S1 Notes 1`)
-2. Studio One → **Options → External Devices → Add → Mackie → Control**
+1. **loopMIDI** â€” **two** cables:
+   - `S1 Controller` â†’ MCU (out `S1 Controller 1`, in `S1 Controller 0`)
+   - `S1 Notes` â†’ instrument notes only (agent out `S1 Notes 2`, S1 in `S1 Notes 1`)
+2. Studio One â†’ **Options â†’ External Devices â†’ Add â†’ Mackie â†’ Control**
    - **Receive From** = MCU OUT (`S1 Controller 1`)
    - **Send To** = feedback (`S1 Controller 0`)
 3. **New Keyboard** (or existing Keyboard) for live notes:
@@ -45,11 +45,11 @@ py -3.12 -m s1remote setup
 
 | File | Purpose |
 |------|---------|
-| `docs/S1_UI_PIPELINE.md` | **Preferred use** — S1-first agent/user split |
+| `docs/S1_UI_PIPELINE.md` | **Preferred use** â€” S1-first agent/user split |
 | `docs/ARM_RECORD_LESSONS.md` | Deep arm/record failures + eyes policy |
 | `docs/AGENT_OPS_LEARNED.md` | Live arm/port failures and agent policy |
 | `docs/MANUAL_WALKTHROUGH_CATALOG.md` | Full manual walk catalog |
-| `docs/FULL_MANUAL_WALK_REPORT.md` | Ch.1–22 results |
+| `docs/FULL_MANUAL_WALK_REPORT.md` | Ch.1â€“22 results |
 | `docs/MANUAL_MISSED_REPORT.md` | Follow-up missed ops |
 | `S1_NOTES_PORT_SETUP.md` | Dual loopMIDI wiring |
 | `STUDIO_ONE_RECORD_MIDI.md` | Record-enable order from 6.6 manual |
@@ -102,7 +102,7 @@ with FullControl() as s1:
     s1.vpot(0, +8)          # MCU maps V-Pots to focused plugin params
     s1.note(60)
     s1.do("view.console")
-    s1.host_set_volume(0, -6)  # then Scripts → S1 Full Control: Process Queue
+    s1.host_set_volume(0, -6)  # then Scripts â†’ S1 Full Control: Process Queue
 ```
 
 See [FULL_CONTROL.md](FULL_CONTROL.md) and [VST_MIDI.md](VST_MIDI.md).
@@ -167,9 +167,22 @@ s1-remote/
   re/                  # RE notes, probes, extracted models
 ```
 
+
+## Zero-human autonomy
+
+After one-time Template + loopMIDI (see `docs/TEMPLATE_CONTRACT.md`):
+
+```bat
+set PYTHONPATH=%CD%;%CD%\tools
+py -3.12 tools\setup_check.py
+py -3.12 tools\autonomous_run.py --name AutoSong --parts drums,bass,lead --max-sec 40
+py -3.12 tools\overnight_queue.py --names SongA,SongB --max-sec 40
+```
+
+See `docs/AUTONOMY.md` and `docs/EXECUTION_JOBS.md`.
 ## Honest limits
 
-- No public “control every S1 function via one host API”.
+- No public â€œcontrol every S1 function via one host APIâ€.
 - Third-party VST params need Control Link learn, Channel Macros, or MCU plugin mode.
 - UCNET path-based mixer/VST (`mixer/channel/ch1/volume`) is modeled; live TCP set not finished.
 - No pixel thrash / blind mouse hunting.
@@ -177,3 +190,4 @@ s1-remote/
 ## License / intent
 
 Personal / research remote tooling for a licensed Studio One install. Does not bypass DRM or patch the DAW binary.
+
