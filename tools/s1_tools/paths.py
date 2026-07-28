@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 # Standing production defaults (override with env)
-DEFAULT_SONGS_ROOT = Path(r"C:\Users\Box One\Documents\Studio One\Songs")
+DEFAULT_SONGS_ROOT = Path.home() / "Documents" / "Studio One" / "Songs"
 DEFAULT_TEMPLATE_SONG = DEFAULT_SONGS_ROOT / "Template" / "Template.song"
 
 

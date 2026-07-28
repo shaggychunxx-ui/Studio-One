@@ -88,7 +88,7 @@ def main() -> int:
     if not shots:
         # default known problem shots
         base = Path(
-            r"C:\Users\Box One\Documents\Studio One\Songs\2026-07-25 ralph rodrigues\_vision"
+            str(Path.home() / "Documents" / "Studio One" / "Songs" / "2026-07-25 ralph rodrigues" / "_vision")
         )
         for rel in (
             "drums_only/081418_arm_fail.png",

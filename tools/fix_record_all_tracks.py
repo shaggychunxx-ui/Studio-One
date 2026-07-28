@@ -366,7 +366,7 @@ def main() -> int:
             if not path.is_file():
                 # try agent autonomy test MIDI folder as fallback
                 alt = Path(
-                    r"C:\Users\Box One\Documents\Studio One\Songs\_agent_autonomy_test\MIDI"
+                    str(Path.home() / "Documents" / "Studio One" / "Songs" / "_agent_autonomy_test" / "MIDI")
                 ) / fname
                 if alt.is_file():
                     path = alt

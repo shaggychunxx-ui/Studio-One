@@ -373,7 +373,7 @@ def main() -> int:
     ap.add_argument(
         "--song-dir",
         type=Path,
-        default=Path(r"C:\Users\Box One\Documents\Studio One\Songs\2026-07-25 ralph rodrigues"),
+        default=Path.home() / "Documents" / "Studio One" / "Songs" / "2026-07-25 ralph rodrigues",
     )
     ap.add_argument(
         "--midi-dir",
@@ -455,7 +455,7 @@ def main() -> int:
             path = midi_dir / fname
             if not path.is_file():
                 alt = Path(
-                    r"C:\Users\Box One\Documents\Studio One\Songs\_agent_autonomy_test\MIDI"
+                    str(Path.home() / "Documents" / "Studio One" / "Songs" / "_agent_autonomy_test" / "MIDI")
                 ) / fname
                 path = alt if alt.is_file() else path
             if not path.is_file():

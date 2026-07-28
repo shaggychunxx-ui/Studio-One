@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 shot = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(
-    r"C:\Users\Box One\Documents\Studio One\Songs\2026-07-25 ralph rodrigues"
+    str(Path.home() / "Documents" / "Studio One" / "Songs" / "2026-07-25 ralph rodrigues")
     r"\_vision\one_track\075846_armed_BASS.png"
 )
 im = Image.open(shot).convert("RGB")

@@ -216,7 +216,7 @@ def main() -> int:
     from s1remote.full_control import FullControl
     from s1remote.hotkeys import focus_studio_one, run_action, studio_one_running
 
-    song = Path(r"C:\Users\Box One\Documents\Studio One\Songs\2026-07-25 ralph rodrigues")
+    song = Path.home() / "Documents" / "Studio One" / "Songs" / "2026-07-25 ralph rodrigues"
     midi_dir = song / "MIDI"
     vision = song / "_vision" / "fix_v2"
     vision.mkdir(parents=True, exist_ok=True)
