@@ -4,7 +4,7 @@
 
 **Active owner:** none
 
-**Last updated:** 2026-07-30
+**Last updated:** 2026-07-31
 **Updated by:** PHONE-OXYGEN
 
 Standing instructions for contributors and agents working in this **public** repo.
@@ -26,6 +26,9 @@ Standing instructions for contributors and agents working in this **public** rep
 
 ## Next
 - [ ] **AI-CODING** Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface
+- [ ] **AI-CODING** gitstatus-remote-probe-20260731-042147
 
 ## Notes
 - PHONE: Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface → Act on AI-CODING
+- PHONE: gitstatus-remote-probe-20260731-042147 -> Act on AI-CODING
+
