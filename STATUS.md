@@ -1,6 +1,6 @@
 # Status
 
-**Act on:** none
+**Act on:** AI-CODING
 
 **Active owner:** none
 
@@ -34,4 +34,6 @@ Standing instructions for contributors and agents working in this **public** rep
 - PHONE: Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface → Act on AI-CODING
 - PHONE: gitstatus-remote-probe-20260731-042147 -> Act on AI-CODING
 - PHONE: test → Act on AI-CODING
+- [ ] **AI-CODING** set up s1 controller with studio one program on LAPTOP
+- PHONE: set up s1 controller with studio one program on LAPTOP → Act on AI-CODING
 
