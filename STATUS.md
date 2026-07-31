@@ -1,11 +1,11 @@
 # Status
 
-**Act on:** AI-CODING
+**Act on:** none
 
 **Active owner:** none
 
 **Last updated:** 2026-07-31
-**Updated by:** PHONE-OXYGEN
+**Updated by:** AI-CODING
 
 Standing instructions for contributors and agents working in this **public** repo.
 
@@ -26,9 +26,9 @@ Standing instructions for contributors and agents working in this **public** rep
 
 ## Next
 - [ ] **AI-CODING** Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface
-- [ ] **AI-CODING** test
 
 ## Notes
+- [x] **AI-CODING:** Received HUMAN GitStatus **test** — **RECEIPT OK** on **Studio-One** (AI-CODING, 2026-07-31 04:28).
 - Armed for HUMAN GitStatus test: send **test** from phone; AI-CODING will confirm receipt per repo.
 - [x] **AI-CODING:** GitStatus remote probe `gitstatus-remote-probe-20260731-042147` — **RECEIPT OK**. Phone Send fields OK; probe write verified.
 - PHONE: Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface → Act on AI-CODING
