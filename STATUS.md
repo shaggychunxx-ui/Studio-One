@@ -1,6 +1,6 @@
 # Status
 
-**Act on:** LAPTOP
+**Act on:** none
 
 **Active owner:** none
 
@@ -25,7 +25,7 @@ Standing instructions for contributors and agents working in this **public** rep
 - Automated scripts should attach a body; agents must match this standard.
 
 ## Next
-- [ ] **AI-CODING** Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface
+
 
 ## Notes
 - [x] **AI-CODING:** Received HUMAN GitStatus **test** — **RECEIPT OK** on **Studio-One** (AI-CODING, 2026-07-31 04:28).
