@@ -1,13 +1,19 @@
 # Status
 
-**Act on:** AI-CODING
+**Act on:** none
 
 **Active owner:** none
 
-**Last updated:** 2026-07-31
-**Updated by:** PHONE-OXYGEN
+**Last updated:** 2026-08-06
+**Updated by:** GROMIT
 
 Standing instructions for contributors and agents working in this **public** repo.
+
+## Fleet policy (standing)
+
+**GROMIT runs all background / unattended agent work** for this repo (planning, docs, tooling, phone Send).  
+**Only LAPTOP** may operate **Studio One 6** (DAW host-local). Phone Send default → **`Act on: GROMIT`** (never PHONE).  
+When DAW work is required: **`Act on: LAPTOP`** / `target: LAPTOP`.
 
 ## Machines / Studio One 6
 
