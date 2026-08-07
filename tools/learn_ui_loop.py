@@ -655,9 +655,41 @@ class LearnUILoop:
         for op, detail in skips:
             self.record("future_hardware_or_edition", op, "policy", "SKIP", detail)
 
+    def clear_prompts(self) -> None:
+        """Eyes + safe dismiss so we do not thrash while stuck on a dialog."""
+        try:
+            from s1_tools.ui_gate import dismiss_blocking_dialogs, list_blocking_dialogs
+            from s1_tools.vision import detect_safety_dialog_uia, dismiss_safety_dialog
+
+            if detect_safety_dialog_uia():
+                dismiss_safety_dialog()
+                time.sleep(0.6)
+            acts = dismiss_blocking_dialogs()
+            blocking = [t for t, _ in list_blocking_dialogs()]
+            if blocking or acts:
+                self.eyes.shot(
+                    f"c{self.cycle}_prompt_gate",
+                    annotate=True,
+                    hud=f"prompts {blocking}",
+                )
+                self.record(
+                    "gate",
+                    "clear_prompts",
+                    "ui_gate+eyes",
+                    "PASS" if not blocking else "FAIL",
+                    f"actions={acts} still={blocking}",
+                    mistake="" if not blocking else f"still blocked: {blocking}",
+                    shot=True,
+                )
+                if blocking:
+                    self.lesson(f"Cycle {self.cycle}: still on dialog(s) {blocking} — need unblock_and_diagnose")
+        except Exception as e:
+            self.record("gate", "clear_prompts", "ui_gate", "FAIL", str(e)[:200], shot=True)
+
     def run_cycle(self) -> None:
         self.cycle += 1
         log(f"=== LEARN CYCLE {self.cycle} remaining_h={self.remaining()/3600:.2f} ===")
+        self.clear_prompts()
         phases = [
             self.phase_prereq,
             self.phase_views,
