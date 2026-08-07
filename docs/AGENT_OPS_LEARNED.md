@@ -22,6 +22,23 @@ See `S1_NOTES_PORT_SETUP.md` and `STUDIO_ONE_RECORD_MIDI.md`.
 - Continuous learner: `tools/learn_ui_loop.py` + LAPTOP runner `Invoke-S1-LearnUI-LAPTOP.ps1`.
 - Eyes must scale Rec column by **screenshot width / aspect ratio** (`rec_x_band_for_width`, `get_screen_geometry`) — LAPTOP is not always 1920×1080.
 
+### LAPTOP learn session 080 (2026-08-07) — live results
+
+| Metric | Value |
+|--------|-------|
+| Cycles | 21 |
+| PASS / FAIL / SKIP / RETRY_PASS | 441 / 1 / 63 / 21 |
+| Geometry | 1920×1080 (16:9) |
+| S1 Controller MCU + Notes | **connected** (loopMIDI) |
+| Physical gear | SKIP (policy) |
+| Ears after Play | signal present (sounddevice) |
+
+**Mistakes learned**
+
+1. **Save As at boot** — dialog not found; continued on Template arrange (1 FAIL, not fatal). Harden `start_from_template.save_as_new_song` + clone fallback; learn may stay on Template* if song UI visible.
+2. **Arm vision at Windows DPI scale 1.25** — `arm_and_verify` eyes click often fails Rec-red confirm; **hotkey `[R]` RETRY_PASS** every cycle. Prefer keyboard arm + screenshot verify; recommend **display scale 100%** on LAPTOP for reliable Rec map.
+3. **Stuck prompt** — human saw a prompt during learn; Save As was the likely blocker. Comms: `gsw/work/music-production/s1-learn-comms/` + `unblock_and_diagnose.py`.
+
 ## Record path (manual + live)
 
 1. Song open; Keyboard **Receive From = S1 Notes 1**
