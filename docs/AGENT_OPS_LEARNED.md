@@ -14,6 +14,14 @@ Config keys: `midi_out_port`, `midi_in_port`, `instrument_midi_out_port` (defaul
 
 See `S1_NOTES_PORT_SETUP.md` and `STUDIO_ONE_RECORD_MIDI.md`.
 
+### Software S1 Controller vs physical external devices (2026-08-07)
+
+- **Always prefer software S1 Controller** (loopMIDI Mackie / MCU) when ports exist.
+- **Physical external devices** (audio interface, hardware MIDI keyboard, hardware surface) may be **offline** until the human connects them later.
+- UI learn / verify sessions must **still use S1 Controller**; only **SKIP** true hardware I/O, not virtual MCU.
+- Continuous learner: `tools/learn_ui_loop.py` + LAPTOP runner `Invoke-S1-LearnUI-LAPTOP.ps1`.
+- Eyes must scale Rec column by **screenshot width / aspect ratio** (`rec_x_band_for_width`, `get_screen_geometry`) — LAPTOP is not always 1920×1080.
+
 ## Record path (manual + live)
 
 1. Song open; Keyboard **Receive From = S1 Notes 1**

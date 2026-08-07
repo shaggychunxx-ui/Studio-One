@@ -47,14 +47,15 @@ class Eyes:
             img = ImageGrab.grab()
             if annotate or hud:
                 dr = ImageDraw.Draw(img)
-                x0, x1 = 605, 655  # Rec X band guide (matches REC_X_BAND)
+                w, h = img.size
                 try:
-                    x0, x1 = REC_X_BAND  # defined later in module; runtime OK
+                    x0, x1 = rec_x_band_for_width(w)
                 except NameError:
-                    pass
-                dr.rectangle([x0, 140, x1, 720], outline=(0, 200, 255), width=1)
+                    x0, x1 = int(w * 0.315), int(w * 0.341)
+                y0, y1 = int(h * 0.14), int(h * 0.82)
+                dr.rectangle([x0, y0, x1, y1], outline=(0, 200, 255), width=1)
                 if hud:
-                    dr.text((16, 14), hud[:80], fill=(0, 255, 120))
+                    dr.text((16, 14), f"{hud[:60]} [{w}x{h}]"[:90], fill=(0, 255, 120))
             img.save(str(path))
             self.shot_count += 1
             log(f"  eyes 📷 {path.name}")
@@ -119,7 +120,8 @@ def scan_rec_red(
         arr = np.asarray(img, dtype=np.int16)
         h, w = arr.shape[:2]
         # Restrict to Rec column only (avoid inspector Rec + selected Mute red)
-        x1, x2 = REC_X_BAND[0], REC_X_BAND[1]
+        # Aspect-safe: scale calibrated 1920-wide band to actual grab width
+        x1, x2 = rec_x_band_for_width(w)
 
         def count_red(y1: int, y2: int) -> int:
             y1 = max(0, min(h - 1, y1))
@@ -423,8 +425,96 @@ def is_studio_one_arrange_shot(path: "Path | None") -> bool:
 # Calibrated Rec Enable X band on 1920px primary (S1 6.6 Artist).
 # Armed Rec red lives at x≈619–652; Monitor speaker is to the RIGHT (x≈665–680).
 # Older code used a wide grey-blob search and often returned Monitor, not Rec.
-REC_X_BAND = (605, 655)
+# Fractions scale to any resolution / aspect ratio (laptop 16:9, 16:10, etc.).
+REC_X_BAND = (605, 655)  # absolute fallback for 1920-wide grabs
+REC_X_FRAC = (605 / 1920.0, 655 / 1920.0)
 MONITOR_X_MIN = 660
+MONITOR_X_FRAC = 660 / 1920.0
+
+
+def rec_x_band_for_width(w: int) -> Tuple[int, int]:
+    """Rec column X band scaled to screenshot width (aspect-safe)."""
+    if w <= 0:
+        return REC_X_BAND
+    # Prefer fractions so 1366/1600/1920/2560 and non-16:9 heights stay correct.
+    x0 = int(round(w * REC_X_FRAC[0]))
+    x1 = int(round(w * REC_X_FRAC[1]))
+    if x1 <= x0:
+        x1 = x0 + max(8, int(w * 0.02))
+    return x0, min(w - 1, x1)
+
+
+def get_screen_geometry() -> Dict[str, Any]:
+    """
+    Primary display size, aspect ratio, and DPI — required before trusting click coords.
+    LAPTOP often differs from AI-CODING 1920x1080 calibration.
+    """
+    try:
+        from .human_input import ensure_dpi_aware
+
+        ensure_dpi_aware()
+    except Exception:
+        pass
+    out: Dict[str, Any] = {
+        "width": 0,
+        "height": 0,
+        "aspect": 0.0,
+        "aspect_label": "unknown",
+        "dpi": 96,
+        "scale": 1.0,
+        "ok": False,
+    }
+    try:
+        import ctypes
+
+        user32 = ctypes.windll.user32
+        try:
+            ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        except Exception:
+            try:
+                user32.SetProcessDPIAware()
+            except Exception:
+                pass
+        w = int(user32.GetSystemMetrics(0))
+        h = int(user32.GetSystemMetrics(1))
+        dc = user32.GetDC(0)
+        dpi = int(ctypes.windll.gdi32.GetDeviceCaps(dc, 88))
+        user32.ReleaseDC(0, dc)
+        scale = dpi / 96.0
+        aspect = (w / h) if h else 0.0
+        # Label common ratios (tolerance ~2%)
+        label = "custom"
+        for name, ratio in (
+            ("16:9", 16 / 9),
+            ("16:10", 16 / 10),
+            ("3:2", 3 / 2),
+            ("4:3", 4 / 3),
+            ("21:9", 21 / 9),
+        ):
+            if aspect and abs(aspect - ratio) / ratio < 0.025:
+                label = name
+                break
+        out.update(
+            {
+                "width": w,
+                "height": h,
+                "aspect": round(aspect, 4),
+                "aspect_label": label,
+                "dpi": dpi,
+                "scale": round(scale, 3),
+                "ok": w > 0 and h > 0,
+            }
+        )
+        log(
+            f"  eyes geometry: {w}x{h} aspect={label} ({aspect:.3f}) "
+            f"dpi={dpi} scale={scale:.2f}"
+        )
+        if not (0.95 <= scale <= 1.05):
+            log(f"  WARN DPI scale={scale:.2f} — prefer fraction-based UI targets")
+        return out
+    except Exception as e:
+        out["error"] = str(e)
+        return out
 
 
 def locate_track_rec_buttons(path: "Path | None") -> List[Tuple[int, int]]:
@@ -446,22 +536,24 @@ def locate_track_rec_buttons(path: "Path | None") -> List[Tuple[int, int]]:
         h, w = arr.shape[:2]
         r, g, b = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
 
-        # Anchor Rec X: any arrange-header red Rec, else band center
-        x_lo, x_hi = REC_X_BAND
+        # Anchor Rec X: any arrange-header red Rec, else aspect-scaled band center
+        x_lo, x_hi = rec_x_band_for_width(w)
+        mon_min = int(round(w * MONITOR_X_FRAC))
+        y_top, y_bot = int(h * 0.14), int(h * 0.82)
         red = (r > 200) & (g < 120) & (b < 120) & (r > g + 50) & (r > b + 50)
         mask = red.copy()
-        mask[:, : x_lo - 10] = False
-        mask[:, x_hi + 10 :] = False
-        mask[:140, :] = False
-        mask[min(h, 750) :, :] = False
+        mask[:, : max(0, x_lo - 10)] = False
+        mask[:, min(w, x_hi + 10) :] = False
+        mask[:y_top, :] = False
+        mask[y_bot:, :] = False
         ys, xs = np.where(mask)
         if len(xs) >= 8:
             rec_x = int(np.median(xs))
         else:
             rec_x = int((x_lo + x_hi) // 2)
 
-        # Never drift into Monitor column
-        rec_x = max(x_lo, min(x_hi, rec_x))
+        # Never drift into Monitor column (right of Rec; scales with width)
+        rec_x = max(x_lo, min(min(x_hi, mon_min - 1), rec_x))
 
         def row_score(y: int) -> int:
             y0, y1 = max(0, y - 6), min(h, y + 7)
@@ -484,18 +576,20 @@ def locate_track_rec_buttons(path: "Path | None") -> List[Tuple[int, int]]:
             )
             return rn * 5 + gn
 
-        scores = np.array([row_score(y) for y in range(155, min(h - 20, 740))], dtype=float)
+        y_scan0 = y_top + 15
+        y_scan1 = max(y_scan0 + 1, y_bot - 20)
+        scores = np.array([row_score(y) for y in range(y_scan0, y_scan1)], dtype=float)
         if scores.size == 0:
             return []
         sm = np.convolve(scores, np.ones(5) / 5, mode="same")
         peaks: List[int] = []
         for i in range(8, len(sm) - 8):
             if sm[i] >= 25 and sm[i] >= sm[i - 6 : i + 7].max():
-                y = 155 + i
+                y = y_scan0 + i
                 # Min spacing ~ one track (compact ~40–50px; expanded ~80+)
                 if not peaks or y - peaks[-1] >= 38:
                     peaks.append(y)
-                elif sm[i] > sm[peaks[-1] - 155]:
+                elif sm[i] > sm[peaks[-1] - y_scan0]:
                     peaks[-1] = y
 
         # Prefer control-row peaks (higher score) when two peaks are within one track
