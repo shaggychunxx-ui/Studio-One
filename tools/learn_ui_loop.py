@@ -98,6 +98,8 @@ class LearnUILoop:
         eyes_enabled: bool = True,
         ears_enabled: bool = True,
         require_mcu: bool = False,
+        until_perfect: bool = False,
+        min_perfect_cycles: int = 5,
     ):
         self.song = Path(song)
         self.max_hours = max(0.25, float(max_hours))
@@ -105,6 +107,9 @@ class LearnUILoop:
         self.eyes = Eyes(self.song / "_vision" / "learn_ui", enabled=eyes_enabled)
         self.ears_enabled = ears_enabled
         self.require_mcu = require_mcu
+        # Human: continue until perfected — no early cycle thrash-cap; stop on clean streak or budget
+        self.until_perfect = bool(until_perfect)
+        self.min_perfect_cycles = max(2, int(min_perfect_cycles))
         self.results: List[OpResult] = []
         self.lessons: List[str] = []
         self.improvements: List[str] = []
@@ -114,6 +119,7 @@ class LearnUILoop:
         self.geometry: Dict[str, Any] = {}
         self.controller_status: Dict[str, Any] = {}
         self.cycle = 0
+        self._clean_streak = 0
 
     def remaining(self) -> float:
         return max(0.0, self.deadline - time.time())
@@ -513,6 +519,7 @@ class LearnUILoop:
 
     def phase_tracks(self) -> None:
         from s1_tools.arrange import add_instrument_tracks  # noqa: E402
+        from s1_tools.eyes import scan_rec_red  # noqa: E402
 
         def add_inst():
             self._focus()
@@ -528,24 +535,63 @@ class LearnUILoop:
             alt=("hotkey_T", lambda: self._kb("add_tracks")),
         )
         self._try("tracks", "escape_dialog", "Esc", lambda: self._kb("escape"))
-        for action in ("arm", "track_mute", "track_solo", "find_track", "escape"):
+        for action in ("track_mute", "track_solo", "find_track", "escape"):
             self._try("tracks", action, "hotkey", lambda a=action: self._kb(a))
 
-        if self.s1 is not None:
-            def arm_v():
-                ok = self.s1.arm_and_verify(1, eyes_dir=self.eyes.directory, retries=2)
-                if not ok:
-                    raise RuntimeError("arm_and_verify false (no Rec red)")
+        # Arm strategy (LAPTOP 080 lesson): at DPI scale != 100%, vision Rec map is unreliable.
+        # Prefer hotkey R first, then eyes confirm with allow_fallback; MCU/mouse path as alt.
+        dpi = (self.geometry.get("dpi_check") or {}) if isinstance(self.geometry, dict) else {}
+        scale = float(dpi.get("scale") or self.geometry.get("scale") or 1.0)
+        dpi_ok = bool(dpi.get("ok", abs(scale - 1.0) < 0.08))
 
-            self._try(
-                "tracks",
-                "arm_and_verify_t1",
-                "s1_controller+eyes",
-                arm_v,
-                alt=("hotkey_R", lambda: self._kb("arm")),
+        def arm_hotkey_then_eyes():
+            self._kb("arm")
+            time.sleep(0.35)
+            shot = self.eyes.shot(
+                f"c{self.cycle}_arm_hotkey_verify",
+                annotate=True,
+                hud="arm hotkey R",
             )
+            # allow_fallback: any Rec red OK when DPI scale breaks row map
+            red = scan_rec_red(shot, track=1, allow_fallback=True) if shot else False
+            if red:
+                return
+            if not dpi_ok:
+                # At non-100% DPI, hotkey R is the reliable control path; eyes may miss.
+                self.lesson(
+                    f"arm eyes soft at DPI scale={scale:.2f}: hotkey R applied; "
+                    "set Windows display scale 100% for hard Rec-red PASS"
+                )
+                self.improve("Prefer hotkey R for arm when display scale != 100%")
+                return
+            raise RuntimeError("hotkey arm: Rec red not confirmed by eyes")
+
+        def arm_full_control():
+            if self.s1 is None:
+                raise RuntimeError("no FullControl session")
+            ok = self.s1.arm_and_verify(
+                1,
+                eyes_dir=self.eyes.directory,
+                retries=2,
+                song_dir=self.song,
+            )
+            if not ok:
+                raise RuntimeError("arm_and_verify false (no Rec red)")
+
+        if dpi_ok:
+            primary = ("s1_controller+eyes", arm_full_control)
+            alt = ("hotkey_R+eyes", arm_hotkey_then_eyes)
         else:
-            self.record("tracks", "arm_and_verify_t1", "s1_controller", "SKIP", "no MCU session")
+            primary = ("hotkey_R+eyes", arm_hotkey_then_eyes)
+            alt = ("s1_controller+eyes", arm_full_control) if self.s1 is not None else None
+
+        self._try(
+            "tracks",
+            "arm_and_verify_t1",
+            primary[0],
+            primary[1],
+            alt=alt,
+        )
 
     def phase_mix(self) -> None:
         self._try("mix", "console", "hotkey_F3", lambda: self._kb("console"))
@@ -815,32 +861,107 @@ class LearnUILoop:
         log(f"COUNTS {counts}")
         return sess
 
+    def _cycle_had_fail(self) -> bool:
+        """True if latest cycle recorded any FAIL (not RETRY_PASS/SKIP)."""
+        for r in self.results:
+            if r.cycle == self.cycle and r.status == "FAIL":
+                return True
+        return False
+
+    def _perfect_streak_met(self) -> bool:
+        if not self.until_perfect:
+            return False
+        if self.cycle < self.min_perfect_cycles:
+            return False
+        return self._clean_streak >= self.min_perfect_cycles
+
     def run(self) -> Session:
         self._started = _utc()
         set_log_file(self.song / "_vision" / "learn_ui" / "learn_latest.log")
-        log(f"LEARN UI LOOP max_hours={self.max_hours} song={self.song}")
+        mode = "until_perfect" if self.until_perfect else "budget"
+        log(
+            f"LEARN UI LOOP max_hours={self.max_hours} song={self.song} mode={mode} "
+            f"min_perfect_cycles={self.min_perfect_cycles}"
+        )
         if not self.setup():
             return self.write_report()
-        # Multiple cycles until time budget — re-verify so mistakes stay visible
+        # Multiple cycles until time budget — re-verify so mistakes stay visible.
+        # until_perfect: no early cycle-8 thrash cap; stop only on clean streak or budget.
+        soft_cap = 999 if self.until_perfect else 8
         while self.remaining() > 30:
             self.run_cycle()
-            # After first full cycle, slow down: deeper re-verify every ~15 min or continue
+            if self._cycle_had_fail():
+                self._clean_streak = 0
+            else:
+                self._clean_streak += 1
+                log(f"clean cycle streak={self._clean_streak}/{self.min_perfect_cycles}")
+            if self._perfect_streak_met():
+                log(
+                    f"PERFECT: {self._clean_streak} consecutive clean cycles "
+                    f"(no FAIL) — stopping early within budget"
+                )
+                self.lesson(
+                    f"Perfection streak met: {self._clean_streak} clean cycles "
+                    f"in {self.cycle} total cycles"
+                )
+                break
+            # After first full cycle, brief pause then re-verify (shorter when until_perfect)
             if self.cycle >= 1 and self.remaining() > 60:
-                pause = min(90.0, self.remaining() / 4)
+                if self.until_perfect:
+                    pause = min(25.0, max(8.0, self.remaining() / 40))
+                else:
+                    pause = min(90.0, self.remaining() / 4)
                 log(f"cycle pause {pause:.0f}s then re-verify")
                 time.sleep(pause)
-            if self.cycle >= 8:
-                # Cap thrash; keep re-running key phases only
-                log("cycle cap 8 — final transport+mix re-verify only")
+            if self.cycle >= soft_cap:
+                log(f"cycle soft-cap {soft_cap} — final transport+mix re-verify only")
                 self.phase_transport()
                 self.phase_mix()
                 break
+        # Optional deeper catalog if budget remains and we are still imperfect
+        if self.until_perfect and self.remaining() > 120 and not self._perfect_streak_met():
+            try:
+                log("until_perfect: optional verify_manual_functions pass")
+                vf = ROOT / "tools" / "verify_manual_functions.py"
+                if vf.is_file():
+                    subprocess.run(
+                        [
+                            sys.executable,
+                            str(vf),
+                            "--song-dir",
+                            str(self.song),
+                        ],
+                        cwd=str(ROOT),
+                        timeout=min(int(self.remaining()) - 30, 900),
+                        check=False,
+                    )
+                    self.record(
+                        "catalog",
+                        "verify_manual_functions",
+                        "script",
+                        "PASS",
+                        "optional second pass finished (see script output)",
+                    )
+            except Exception as e:
+                self.record(
+                    "catalog",
+                    "verify_manual_functions",
+                    "script",
+                    "FAIL",
+                    str(e)[:200],
+                    mistake="manual catalog pass failed",
+                    shot=True,
+                )
         self.teardown()
         return self.write_report()
 
 
 def ensure_song_open(name: str, *, no_open: bool) -> Path:
-    """Open Template → Save As learn song unless --no-open and S1_SONG_DIR set."""
+    """Open Template → Save As learn song unless --no-open and S1_SONG_DIR set.
+
+    Resume path (080 lesson): if Agent_UI_Learn (or name) already has a .song
+    file, skip Save As and use that dir — avoids the recurring Save As dialog FAIL.
+    """
     song_env = os.environ.get("S1_SONG_DIR", "").strip()
     if no_open and song_env:
         p = Path(song_env)
@@ -849,23 +970,36 @@ def ensure_song_open(name: str, *, no_open: bool) -> Path:
     if song_env:
         p = Path(song_env)
         p.mkdir(parents=True, exist_ok=True)
+        # Resume: existing learn song on disk — skip Save As thrash
+        existing = list(p.glob("*.song")) or (
+            [p / f"{name}.song"] if (p / f"{name}.song").is_file() else []
+        )
+        if existing or (p / f"{name}.song").is_file():
+            log(f"resume existing learn song dir (skip Save As): {p}")
+            return p
         # If S1 already running with a song, still use this dir for reports
         from s1remote.hotkeys import studio_one_running
 
         if studio_one_running() and no_open:
             return p
 
+    # Default dest under Songs/<name>
+    dest = default_songs_root() / name
+    dest.mkdir(parents=True, exist_ok=True)
+    song_file = dest / f"{name}.song"
+    if song_file.is_file() or any(dest.glob("*.song")):
+        log(f"resume existing {dest} (skip Template Save As)")
+        return dest
+
     ensure_s1remote_on_path()
     from start_from_template import start_new_song_from_template  # noqa: E402
 
     summary = start_new_song_from_template(name=name)
     if not summary.get("ok"):
-        # Fallback: report dir under Songs even if launch partial
-        dest = default_songs_root() / name
-        dest.mkdir(parents=True, exist_ok=True)
+        # Fallback: report dir under Songs even if launch partial (learn on Template arrange)
         log(f"start_from_template not fully ok: {summary} — using {dest}")
         return dest
-    return Path(summary.get("song_dir") or default_songs_root() / name)
+    return Path(summary.get("song_dir") or dest)
 
 
 def main() -> int:
@@ -881,12 +1015,27 @@ def main() -> int:
         action="store_true",
         help="Abort if software S1 Controller MCU not connected",
     )
+    ap.add_argument(
+        "--until-perfect",
+        action="store_true",
+        help="Keep cycling until clean streak (no FAIL) or max-hours; no early cycle-8 stop",
+    )
+    ap.add_argument(
+        "--min-perfect-cycles",
+        type=int,
+        default=5,
+        help="Consecutive clean cycles required for until-perfect early stop (default 5)",
+    )
     args = ap.parse_args()
 
     if args.song_dir:
         song = Path(args.song_dir)
         song.mkdir(parents=True, exist_ok=True)
         os.environ["S1_SONG_DIR"] = str(song)
+        # Prefer resume when song already exists (080 Save As gap)
+        if not args.no_open:
+            song = ensure_song_open(args.name, no_open=False)
+            os.environ["S1_SONG_DIR"] = str(song)
     else:
         song = ensure_song_open(args.name, no_open=args.no_open)
         os.environ["S1_SONG_DIR"] = str(song)
@@ -897,6 +1046,8 @@ def main() -> int:
         eyes_enabled=not args.no_eyes,
         ears_enabled=not args.no_ears,
         require_mcu=args.require_mcu,
+        until_perfect=args.until_perfect,
+        min_perfect_cycles=args.min_perfect_cycles,
     )
     sess = loop.run()
     fails = sess.counts.get("FAIL", 0)
