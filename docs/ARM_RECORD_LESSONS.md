@@ -101,11 +101,17 @@ Diagnostic DPI: this machine often runs at **150%** scale — `ensure_dpi_aware(
 
 ### B. Import path (no live arm)
 
-- **Song → Import File** / Browser Files drag `.mid` onto instrument track.
-- Tool: `tools/import_and_verify_midi.py` (song-dir CLI).
+- **Song → Import File…** (`Ctrl+Shift+O`) — **not** File → Import Files (wrong menu; dialog never opens).
+- Tool: `tools/import_and_verify_midi.py` tries: Ctrl+Shift+O → Song menu → File legacy → Alt+S/F I.
 - Still need instrument on track to hear.
 
-### C. User-armed fallback (only when A fails)
+### C. Track select (wrong_track_armed / armed_rows [-1])
+
+- Do **not** use Ctrl+Home for track focus (timeline only).
+- Select: ESC → F2 arrange → PageUp/Up to top → Down (N-1) → one `[R]`.
+- If keyboard still arms wrong row: `allow_mouse` enables **one** vision Rec click (never grid spam).
+
+### D. User-armed fallback (only when A fails)
 
 Pass `--user-armed` to any tool. The agent skips arm entirely.
 User sets Rec red manually before the tool runs.

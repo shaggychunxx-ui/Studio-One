@@ -30,7 +30,16 @@ from s1_tools.tracks_map import ensure_default_tracks, load_tracks, ROLE_MIDI  #
 from s1_tools.state import set_state, load_state  # noqa: E402
 
 
-def _write_one_part_job(song: Path, role: str, track: int, midi_name: str, max_sec: float) -> Path:
+def _write_one_part_job(
+    song: Path,
+    role: str,
+    track: int,
+    midi_name: str,
+    max_sec: float,
+    *,
+    prefer_import: bool = False,
+    allow_mouse: bool = False,
+) -> Path:
     job = {
         "version": 1,
         "id": f"produce_{role}_{datetime.now(timezone.utc).strftime('%H%M%S')}",
@@ -40,6 +49,9 @@ def _write_one_part_job(song: Path, role: str, track: int, midi_name: str, max_s
             "probe_first": True,
             "probe_sec": max_sec,
             "import_on_arm_fail": True,
+            "prefer_import": bool(prefer_import),
+            # Vision Rec click as last arm attempt when keyboard select fails
+            "allow_mouse": bool(allow_mouse),
             "save_after": True,
         },
         "steps": [
@@ -76,6 +88,11 @@ def main() -> int:
     )
     ap.add_argument("--max-sec", type=float, default=15.0, help="Per-part stream probe cap")
     ap.add_argument("--prefer-import", action="store_true", help="Import MIDI instead of live arm")
+    ap.add_argument(
+        "--allow-mouse",
+        action="store_true",
+        help="Allow one vision Rec click after keyboard/MCU arm fail",
+    )
     args = ap.parse_args()
 
     ensure_s1remote_on_path()
@@ -181,10 +198,19 @@ def main() -> int:
             continue
 
         log(f"######## PART {role} → track {track} (live eyes/ears, no thrash) ########")
-        job_path = _write_one_part_job(song, role, track, midi_name, args.max_sec)
+        # Default allow_mouse when prefer_import: arm path still used if import
+        # dialog fails; vision Rec click is last non-thrash attempt.
+        allow_mouse = bool(args.allow_mouse or args.prefer_import)
+        job_path = _write_one_part_job(
+            song,
+            role,
+            track,
+            midi_name,
+            args.max_sec,
+            prefer_import=bool(args.prefer_import),
+            allow_mouse=allow_mouse,
+        )
         job = load_job(job_path)
-        if args.prefer_import:
-            job.setdefault("options", {})["prefer_import"] = True
         runner = JobRunner(song, job, dry_run=False, force_max_sec=args.max_sec, no_prompt=True)
         result = runner.run()
         ok = bool(result.get("ok"))

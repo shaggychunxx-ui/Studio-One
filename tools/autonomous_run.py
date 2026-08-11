@@ -109,6 +109,8 @@ def run_produce(song: Path, parts: str, max_sec: float, prefer_import: bool) -> 
     argv = ["--resume", "--song-dir", str(song), "--parts", parts, "--max-sec", str(max_sec)]
     if prefer_import:
         argv.append("--prefer-import")
+        # Import-first jobs still fall back to arm; enable one vision Rec click
+        argv.append("--allow-mouse")
     # produce.main uses argparse of sys.argv — call subprocess for isolation
     cmd = [sys.executable, str(TOOLS / "produce.py")] + argv
     env = os.environ.copy()

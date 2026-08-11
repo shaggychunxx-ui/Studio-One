@@ -3,7 +3,11 @@
 Import .mid files into the open Studio One Song (no live arm required).
 
 Preferred non-realtime handoff when live record/arm is flaky.
-Uses File → Import Files… and types absolute paths into the dialog.
+
+Studio One 6.x (Windows) primary path:
+  Song → Import File…   shortcut: Ctrl+Shift+O
+
+Legacy / other builds may expose File → Import Files…
 
 Env:
   S1_SONG_DIR / --song-dir   song folder (MIDI/ default subdir)
@@ -35,9 +39,18 @@ from s1_tools.eyes import Eyes  # noqa: E402
 from s1_tools.paths import default_eyes_dir, default_log_path  # noqa: E402
 
 
-def find_file_dialog(timeout: float = 5.0):
+DIALOG_TITLES = (
+    "Import File",
+    "Import Files",
+    "Open",
+    "Import",
+    "Select files",
+    "Select Files",
+)
+
+
+def find_file_dialog(timeout: float = 6.0):
     deadline = time.time() + timeout
-    titles = ("Import Files", "Import File", "Open", "Import", "Select files", "Select Files")
     while time.time() < deadline:
         for backend in ("uia", "win32"):
             desk = Desktop(backend=backend)
@@ -48,51 +61,117 @@ def find_file_dialog(timeout: float = 5.0):
                     continue
                 if not t:
                     continue
-                for want in titles:
+                for want in DIALOG_TITLES:
                     if want.lower() in t.lower() and w.is_visible():
                         return w, backend, t
         time.sleep(0.12)
     return None, None, None
 
 
-def import_one_file(path: Path, *, open_menu_path, focus_studio_one) -> bool:
-    path = path.resolve()
-    if not path.is_file():
-        log(f"  missing file {path}")
-        return False
-
-    focus_studio_one()
-    time.sleep(0.2)
-    send_keys("{ESC}")
+def _dismiss_overlays() -> None:
+    try:
+        send_keys("{ESC}")
+    except Exception:
+        pass
+    time.sleep(0.12)
+    try:
+        send_keys("{ESC}")
+    except Exception:
+        pass
     time.sleep(0.15)
 
-    log(f"  File → Import Files… for {path.name}")
-    try:
+
+def _open_import_dialog(open_menu_path, focus_studio_one) -> bool:
+    """
+    Try several open strategies until a file dialog appears.
+
+    Order (Studio One 6.6 agent knowledge):
+      1) Ctrl+Shift+O  (Song → Import File…)
+      2) Menu Song → Import File…
+      3) Menu File → Import Files… (legacy label)
+      4) Alt+S then I / Enter
+      5) Alt+F then I / Enter
+    """
+    strategies = []
+
+    def via_hotkey_ctrl_shift_o() -> None:
+        focus_studio_one()
+        time.sleep(0.15)
+        _dismiss_overlays()
+        try:
+            from s1remote.hotkeys import send_hotkey  # type: ignore
+
+            send_hotkey(["ctrl", "shift"], "O")
+        except Exception:
+            send_keys("^+o")
+
+    def via_song_menu() -> None:
+        focus_studio_one()
+        time.sleep(0.12)
+        _dismiss_overlays()
+        open_menu_path(["Song", "Import File…"], focus=True)
+
+    def via_file_menu() -> None:
+        focus_studio_one()
+        time.sleep(0.12)
+        _dismiss_overlays()
         open_menu_path(["File", "Import Files…"], focus=True)
-    except Exception as e:
-        log(f"  menu path fail ({e}), trying Alt+F then I")
-        send_keys("%f")
-        time.sleep(0.3)
+
+    def via_alt_song_i() -> None:
+        focus_studio_one()
+        time.sleep(0.12)
+        _dismiss_overlays()
+        send_keys("%s")
+        time.sleep(0.35)
         send_keys("i")
         time.sleep(0.2)
         send_keys("{ENTER}")
 
-    time.sleep(0.7)
-    dlg, backend, title = find_file_dialog()
-    if dlg is None:
-        log("  FAIL: no import/open dialog")
-        return False
-    log(f"  dialog: {title!r} backend={backend}")
+    def via_alt_file_i() -> None:
+        focus_studio_one()
+        time.sleep(0.12)
+        _dismiss_overlays()
+        send_keys("%f")
+        time.sleep(0.35)
+        send_keys("i")
+        time.sleep(0.2)
+        send_keys("{ENTER}")
 
-    try:
-        dlg.set_focus()
-    except Exception:
-        pass
+    strategies = [
+        ("Ctrl+Shift+O", via_hotkey_ctrl_shift_o),
+        ("Song → Import File…", via_song_menu),
+        ("File → Import Files…", via_file_menu),
+        ("Alt+S I", via_alt_song_i),
+        ("Alt+F I", via_alt_file_i),
+    ]
+
+    for name, fn in strategies:
+        try:
+            log(f"  import open try: {name}")
+            fn()
+        except Exception as e:
+            log(f"  import open {name} exception: {e}")
+            continue
+        time.sleep(0.75)
+        dlg, backend, title = find_file_dialog(timeout=3.5)
+        if dlg is not None:
+            log(f"  dialog open via {name}: {title!r} backend={backend}")
+            return True
+        # Close any partial menu before next try
+        _dismiss_overlays()
+        time.sleep(0.2)
+
+    log("  FAIL: no import/open dialog after all open strategies")
+    return False
+
+
+def _type_path_into_dialog(path: Path) -> None:
+    """Focus filename field and type absolute path (pywinauto-safe escaping)."""
     time.sleep(0.2)
-
+    # Alt+N = File name field on standard Windows common dialogs
     send_keys("%n")
     time.sleep(0.15)
-    pstr = str(path)
+    pstr = str(path.resolve())
     send_keys("^a")
     time.sleep(0.05)
     safe = (
@@ -105,14 +184,49 @@ def import_one_file(path: Path, *, open_menu_path, focus_studio_one) -> bool:
         .replace("(", "{(}")
         .replace(")", "{)}")
     )
-    send_keys(safe, with_spaces=True, pause=0.02)
+    send_keys(safe, with_spaces=True, pause=0.015)
     time.sleep(0.25)
     send_keys("{ENTER}")
     time.sleep(0.9)
+    # Confirm any follow-up import options dialog
     send_keys("{ENTER}")
     time.sleep(0.5)
     send_keys("{ESC}")
     time.sleep(0.2)
+
+
+def import_one_file(path: Path, *, open_menu_path, focus_studio_one) -> bool:
+    path = Path(path).resolve()
+    if not path.is_file():
+        log(f"  missing file {path}")
+        return False
+
+    focus_studio_one()
+    time.sleep(0.2)
+    _dismiss_overlays()
+
+    log(f"  Song → Import File… for {path.name}")
+    if not _open_import_dialog(open_menu_path, focus_studio_one):
+        return False
+
+    dlg, backend, title = find_file_dialog(timeout=2.0)
+    if dlg is None:
+        log("  FAIL: dialog vanished before type")
+        return False
+    log(f"  dialog: {title!r} backend={backend}")
+
+    try:
+        dlg.set_focus()
+    except Exception:
+        pass
+
+    try:
+        _type_path_into_dialog(path)
+    except Exception as e:
+        log(f"  type path fail: {e}")
+        _dismiss_overlays()
+        return False
+
     log(f"  import attempted: {path.name}")
     return True
 

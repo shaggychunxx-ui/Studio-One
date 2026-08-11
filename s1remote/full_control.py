@@ -269,11 +269,15 @@ class FullControl:
         plan: List[str] = ["keyboard"]
         if retries >= 2:
             plan.append("mcu")
-        if allow_mouse and retries >= 3:
+        if allow_mouse:
             plan.append("mouse_rec_once")
-        plan = plan[:retries]
+        plan = plan[: max(1, min(retries + (1 if allow_mouse else 0), 4))]
 
+        skip_toggle_methods = False  # after wrong-track arm, only vision click OK
         for attempt, method in enumerate(plan, start=1):
+            if skip_toggle_methods and method in ("keyboard", "mcu"):
+                log(f"  arm skip {method}: wrong track already armed (no more toggles)")
+                continue
             focus_studio_one()
             time.sleep(0.15)
             if method == "keyboard":
@@ -320,50 +324,75 @@ class FullControl:
             if armed_else:
                 log(
                     f"  arm attempt {attempt}: Rec red on {armed_else}, "
-                    f"not target {track} — will diagnose (no more thrash on wrong track)"
+                    f"not target {track} — no more [R]/MCU; vision click only if allowed"
                 )
-                # Stop: further [R] on wrong selection makes diagnosis worse
-                if method == "keyboard":
-                    break
+                skip_toggle_methods = True
             time.sleep(0.1)
 
         return _fail()
 
     def _select_arrange_track(self, track: int) -> None:
-        """Best-effort keyboard focus on Arrange track N (1-based)."""
-        from .hotkeys import focus_studio_one, send_hotkey
+        """
+        Best-effort keyboard focus on Arrange track N (1-based).
+
+        Avoid Ctrl+Home — in S1 that jumps the *timeline* cursor, not the
+        track list, and often leaves focus off the track headers (root cause
+        of wrong_track_armed / Rec red on row -1).
+
+        Strategy:
+          1) ESC overlays
+          2) Ensure arrange editor (F2) so track list receives arrows
+          3) PageUp + many Up to top of track list
+          4) Down (N-1) to target
+        """
+        from .hotkeys import focus_studio_one, run_action
         from pywinauto.keyboard import send_keys
 
+        track = max(1, int(track))
         focus_studio_one()
         time.sleep(0.15)
-        # Escape overlays, then walk from top of track list
         try:
-            send_keys("{ESC}{ESC}")
+            send_keys("{ESC}")
+            time.sleep(0.08)
+            send_keys("{ESC}")
         except Exception:
             pass
         time.sleep(0.1)
-        # Many S1 builds: Ctrl+Home focuses start; then Up thrash to top
+
+        # Arrange/editor focus — track headers respond to Up/Down here
         try:
-            send_hotkey(["ctrl"], "HOME")
+            run_action("editor", focus=False)  # F2
         except Exception:
             try:
-                send_keys("^{HOME}")
+                send_keys("{F2}")
             except Exception:
                 pass
-        time.sleep(0.1)
-        for _ in range(24):
+        time.sleep(0.15)
+        focus_studio_one()
+        time.sleep(0.08)
+
+        # Walk to top of track list (PageUp batches, then fine Up)
+        for _ in range(6):
+            try:
+                send_keys("{PGUP}")
+            except Exception:
+                break
+            time.sleep(0.03)
+        for _ in range(28):
             try:
                 send_keys("{UP}")
             except Exception:
                 break
-        time.sleep(0.08)
+            time.sleep(0.02)
+        time.sleep(0.1)
+
         for _ in range(max(0, track - 1)):
             try:
                 send_keys("{DOWN}")
             except Exception:
                 break
-            time.sleep(0.04)
-        time.sleep(0.12)
+            time.sleep(0.05)
+        time.sleep(0.15)
 
     def _arm_once_keyboard(self, track: int) -> None:
         """Select Arrange track then toggle Rec Enable with [R] once."""
@@ -371,7 +400,8 @@ class FullControl:
             from .hotkeys import run_action
 
             self._select_arrange_track(track)
-            time.sleep(0.1)
+            time.sleep(0.15)
+            # One [R] only — never double-tap (toggle would disarm)
             run_action("arm", focus=False)
         except Exception:
             pass
@@ -458,12 +488,14 @@ class FullControl:
             return False
         pts = locate_track_rec_buttons(shot)
         log(f"  vision Rec pts={len(pts)} for track={track}")
+        # Alt+click = exclusive Rec Enable (only target track) — safer when
+        # keyboard previously armed the wrong row.
         if pts and 1 <= track <= len(pts):
             x, y = pts[track - 1]
             if x >= 660:
                 x = (REC_X_BAND[0] + REC_X_BAND[1]) // 2
-            log(f"  vision Rec click @ ({x},{y})")
-            self._click_screen(x, y)
+            log(f"  vision exclusive Rec Alt+click @ ({x},{y})")
+            self._click_screen(x, y, alt=True)
             time.sleep(0.35)
             return True
         rect = self._main_window_rect()
@@ -476,7 +508,8 @@ class FullControl:
         x, y = int(pt[0]), int(pt[1])
         if x >= 660:
             x = (REC_X_BAND[0] + REC_X_BAND[1]) // 2
-        self._click_screen(x, y)
+        log(f"  vision exclusive Rec Alt+click @ ({x},{y}) frac")
+        self._click_screen(x, y, alt=True)
         time.sleep(0.35)
         return True
 

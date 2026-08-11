@@ -127,7 +127,10 @@ MENU_ACTIONS = {
     "menu.external_devices": ["Studio One", "Options…"],  # then External Devices tab in UI
     "menu.keyboard_shortcuts": ["Studio One", "Keyboard Shortcuts…"],
     "menu.add_tracks": ["Track", "Add Tracks…"],
-    "menu.import_files": ["File", "Import Files…"],
+    # Studio One 6.x: Song → Import File… (Ctrl+Shift+O). File→Import Files is legacy.
+    "menu.import_file": ["Song", "Import File…"],
+    "menu.import_files": ["Song", "Import File…"],
+    "menu.import_files_legacy": ["File", "Import Files…"],
 }
 for mid, path in MENU_ACTIONS.items():
     _c(mid, "menu", f"Menu {' → '.join(path)}", path=path)

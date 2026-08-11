@@ -111,6 +111,8 @@ ACTIONS: dict[str, tuple[list[str], str]] = {
     "escape": ([], "ESCAPE"),
     "export_mixdown": (["ctrl"], "E"),
     "bounce_selection": (["ctrl"], "B"),
+    # Song → Import File… (Studio One 6.x Windows default)
+    "import_file": (["ctrl", "shift"], "O"),
     "find_track": (["ctrl", "alt"], "T"),
     "find_channel": (["ctrl", "alt"], "C"),
     "command_search": (["ctrl"], "K"),
