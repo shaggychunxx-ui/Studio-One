@@ -46,7 +46,12 @@ from s1_tools.paths import (  # noqa: E402
 )
 from s1_tools.logutil import log, set_log_file  # noqa: E402
 from s1_tools.eyes import Eyes, is_studio_one_arrange_shot  # noqa: E402
-from s1_tools.vision import analyze_shot, detect_safety_dialog_uia, dismiss_safety_dialog  # noqa: E402
+from s1_tools.vision import (  # noqa: E402
+    analyze_shot,
+    detect_safety_dialog_uia,
+    dismiss_safety_dialog,
+    hard_clear_safety,
+)
 
 
 DEFAULT_EXE = Path(r"C:\Program Files\PreSonus\Studio One 6\Studio One.exe")
@@ -196,7 +201,7 @@ def wait_song_ui(eyes: Eyes, *, name_hint: str | None, timeout: float = 120.0) -
             return False
         if detect_safety_dialog_uia():
             log("  dismiss Safety")
-            dismiss_safety_dialog()
+            dismiss_safety_dialog(retries=4)
             time.sleep(1.0)
         focus_studio_one()
         titles = window_titles()
@@ -243,16 +248,25 @@ def open_template(template: Path, eyes: Eyes) -> bool:
     else:
         time.sleep(2.5)
 
-    # Boot + safety
-    for i in range(8):
+    # Boot + safety (AI-CODING 085: Safety could stick; multi-strategy + hard clear)
+    for i in range(10):
         if detect_safety_dialog_uia():
-            dismiss_safety_dialog()
+            log(f"  boot Safety pass {i}")
+            cleared = dismiss_safety_dialog(retries=4)
             time.sleep(1.2)
+            if not cleared and detect_safety_dialog_uia() and i >= 3:
+                log("  boot Safety stuck — hard_clear + relaunch Template")
+                hard_clear_safety(kill_s1=True)
+                time.sleep(2.0)
+                subprocess.Popen([str(exe), str(template)])
+                time.sleep(6.0)
+                continue
         focus_studio_one()
         eyes.shot(f"boot_{i}")
         titles = window_titles()
         if any("Template" in t or "Studio One -" in t for t in titles):
-            break
+            if not detect_safety_dialog_uia():
+                break
         time.sleep(2)
 
     ok = wait_song_ui(eyes, name_hint="Template", timeout=150)

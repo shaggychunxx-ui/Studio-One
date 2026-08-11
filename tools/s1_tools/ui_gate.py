@@ -23,7 +23,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from .logutil import log
 from .eyes import is_studio_one_arrange_shot, Eyes
-from .vision import detect_safety_dialog_uia, dismiss_safety_dialog
+from .vision import (
+    detect_safety_dialog_uia,
+    dismiss_safety_dialog,
+    hard_clear_safety,
+)
 from .failure_log import record_failure
 
 # Dialog titles that block arrange work — cancel/dismiss, do not OK
@@ -144,11 +148,25 @@ def dismiss_blocking_dialogs(*, allow_ok_on_safety: bool = True) -> List[str]:
     from s1remote.hotkeys import focus_studio_one
 
     actions: List[str] = []
+    # Safety first — multi-strategy (button / keys / bottom-right coords).
+    # Do not ESC Safety (cancels wrong path); Start normally only.
     if detect_safety_dialog_uia():
-        log("  ui_gate: Safety dialog — dismiss start")
-        dismiss_safety_dialog()
-        actions.append("dismissed_safety")
-        time.sleep(1.0)
+        log("  ui_gate: Safety dialog — multi-strategy dismiss")
+        ok = dismiss_safety_dialog(retries=4)
+        actions.append("dismissed_safety_ok" if ok else "dismissed_safety_fail")
+        time.sleep(0.8)
+        # Second pass if ghost title / Qt lag
+        if detect_safety_dialog_uia():
+            log("  ui_gate: Safety still present — second dismiss pass")
+            ok2 = dismiss_safety_dialog(retries=3)
+            actions.append("dismissed_safety_pass2_ok" if ok2 else "dismissed_safety_pass2_fail")
+            time.sleep(0.8)
+        # Last resort: kill S1 + clear crash markers (caller must relaunch song)
+        if detect_safety_dialog_uia():
+            log("  ui_gate: Safety still blocking — hard_clear_safety (kill S1 + markers)")
+            hard_clear_safety(kill_s1=True)
+            actions.append("hard_clear_safety")
+            time.sleep(1.0)
 
     for title, w in list_blocking_dialogs():
         low = title.lower()
@@ -187,8 +205,8 @@ def dismiss_blocking_dialogs(*, allow_ok_on_safety: bool = True) -> List[str]:
     except Exception:
         pass
     time.sleep(0.2)
-    # One more ESC if New still up
-    still = list_blocking_dialogs()
+    # One more ESC if New still up (never for Safety — already handled)
+    still = [(t, w) for t, w in list_blocking_dialogs() if "safety" not in t.lower()]
     if still:
         send_keys("{ESC}")
         actions.append("final_esc")
