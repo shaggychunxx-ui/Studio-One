@@ -6,6 +6,8 @@ Standing Template path (default):
 
 Production **must** Save As a new song before any stream — never write takes into Template.
 
+**Sample rate: 48 kHz for every song** (StudioLive 32SC / engine). Do not create or export at 44.1 kHz.
+
 ## Required track map (1-based Arrange)
 
 | Role | Track | Suggested instrument |

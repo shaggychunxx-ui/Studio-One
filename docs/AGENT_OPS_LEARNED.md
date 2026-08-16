@@ -3,6 +3,10 @@
 **Date:** 2026-07-24  
 **Companion:** Music-producer `studio-one-6.6-agent-knowledge/` (manual chapters + same ops notes)
 
+## Sample rate (standing — 2026-08-15)
+
+**Every song is 48 kHz.** StudioLive 32SC and `AudioEngine.settings` are 48 kHz. New Song / Song Setup / mixdown WAV must be 48 kHz. 44.1 kHz songs make S1 resample and hitch on LAPTOP.
+
 ## Ports
 
 | Port | Role |
