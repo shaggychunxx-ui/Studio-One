@@ -81,7 +81,8 @@ class Session:
     geometry: Dict[str, Any] = field(default_factory=dict)
     s1_controller: Dict[str, Any] = field(default_factory=dict)
     external_devices_policy: str = (
-        "Physical external devices offline OK; still use software S1 Controller (loopMIDI MCU)."
+        "Exercise every AVAILABLE live device (StudioLive, TR-8S, Matriarch, Monologue) "
+        "plus software S1 Controller. Missing ports = SKIP, not FAIL. New song each cycle."
     )
     results: List[Dict[str, Any]] = field(default_factory=list)
     lessons: List[str] = field(default_factory=list)
@@ -100,6 +101,8 @@ class LearnUILoop:
         require_mcu: bool = False,
         until_perfect: bool = False,
         min_perfect_cycles: int = 5,
+        live_devices: bool = False,
+        new_song_each_cycle: bool = False,
     ):
         self.song = Path(song)
         self.max_hours = max(0.25, float(max_hours))
@@ -110,6 +113,8 @@ class LearnUILoop:
         # Human: continue until perfected — no early cycle thrash-cap; stop on clean streak or budget
         self.until_perfect = bool(until_perfect)
         self.min_perfect_cycles = max(2, int(min_perfect_cycles))
+        self.live_devices = bool(live_devices)
+        self.new_song_each_cycle = bool(new_song_each_cycle)
         self.results: List[OpResult] = []
         self.lessons: List[str] = []
         self.improvements: List[str] = []
@@ -260,17 +265,18 @@ class LearnUILoop:
             self.lesson("Software S1 Controller (MCU) connected — prefer MCU for transport/mix.")
         if not notes_ok:
             self.lesson(
-                "S1 Notes instrument port offline — skip live note stream; "
-                "physical external devices also offline per human (future)."
+                "S1 Notes instrument port offline — skip live note stream."
             )
-        # Physical I/O: always document as future
-        self.record(
-            "0",
-            "physical_external_devices",
-            "policy",
-            "SKIP",
-            "Human: external hardware not connected (future). Use virtual S1 Controller only.",
-        )
+        if self.live_devices:
+            self._probe_live_devices()
+        else:
+            self.record(
+                "0",
+                "physical_external_devices",
+                "policy",
+                "SKIP",
+                "Default policy: hardware optional. Use --live-devices to exercise attached gear.",
+            )
         return True
 
     def teardown(self) -> None:
@@ -690,16 +696,84 @@ class LearnUILoop:
 
     def phase_doc_skip(self) -> None:
         skips = [
-            ("physical_audio_io", "Song Setup Audio I/O — physical interface future"),
-            ("physical_midi_keyboard", "Hardware MIDI keyboard — future"),
-            ("hardware_control_surface", "Hardware surface — future; use software S1 Controller"),
             ("show_page", "Show page — user / Pro"),
             ("project_mastering", "Project page mastering"),
             ("spatial_atmos", "Atmos / spatial"),
             ("collaboration_cloud", "Studio One+ cloud"),
         ]
+        if not self.live_devices:
+            skips = [
+                ("physical_audio_io", "Song Setup Audio I/O — physical interface future"),
+                ("physical_midi_keyboard", "Hardware MIDI keyboard — future"),
+                ("hardware_control_surface", "Hardware surface — future; use software S1 Controller"),
+            ] + skips
         for op, detail in skips:
             self.record("future_hardware_or_edition", op, "policy", "SKIP", detail)
+
+    def _probe_live_devices(self) -> None:
+        """Human 2026-08-16: work with every AVAILABLE attached device. Missing = SKIP."""
+        blob = ""
+        try:
+            from s1remote.midi.port import list_ports
+
+            ports = list_ports()
+            blob = " ".join((ports.get("inputs") or []) + (ports.get("outputs") or [])).lower()
+        except Exception as e:
+            self.record("live_devices", "list_ports", "mido", "FAIL", str(e)[:180], mistake=str(e)[:120])
+            blob = ""
+        wanted = [
+            ("tr8s", ("tr-8s", "tr8s")),
+            ("matriarch", ("matriarch",)),
+            ("monologue", ("monologue",)),
+            ("s1_controller", ("s1 controller",)),
+            ("s1_notes", ("s1 notes",)),
+        ]
+        for op, needles in wanted:
+            ok = any(n in blob for n in needles)
+            self.record(
+                "live_devices",
+                op,
+                "midi_ports",
+                "PASS" if ok else "SKIP",
+                "present in mido list" if ok else "not attached / not listed",
+            )
+        # StudioLive: engine file + Windows device name
+        engine = Path(os.environ.get("APPDATA", "")) / "PreSonus" / "Studio One 6" / "x64" / "AudioEngine.settings"
+        sl = False
+        if engine.is_file():
+            try:
+                sl = "54EDCF0E" in engine.read_text(encoding="utf-8", errors="ignore").upper()
+            except Exception:
+                sl = False
+        self.record(
+            "live_devices",
+            "studiolive_engine",
+            "AudioEngine.settings",
+            "PASS" if sl else "SKIP",
+            "masterDevice=StudioLive Series III" if sl else "engine not on StudioLive",
+        )
+        self.lesson("Live-device learn: attached MIDI/mixer PASS; missing ports SKIP. Do not rec-arm 32 channels.")
+
+    def phase_new_song(self) -> None:
+        """Create a new light song this cycle (not Template / not 32-ch Record and Mix)."""
+
+        def _new():
+            from s1remote.menus import open_menu_path
+            from s1remote.hotkeys import run_action, studio_one_running
+
+            if not studio_one_running():
+                raise RuntimeError("Studio One not running")
+            if not self._focus():
+                raise RuntimeError("focus failed")
+            time.sleep(0.12)
+            open_menu_path(["File", "New…"], focus=True)
+            time.sleep(1.0)
+            # If New dialog stays up, Esc keeps the last auto-created song rather than OK Record-and-Mix
+            run_action("escape", focus=True)
+            time.sleep(0.2)
+            self._focus()
+
+        self._try("song", "file_new_light", "menu_File_New", _new)
 
     def clear_prompts(self) -> None:
         """Eyes + safe dismiss so we do not thrash while stuck on a dialog."""
@@ -736,7 +810,10 @@ class LearnUILoop:
         self.cycle += 1
         log(f"=== LEARN CYCLE {self.cycle} remaining_h={self.remaining()/3600:.2f} ===")
         self.clear_prompts()
-        phases = [
+        phases = []
+        if self.new_song_each_cycle:
+            phases.append(self.phase_new_song)
+        phases += [
             self.phase_prereq,
             self.phase_views,
             self.phase_transport,
@@ -1026,6 +1103,16 @@ def main() -> int:
         default=5,
         help="Consecutive clean cycles required for until-perfect early stop (default 5)",
     )
+    ap.add_argument(
+        "--live-devices",
+        action="store_true",
+        help="Exercise attached StudioLive / TR-8S / Matriarch / Monologue (SKIP if missing)",
+    )
+    ap.add_argument(
+        "--new-song-each-cycle",
+        action="store_true",
+        help="File > New a light song every cycle (do not reopen 32-ch Template)",
+    )
     args = ap.parse_args()
 
     if args.song_dir:
@@ -1048,6 +1135,8 @@ def main() -> int:
         require_mcu=args.require_mcu,
         until_perfect=args.until_perfect,
         min_perfect_cycles=args.min_perfect_cycles,
+        live_devices=args.live_devices,
+        new_song_each_cycle=args.new_song_each_cycle,
     )
     sess = loop.run()
     fails = sess.counts.get("FAIL", 0)
