@@ -321,6 +321,32 @@ class LearnUILoop:
                     if rep.safety_dialog:
                         dismiss_safety_dialog()
                         detail += " safety_dismissed"
+                    from s1remote.hotkeys import studio_one_running
+
+                    if not studio_one_running():
+                        self.record(
+                            phase,
+                            op,
+                            method,
+                            "FAIL",
+                            detail + " S1_not_running",
+                            mistake="Studio One not running — do not PASS desktop shots",
+                            shot=False,
+                            ears=ears_rep,
+                        )
+                        return
+                    if not rep.likely_song_ui:
+                        self.record(
+                            phase,
+                            op,
+                            method,
+                            "FAIL",
+                            detail + " not_s1_ui",
+                            mistake="Screenshot is not Studio One (desktop/wallpaper/TUI)",
+                            shot=False,
+                            ears=ears_rep,
+                        )
+                        return
             self.record(
                 phase,
                 op,

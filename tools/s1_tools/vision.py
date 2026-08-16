@@ -469,11 +469,32 @@ def analyze_shot(path: Optional[Path]) -> VisionReport:
         # Hard block only when UIA sees the Safety dialog; pixel is a soft note.
         safety_px = green_hits > 400 and 40.0 < mean_luma < 75.0
         safety = bool(safety_uia)
-        # Song UI: not UIA-safety, not empty
+        chroma = np.maximum(np.maximum(r, g), b) - np.minimum(np.minimum(r, g), b)
+        chroma_mean = float(chroma.mean())
+        # Windows wallpaper / photos: high chroma + mid-high luma (e.g. desert sky)
+        wallpaper = chroma_mean > 28.0 and mean_luma > 85.0
+        # Empty S1 arrange is dark gray chrome (luma ~50-75), low chroma
+        s1_dark = 18.0 < mean_luma < 82.0 and chroma_mean < 26.0
+        arrange = False
+        try:
+            from .eyes import is_studio_one_arrange_shot
+
+            arrange = bool(is_studio_one_arrange_shot(path))
+        except Exception:
+            arrange = False
+        s1_running = False
+        try:
+            from s1remote.hotkeys import studio_one_running
+
+            s1_running = bool(studio_one_running())
+        except Exception:
+            s1_running = False
+        # Never treat desktop wallpaper as Song UI (2026-08-16: loop PASSed on lock screen)
         likely_song = (
             not safety
-            and 15.0 < mean_luma < 220.0
-            and (arr.shape[0] * arr.shape[1] > 10000)
+            and s1_running
+            and not wallpaper
+            and (arrange or s1_dark)
         )
         notes: List[str] = []
         if safety:

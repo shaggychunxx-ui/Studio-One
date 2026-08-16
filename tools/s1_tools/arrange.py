@@ -132,6 +132,8 @@ def add_instrument_tracks(count: int = 1, *, focus_fn=None) -> int:
         ("Track", "Add", "Instrument Track"),
         ("Track", "Add", "Instrument Track…"),
         ("Track", "Add Tracks…"),
+        ("Track", "Add Tracks"),
+        ("Track", "Add Track"),
     ]
     for i in range(count):
         log(f"=== Add Instrument Track #{i + 1} ===")
