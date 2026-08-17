@@ -8,7 +8,12 @@ Policy (human 2026-08-07):
   - Physical external devices (audio interface, hardware MIDI) may be offline —
     do not fail the whole session for that; SKIP true hardware ops, still use
     virtual S1 Controller when present
-  - Every action: do → verify (eyes screenshot; ears on play) → log mistake
+  - Every action: look BEFORE → do → look AFTER (eyes); ears on play → log mistake
+  - PHONE 2026-08-16: LOOK at the DAW — restore+focus S1 each cycle; never --no-eyes
+    with --live-devices / --new-song-each-cycle
+  - PHONE 2026-08-17: full UI learn + all external instruments; visually verify
+    before AND after every action; monitor actions / program / system; stop if
+    Studio One exits twice (098 File>New crash on this i7)
   - Respect screen aspect ratio / DPI (get_screen_geometry + fraction coords)
   - Improve: retry FAIL with alternate method; write lessons as we go
 
@@ -82,8 +87,13 @@ class Session:
     s1_controller: Dict[str, Any] = field(default_factory=dict)
     external_devices_policy: str = (
         "Exercise every AVAILABLE live device (StudioLive, TR-8S, Matriarch, Monologue) "
-        "plus software S1 Controller. Missing ports = SKIP, not FAIL. New song each cycle."
+        "plus software S1 Controller. Missing ports = SKIP, not FAIL. "
+        "Resume one light song; do not File>New each cycle."
     )
+    verify_before_after: bool = True
+    monitor_system: bool = True
+    s1_exit_count: int = 0
+    system_samples: List[Dict[str, Any]] = field(default_factory=list)
     results: List[Dict[str, Any]] = field(default_factory=list)
     lessons: List[str] = field(default_factory=list)
     counts: Dict[str, int] = field(default_factory=dict)
@@ -103,21 +113,31 @@ class LearnUILoop:
         min_perfect_cycles: int = 5,
         live_devices: bool = False,
         new_song_each_cycle: bool = False,
+        verify_before_after: bool = True,
+        monitor_system: bool = True,
+        max_s1_exits: int = 2,
     ):
         self.song = Path(song)
         self.max_hours = max(0.25, float(max_hours))
         self.deadline = time.time() + self.max_hours * 3600
+        self.live_devices = bool(live_devices)
+        self.new_song_each_cycle = bool(new_song_each_cycle)
+        self.verify_before_after = bool(verify_before_after)
+        self.monitor_system = bool(monitor_system)
+        self.max_s1_exits = max(1, int(max_s1_exits))
+        # PHONE: laptop must look at what it is doing
+        if self.live_devices or self.new_song_each_cycle or self.verify_before_after:
+            eyes_enabled = True
         self.eyes = Eyes(self.song / "_vision" / "learn_ui", enabled=eyes_enabled)
         self.ears_enabled = ears_enabled
         self.require_mcu = require_mcu
         # Human: continue until perfected — no early cycle thrash-cap; stop on clean streak or budget
         self.until_perfect = bool(until_perfect)
         self.min_perfect_cycles = max(2, int(min_perfect_cycles))
-        self.live_devices = bool(live_devices)
-        self.new_song_each_cycle = bool(new_song_each_cycle)
         self.results: List[OpResult] = []
         self.lessons: List[str] = []
         self.improvements: List[str] = []
+        self.system_samples: List[Dict[str, Any]] = []
         self.s1 = None
         self._focus = None
         self._run_action = None
@@ -125,6 +145,8 @@ class LearnUILoop:
         self.controller_status: Dict[str, Any] = {}
         self.cycle = 0
         self._clean_streak = 0
+        self._s1_exits = 0
+        self._stop_now = False
 
     def remaining(self) -> float:
         return max(0.0, self.deadline - time.time())
@@ -307,46 +329,92 @@ class LearnUILoop:
         if self.remaining() < 5:
             self.record(phase, op, method, "SKIP", "time budget exhausted")
             return
+        if self._stop_now:
+            self.record(phase, op, method, "SKIP", "stopped after S1 exit")
+            return
         try:
+            before_detail = ""
+            if self.verify_before_after and verify_eyes:
+                bp = self.eyes.shot(
+                    f"c{self.cycle}_{phase}_{op}_before",
+                    annotate=True,
+                    hud=f"BEFORE {op}",
+                )
+                if not bp:
+                    self.record(
+                        phase,
+                        op,
+                        method,
+                        "FAIL",
+                        "no before shot — cannot visually verify",
+                        mistake="eyes before failed; not running blind",
+                    )
+                    return
+                brep = analyze_shot(bp)
+                before_detail = f"before_luma={brep.mean_luma:.0f} song_ui={brep.likely_song_ui}"
+                if not brep.likely_song_ui:
+                    self.record(
+                        phase,
+                        op,
+                        method,
+                        "FAIL",
+                        before_detail + " not_s1_ui",
+                        mistake="Before shot is not Studio One (desktop/wallpaper/TUI)",
+                    )
+                    return
             fn()
-            detail = ""
+            detail = before_detail
             ears_rep = None
             if ears_on_pass and self.ears_enabled:
                 ears_rep = self._ears_probe(f"{phase}_{op}")
             if verify_eyes:
-                p = self.eyes.shot(f"c{self.cycle}_{phase}_{op}_after", annotate=True, hud=f"{op}")
-                if p:
-                    rep = analyze_shot(p)
-                    detail = f"luma={rep.mean_luma:.0f} song_ui={rep.likely_song_ui}"
-                    if rep.safety_dialog:
-                        dismiss_safety_dialog()
-                        detail += " safety_dismissed"
-                    from s1remote.hotkeys import studio_one_running
+                p = self.eyes.shot(
+                    f"c{self.cycle}_{phase}_{op}_after",
+                    annotate=True,
+                    hud=f"AFTER {op}",
+                )
+                if not p:
+                    self.record(
+                        phase,
+                        op,
+                        method,
+                        "FAIL",
+                        (detail + " no after shot").strip(),
+                        mistake="eyes after failed; cannot verify action",
+                    )
+                    return
+                rep = analyze_shot(p)
+                extra = f"after_luma={rep.mean_luma:.0f} song_ui={rep.likely_song_ui}"
+                detail = f"{detail} {extra}".strip()
+                if rep.safety_dialog:
+                    dismiss_safety_dialog()
+                    detail += " safety_dismissed"
+                from s1remote.hotkeys import studio_one_running
 
-                    if not studio_one_running():
-                        self.record(
-                            phase,
-                            op,
-                            method,
-                            "FAIL",
-                            detail + " S1_not_running",
-                            mistake="Studio One not running — do not PASS desktop shots",
-                            shot=False,
-                            ears=ears_rep,
-                        )
-                        return
-                    if not rep.likely_song_ui:
-                        self.record(
-                            phase,
-                            op,
-                            method,
-                            "FAIL",
-                            detail + " not_s1_ui",
-                            mistake="Screenshot is not Studio One (desktop/wallpaper/TUI)",
-                            shot=False,
-                            ears=ears_rep,
-                        )
-                        return
+                if not studio_one_running():
+                    self.record(
+                        phase,
+                        op,
+                        method,
+                        "FAIL",
+                        detail + " S1_not_running",
+                        mistake="Studio One not running — do not PASS desktop shots",
+                        shot=False,
+                        ears=ears_rep,
+                    )
+                    return
+                if not rep.likely_song_ui:
+                    self.record(
+                        phase,
+                        op,
+                        method,
+                        "FAIL",
+                        detail + " not_s1_ui",
+                        mistake="Screenshot is not Studio One (desktop/wallpaper/TUI)",
+                        shot=False,
+                        ears=ears_rep,
+                    )
+                    return
             self.record(
                 phase,
                 op,
@@ -681,6 +749,32 @@ class LearnUILoop:
 
         self._try("midi", "note_c4", "s1_notes", note, ears_on_pass=True)
 
+    def phase_live_instruments(self) -> None:
+        """PHONE 2026-08-17: learn attached hardware. No 32-ch rec-arm. No File>New."""
+        if not self.live_devices:
+            return
+        self._try(
+            "live",
+            "play_through_studiolive",
+            "hotkey_Space",
+            lambda: self._kb("transport_play"),
+            ears_on_pass=True,
+        )
+        self._try(
+            "live",
+            "stop",
+            "hotkey",
+            lambda: self._kb("transport_stop"),
+        )
+        if self.s1 is not None and self.controller_status.get("instrument_midi_connected"):
+            self._try(
+                "live",
+                "note_to_routed_instrument",
+                "s1_notes",
+                lambda: self.s1.note(60, 0.15, 100),
+                ears_on_pass=True,
+            )
+
     def phase_menus(self) -> None:
         from s1remote.menus import open_menu_path  # noqa: E402
         from s1remote.hotkeys import studio_one_running  # noqa: E402
@@ -832,9 +926,107 @@ class LearnUILoop:
         except Exception as e:
             self.record("gate", "clear_prompts", "ui_gate", "FAIL", str(e)[:200], shot=True)
 
+    def _sample_system(self, tag: str) -> Dict[str, Any]:
+        """Snapshot Studio One / Universal Control / host memory. PHONE: monitor program + system."""
+        sample: Dict[str, Any] = {"t": _utc(), "cycle": self.cycle, "tag": tag}
+        try:
+            from s1remote.hotkeys import studio_one_running
+
+            sample["s1_running"] = bool(studio_one_running())
+        except Exception as e:
+            sample["s1_running"] = None
+            sample["s1_err"] = str(e)[:80]
+        ps = (
+            "$p = Get-Process -Name 'Studio One','Universal Control' -ErrorAction SilentlyContinue; "
+            "$os = Get-CimInstance Win32_OperatingSystem; "
+            "[pscustomobject]@{ "
+            "procs = @($p | ForEach-Object { @{ name=$_.ProcessName; pid=$_.Id; "
+            "ws_mb=[math]::Round($_.WorkingSet64/1MB,1); cpu=$_.CPU } }); "
+            "free_mb=[math]::Round($os.FreePhysicalMemory/1024,0); "
+            "total_mb=[math]::Round($os.TotalVisibleMemorySize/1024,0) "
+            "} | ConvertTo-Json -Compress -Depth 4"
+        )
+        try:
+            raw = subprocess.check_output(
+                ["powershell", "-NoProfile", "-Command", ps],
+                text=True,
+                timeout=12,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+            if raw:
+                blob = json.loads(raw)
+                sample["procs"] = blob.get("procs") or []
+                sample["free_mb"] = blob.get("free_mb")
+                sample["total_mb"] = blob.get("total_mb")
+        except Exception as e:
+            sample["ps_err"] = str(e)[:120]
+        self.system_samples.append(sample)
+        s1p = next((p for p in (sample.get("procs") or []) if "Studio" in str(p.get("name", ""))), None)
+        detail = (
+            f"s1={sample.get('s1_running')} free_mb={sample.get('free_mb')} "
+            f"s1_ws={s1p.get('ws_mb') if s1p else 'n/a'}"
+        )
+        status = "PASS" if sample.get("s1_running") else "FAIL"
+        self.record("health", f"sys_{tag}", "cim+proc", status, detail.strip())
+        return sample
+
+    def _note_s1_exit(self, where: str) -> None:
+        self._s1_exits += 1
+        self.record(
+            "health",
+            "studio_one_exit",
+            "proc",
+            "FAIL",
+            f"{where}: S1 gone (exit #{self._s1_exits}/{self.max_s1_exits})",
+            mistake="Studio One process exited",
+            shot=True,
+        )
+        if self._s1_exits >= self.max_s1_exits:
+            self._stop_now = True
+            self.lesson(
+                f"S1 exited {self._s1_exits} times — stopping (098 crash guard). "
+                "Do not File>New-each-cycle on this i7."
+            )
+
+    def look_at_daw(self) -> None:
+        """Restore + focus Studio One, then screenshot. PHONE: look at what you are doing."""
+        try:
+            if self._focus:
+                self._focus()
+        except Exception as e:
+            self.lesson(f"look_at_daw focus: {e}")
+        shot = self.eyes.shot(
+            f"c{self.cycle}_looking",
+            annotate=True,
+            hud=f"LOOK cycle {self.cycle}",
+        )
+        if not shot:
+            self.record(
+                "look",
+                "eyes_shot",
+                "pillow",
+                "FAIL",
+                "eyes returned no screenshot — cannot look at the DAW",
+                mistake="eyes off or PIL/grab failed",
+            )
+            return
+        self.record(
+            "look",
+            "restore_focus_shot",
+            "eyes",
+            "PASS",
+            f"shot={Path(shot).name}",
+        )
+
     def run_cycle(self) -> None:
         self.cycle += 1
         log(f"=== LEARN CYCLE {self.cycle} remaining_h={self.remaining()/3600:.2f} ===")
+        if self.monitor_system:
+            samp = self._sample_system("cycle_start")
+            if samp.get("s1_running") is False:
+                self._note_s1_exit(f"cycle {self.cycle} start")
+                return
+        self.look_at_daw()
         self.clear_prompts()
         phases = []
         if self.new_song_each_cycle:
@@ -847,11 +1039,15 @@ class LearnUILoop:
             self.phase_tracks,
             self.phase_mix,
             self.phase_midi_notes,
+            self.phase_live_instruments,
             self.phase_menus,
             self.phase_browser,
             self.phase_doc_skip,
         ]
         for fn in phases:
+            if self._stop_now:
+                log("stop_now — abort remaining phases")
+                break
             if self.remaining() < 10:
                 log("time budget low — stop cycle early")
                 break
@@ -867,6 +1063,16 @@ class LearnUILoop:
                     mistake=str(e)[:160],
                     shot=True,
                 )
+        if self.monitor_system and not self._stop_now:
+            samp = self._sample_system("cycle_end")
+            if samp.get("s1_running") is False:
+                self._note_s1_exit(f"cycle {self.cycle} end")
+        if self.verify_before_after:
+            self.eyes.shot(
+                f"c{self.cycle}_cycle_end",
+                annotate=True,
+                hud=f"AFTER cycle {self.cycle}",
+            )
 
     def write_report(self) -> Session:
         counts: Dict[str, int] = {}
@@ -879,6 +1085,10 @@ class LearnUILoop:
             host=os.environ.get("COMPUTERNAME", ""),
             geometry=self.geometry,
             s1_controller=self.controller_status,
+            verify_before_after=self.verify_before_after,
+            monitor_system=self.monitor_system,
+            s1_exit_count=self._s1_exits,
+            system_samples=self.system_samples[-40:],
             results=[asdict(r) for r in self.results],
             lessons=self.lessons,
             counts=counts,
@@ -900,6 +1110,9 @@ class LearnUILoop:
             f"- Geometry: `{sess.geometry}`",
             f"- S1 Controller: `{sess.s1_controller}`",
             f"- Policy: {sess.external_devices_policy}",
+            f"- Verify before/after: {sess.verify_before_after}",
+            f"- Monitor system: {sess.monitor_system}",
+            f"- S1 exits: {sess.s1_exit_count}",
             f"- Counts: {sess.counts}",
             "",
             "## Lessons",
@@ -993,6 +1206,9 @@ class LearnUILoop:
         soft_cap = 999 if self.until_perfect else 8
         while self.remaining() > 30:
             self.run_cycle()
+            if self._stop_now:
+                log("stop_now after S1 exits — writing report")
+                break
             if self._cycle_had_fail():
                 self._clean_streak = 0
             else:
@@ -1016,13 +1232,23 @@ class LearnUILoop:
                     pause = min(90.0, self.remaining() / 4)
                 log(f"cycle pause {pause:.0f}s then re-verify")
                 time.sleep(pause)
+                if self.monitor_system:
+                    samp = self._sample_system("pause")
+                    if samp.get("s1_running") is False:
+                        self._note_s1_exit(f"pause after cycle {self.cycle}")
+                        break
             if self.cycle >= soft_cap:
                 log(f"cycle soft-cap {soft_cap} — final transport+mix re-verify only")
                 self.phase_transport()
                 self.phase_mix()
                 break
-        # Optional deeper catalog if budget remains and we are still imperfect
-        if self.until_perfect and self.remaining() > 120 and not self._perfect_streak_met():
+        # Optional deeper catalog if budget remains, S1 still up, and we are still imperfect
+        if (
+            self.until_perfect
+            and not self._stop_now
+            and self.remaining() > 120
+            and not self._perfect_streak_met()
+        ):
             try:
                 log("until_perfect: optional verify_manual_functions pass")
                 vf = ROOT / "tools" / "verify_manual_functions.py"
@@ -1137,7 +1363,35 @@ def main() -> int:
     ap.add_argument(
         "--new-song-each-cycle",
         action="store_true",
-        help="File > New a light song every cycle (do not reopen 32-ch Template)",
+        help="File > New a light song every cycle (do not reopen 32-ch Template; crashes LAPTOP i7)",
+    )
+    ap.add_argument(
+        "--verify-before-after",
+        action="store_true",
+        default=True,
+        help="Screenshot before AND after every action (PHONE 2026-08-17; default on)",
+    )
+    ap.add_argument(
+        "--no-verify-before-after",
+        action="store_true",
+        help="Disable before-action screenshots (after-only)",
+    )
+    ap.add_argument(
+        "--monitor-system",
+        action="store_true",
+        default=True,
+        help="Sample S1/UC/RAM each cycle and stop after repeated S1 exits (default on)",
+    )
+    ap.add_argument(
+        "--no-monitor-system",
+        action="store_true",
+        help="Disable process/RAM sampling",
+    )
+    ap.add_argument(
+        "--max-s1-exits",
+        type=int,
+        default=2,
+        help="Stop after this many Studio One process exits (default 2; 098 crash guard)",
     )
     args = ap.parse_args()
 
@@ -1153,6 +1407,11 @@ def main() -> int:
         song = ensure_song_open(args.name, no_open=args.no_open)
         os.environ["S1_SONG_DIR"] = str(song)
 
+    if (args.live_devices or args.new_song_each_cycle) and args.no_eyes:
+        log("WARN: live-device / new-song learn requires eyes — ignoring --no-eyes")
+        args.no_eyes = False
+    verify_ba = bool(args.verify_before_after) and not bool(args.no_verify_before_after)
+    mon_sys = bool(args.monitor_system) and not bool(args.no_monitor_system)
     loop = LearnUILoop(
         song,
         max_hours=args.max_hours,
@@ -1163,6 +1422,9 @@ def main() -> int:
         min_perfect_cycles=args.min_perfect_cycles,
         live_devices=args.live_devices,
         new_song_each_cycle=args.new_song_each_cycle,
+        verify_before_after=verify_ba,
+        monitor_system=mon_sys,
+        max_s1_exits=args.max_s1_exits,
     )
     sess = loop.run()
     fails = sess.counts.get("FAIL", 0)
