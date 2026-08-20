@@ -14,6 +14,8 @@ Policy (human 2026-08-07):
   - PHONE 2026-08-17: full UI learn + all external instruments; visually verify
     before AND after every action; monitor actions / program / system; stop if
     Studio One exits twice (098 File>New crash on this i7)
+  - PHONE 2026-08-20: learn adding instruments and effects to tracks
+    (--plugins-focus). Skip Q/quantize (099 crash). No Explorer drag.
   - Respect screen aspect ratio / DPI (get_screen_geometry + fraction coords)
   - Improve: retry FAIL with alternate method; write lessons as we go
 
@@ -116,6 +118,8 @@ class LearnUILoop:
         verify_before_after: bool = True,
         monitor_system: bool = True,
         max_s1_exits: int = 2,
+        plugins_focus: bool = False,
+        skip_quantize: bool = False,
     ):
         self.song = Path(song)
         self.max_hours = max(0.25, float(max_hours))
@@ -125,8 +129,15 @@ class LearnUILoop:
         self.verify_before_after = bool(verify_before_after)
         self.monitor_system = bool(monitor_system)
         self.max_s1_exits = max(1, int(max_s1_exits))
+        self.plugins_focus = bool(plugins_focus)
+        self.skip_quantize = bool(skip_quantize) or self.plugins_focus
         # PHONE: laptop must look at what it is doing
-        if self.live_devices or self.new_song_each_cycle or self.verify_before_after:
+        if (
+            self.live_devices
+            or self.new_song_each_cycle
+            or self.verify_before_after
+            or self.plugins_focus
+        ):
             eyes_enabled = True
         self.eyes = Eyes(self.song / "_vision" / "learn_ui", enabled=eyes_enabled)
         self.ears_enabled = ears_enabled
@@ -594,7 +605,7 @@ class LearnUILoop:
             pass
 
     def phase_edit(self) -> None:
-        for action in (
+        actions = [
             "undo",
             "redo",
             "select_all",
@@ -614,7 +625,18 @@ class LearnUILoop:
             "tool_mute",
             "save",
             "escape",
-        ):
+        ]
+        if self.skip_quantize:
+            for skip in ("quantize", "merge"):
+                self.record(
+                    "edit",
+                    skip,
+                    "policy",
+                    "SKIP",
+                    "Q/quantize crashes Studio One on this i7 (099) — skipped",
+                )
+            actions = [a for a in actions if a not in ("quantize", "merge")]
+        for action in actions:
             self._try("edit", action, "hotkey", lambda a=action: self._kb(a))
 
     def phase_tracks(self) -> None:
@@ -793,7 +815,105 @@ class LearnUILoop:
 
             self._try("menus", path[0].lower(), "menu_uia", open_m)
 
+    def phase_plugins(self) -> None:
+        """Add a stock instrument and a stock effect onto the selected track.
+
+        Keyboard/UIA only. Explorer drag is banned on this host. Search+Enter
+        without a plugin window is FAIL (080/082: browser_load does not assign).
+        """
+        from s1_tools.plugins import (  # noqa: E402
+            after_load_proof,
+            inspector_output_combos,
+            try_inserts_menu,
+        )
+
+        self._try("plugins", "inspector", "hotkey_F4", lambda: self._kb("inspector"))
+        combos = inspector_output_combos()
+        self.record(
+            "plugins",
+            "inspector_output_scan",
+            "uia",
+            "PASS" if combos else "SKIP",
+            f"combos={combos[:6]}" if combos else "no Output/instrument combo names exposed",
+        )
+
+        def load_inst():
+            if self.s1 is None:
+                raise RuntimeError("no FullControl")
+            self._kb("browser_instruments")
+            time.sleep(0.25)
+            self.s1.browser_load("Presence XT", tab="instruments")
+            ok, detail = after_load_proof(kind="instrument")
+            if not ok:
+                raise RuntimeError(detail)
+            self.lesson(f"instrument load proof: {detail}")
+
+        def load_inst_mojito():
+            if self.s1 is None:
+                raise RuntimeError("no FullControl")
+            self.s1.browser_load("Mojito", tab="instruments")
+            ok, detail = after_load_proof(kind="instrument")
+            if not ok:
+                raise RuntimeError(detail)
+
+        if self.s1 is not None:
+            self._try(
+                "plugins",
+                "add_instrument_presence_xt",
+                "F6_search_enter",
+                load_inst,
+                alt=("F6_mojito", load_inst_mojito),
+            )
+        else:
+            self.record("plugins", "add_instrument", "F6", "SKIP", "no FullControl")
+
+        self._try("plugins", "instrument_editor", "hotkey_ShiftF11", lambda: self._kb("instrument_editor"))
+        self._try("plugins", "escape_inst_editor", "Esc", lambda: self._kb("escape"))
+
+        def load_fx():
+            if self.s1 is None:
+                raise RuntimeError("no FullControl")
+            self._kb("browser_effects")
+            time.sleep(0.25)
+            self.s1.browser_load("Pro EQ", tab="effects")
+            ok, detail = after_load_proof(kind="effect")
+            if not ok:
+                raise RuntimeError(detail)
+            self.lesson(f"effect load proof: {detail}")
+
+        def inserts_menu():
+            self._kb("channel_editor")
+            time.sleep(0.45)
+            ok, detail = try_inserts_menu("Pro EQ")
+            if not ok:
+                raise RuntimeError(detail)
+            proof, pdetail = after_load_proof(kind="effect")
+            if not proof:
+                raise RuntimeError(f"Inserts typed but no FX window ({pdetail})")
+            self.lesson(f"Inserts menu proof: {detail} | {pdetail}")
+
+        if self.s1 is not None:
+            self._try(
+                "plugins",
+                "add_effect_pro_eq",
+                "F7_search_enter",
+                load_fx,
+                alt=("F11_inserts_menu", inserts_menu),
+            )
+        else:
+            self._try(
+                "plugins",
+                "add_effect_pro_eq",
+                "F11_inserts_menu",
+                inserts_menu,
+            )
+
+        self._try("plugins", "escape_plugin_windows", "Esc", lambda: self._kb("escape"))
+        self._try("plugins", "save", "hotkey", lambda: self._kb("save"))
+
     def phase_browser(self) -> None:
+        if self.plugins_focus:
+            return
         self._try("browser", "open", "hotkey_F5", lambda: self._kb("browser"))
         if self.s1 is not None:
             self._try(
@@ -1031,19 +1151,28 @@ class LearnUILoop:
         phases = []
         if self.new_song_each_cycle:
             phases.append(self.phase_new_song)
-        phases += [
-            self.phase_prereq,
-            self.phase_views,
-            self.phase_transport,
-            self.phase_edit,
-            self.phase_tracks,
-            self.phase_mix,
-            self.phase_midi_notes,
-            self.phase_live_instruments,
-            self.phase_menus,
-            self.phase_browser,
-            self.phase_doc_skip,
-        ]
+        if self.plugins_focus:
+            # Do not run Q/quantize (099 crash) or the rest of the UI catalog.
+            phases += [
+                self.phase_prereq,
+                self.phase_tracks,
+                self.phase_plugins,
+                self.phase_midi_notes,
+            ]
+        else:
+            phases += [
+                self.phase_prereq,
+                self.phase_views,
+                self.phase_transport,
+                self.phase_edit,
+                self.phase_tracks,
+                self.phase_mix,
+                self.phase_midi_notes,
+                self.phase_live_instruments,
+                self.phase_menus,
+                self.phase_browser,
+                self.phase_doc_skip,
+            ]
         for fn in phases:
             if self._stop_now:
                 log("stop_now — abort remaining phases")
@@ -1203,7 +1332,7 @@ class LearnUILoop:
             return self.write_report()
         # Multiple cycles until time budget — re-verify so mistakes stay visible.
         # until_perfect: no early cycle-8 thrash cap; stop only on clean streak or budget.
-        soft_cap = 999 if self.until_perfect else 8
+        soft_cap = 999 if self.until_perfect else (3 if self.plugins_focus else 8)
         while self.remaining() > 30:
             self.run_cycle()
             if self._stop_now:
@@ -1393,6 +1522,16 @@ def main() -> int:
         default=2,
         help="Stop after this many Studio One process exits (default 2; 098 crash guard)",
     )
+    ap.add_argument(
+        "--plugins-focus",
+        action="store_true",
+        help="Only add-instrument-track + load instrument/FX onto tracks (skip Q/quantize)",
+    )
+    ap.add_argument(
+        "--skip-quantize",
+        action="store_true",
+        help="Skip Q/quantize and merge (099 crash on LAPTOP i7)",
+    )
     args = ap.parse_args()
 
     if args.song_dir:
@@ -1407,8 +1546,8 @@ def main() -> int:
         song = ensure_song_open(args.name, no_open=args.no_open)
         os.environ["S1_SONG_DIR"] = str(song)
 
-    if (args.live_devices or args.new_song_each_cycle) and args.no_eyes:
-        log("WARN: live-device / new-song learn requires eyes — ignoring --no-eyes")
+    if (args.live_devices or args.new_song_each_cycle or args.plugins_focus) and args.no_eyes:
+        log("WARN: live-device / new-song / plugins learn requires eyes — ignoring --no-eyes")
         args.no_eyes = False
     verify_ba = bool(args.verify_before_after) and not bool(args.no_verify_before_after)
     mon_sys = bool(args.monitor_system) and not bool(args.no_monitor_system)
@@ -1425,6 +1564,8 @@ def main() -> int:
         verify_before_after=verify_ba,
         monitor_system=mon_sys,
         max_s1_exits=args.max_s1_exits,
+        plugins_focus=args.plugins_focus,
+        skip_quantize=args.skip_quantize,
     )
     sess = loop.run()
     fails = sess.counts.get("FAIL", 0)

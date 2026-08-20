@@ -668,16 +668,24 @@ class FullControl:
 
     # ---- browser load (deliberate, fixed coords relative via keys only) ----
 
-    def browser_load(self, search: str) -> None:
+    def browser_load(self, search: str, *, tab: str = "browser") -> None:
         """
-        Open Browser, type search, Enter twice to load.
+        Open Browser (or Instruments/Effects tab), type search, Enter twice.
         Keyboard-first (no multi-click thrash, no pynput dependency).
+
+        tab: browser (F5) | instruments (F6) | effects (F7)
+        Enter is not proof the VST landed on the selected track — caller must verify.
         """
         import ctypes
 
         user32 = ctypes.windll.user32
         focus_studio_one()
-        run_action("browser", focus=False)
+        tab_action = {
+            "instruments": "browser_instruments",
+            "effects": "browser_effects",
+            "files": "browser_files",
+        }.get((tab or "browser").lower(), "browser")
+        run_action(tab_action, focus=False)
         time.sleep(0.45)
         try:
             send_hotkey(["ctrl"], "F")

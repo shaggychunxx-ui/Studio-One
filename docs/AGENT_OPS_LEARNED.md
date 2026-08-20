@@ -24,6 +24,7 @@ See `S1_NOTES_PORT_SETUP.md` and `STUDIO_ONE_RECORD_MIDI.md`.
 - **Physical external devices** (audio interface, hardware MIDI keyboard, hardware surface) may be **offline** until the human connects them later.
 - UI learn / verify sessions must **still use S1 Controller**; only **SKIP** true hardware I/O, not virtual MCU.
 - Continuous learner: `tools/learn_ui_loop.py` + LAPTOP runner `Invoke-S1-LearnUI-LAPTOP.ps1`.
+- Instruments/FX on tracks: `learn_ui_loop.py --plugins-focus` + `Invoke-S1-LearnPlugins-LAPTOP.ps1`. Search+Enter is not proof — require plugin window or Inspector name. Skip Q (099 crash). No Explorer drag.
 - Eyes must scale Rec column by **screenshot width / aspect ratio** (`rec_x_band_for_width`, `get_screen_geometry`) — LAPTOP is not always 1920×1080.
 
 ### LAPTOP learn session 080 (2026-08-07) — live results

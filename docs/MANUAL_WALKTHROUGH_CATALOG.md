@@ -84,9 +84,10 @@ Source: Reference Manual chapters via `Music-producer/studio-one-6.6-agent-knowl
 | # | Op | Method | Result |
 |---|-----|--------|--------|
 | 4.1 | Open Instruments browser | KB `F6` | TODO |
-| 4.2 | Load instrument onto track | Browser drag / Output dropdown | TODO — custom browser UI; user demo used Browser + Replace |
+| 4.2 | Load instrument onto track | F6 search + Enter, then Replace UIA; eyes must see plugin window | **100** — do not treat search-only as PASS |
 | 4.3 | Replace instrument dialog | Click **Replace** button (UIA) | OK when dialog appears |
 | 4.4 | Console Instruments panel | Click + | TODO fragile coords |
+| 4.5 | Load effect onto track | F7 search + Enter **or** F11 Inserts menu | **100** — plugin window required |
 
 **Learned:** Typing works char-by-char; must be **on Song page**, not Start page search.
 
