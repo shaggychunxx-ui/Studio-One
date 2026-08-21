@@ -64,13 +64,10 @@ _LAYERS: Dict[str, str] = {
 }
 
 _SETUP_STEPS: List[str] = [
-    "Install loopMIDI — create port 'S1 Controller' (gives ports 0 and 1)",
-    "Install loopMIDI — create port 'S1 Notes' (gives ports 1 and 2)",
-    "Studio One → Options → External Devices → Add → Mackie Control",
-    "  Receive From = S1 Controller 1 (MCU OUT from this tool)",
-    "  Send To      = S1 Controller 0 (feedback LEDs/meters back)",
-    "Studio One → Options → External Devices → New Keyboard",
-    "  Receive From = S1 Notes 1 (instrument notes IN to S1)",
+    "Close Studio One, then: py -3.12 -m s1remote setup --apply",
+    "loopMIDI ports 'S1 Controller' (MCU) and 'S1 Notes' (Keyboard) — rtmidi index is not 0/1 when hardware MIDI is present",
+    "Studio One External Devices: Mackie Control Receive/Send = S1 Controller",
+    "Studio One External Devices: Keyboard S1 Notes Receive = S1 Notes",
     "Build and install host package: py -3.12 -m s1remote full package",
     "  Then in S1: Scripts → S1 Full Control: Process Queue",
     "Optional: Control Link ON + Focus ON in S1 toolbar for permanent CC↔param binds",
@@ -78,7 +75,7 @@ _SETUP_STEPS: List[str] = [
 
 _RECORD_PATH: List[str] = [
     "1. Song open; stay on Song/Arrange page (not Start page)",
-    "2. Keyboard device: Receive From = S1 Notes 1 (not MCU port)",
+    "2. Keyboard device: Receive From = S1 Notes (not MCU port)",
     "3. Instrument on Arrange track — user drags from browser (agent cannot drag)",
     "4. Track Input = that Keyboard device",
     "5. Record Enable red ([R]) on that track — this is a TOGGLE",

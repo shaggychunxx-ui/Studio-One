@@ -5,15 +5,17 @@ Maximum practical control of **Studio One 6** from one program (`s1-remote`).
 ## One-time setup
 
 ```bat
-cd %USERPROFILE%\s1-remote
-py -3.12 -m s1remote setup
+cd %USERPROFILE%\Documents\GitHub\Studio-One
+py -3.12 -m s1remote setup --apply
 py -3.12 -m s1remote full package
 ```
 
-1. **loopMIDI** — port `S1 Controller 1` (OUT).
+`setup --apply` (Studio One must be closed):
+
+1. **loopMIDI** — ports `S1 Controller` (MCU) and `S1 Notes` (Keyboard).
 2. Studio One → **Options → External Devices**
-   - **Mackie Control** — Receive From = `S1 Controller 1`
-   - **New Keyboard** — same port (notes + Control Link CCs)
+   - **Mackie Control** — Receive/Send = `S1 Controller`
+   - **S1 Notes Keyboard** — Receive From = `S1 Notes` (never the MCU cable)
 3. Install `scripts\S1FullControl.package` (Scripts menu / drag into S1).
 4. Optional: Control Link toolbar ON for permanent CC binds.
 

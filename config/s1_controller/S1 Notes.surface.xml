@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ControlSurface>
+	<!-- Software Keyboard for instrument notes on loopMIDI port "S1 Notes".
+	     Notes pass through KeyboardDevice. CC 20–35 are Control Link knobs. -->
+	<Controls>
+		<Control name="knob[0]" title="CC20" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="20"/>
+		</Control>
+		<Control name="knob[1]" title="CC21" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="21"/>
+		</Control>
+		<Control name="knob[2]" title="CC22" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="22"/>
+		</Control>
+		<Control name="knob[3]" title="CC23" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="23"/>
+		</Control>
+		<Control name="knob[4]" title="CC24" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="24"/>
+		</Control>
+		<Control name="knob[5]" title="CC25" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="25"/>
+		</Control>
+		<Control name="knob[6]" title="CC26" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="26"/>
+		</Control>
+		<Control name="knob[7]" title="CC27" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="27"/>
+		</Control>
+		<Control name="knob[8]" title="CC28" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="28"/>
+		</Control>
+		<Control name="knob[9]" title="CC29" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="29"/>
+		</Control>
+		<Control name="knob[10]" title="CC30" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="30"/>
+		</Control>
+		<Control name="knob[11]" title="CC31" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="31"/>
+		</Control>
+		<Control name="knob[12]" title="CC32" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="32"/>
+		</Control>
+		<Control name="knob[13]" title="CC33" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="33"/>
+		</Control>
+		<Control name="knob[14]" title="CC34" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="34"/>
+		</Control>
+		<Control name="knob[15]" title="CC35" type="knob" options="receive public">
+			<MidiMessage status="#B0" address="35"/>
+		</Control>
+	</Controls>
+	<Mappings>
+		<Global/>
+	</Mappings>
+</ControlSurface>

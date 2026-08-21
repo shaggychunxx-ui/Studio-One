@@ -19,6 +19,15 @@ def list_ports() -> dict[str, list[str]]:
     }
 
 
+def _base_port_name(name: str) -> str:
+    """Strip rtmidi's trailing ' 0'/' 1'/… index. 'S1 Controller 6' -> 'S1 Controller'."""
+    name = (name or "").strip()
+    parts = name.rsplit(" ", 1)
+    if len(parts) == 2 and parts[1].isdigit():
+        return parts[0]
+    return name
+
+
 def _match_port(names: Iterable[str], preferred: str) -> Optional[str]:
     preferred = (preferred or "").strip()
     if not preferred:
@@ -26,7 +35,6 @@ def _match_port(names: Iterable[str], preferred: str) -> Optional[str]:
     names = list(names)
     if preferred in names:
         return preferred
-    # Fuzzy: substring match (case-insensitive)
     low = preferred.lower()
     for n in names:
         if low in n.lower() or n.lower() in low:
@@ -34,6 +42,11 @@ def _match_port(names: Iterable[str], preferred: str) -> Optional[str]:
     # Prefix without trailing index: "S1 Controller" -> "S1 Controller 1"
     for n in names:
         if n.lower().startswith(low):
+            return n
+    # "S1 Controller 1" must match "S1 Controller 6" when hardware MIDI occupies 0–4
+    want = _base_port_name(preferred).lower()
+    for n in names:
+        if _base_port_name(n).lower() == want:
             return n
     return None
 

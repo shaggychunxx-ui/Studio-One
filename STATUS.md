@@ -4,22 +4,22 @@
 
 **Active owner:** none
 
-**Last updated:** 2026-08-06
+**Last updated:** 2026-08-21
 **Updated by:** GROMIT
 
 Standing instructions for contributors and agents working in this **public** repo.
 
 ## Fleet policy (standing)
 
-**GROMIT runs all background / unattended agent work** for this repo (planning, docs, tooling, phone Send).  
-**Only LAPTOP** may operate **Studio One 6** (DAW host-local). Phone Send default → **`Act on: GROMIT`** (never PHONE).  
-When DAW work is required: **`Act on: LAPTOP`** / `target: LAPTOP`.
+**GROMIT runs all background / unattended agent work** for this repo (planning, docs, tooling, DAW, phone Send).  
+**GROMIT is the Studio One 6 host.** LAPTOP is helper-only. Phone Send default → **`Act on: GROMIT`** (never PHONE).
 
 ## Machines / Studio One 6
 
-- **LAPTOP** is the computer where the music is made.
+- **GROMIT is the DAW host** (PHONE 2026-08-20). Studio One 6.6.4 + StudioLive 32SC live here.
+- **LAPTOP** remains a helper (listen, fetch stems, host-local only).
 - Composition can be done on any computer.
-- **Only LAPTOP** may touch the **Studio One 6** program (open, edit, record, render, or otherwise drive the DAW). Other machines may plan, compose notes, script tooling, or document — they must not run or control Studio One 6.
+- Software **S1 Controller** (loopMIDI Mackie + S1 Notes Keyboard) is installed on GROMIT via `py -3.12 -m s1remote setup --apply`.
 
 ## Commits (mandatory)
 
@@ -40,6 +40,5 @@ When DAW work is required: **`Act on: LAPTOP`** / `target: LAPTOP`.
 - PHONE: Use your eyes and ears and all available resources and knowledge, teach your self how to operate the studio one program in the user interface → Act on AI-CODING
 - PHONE: gitstatus-remote-probe-20260731-042147 -> Act on AI-CODING
 - PHONE: test → Act on AI-CODING
-- [ ] **AI-CODING** set up s1 controller with studio one program on LAPTOP
-- PHONE: set up s1 controller with studio one program on LAPTOP → Act on AI-CODING
+- [x] **GROMIT 2026-08-21:** Software S1 Controller installed (loopMIDI `S1 Controller` + `S1 Notes`, External Devices Mackie Control + S1 Notes Keyboard). MCU feedback verified. Supersedes old LAPTOP/AI-CODING wiring task.
 

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceDefinition classID="{A7C3E1B2-9D4F-4A18-8E6C-2B1F0D5A7C91}" name="S1 Notes" category="Keyboard"
+                  nativeCode="KeyboardDevice" vendor="s1-remote" surfaceFile="S1 Notes.surface.xml"/>

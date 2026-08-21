@@ -24,19 +24,25 @@ copy config\settings.example.json config\settings.json
 
 ## One-time Studio One wiring
 
+Close Studio One, then:
+
 ```bat
 set PYTHONPATH=%CD%
-py -3.12 -m s1remote setup
+py -3.12 -m s1remote setup --apply
 ```
 
-1. **loopMIDI** â€” **two** cables:
-   - `S1 Controller` â†’ MCU (out `S1 Controller 1`, in `S1 Controller 0`)
-   - `S1 Notes` â†’ instrument notes only (agent out `S1 Notes 2`, S1 in `S1 Notes 1`)
-2. Studio One â†’ **Options â†’ External Devices â†’ Add â†’ Mackie â†’ Control**
-   - **Receive From** = MCU OUT (`S1 Controller 1`)
-   - **Send To** = feedback (`S1 Controller 0`)
-3. **New Keyboard** (or existing Keyboard) for live notes:
-   - **Receive From = `S1 Notes 1`** (not the MCU port)
+That creates loopMIDI ports **S1 Controller** + **S1 Notes**, writes External Devices (Mackie Control + S1 Notes Keyboard), and saves `config/settings.json`. rtmidi may number those ports `5`/`6` when hardware MIDI is already present — match on the name, not the index.
+
+Manual equivalent:
+
+1. **loopMIDI** — **two** cables:
+   - `S1 Controller` → MCU (agent out / S1 in)
+   - `S1 Notes` → instrument notes only (not the Mackie cable)
+2. Studio One → **Options → External Devices → Add → Mackie → Control**
+   - **Receive From** = S1 Controller (agent OUT)
+   - **Send To** = S1 Controller (feedback)
+3. **New Keyboard** named S1 Notes:
+   - **Receive From = `S1 Notes`** (not the MCU port)
 4. See **`S1_NOTES_PORT_SETUP.md`** and **`STUDIO_ONE_RECORD_MIDI.md`**
 
 > MCU and notes must **not** share one port. Notes on the Mackie cable collide with surface note-numbers and do not record reliably.

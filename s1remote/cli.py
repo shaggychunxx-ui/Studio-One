@@ -394,25 +394,41 @@ def cmd_ucnet_paths(args) -> int:
 
 
 def cmd_setup(args) -> int:
+    if getattr(args, "apply", False):
+        from pathlib import Path
+
+        tools = Path(__file__).resolve().parent.parent / "tools"
+        sys.path.insert(0, str(tools))
+        from install_s1_controller import run as apply_controller
+
+        report = apply_controller(dry_run=False, skip_midi=bool(getattr(args, "skip_midi", False)))
+        print(json.dumps(report, indent=2))
+        return 0 if report.get("ok") else 1
+
     settings = config.load_settings()
     out_p = settings.get("midi_out_port")
     in_p = settings.get("midi_in_port")
+    notes_p = settings.get("instrument_midi_out_port", "S1 Notes")
     print(
         f"""
 Studio One setup (one time)
 ===========================
 
-1. Virtual MIDI cable
-   Install loopMIDI and create a port (e.g. "S1 Controller").
-   Default config on this PC:
-     OUT (this tool sends):     {out_p}
-     IN  (this tool receives):  {in_p}
+Apply on this PC (loopMIDI + External Devices, S1 must be closed):
+  py -3.12 -m s1remote setup --apply
 
-2. Studio One → Options → External Devices → Add
+1. Virtual MIDI cable (loopMIDI)
+   Two ports — never share MCU and notes:
+     MCU  OUT (this tool sends):     {out_p}
+     MCU  IN  (this tool receives):  {in_p}
+     Notes OUT (instrument stream):  {notes_p}
+
+2. Studio One → Options → External Devices
    • Mackie → Control
        Receive From = {out_p}   (must match what we send on)
        Send To      = {in_p}    (feedback LEDs / meters)
-   • Optional: New Keyboard on the same cable for instrument notes
+   • New Keyboard named S1 Notes
+       Receive From = S1 Notes 1  (not the Mackie cable)
 
    If transport does nothing, swap Receive From / Send To (or swap
    midi_out_port / midi_in_port in config/settings.json).
@@ -541,7 +557,13 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("ports", help="List MIDI ports")
     s.set_defaults(func=cmd_ports, _need_midi=False)
 
-    s = sub.add_parser("setup", help="Print Studio One wiring instructions")
+    s = sub.add_parser("setup", help="Print wiring, or --apply to install S1 Controller")
+    s.add_argument(
+        "--apply",
+        action="store_true",
+        help="Create loopMIDI ports + Mackie Control + S1 Notes Keyboard (S1 must be closed)",
+    )
+    s.add_argument("--skip-midi", action="store_true", help="With --apply, do not restart loopMIDI")
     s.set_defaults(func=cmd_setup, _need_midi=False)
 
     s = sub.add_parser("connect", help="Open MIDI and save port choice")

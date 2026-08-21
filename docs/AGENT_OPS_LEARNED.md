@@ -11,8 +11,8 @@
 
 | Port | Role |
 |------|------|
-| `S1 Controller 1` (out) / `0` (in) | Mackie Control — transport, faders, mute/solo/select |
-| `S1 Notes 2` (agent out) / `1` (S1 in) | Instrument notes only |
+| `S1 Controller` out/in (rtmidi index varies; GROMIT with gear = 6/5) | Mackie Control — transport, faders, mute/solo/select |
+| `S1 Notes` out/in (GROMIT with gear = 7/6) | Instrument notes only |
 
 Config keys: `midi_out_port`, `midi_in_port`, `instrument_midi_out_port` (default fuzzy `S1 Notes`).
 

@@ -4,26 +4,31 @@
 
 | loopMIDI port | Role |
 |---------------|------|
-| **S1 Controller** | Mackie Control (mixer/transport) — unchanged |
-| **S1 Notes** | Instrument Track notes only (new) |
+| **S1 Controller** | Mackie Control (mixer/transport) |
+| **S1 Notes** | Instrument Track notes only |
 
-Windows ports (current numbering):
+Install (Studio One closed):
 
-- Out (agent → S1): `S1 Notes 2`
-- In (S1 listens): `S1 Notes 1`
+```bat
+py -3.12 -m s1remote setup --apply
+```
 
-`s1-remote` settings:
+Windows ports (rtmidi index is not stable — hardware MIDI occupies 0–4 on GROMIT):
 
-- `midi_out_port`: `S1 Controller 1` (MCU)
-- `instrument_midi_out_port`: `S1 Notes` (fuzzy-matches `S1 Notes 2`)
+- MCU out (agent → S1): `S1 Controller N` (name match, not `1`)
+- MCU in (S1 feedback): `S1 Controller M`
+- Notes out (agent): `S1 Notes N`
+- Notes in (S1 Keyboard): `S1 Notes M`
+
+`s1-remote` settings store the live names after `--apply`.
 
 ## Studio One setup (once)
 
-1. **Options → External Devices**
+1. **Options → External Devices** (or `setup --apply`)
 2. **Mackie Control**  
-   - Receive From = `S1 Controller 1` (keep as before)
-3. **Keyboard** (your new Keyboard device, or Add → New Keyboard)  
-   - **Receive From = `S1 Notes 1`**  
+   - Receive From / Send To = `S1 Controller`
+3. **Keyboard** named **S1 Notes**
+   - **Receive From = `S1 Notes`**  
    - Optional: enable **Default Instrument Input**
 4. On an **Instrument Track**:  
    - Input = that Keyboard (or All Inputs)  
