@@ -23,6 +23,10 @@ STATES = (
     "lead_locked",
     "form_building",
     "done",
+    # autonomy pipeline (autonomous_run.py)
+    "autonomous_run",
+    "autonomous_done",
+    "autonomous_failed",
 )
 
 

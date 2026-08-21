@@ -40,7 +40,7 @@ def tracks_path(song_dir: Path) -> Path:
 def load_tracks(song_dir: Path) -> Dict[str, Any]:
     p = tracks_path(song_dir)
     if p.is_file():
-        data = json.loads(p.read_text(encoding="utf-8"))
+        data = json.loads(p.read_text(encoding="utf-8-sig"))
         if isinstance(data, dict) and "roles" in data:
             return data
         if isinstance(data, dict):
