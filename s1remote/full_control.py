@@ -60,13 +60,32 @@ class FullControl:
 
     def connect(self) -> "FullControl":
         self.remote.connect(open_input=False)
-        self.vst.connect()
+        # WinMM: one process may not dual-open the same loopMIDI output.
+        # Share MCU bridge with VST Control Link instead of opening again.
+        try:
+            from .midi.control_link import ControlLink
+            from .vst_midi import GENERIC_BANKS
+
+            self.vst.bridge = self.remote.bridge
+            maps_path = self.vst.maps_path if getattr(self.vst, "maps_path", None) and self.vst.maps_path.is_file() else None
+            self.vst.link = ControlLink(self.remote.bridge, maps_path=maps_path)
+            for key, bank in GENERIC_BANKS.items():
+                if key not in self.vst.link.maps:
+                    self.vst.link.maps[key] = bank
+        except Exception:
+            # Prefer produce path even if VST maps fail to attach
+            try:
+                self.vst.connect()
+            except Exception:
+                pass
         self._connected = True
         return self
 
     def disconnect(self) -> None:
+        # Do not close shared bridge via vst — remote owns the port.
         try:
-            self.vst.disconnect()
+            if getattr(self.vst, "bridge", None) is not getattr(self.remote, "bridge", None):
+                self.vst.disconnect()
         except Exception:
             pass
         try:

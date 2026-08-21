@@ -60,7 +60,7 @@ def _utc() -> str:
 
 
 def load_job(path: Path) -> Dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def write_result(song: Path, result: Dict[str, Any]) -> Path:
@@ -795,20 +795,22 @@ class JobRunner:
 
                 ok_imp = import_one_file(midi, open_menu_path=open_menu_path, focus_studio_one=_f)
                 after_i = self._shot(f"import_{label}")
-                self._record_step(
-                    "stream_record",
-                    ok=bool(ok_imp),
-                    label=label,
-                    track=track,
-                    midi=str(midi),
-                    method="import_fallback",
-                    imported=bool(ok_imp),
-                    note_ons=0,
-                    armed_confirmed=False,
-                    clip_growth=None,
-                    vision={"after": analyze_shot(after_i).to_dict() if after_i else {}},
-                )
-                return bool(ok_imp)
+                if ok_imp:
+                    self._record_step(
+                        "stream_record",
+                        ok=True,
+                        label=label,
+                        track=track,
+                        midi=str(midi),
+                        method="import_fallback",
+                        imported=True,
+                        note_ons=0,
+                        armed_confirmed=False,
+                        clip_growth=None,
+                        vision={"after": analyze_shot(after_i).to_dict() if after_i else {}},
+                    )
+                    return True
+                log("  prefer_import returned false — fall through to live stream")
             except Exception as e:
                 log(f"  import fallback fail ({e}) — try live stream")
 
