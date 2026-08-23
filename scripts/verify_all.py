@@ -63,6 +63,12 @@ def test_imports() -> None:
         "s1remote.ucnet.paths",
         "s1remote.ucnet.client",
         "s1remote.vst_re",
+        "s1remote.ui",
+        "s1remote.ui.driver",
+        "s1remote.ui.catalog",
+        "s1remote.ui.layout",
+        "s1remote.ui.window",
+        "s1remote.ui.tree",
     ]
     for m in mods:
         try:
@@ -85,6 +91,10 @@ def test_cli_help() -> None:
         ["vst", "-h"],
         ["full", "-h"],
         ["full", "caps", "-h"],
+        ["ui", "-h"],
+        ["ui", "inspect", "-h"],
+        ["ui", "commands"],
+        ["ui", "regions"],
         ["ucnet-discover", "-h"],
         ["ucnet-connect", "-h"],
         ["ucnet-paths", "-h"],
@@ -143,6 +153,29 @@ def test_catalogs() -> None:
         record("hotkeys ACTIONS", "mixer" in ACTIONS and "save" in ACTIONS, str(len(ACTIONS)))
     except Exception as e:
         record("hotkeys", False, str(e))
+
+    try:
+        from s1remote.ui.catalog import UI_COMMANDS, coverage as ui_cov, search as ui_search
+        from s1remote.ui.layout import REGIONS, rec_point_for_track
+
+        cov = ui_cov()
+        record("ui catalog count", cov.get("total", 0) >= 80, str(cov))
+        record("ui search track", len(ui_search("track")) > 5, str(len(ui_search("track"))))
+        record("ui regions", "arrange" in REGIONS and "rec_column" in REGIONS, str(len(REGIONS)))
+        x, y = rec_point_for_track(1, client_left=0, client_top=0, client_width=1920, client_height=1080)
+        record("ui rec track1 in rec band", 605 <= x <= 655, f"x={x} y={y}")
+        record("ui commands file.save", "file.save" in UI_COMMANDS)
+    except Exception as e:
+        record("ui catalog/layout", False, str(e))
+
+    try:
+        from s1remote.ui import S1UI
+
+        ui = S1UI()
+        info = ui.inspect()
+        record("ui inspect no-crash", "running" in info, str(info.get("running")))
+    except Exception as e:
+        record("ui inspect", False, str(e))
 
     try:
         from s1remote.vst_midi import VstMidiControl, GENERIC_BANKS

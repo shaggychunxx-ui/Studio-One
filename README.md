@@ -10,6 +10,7 @@ Uses supported surfaces only (no process injection):
 | **Control Link** | Named VST / stock params (after map + optional learn) | MIDI CC (MCU cable) |
 | **Instrument MIDI** | Notes, velocity, program change for **live record** | **Separate** port (`S1 Notes`) |
 | **Hotkeys / menus** | Views, file, edit, menu bar paths | Focus window + keys |
+| **UI driver** | Find Command, UIA chrome, named region clicks/drags, shots | Live window (`s1remote ui`) |
 | **In-host package** | Track/channel mute/volume by index | Studio One Scripts |
 | **UCNET** | Discovery working; TCP param session still RE | UDP 47809 / TCP session |
 | **HTTP API** | Same features for Stream Deck / scripts | `http://127.0.0.1:8765` |
@@ -51,7 +52,8 @@ Manual equivalent:
 
 | File | Purpose |
 |------|---------|
-| `docs/S1_UI_PIPELINE.md` | **Preferred use** â€” S1-first agent/user split |
+| `docs/UI_DRIVER.md` | **Live UI driver** — inspect, Find Command, UIA, named clicks |
+| `docs/S1_UI_PIPELINE.md` | **Preferred use** — S1-first agent/user split |
 | `docs/ARM_RECORD_LESSONS.md` | Deep arm/record failures + eyes policy |
 | `docs/AGENT_OPS_LEARNED.md` | Live arm/port failures and agent policy |
 | `docs/MANUAL_WALKTHROUGH_CATALOG.md` | Full manual walk catalog |
@@ -92,6 +94,10 @@ py -3.12 -m s1remote full vpot 0 --delta 4
 py -3.12 -m s1remote full package
 py -3.12 -m s1remote ucnet-discover
 py -3.12 -m s1remote ucnet-paths --kind transport
+py -3.12 -m s1remote ui inspect
+py -3.12 -m s1remote ui command "Add Instrument Track"
+py -3.12 -m s1remote ui do view.browser
+py -3.12 -m s1remote ui click-region arrange
 ```
 
 ### Full Control (stacked API)
@@ -111,7 +117,7 @@ with FullControl() as s1:
     s1.host_set_volume(0, -6)  # then Scripts â†’ S1 Full Control: Process Queue
 ```
 
-See [FULL_CONTROL.md](FULL_CONTROL.md) and [VST_MIDI.md](VST_MIDI.md).
+See [FULL_CONTROL.md](FULL_CONTROL.md), [docs/UI_DRIVER.md](docs/UI_DRIVER.md), and [VST_MIDI.md](VST_MIDI.md).
 
 ## VST MIDI (Control Link)
 
@@ -163,6 +169,7 @@ s1-remote/
     full_control.py    # stacked FullControl API
     cli.py / api.py
     hotkeys.py / menus.py
+    ui/                # live window: Find Command, UIA, named regions
     vst_midi.py
     host_bridge.py
     midi/              # MCU, Control Link, notes
@@ -191,7 +198,7 @@ See `docs/AUTONOMY.md` and `docs/EXECUTION_JOBS.md`.
 - No public â€œcontrol every S1 function via one host APIâ€.
 - Third-party VST params need Control Link learn, Channel Macros, or MCU plugin mode.
 - UCNET path-based mixer/VST (`mixer/channel/ch1/volume`) is modeled; live TCP set not finished.
-- No pixel thrash / blind mouse hunting.
+- No pixel thrash / blind mouse hunting — named regions + Find Command + UIA only (`docs/UI_DRIVER.md`).
 
 ## License / intent
 

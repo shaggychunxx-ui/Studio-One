@@ -60,6 +60,7 @@ _LAYERS: Dict[str, str] = {
     "menu": "Alt-menu keyboard paths — full menu bar coverage (Windows only)",
     "browser": "Browser — F5 + type + Enter to search and load instruments/FX",
     "host": "In-host package queue — track/channel ops via Host.Objects inside Studio One",
+    "ui": "Live UI driver — Find Command (Ctrl+K), UIA chrome, named client-relative regions, shot overlay",
     "ucnet": "UCNET (RE) — UDP discovery working; TCP param session framing incomplete",
 }
 
@@ -153,9 +154,9 @@ _HONEST_LIMITS: List[str] = [
     "UCNET TCP param session framing is incomplete — cannot yet set remote SurfaceData params over TCP.",
     "In-host Host.Objects requires running the package task once per queue (S1 does not expose continuous external IPC).",
     "Third-party VST param lists need Control Link learn, Channel Macros, or MCU plugin-mode focus — no public per-param dump.",
-    "No pixel thrash — cursor is not used to hunt knobs.",
-    "Browser drag cannot be automated (S1 custom browser UI).",
-    "Studio One dialog automation unreliable (custom-drawn, limited UIA exposure).",
+    "No pixel thrash — cursor is not used to hunt unlabeled knobs. Named regions + Find Command + UIA only.",
+    "Browser drop uses named drag (browser.result → arrange.blank); UIA cannot see custom browser rows.",
+    "Studio One dialogs are mostly custom-drawn — prefer Escape / Find Command over UIA OK.",
     "MCU strip 0 ≠ Arrange Track 1 — strip/track mapping is not guaranteed.",
 ]
 
@@ -233,6 +234,10 @@ class DawOperator:
             "known_failures": _KNOWN_FAILURES,
             "agent_policies": _AGENT_POLICIES,
             "honest_limits": _HONEST_LIMITS,
+            "ui_driver": {
+                "cli": "py -3.12 -m s1remote ui inspect|command|do|click-region|tree|shot",
+                "doc": "docs/UI_DRIVER.md",
+            },
         }
 
     def commands(self, query: str = "") -> List[Dict[str, Any]]:
@@ -295,6 +300,19 @@ class DawOperator:
 
     def vst_param(self, plugin: str, param: str, value: Any) -> Dict[str, Any]:
         return self._fc.vst_param(plugin, param, value)
+
+    # Live UI
+    def ui_inspect(self) -> Dict[str, Any]:
+        return self._fc.ui.inspect()
+
+    def ui_command(self, name: str) -> Dict[str, Any]:
+        return self._fc.ui.command(name)
+
+    def ui_do(self, command_id: str) -> Dict[str, Any]:
+        return self._fc.ui.do(command_id)
+
+    def ui_click_region(self, name: str) -> Dict[str, Any]:
+        return self._fc.ui.click_region(name)
 
     # MIDI notes
     def note(

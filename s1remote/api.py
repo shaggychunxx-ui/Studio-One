@@ -122,6 +122,60 @@ def create_app(remote: S1Remote) -> Flask:
         remote.mcu.click(name)
         return jsonify({"ok": True, "button": name})
 
+    @app.get("/ui/inspect")
+    def ui_inspect():
+        from .ui import S1UI
+
+        return jsonify(S1UI().inspect())
+
+    @app.get("/ui/commands")
+    def ui_commands():
+        from .ui import search as ui_search
+        from .ui.catalog import coverage
+
+        q = request.args.get("q", "")
+        return jsonify({"coverage": coverage(), "commands": ui_search(q)})
+
+    @app.get("/ui/regions")
+    def ui_regions():
+        from .ui import list_regions
+
+        return jsonify(list_regions(request.args.get("q", "")))
+
+    @app.post("/ui/command")
+    def ui_command():
+        from .ui import S1UI
+
+        body = request.get_json(force=True)
+        return jsonify(S1UI().command(body.get("name") or ""))
+
+    @app.post("/ui/do")
+    def ui_do():
+        from .ui import S1UI
+
+        body = request.get_json(force=True)
+        return jsonify(S1UI().do(body.get("id") or body.get("command_id") or ""))
+
+    @app.post("/ui/click-region")
+    def ui_click_region():
+        from .ui import S1UI
+
+        body = request.get_json(force=True)
+        return jsonify(
+            S1UI().click_region(
+                body.get("name") or "",
+                button=body.get("button") or "left",
+                double=bool(body.get("double")),
+            )
+        )
+
+    @app.post("/ui/invoke")
+    def ui_invoke():
+        from .ui import S1UI
+
+        body = request.get_json(force=True)
+        return jsonify(S1UI().invoke(body.get("name") or "", control_type=body.get("type") or ""))
+
     return app
 
 

@@ -460,6 +460,126 @@ Apply on this PC (loopMIDI + External Devices, S1 must be closed):
     return 0
 
 
+def cmd_ui(args) -> int:
+    """Studio One UI driver — inspect / Find Command / UIA / named clicks."""
+    from .ui.driver import S1UI, dumps
+
+    ui = S1UI()
+    action = args.ui_action
+
+    if action == "inspect":
+        print(dumps(ui.inspect(focus=bool(getattr(args, "focus", False)))))
+        return 0
+
+    if action == "tree":
+        nodes = ui.tree(
+            getattr(args, "query", "") or "",
+            max_depth=int(getattr(args, "depth", 6) or 6),
+            max_nodes=int(getattr(args, "max_nodes", 400) or 400),
+            named_only=not bool(getattr(args, "all", False)),
+        )
+        print(dumps({"count": len(nodes), "nodes": nodes}))
+        return 0
+
+    if action == "find":
+        hits = ui.find(
+            args.name,
+            control_type=getattr(args, "type", "") or "",
+            automation_id=getattr(args, "auto_id", "") or "",
+        )
+        print(dumps({"count": len(hits), "hits": hits}))
+        return 0
+
+    if action == "invoke":
+        print(dumps(ui.invoke(args.name, control_type=getattr(args, "type", "") or "")))
+        return 0
+
+    if action == "command":
+        print(dumps(ui.command(args.name)))
+        return 0
+
+    if action == "do":
+        print(dumps(ui.do(args.command_id)))
+        return 0
+
+    if action == "menu":
+        path = [p for p in (args.path or "").split(">") if p.strip()]
+        if not path:
+            print(dumps({"ok": False, "error": "menu path like File>Save"}))
+            return 1
+        print(dumps(ui.menu(path)))
+        return 0
+
+    if action == "click-region":
+        print(
+            dumps(
+                ui.click_region(
+                    args.name,
+                    button=getattr(args, "button", "left") or "left",
+                    double=bool(getattr(args, "double", False)),
+                )
+            )
+        )
+        return 0
+
+    if action == "click-frac":
+        print(dumps(ui.click_frac(float(args.fx), float(args.fy), button=getattr(args, "button", "left") or "left")))
+        return 0
+
+    if action == "click-rec":
+        print(dumps(ui.click_rec(int(args.track))))
+        return 0
+
+    if action == "drag":
+        print(dumps(ui.drag(args.src, args.dst)))
+        return 0
+
+    if action == "type":
+        print(dumps(ui.type_text(args.text, paste=not bool(getattr(args, "keys", False)))))
+        return 0
+
+    if action == "keys":
+        print(dumps(ui.keys(args.action)))
+        return 0
+
+    if action == "shot":
+        print(dumps(ui.shot(getattr(args, "tag", None) or "ui", overlay=bool(getattr(args, "overlay", False)))))
+        return 0
+
+    if action == "commands":
+        from .ui.catalog import coverage as ui_cov
+
+        print(dumps({"coverage": ui_cov(), "commands": ui.commands(getattr(args, "query", "") or "")}))
+        return 0
+
+    if action == "regions":
+        print(dumps(ui.regions(getattr(args, "query", "") or "")))
+        return 0
+
+    if action == "escape":
+        print(dumps(ui.escape(int(getattr(args, "times", 1) or 1))))
+        return 0
+
+    if action == "enter":
+        print(dumps(ui.enter()))
+        return 0
+
+    if action == "dismiss":
+        print(dumps(ui.dismiss(ok=bool(getattr(args, "ok", False)))))
+        return 0
+
+    if action == "scroll":
+        print(dumps(ui.scroll(getattr(args, "region", None) or "arrange", clicks=int(getattr(args, "clicks", -3)))))
+        return 0
+
+    if action == "set-value":
+        print(dumps(ui.set_value(args.name, args.value, control_type=getattr(args, "type", "") or "Edit")))
+        return 0
+
+    print(f"Unknown ui action {action}", file=sys.stderr)
+    return 1
+
+
 def cmd_full(args) -> int:
     """Full Control surface — all layers."""
     from .full_control import FullControl, build_host_package
@@ -767,6 +887,109 @@ def build_parser() -> argparse.ArgumentParser:
 
     os_ = op_sub.add_parser("coverage", help="Command count by layer")
     os_.set_defaults(func=cmd_operator, op_action="coverage", _need_midi=False)
+
+    # ---- UI driver (window / Find Command / UIA / named clicks) ----
+    s = sub.add_parser("ui", help="Manipulate Studio One UI (inspect, Find Command, UIA, named clicks)")
+    ui_sub = s.add_subparsers(dest="ui_action", required=True)
+
+    us = ui_sub.add_parser("inspect", help="Window, page, dialogs, region list (no clicks)")
+    us.add_argument("--focus", action="store_true")
+    us.set_defaults(func=cmd_ui, ui_action="inspect", _need_midi=False)
+
+    us = ui_sub.add_parser("tree", help="Dump UIA tree of Studio One chrome")
+    us.add_argument("query", nargs="?", default="")
+    us.add_argument("--depth", type=int, default=6)
+    us.add_argument("--max-nodes", dest="max_nodes", type=int, default=400)
+    us.add_argument("--all", action="store_true", help="Include unnamed panes")
+    us.set_defaults(func=cmd_ui, ui_action="tree", _need_midi=False)
+
+    us = ui_sub.add_parser("find", help="Find UIA elements by name")
+    us.add_argument("name")
+    us.add_argument("--type", default="", help="Control type substring (Button, Edit, MenuItem)")
+    us.add_argument("--auto-id", dest="auto_id", default="")
+    us.set_defaults(func=cmd_ui, ui_action="find", _need_midi=False)
+
+    us = ui_sub.add_parser("invoke", help="Click/invoke a UIA element by name")
+    us.add_argument("name")
+    us.add_argument("--type", default="")
+    us.set_defaults(func=cmd_ui, ui_action="invoke", _need_midi=False)
+
+    us = ui_sub.add_parser("set-value", help="Set a UIA Edit field")
+    us.add_argument("name")
+    us.add_argument("value")
+    us.add_argument("--type", default="Edit")
+    us.set_defaults(func=cmd_ui, ui_action="set-value", _need_midi=False)
+
+    us = ui_sub.add_parser("command", help="Find Command (Ctrl+K) then Enter")
+    us.add_argument("name", help='Studio One command name, e.g. "Add Instrument Track"')
+    us.set_defaults(func=cmd_ui, ui_action="command", _need_midi=False)
+
+    us = ui_sub.add_parser("do", help="Run catalog UI command id (hotkey/find/menu/region)")
+    us.add_argument("command_id")
+    us.set_defaults(func=cmd_ui, ui_action="do", _need_midi=False)
+
+    us = ui_sub.add_parser("menu", help="Alt-menu path File>Save")
+    us.add_argument("path", help="File>Save  or  Track>Add>Instrument Track")
+    us.set_defaults(func=cmd_ui, ui_action="menu", _need_midi=False)
+
+    us = ui_sub.add_parser("click-region", help="Click named layout region (client-relative)")
+    us.add_argument("name")
+    us.add_argument("--button", choices=["left", "right"], default="left")
+    us.add_argument("--double", action="store_true")
+    us.set_defaults(func=cmd_ui, ui_action="click-region", _need_midi=False)
+
+    us = ui_sub.add_parser("click-frac", help="Click client-relative fraction 0..1")
+    us.add_argument("fx", type=float)
+    us.add_argument("fy", type=float)
+    us.add_argument("--button", choices=["left", "right"], default="left")
+    us.set_defaults(func=cmd_ui, ui_action="click-frac", _need_midi=False)
+
+    us = ui_sub.add_parser("click-rec", help="Click Rec Enable for 1-based Arrange track")
+    us.add_argument("track", type=int)
+    us.set_defaults(func=cmd_ui, ui_action="click-rec", _need_midi=False)
+
+    us = ui_sub.add_parser("drag", help="Drag named region → named region")
+    us.add_argument("src")
+    us.add_argument("dst")
+    us.set_defaults(func=cmd_ui, ui_action="drag", _need_midi=False)
+
+    us = ui_sub.add_parser("type", help="Type/paste into focused field")
+    us.add_argument("text")
+    us.add_argument("--keys", action="store_true", help="Key-by-key instead of paste")
+    us.set_defaults(func=cmd_ui, ui_action="type", _need_midi=False)
+
+    us = ui_sub.add_parser("keys", help="Named hotkey (see `s1remote hotkeys`)")
+    us.add_argument("action")
+    us.set_defaults(func=cmd_ui, ui_action="keys", _need_midi=False)
+
+    us = ui_sub.add_parser("shot", help="Screenshot (optional region overlay)")
+    us.add_argument("--tag", default="ui")
+    us.add_argument("--overlay", action="store_true")
+    us.set_defaults(func=cmd_ui, ui_action="shot", _need_midi=False)
+
+    us = ui_sub.add_parser("commands", help="Search UI command catalog")
+    us.add_argument("query", nargs="?", default="")
+    us.set_defaults(func=cmd_ui, ui_action="commands", _need_midi=False)
+
+    us = ui_sub.add_parser("regions", help="List named layout regions")
+    us.add_argument("query", nargs="?", default="")
+    us.set_defaults(func=cmd_ui, ui_action="regions", _need_midi=False)
+
+    us = ui_sub.add_parser("escape", help="Press Escape")
+    us.add_argument("--times", type=int, default=1)
+    us.set_defaults(func=cmd_ui, ui_action="escape", _need_midi=False)
+
+    us = ui_sub.add_parser("enter", help="Press Enter")
+    us.set_defaults(func=cmd_ui, ui_action="enter", _need_midi=False)
+
+    us = ui_sub.add_parser("dismiss", help="Escape dialogs (never OK unless --ok)")
+    us.add_argument("--ok", action="store_true", help="Press Enter instead of Escape")
+    us.set_defaults(func=cmd_ui, ui_action="dismiss", _need_midi=False)
+
+    us = ui_sub.add_parser("scroll", help="Wheel-scroll a named region")
+    us.add_argument("region", nargs="?", default="arrange")
+    us.add_argument("--clicks", type=int, default=-3)
+    us.set_defaults(func=cmd_ui, ui_action="scroll", _need_midi=False)
 
     s = sub.add_parser("ucnet-discover", help="UCNET UDP discovery (Studio One Remote protocol)")
     s.add_argument("--timeout", type=float, default=2.0)

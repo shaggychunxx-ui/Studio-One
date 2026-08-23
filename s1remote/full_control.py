@@ -55,6 +55,7 @@ class FullControl:
         self.vst = VstMidiControl(out_port=out_port)
         self._connected = False
         self._remote_params: Optional[dict] = None
+        self._ui = None
 
     # ---- lifecycle ----
 
@@ -751,6 +752,17 @@ class FullControl:
     def host_interpret(self, category: str, name: str) -> str:
         return self.host("interpret_command", category=category, name=name)
 
+    # ---- UI driver ----
+
+    @property
+    def ui(self):
+        """Live window driver (Find Command / UIA / named regions). MIDI-free."""
+        if getattr(self, "_ui", None) is None:
+            from .ui import S1UI
+
+            self._ui = S1UI()
+        return self._ui
+
     # ---- generic router ----
 
     def do(self, command_id: str, **override: Any) -> Any:
@@ -859,6 +871,7 @@ class FullControl:
                 "menu_bar_keyboard": True,
                 "browser_search_load": True,
                 "host_package_queue": True,
+                "ui_driver_find_command_uia_regions": True,
                 "remoteservice_param_names": remote_params,
                 "ucnet_session_params": False,  # RE incomplete
                 "pixel_thrash_disabled": True,

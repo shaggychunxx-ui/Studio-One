@@ -29,7 +29,10 @@ py -3.12 -m s1remote full package
 | Named VST params | Control Link maps | `vst set mai_tai …` |
 | MIDI notes in | Keyboard MIDI | `note 60` |
 | Views / file / edit | Hotkeys | `hotkey mixer` / `browser` |
-| Menu bar | Alt menu path | `full do menu.track` |
+| **Any named UI command** | Find Command (`Ctrl+K`) | `ui command "Add Instrument Track"` |
+| Menu bar | Alt menu path | `full do menu.track` / `ui menu "Track>Add>Instrument Track"` |
+| Native dialog chrome | UIA invoke | `ui invoke OK` |
+| Arrange / browser / Rec column | Named client-relative region | `ui click-region arrange` / `ui click-rec 1` |
 | Browser load instrument | F5 + type + Enter | `full browser-load Mojito` |
 | Channel volume by index | In-host Host.Objects | `full host set_channel_volume --params "{\"index\":0,\"db\":-6}"` then run **Process Queue** in S1 |
 | All map CCs pulsed | MIDI only | `full program-maps` |
@@ -57,6 +60,18 @@ with FullControl() as s1:
 
     s1.host_set_volume(0, -6)  # then Process Queue in S1
     s1.do("mixer.mode_plugin")
+
+    # Live window (no MIDI): Find Command, UIA, named regions
+    s1.ui.command("Add Instrument Track")
+    s1.ui.click_region("arrange")
+```
+
+```python
+from s1remote.ui import S1UI
+
+ui = S1UI()
+ui.inspect()
+ui.do("view.browser")
 ```
 
 ## CLI
@@ -70,6 +85,9 @@ py -3.12 -m s1remote full vpot 0 --delta 6
 py -3.12 -m s1remote full do view.browser
 py -3.12 -m s1remote full browser-load "Mai Tai"
 py -3.12 -m s1remote full host set_channel_mute --params "{\"index\":0,\"state\":true}"
+py -3.12 -m s1remote ui inspect
+py -3.12 -m s1remote ui command "Add Instrument Track"
+py -3.12 -m s1remote ui do track.add_instrument
 ```
 
 ## Honest limits
@@ -77,6 +95,6 @@ py -3.12 -m s1remote full host set_channel_mute --params "{\"index\":0,\"state\"
 - **UCNET session** (phone Remote app protocol) is not fully decoded — cannot yet set remote SurfaceData params over TCP.
 - **In-host Host.Objects** requires running the package task once per queue (S1 does not expose continuous external IPC).
 - **Third-party VST param lists** need Control Link learn, Channel Macros, or MCU plugin-mode focus — no public dump of every third-party param.
-- **No pixel thrash** — cursor is not used to hunt knobs.
+- **No pixel thrash** — cursor is not used to hunt unlabeled knobs. Named regions + Find Command + UIA only (`docs/UI_DRIVER.md`).
 
 This is the real maximum stack PreSonus allows without reverse-engineering the process memory.

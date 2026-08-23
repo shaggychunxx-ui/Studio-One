@@ -36,6 +36,9 @@ Use when UIA cannot see Rec buttons or clips. See `docs/ARM_RECORD_LESSONS.md`.
 
 Requires: `pillow` for grabs.
 
+Live window driver (Find Command / UIA / named regions): `docs/UI_DRIVER.md`  
+`py -3.12 -m s1remote ui inspect`
+
 ## Tools
 
 | Script | Role |
