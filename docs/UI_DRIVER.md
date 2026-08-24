@@ -69,7 +69,8 @@ Region boxes are **client-relative fractions** of the Studio One window (DPI-saf
 - Named transport clicks are a fallback. MCU is more reliable when loopMIDI is wired.
 - `click-rec` without a screenshot is row-pitch math. Compact track headers put Rec around the Mute/Solo cluster, **not** `REC_X_FRAC` 605/1920. Prefer `[R]` on the selected track or `FullControl.arm_and_verify`.
 - Studio One 6 **Artist**: File → Save As has **no** default hotkey (`Ctrl+Shift+S` is unbound). Use `ui.save_as_dialog()` / UIA `Save As...`. Do not `Ctrl+S` over Template.
-- Mix vs Edit bottom tabs are custom-drawn. F3 does not leave Mix. Find Command `Editor` is the wrong name.
+- Mix vs Edit bottom tabs are custom-drawn. F3 does not leave Mix. Find Command `Editor` is the wrong name. Named regions `page.edit` / `page.mix` / `page.browse` / `transport.tempo` are GROMIT-calibrated (tempo is left of Master Volume).
+- Alt+S opens the **Studio One** menu, not Song. Song Setup is UIA `Song` → `Song Setup...` (`ui do song.setup`). Ctrl+. is Grok shortcuts, not Song Setup.
 - Launch S1 outside the agent job (background `Start-Process` + `Wait-Process`). A foreground shell job kills Studio One when the command exits.
 - `inspect().dialogs` only lists Studio One-titled windows. The Windows **Save As** file dialog will not appear there — screenshot it.
 

@@ -31,6 +31,15 @@ What failed, then the other way:
 
 Template still missing Impact XT kit samples + Surge XT / SynthMaster Player. Close those dialogs; do not Install during a learn. Do not rec-arm 32 mixer channels. Do not File→New.
 
+Continue (same day):
+
+- **Song Setup:** UIA invoke `Song` then `Song Setup...`. Do not Alt+S (that is the Studio One menu). Ctrl+. is Grok shortcuts, not Song Setup.
+- **Sample rate:** this song's General tab was 44.1 kHz with “Mismatch: Audio device has 48.0 kHz”. Dropdown + Down + Enter → 48.0, then OK. Transport already showed 48.0.
+- **Tempo 160:** not on Song Setup Timeline. Click the transport **160.00/120.00** field **left of Master Volume**. `click_frac(0.80, 0.955)` is Master Volume. Working point on 1745×999: **(1312, 952)**.
+- **Edit / Mix / Browse** bottom tabs work with a raw click. Edit opens the piano roll (Mai Tai clip showed C1 / vel 63%). Mix shows the selected channel + Main (Compressor, Pro EQ).
+- **Hardware:** `mido` out `TR-8S 1` (notes 36/38/42), `Moog Matriarch 3` (48/52/55), `monologue 4` (60/64) — send succeeded. MCU play at 160 with metronome: green play, playhead moving.
+- **UCNET** with S1 open: discovers DAW `Studio One/6.6.4.102451 Win x64` tcp **54687** and StudioLive 32SC AUD tcp 60716. Zero servers when S1 is closed.
+
 ## Sample rate (standing — 2026-08-15)
 
 **Every song is 48 kHz.** StudioLive 32SC and `AudioEngine.settings` are 48 kHz. New Song / Song Setup / mixdown WAV must be 48 kHz. 44.1 kHz songs make S1 resample and hitch on LAPTOP.

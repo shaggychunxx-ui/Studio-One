@@ -53,6 +53,11 @@ REGIONS: Dict[str, Tuple[float, float, float, float]] = {
     "transport.record": (0.400, 0.915, 0.450, 0.985),
     "transport.loop": (0.450, 0.915, 0.490, 0.985),
     "transport.metronome": (0.490, 0.915, 0.535, 0.985),
+    # GROMIT 1745x999 live: 120.00/160.00 sits left of Master Volume, not at 0.80
+    "transport.tempo": (0.730, 0.930, 0.785, 0.985),
+    "page.edit": (0.860, 0.930, 0.905, 0.990),
+    "page.mix": (0.905, 0.930, 0.950, 0.990),
+    "page.browse": (0.950, 0.930, 0.995, 0.990),
     "start.new": (0.040, 0.280, 0.160, 0.340),
     "start.open": (0.040, 0.350, 0.160, 0.410),
     "dialog.ok": (0.55, 0.62, 0.72, 0.72),

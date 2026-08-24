@@ -195,6 +195,16 @@ class S1UI:
             result = self.save_as_dialog()
             result["id"] = command_id
             return result
+        # Alt+S opens the Studio One menu, not Song. UIA Song → Song Setup...
+        if command_id == "song.setup":
+            send_hotkey([], "ESCAPE")
+            time.sleep(0.08)
+            self.invoke("Song")
+            time.sleep(0.4)
+            result = self.invoke("Song Setup...")
+            result["id"] = command_id
+            result["layer"] = "menu_uia"
+            return result
 
         hotkey = meta.get("hotkey") or ""
         if hotkey and hotkey in ACTIONS:
