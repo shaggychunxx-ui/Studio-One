@@ -67,6 +67,8 @@ KEYEVENTF_KEYUP = 0x0002
 # modifiers: "ctrl", "alt", "shift"
 ACTIONS: dict[str, tuple[list[str], str]] = {
     "save": (["ctrl"], "S"),
+    # Artist 6.6: Save As has no default chord. Ctrl+Shift+S is unbound.
+    # Save New Version is Ctrl+Shift+Alt+S. Use S1UI.save_as_dialog().
     "save_as": (["ctrl", "shift"], "S"),
     "undo": (["ctrl"], "Z"),
     "redo": (["ctrl", "shift"], "Z"),

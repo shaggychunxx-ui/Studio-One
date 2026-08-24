@@ -293,10 +293,18 @@ def save_as_new_song(dest_song_file: Path, eyes: Eyes) -> bool:
     time.sleep(0.15)
 
     log(f"Save As → {dest_song_file}")
+    # Artist 6.6: Ctrl+Shift+S is unbound. File → Save As... via UIA.
     try:
-        run_action("save_as", focus=True)
-    except Exception:
-        send_keys("^+s")
+        from s1remote.ui import S1UI
+
+        uia_as = S1UI().save_as_dialog()
+        log(f"  save_as_dialog: {uia_as}")
+    except Exception as e:
+        log(f"  save_as_dialog warn: {e}")
+        try:
+            run_action("save_as", focus=True)
+        except Exception:
+            send_keys("^+s")
     time.sleep(0.9)
 
     dlg, backend, title = find_dialog(
@@ -304,9 +312,14 @@ def save_as_new_song(dest_song_file: Path, eyes: Eyes) -> bool:
         timeout=8.0,
     )
     if dlg is None:
-        log("  Save As dialog not found — retry hotkey")
+        log("  Save As dialog not found — retry File menu UIA")
         focus_studio_one()
-        send_keys("^+s")
+        try:
+            from s1remote.ui import S1UI
+
+            S1UI().save_as_dialog()
+        except Exception:
+            send_keys("^+s")
         time.sleep(1.0)
         dlg, backend, title = find_dialog(
             ("Save As", "Save Song", "Save", "Name Song"),

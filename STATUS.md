@@ -3,8 +3,8 @@
 
 **Active owner:** none
 
-**Last updated:** 2026-08-23
-**Updated by:** PHONE
+**Last updated:** 2026-08-24
+**Updated by:** GROMIT
 
 Standing instructions for contributors and agents working in this **public** repo.
 
@@ -40,6 +40,7 @@ Standing instructions for contributors and agents working in this **public** rep
 - PHONE: gitstatus-remote-probe-20260731-042147 -> Act on AI-CODING
 - PHONE: test → Act on AI-CODING
 - [x] **GROMIT 2026-08-21:** Software S1 Controller installed (loopMIDI `S1 Controller` + `S1 Notes`, External Devices Mackie Control + S1 Notes Keyboard). MCU feedback verified. Supersedes old LAPTOP/AI-CODING wiring task.
+- [x] **GROMIT 2026-08-24:** Live UI learn on Template → Save As `Learn_GROMIT_20260824`. MCU play/record + S1 Notes landed a blue MIDI clip on Mai Tai. Find Command paste was firing Save As Template; Artist has no Save As hotkey — UIA `Save As...`. Notes in `docs/LEARN_UI_SESSION_LATEST.md`.
 - [ ] **GROMIT** AI temp 10 experiment every way to manipulate music with DAW. external instruments are loaded to play a patch at 160. explore every aspect of DAW and hardware continue until told to stop
 - PHONE: AI temp 10 experiment every way to manipulate music with DAW. external instruments are loaded to play a patch at 160. explore every aspect of DAW and hardware continue until told to stop → Act on GROMIT (GROMIT delegates host-local work)
 

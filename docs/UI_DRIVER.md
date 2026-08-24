@@ -65,9 +65,13 @@ Region boxes are **client-relative fractions** of the Studio One window (DPI-saf
 ## Honest limits
 
 - Arrange clips, mixer knobs, and browser rows are **custom-drawn**. UIA will not list them. Use Find Command, MCU, named regions, or vision Rec clicks.
-- Find Command fires the **first match**. Use the Keyboard Shortcuts name (`Add Instrument Track`, not `add inst`).
+- Find Command fires the **first match**. Use the Keyboard Shortcuts name (`Add Instrument Track`, not `add inst`). Empty Find Command + Enter re-fires the last command — on GROMIT that was **Save As Template**. `command()` types the name (does not trust clipboard paste) and Escapes an unexpected Save As Template dialog.
 - Named transport clicks are a fallback. MCU is more reliable when loopMIDI is wired.
-- `click-rec` without a screenshot is row-pitch math. Prefer `FullControl.arm_and_verify` when producing.
+- `click-rec` without a screenshot is row-pitch math. Compact track headers put Rec around the Mute/Solo cluster, **not** `REC_X_FRAC` 605/1920. Prefer `[R]` on the selected track or `FullControl.arm_and_verify`.
+- Studio One 6 **Artist**: File → Save As has **no** default hotkey (`Ctrl+Shift+S` is unbound). Use `ui.save_as_dialog()` / UIA `Save As...`. Do not `Ctrl+S` over Template.
+- Mix vs Edit bottom tabs are custom-drawn. F3 does not leave Mix. Find Command `Editor` is the wrong name.
+- Launch S1 outside the agent job (background `Start-Process` + `Wait-Process`). A foreground shell job kills Studio One when the command exits.
+- `inspect().dialogs` only lists Studio One-titled windows. The Windows **Save As** file dialog will not appear there — screenshot it.
 
 ## HTTP (with `s1remote api`)
 

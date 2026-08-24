@@ -49,7 +49,7 @@ _u("file.new", "New", category="File", hotkey="new_song", menu=["File", "New…"
 _u("file.open", "Open", category="File", hotkey="open", menu=["File", "Open…"], page="any")
 _u("file.close", "Close", category="File", hotkey="close", menu=["File", "Close"])
 _u("file.save", "Save", category="File", hotkey="save", menu=["File", "Save"])
-_u("file.save_as", "Save As", category="File", hotkey="save_as", menu=["File", "Save As…"])
+_u("file.save_as", "Save As...", category="File", menu=["File", "Save As..."])
 _u("file.exit", "Exit", category="File", menu=["File", "Exit"], page="any")
 
 # ---- Song / export / import ----

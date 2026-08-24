@@ -3,6 +3,34 @@
 **Date:** 2026-07-24  
 **Companion:** Music-producer `studio-one-6.6-agent-knowledge/` (manual chapters + same ops notes)
 
+## GROMIT live learn (2026-08-24)
+
+Host **GROMIT**. Song `Learn_GROMIT_20260824` (Save As from Template; do not write Template). 48 kHz. MCU `S1 Controller 6`, notes `S1 Notes 7`.
+
+What worked (eyes proof):
+
+- Safety → coord Start (UIA Start was invisible). Then Close Locate Missing Files + Missing Devices.
+- MCU play (green transport, playhead moved) / stop / record.
+- F5 browser, F4 inspector, F6 Instruments tab.
+- Add Instrument Track via UIA menu (`add_instrument_tracks`), not Find Command.
+- Select Mai Tai (track 3) → Rec red → MCU record + `S1Remote.note` → **blue MIDI clip** on that lane. Playback playhead crossed the clip.
+- Save As: UIA File menu `Save As...` then full path in the Windows dialog.
+
+What failed, then the other way:
+
+| Tried | What happened | Other way |
+|-------|----------------|-----------|
+| Foreground `Start-Process` | S1 died when the shell job ended | Background job + `Wait-Process` |
+| Find Command `Editor` / `Add Instrument Track` | Clipboard paste missed; Enter fired **Save As Template** | Escape; UIA Track menu; type into Find Command |
+| `Ctrl+Shift+S` | Unbound on Artist 6.6 | Alt+F → invoke `Save As...` |
+| File menu first letter A | Opened **Save New Version** | Exact UIA name `Save As...` |
+| `click-region browser.search` | Clicked folder list | `FullControl.browser_load` (search still not proof of load) |
+| `browser_load Presence XT` | Search tags only; Inspector Out stayed None | Use a track that already has Mai Tai/Presence |
+| `click-rec` 1920 Rec band | Lands on the arrange grid with compact headers | `[R]` on selected track; look for filled red circle |
+| F3 / Find Command Editor | Mix tab stays Mix; Editor name is wrong | Bottom Edit tab (custom) or stay on arrange after other cmds |
+
+Template still missing Impact XT kit samples + Surge XT / SynthMaster Player. Close those dialogs; do not Install during a learn. Do not rec-arm 32 mixer channels. Do not File→New.
+
 ## Sample rate (standing — 2026-08-15)
 
 **Every song is 48 kHz.** StudioLive 32SC and `AudioEngine.settings` are 48 kHz. New Song / Song Setup / mixdown WAV must be 48 kHz. 44.1 kHz songs make S1 resample and hitch on LAPTOP.

@@ -19,6 +19,23 @@ SKIP_TITLE = (
     "firefox",
 )
 
+# Child dialogs of Studio One often omit "Studio One" in the title.
+S1_DIALOG_TITLES = (
+    "save as template",
+    "save as",
+    "save new version",
+    "locate missing files",
+    "missing devices",
+    "safety",
+)
+
+
+def _is_s1_window_title(title: str) -> bool:
+    low = (title or "").lower()
+    if "studio one" in low:
+        return True
+    return any(s in low for s in S1_DIALOG_TITLES)
+
 
 def _s1_windows(backend: str = "uia"):
     from pywinauto import Desktop
@@ -33,7 +50,7 @@ def _s1_windows(backend: str = "uia"):
         if not t:
             continue
         low = t.lower()
-        if "studio one" not in low:
+        if not _is_s1_window_title(t):
             continue
         if any(s in low for s in SKIP_TITLE):
             continue

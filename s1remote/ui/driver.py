@@ -127,13 +127,58 @@ class S1UI:
         focus_studio_one()
         time.sleep(0.12)
         send_hotkey(["ctrl"], "K")
-        time.sleep(0.28)
-        _paste(name)
+        time.sleep(0.35)
+        # Paste often fails (empty Find Command + Enter re-fires the last
+        # command — on GROMIT that was Save As Template). Type the name.
+        send_hotkey(["ctrl"], "A")
+        time.sleep(0.05)
+        _type_ascii(name)
         time.sleep(0.22)
         if confirm:
             send_hotkey([], "RETURN")
-            time.sleep(0.18)
+            time.sleep(0.22)
+            if "template" not in name.lower():
+                self._escape_if_save_as_template()
+                err = (self.last or {}).get("error") or ""
+                if "Save As Template" in err:
+                    self.last["name"] = name
+                    self.last["title"] = info.title
+                    return self.last
         result = {"ok": True, "method": "find_command", "name": name, "title": info.title}
+        self.last = result
+        return result
+
+    def _escape_if_save_as_template(self) -> None:
+        """Find Command first-match can open Save As Template. Never OK that."""
+        try:
+            for w in ui_tree.list_top_windows():
+                t = (w.get("title") or "").lower()
+                if "save as template" in t:
+                    send_hotkey([], "ESCAPE")
+                    time.sleep(0.08)
+                    send_hotkey([], "ESCAPE")
+                    self.last = {
+                        "ok": False,
+                        "error": "Find Command opened Save As Template; escaped",
+                    }
+                    return
+        except Exception:
+            pass
+
+    def save_as_dialog(self) -> Dict[str, Any]:
+        """
+        Open the Windows Save As file dialog.
+
+        Studio One 6 Artist has no Ctrl+Shift+S for Save As (that chord is
+        empty; Save New Version is Ctrl+Shift+Alt+S). Use the File menu item.
+        """
+        self.focus()
+        send_hotkey([], "ESCAPE")
+        time.sleep(0.08)
+        send_hotkey(["alt"], "F")
+        time.sleep(0.4)
+        result = self.invoke("Save As...")
+        result["layer"] = "menu_uia"
         self.last = result
         return result
 
@@ -145,6 +190,11 @@ class S1UI:
         info = self.focus()
         if not info.hwnd:
             return {"ok": False, "error": "Studio One not running", "id": command_id}
+        # Artist: Save As has no hotkey; Find Command hits Save As Template.
+        if command_id == "file.save_as":
+            result = self.save_as_dialog()
+            result["id"] = command_id
+            return result
 
         hotkey = meta.get("hotkey") or ""
         if hotkey and hotkey in ACTIONS:
