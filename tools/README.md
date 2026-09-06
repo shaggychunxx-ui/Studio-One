@@ -52,9 +52,10 @@ Live window driver (Find Command / UIA / named regions): `docs/UI_DRIVER.md`
 | `import_and_verify_midi.py` | File import `.mid` (no live arm) |
 | `run_pocket_watched.py` | Stream drums/bass with eyes |
 | `pipeline_monitored.py` | Phased status / compose lead / stream |
+| **`prepare_video_for_s1.py`** | **48 kHz wav + constant-fps mp4 from a video (Mira ffmpeg). Artist: import wav. `docs/VIDEO_IMPORT.md`** |
 
 Job schema: `s1_tools/job_schema.py`. Sensors: `eyes.py`, `ears.py`, `vision.py`.  
-See `docs/EXECUTION_JOBS.md`.
+See `docs/EXECUTION_JOBS.md`. Video import: `docs/VIDEO_IMPORT.md`.
 
 ## Examples
 

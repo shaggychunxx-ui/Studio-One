@@ -62,6 +62,7 @@ Manual equivalent:
 | `S1_NOTES_PORT_SETUP.md` | Dual loopMIDI wiring |
 | `STUDIO_ONE_RECORD_MIDI.md` | Record-enable order from 6.6 manual |
 | `tools/` | Path-agnostic scripts + **producer eyes** (screenshots) |
+| `docs/VIDEO_IMPORT.md` | 48 kHz wav from video (Mira ffmpeg). Artist has no Video Track |
 
 Manual chapter text + full production workflow live in **Music-producer**:
 `studio-one-6.6-agent-knowledge/`, `production-workflow-knowledge/`.
