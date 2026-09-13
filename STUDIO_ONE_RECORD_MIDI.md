@@ -13,7 +13,7 @@ Local pack: `Music-producer/studio-one-6.6-agent-knowledge/FUNCTIONS.md`
    - Manual: click Record Enable  
    - Audio shortcut: select track + **[R]**  
    - Exclusive: **Alt+click** Record Enable  
-   - Option: Instrument Input Follows Selection auto-arms selected Instrument Track  
+   - **Do not** rely on Instrument Input Follows Selection — it is **OFF** on GROMIT (Options → Advanced → Console). Selecting a track must not auto-arm Rec or Monitor.  
 6. Confirm: play a note → **track meter moves** (note data arriving).
 7. **Transport Record** (**NumPad \*** or MCU Record).
 8. Stream / play MIDI notes.

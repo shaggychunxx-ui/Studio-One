@@ -38,6 +38,16 @@ Continue (same day):
 - **Tempo 160:** not on Song Setup Timeline. Click the transport **160.00/120.00** field **left of Master Volume**. `click_frac(0.80, 0.955)` is Master Volume. Working point on 1745×999: **(1312, 952)**.
 - **Edit / Mix / Browse** bottom tabs work with a raw click. Edit opens the piano roll (Mai Tai clip showed C1 / vel 63%). Mix shows the selected channel + Main (Compressor, Pro EQ).
 - **Hardware:** `mido` out `TR-8S 1` (notes 36/38/42), `Moog Matriarch 3` (48/52/55), `monologue 4` (60/64) — send succeeded. MCU play at 160 with metronome: green play, playhead moving.
+
+## Input monitoring vs track select (GROMIT 2026-09-12)
+
+Human: do **not** auto-enable input monitoring (or Rec) when selecting a track.
+
+- **Options → Advanced → Console**
+  - **Audio Input follows Selection** = off (`Engine.Editing.audioMonitorFollowsSelection=0`)
+  - **Instrument Input follows Selection** = off (`Engine.Editing.monitorFollowsSelection=0`)
+- Left **Audio/Instrument track monitoring follows record** on (arm still turns monitor on).
+- Arm with `[R]` or a Rec click. Do not turn Follows Selection back on.
 - **UCNET** with S1 open: discovers DAW `Studio One/6.6.4.102451 Win x64` tcp **54687** and StudioLive 32SC AUD tcp 60716. Zero servers when S1 is closed.
 
 ## Sample rate (standing — 2026-08-15)
