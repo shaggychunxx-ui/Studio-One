@@ -7,8 +7,10 @@ What this installs
      S1 Controller  — Mackie Control Universal (mixer / transport / V-Pots)
      S1 Notes       — Keyboard (instrument notes; never share the MCU cable)
 2. Studio One External Devices (MusicDevices.settings, S1 must be closed):
-     Mackie Control  Receive/Send = S1 Controller
+     Mackie Control  Receive From = S1 Controller, Send To = None
      S1 Notes        Keyboard Receive = S1 Notes
+   Same-port Send+Receive on loopMIDI echoes MCU LEDs back as button
+   presses, so Loop/Record/Play click then immediately turn off.
 3. User Devices\\S1 Notes.device (+ surface with CC 20–35 for Control Link)
 4. s1-remote config/settings.json port names
 
@@ -52,10 +54,11 @@ MUSIC_DEVICES = S1_APPDATA / "MusicDevices.settings"
 USER_DEVICES = S1_APPDATA / "User Devices"
 TEMPLATE_DIR = ROOT / "config" / "s1_controller"
 
+# Receive only. loopMIDI is one virtual cable: S1 Send To the same port
+# echoes MCU LED notes back as button presses (Loop/Record will not latch).
 MACKIE_XML = (
     f'\t\t\t<MusicDeviceDescription name="{MACKIE_NAME}" '
-    f'receivePortID="WinMidi/Receive/{PORT_MCU}" '
-    f'sendPortID="WinMidi/Send/{PORT_MCU}">\n'
+    f'receivePortID="WinMidi/Receive/{PORT_MCU}">\n'
     f'\t\t\t\t<UID x:id="modelID" uid="{MACKIE_MODEL_ID}"/>\n'
     f'\t\t\t\t<UID x:id="instanceID" uid="{MACKIE_INSTANCE_ID}"/>\n'
     f"\t\t\t</MusicDeviceDescription>\n"
@@ -128,6 +131,12 @@ def patch_music_devices(dry_run: bool = False) -> dict:
         text = text[:idx] + block + text[idx:]
         added.append(label)
         return text
+
+    # Repair: never Send MCU LEDs into the same loopMIDI port we Receive From.
+    echo = f'sendPortID="WinMidi/Send/{PORT_MCU}"'
+    if echo in text:
+        text = text.replace(" " + echo, "").replace(echo + " ", "").replace(echo, "")
+        added.append("mackie_send_to_none")
 
     insert(
         MACKIE_XML,

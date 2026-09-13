@@ -426,12 +426,12 @@ Apply on this PC (loopMIDI + External Devices, S1 must be closed):
 2. Studio One → Options → External Devices
    • Mackie → Control
        Receive From = {out_p}   (must match what we send on)
-       Send To      = {in_p}    (feedback LEDs / meters)
+       Send To      = None      (same loopMIDI port echoes Loop/Record off)
    • New Keyboard named S1 Notes
        Receive From = S1 Notes 1  (not the Mackie cable)
 
-   If transport does nothing, swap Receive From / Send To (or swap
-   midi_out_port / midi_in_port in config/settings.json).
+   If Loop/Record click then turn off, Send To is echoing — set it to None.
+   If transport does nothing, swap midi_out_port in config/settings.json.
 
 3. Control Link for VST / any plug-in parameter
    • Control Link ON + Focus ON in Studio One toolbar

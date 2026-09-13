@@ -26,7 +26,8 @@ Windows ports (rtmidi index is not stable — hardware MIDI occupies 0–4 on GR
 
 1. **Options → External Devices** (or `setup --apply`)
 2. **Mackie Control**  
-   - Receive From / Send To = `S1 Controller`
+   - **Receive From** = `S1 Controller`  
+   - **Send To** = **None** (same-port Send+Receive on loopMIDI echoes Cycle/Record LEDs back as button presses, so Loop and Record do not stay on)
 3. **Keyboard** named **S1 Notes**
    - **Receive From = `S1 Notes`**  
    - Optional: enable **Default Instrument Input**

@@ -418,7 +418,7 @@ class JobRunner:
                     op=op,
                     remediations=[
                         "loopMIDI S1 Controller pair",
-                        "External Devices Mackie Receive/Send ports",
+                        "External Devices Mackie Receive From = S1 Controller, Send To = None",
                     ],
                     next_action="fix_mcu_ports",
                     evidence={"status": snip},

@@ -67,7 +67,7 @@ _LAYERS: Dict[str, str] = {
 _SETUP_STEPS: List[str] = [
     "Close Studio One, then: py -3.12 -m s1remote setup --apply",
     "loopMIDI ports 'S1 Controller' (MCU) and 'S1 Notes' (Keyboard) — rtmidi index is not 0/1 when hardware MIDI is present",
-    "Studio One External Devices: Mackie Control Receive/Send = S1 Controller",
+    "Studio One External Devices: Mackie Control Receive From = S1 Controller, Send To = None",
     "Studio One External Devices: Keyboard S1 Notes Receive = S1 Notes",
     "Build and install host package: py -3.12 -m s1remote full package",
     "  Then in S1: Scripts → S1 Full Control: Process Queue",

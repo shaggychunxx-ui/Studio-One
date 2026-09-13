@@ -28,7 +28,7 @@ Written to each song as `tracks.json` at start (`s1_tools.tracks_map`).
 
 1. **loopMIDI** cables: `S1 Controller` (MCU) + `S1 Notes` (instrument).
 2. Studio One → External Devices:
-   - Mackie Control: Receive/Send on Controller ports
+   - Mackie Control: Receive From = S1 Controller, Send To = None
    - Keyboard: **Receive From = S1 Notes 1** (not MCU)
 3. Open Template; confirm each role track has an **instrument** and Input = Keyboard.
 4. Control Link maps (optional but recommended): core EQ/cutoff on stock plugs.

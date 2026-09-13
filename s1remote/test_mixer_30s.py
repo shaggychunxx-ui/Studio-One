@@ -167,8 +167,8 @@ def main() -> int:
         "",
         "Requires Studio One:",
         "  Options → External Devices → Mackie Control",
-        "  Receive From: S1 Controller 1  (this app's OUT)",
-        "  Send To:      S1 Controller 0  (optional feedback)",
+        "  Receive From: S1 Controller  (this app's OUT)",
+        "  Send To:      None  (same-port LED echo toggles Loop/Record off)",
         "",
         "Mutes:",
     ]

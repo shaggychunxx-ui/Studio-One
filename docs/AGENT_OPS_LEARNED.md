@@ -39,6 +39,14 @@ Continue (same day):
 - **Edit / Mix / Browse** bottom tabs work with a raw click. Edit opens the piano roll (Mai Tai clip showed C1 / vel 63%). Mix shows the selected channel + Main (Compressor, Pro EQ).
 - **Hardware:** `mido` out `TR-8S 1` (notes 36/38/42), `Moog Matriarch 3` (48/52/55), `monologue 4` (60/64) — send succeeded. MCU play at 160 with metronome: green play, playhead moving.
 
+## MCU Loop/Record do not latch (GROMIT 2026-09-12)
+
+loopMIDI is one cable. If Mackie Control **Send To** and **Receive From** are both `S1 Controller`, S1 hears its own Cycle/Record LED notes and toggles the button off.
+
+- **Receive From** = `S1 Controller` (agent → S1)
+- **Send To** = **None**
+- `tools/install_s1_controller.py` must not write `sendPortID` on that port.
+
 ## Input monitoring vs track select (GROMIT 2026-09-12)
 
 Human: do **not** auto-enable input monitoring (or Rec) when selecting a track.

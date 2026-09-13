@@ -14,7 +14,7 @@ py -3.12 -m s1remote full package
 
 1. **loopMIDI** — ports `S1 Controller` (MCU) and `S1 Notes` (Keyboard).
 2. Studio One → **Options → External Devices**
-   - **Mackie Control** — Receive/Send = `S1 Controller`
+   - **Mackie Control** — Receive From = `S1 Controller`, Send To = None (not the same loopMIDI port)
    - **S1 Notes Keyboard** — Receive From = `S1 Notes` (never the MCU cable)
 3. Install `scripts\S1FullControl.package` (Scripts menu / drag into S1).
 4. Optional: Control Link toolbar ON for permanent CC binds.

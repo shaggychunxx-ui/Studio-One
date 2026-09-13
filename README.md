@@ -41,7 +41,7 @@ Manual equivalent:
    - `S1 Notes` → instrument notes only (not the Mackie cable)
 2. Studio One → **Options → External Devices → Add → Mackie → Control**
    - **Receive From** = S1 Controller (agent OUT)
-   - **Send To** = S1 Controller (feedback)
+   - **Send To** = **None** (not the same loopMIDI port — LED echo toggles Loop/Record off)
 3. **New Keyboard** named S1 Notes:
    - **Receive From = `S1 Notes`** (not the MCU port)
 4. See **`S1_NOTES_PORT_SETUP.md`** and **`STUDIO_ONE_RECORD_MIDI.md`**
