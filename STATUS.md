@@ -1,10 +1,10 @@
 # Status / Handoff
-**Act on:** none
+**Act on:** GROMIT
 
-**Active owner:** none
+**Active owner:** GROMIT
 
-**Last updated:** 2026-08-24
-**Updated by:** GROMIT
+**Last updated:** 2026-09-17
+**Updated by:** CURSOR (Studio One)
 
 Standing instructions for contributors and agents working in this **public** repo.
 
@@ -31,6 +31,7 @@ Standing instructions for contributors and agents working in this **public** rep
 
 ## Next
 
+- **167** Open/prepare DarkPulse_Arm167 (Template → Save As). Kit+bass only. Prefer Import MIDI / `autonomous_run.py --parts drums,bass --prefer-import --max-sec 24 --skip-mix`. Stop pocket/C2. Leave `Learn_GROMIT_20260824` alone if still open.
 
 ## Notes
 - [x] **AI-CODING:** Received HUMAN GitStatus **test** — **RECEIPT OK** on **Studio-One** (AI-CODING, 2026-07-31 04:28).
@@ -47,8 +48,10 @@ Standing instructions for contributors and agents working in this **public** rep
 
 ## Current goal
 
+**167** DarkPulse_Arm167 autonomous kit+bass (prefer import). Stop pocket/C2. Parallel: leave Learn_GROMIT song untouched.
+
 ## NOTIFY
-- (none)
+- **NOTIFY:** PHONE→GROMIT **167** open/prepare Studio One arm practice (dark_pulse MVP kit+bass). Fully autonomous. Prefer new Save As `DarkPulse_Arm167` from Template (do not write Template; leave `Learn_GROMIT_20260824` alone if still open). `cd` Studio-One checkout; `py -3.12 tools\\autonomous_run.py --name DarkPulse_Arm167 --parts drums,bass --prefer-import --max-sec 24 --skip-mix`. Stop pocket/C2. Proof under song `_vision/`. Act on GROMIT.
 
 ## Done
 
