@@ -1,9 +1,9 @@
 # Status / Handoff
-**Act on:** GROMIT
+**Act on:** none
 
-**Active owner:** GROMIT
+**Active owner:** none
 
-**Last updated:** 2026-09-17
+**Last updated:** 2026-09-21
 **Updated by:** CURSOR (Studio One)
 
 Standing instructions for contributors and agents working in this **public** repo.
@@ -31,7 +31,7 @@ Standing instructions for contributors and agents working in this **public** rep
 
 ## Next
 
-- **167** Open/prepare DarkPulse_Arm167 (Template → Save As). Kit+bass only. Prefer Import MIDI / `autonomous_run.py --parts drums,bass --prefer-import --max-sec 24 --skip-mix`. Stop pocket/C2. Leave `Learn_GROMIT_20260824` alone if still open.
+- **PAUSED (PHONE 2026-09-21):** No music creation / learning / AI temp / training loops until user says resume.
 
 ## Notes
 - [x] **AI-CODING:** Received HUMAN GitStatus **test** — **RECEIPT OK** on **Studio-One** (AI-CODING, 2026-07-31 04:28).
@@ -44,14 +44,15 @@ Standing instructions for contributors and agents working in this **public** rep
 - [x] **GROMIT 2026-08-24:** Live UI learn on Template → Save As `Learn_GROMIT_20260824`. MCU play/record + S1 Notes landed a blue MIDI clip on Mai Tai. Find Command paste was firing Save As Template; Artist has no Save As hotkey — UIA `Save As...`. Notes in `docs/LEARN_UI_SESSION_LATEST.md`.
 - [x] **GROMIT 2026-08-24 continue:** Tempo **160.00**, song sample rate fixed 44.1→48 kHz, Edit piano roll + Mix console, hardware notes out TR-8S/Matriarch/monologue, UCNET DAW tcp 54687 live.
 - [ ] **PAUSED** (human TUI 2026-08-24) AI temp 10 experiment every way to manipulate music with DAW. Song left open: `Learn_GROMIT_20260824` at 160 BPM / 48 kHz. Transport stopped. Do not kill S1. Resume only if asked.
+- [x] **167 DONE** DarkPulse_Arm167 kit+bass (Impact t1 + Mojito t5) via Import MIDI; arm failed DPI 1.25. Proof in grok-shared-workspace `work/music-production/reports/`.
 - PHONE: AI temp 10 experiment every way to manipulate music with DAW. external instruments are loaded to play a patch at 160. explore every aspect of DAW and hardware continue until told to stop → **paused** (TUI pause)
 
 ## Current goal
 
-**167** DarkPulse_Arm167 autonomous kit+bass (prefer import). Stop pocket/C2. Parallel: leave Learn_GROMIT song untouched.
+**PAUSED** — no music creation/learning until user says resume (PHONE 2026-09-21).
 
 ## NOTIFY
-- **NOTIFY:** PHONE→GROMIT **167** open/prepare Studio One arm practice (dark_pulse MVP kit+bass). Fully autonomous. Prefer new Save As `DarkPulse_Arm167` from Template (do not write Template; leave `Learn_GROMIT_20260824` alone if still open). `cd` Studio-One checkout; `py -3.12 tools\\autonomous_run.py --name DarkPulse_Arm167 --parts drums,bass --prefer-import --max-sec 24 --skip-mix`. Stop pocket/C2. Proof under song `_vision/`. Act on GROMIT.
+- **NOTIFY:** PHONE→Studio-One **PAUSE music creation/learning** (2026-09-21). Stop song gen / AI temp / training loops. No new GROMIT/LAPTOP music jobs. Hold until resume. Act on none.
 
 ## Done
 
